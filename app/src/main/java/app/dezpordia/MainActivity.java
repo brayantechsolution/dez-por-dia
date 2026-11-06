@@ -236,8 +236,11 @@ public class MainActivity extends Activity {
         row.setMinimumHeight(dp(56));
         row.setPadding(0, dp(8), 0, dp(8));
 
-        TextView num = text(String.valueOf(number), 13, MUTED, false);
-        row.addView(num, new LinearLayout.LayoutParams(dp(28), LinearLayout.LayoutParams.WRAP_CONTENT));
+        TextView num = word.emoji.isEmpty()
+                ? text(String.valueOf(number), 13, MUTED, false)
+                : text(word.emoji, 22, INK, false);
+        num.setImportantForAccessibility(View.IMPORTANT_FOR_ACCESSIBILITY_NO);
+        row.addView(num, new LinearLayout.LayoutParams(dp(40), LinearLayout.LayoutParams.WRAP_CONTENT));
 
         LinearLayout col = new LinearLayout(this);
         col.setOrientation(LinearLayout.VERTICAL);

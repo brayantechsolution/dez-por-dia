@@ -21,6 +21,16 @@ public final class WallpaperPainter {
     static final int LINE = 0xFF2A3A52;
     static final int WHITE = 0xFFFFFFFF;
 
+    /** Um fundo escuro diferente para cada palavra do dia (todos com bom contraste). */
+    static final int[] GROUNDS = {
+            0xFF0F1B2D, // azul-marinho
+            0xFF0E2A2A, // verde-petróleo
+            0xFF2A1630, // ameixa
+            0xFF142616, // verde-floresta
+            0xFF2D1418, // vinho
+            0xFF18213F, // azul-ardósia
+    };
+
     private WallpaperPainter() {}
 
     public static Bitmap paint(Context context, Words.Word word, int number, int seen) {
@@ -33,13 +43,14 @@ public final class WallpaperPainter {
 
         Bitmap bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(bitmap);
-        canvas.drawColor(NAVY);
+        int ground = GROUNDS[(number - 1 + GROUNDS.length) % GROUNDS.length];
+        canvas.drawColor(ground);
 
         Typeface bold = Typeface.create(Typeface.SANS_SERIF, Typeface.BOLD);
         Typeface regular = Typeface.create(Typeface.SANS_SERIF, Typeface.NORMAL);
 
         // Selo "PALAVRA 2 DE 10"
-        TextPaint chipText = paint(12 * u, NAVY, bold);
+        TextPaint chipText = paint(12 * u, ground, bold);
         chipText.setLetterSpacing(0.08f);
         String chip = "PALAVRA " + number + " DE " + Words.PER_DAY;
         float chipH = 28 * u;
@@ -65,6 +76,30 @@ public final class WallpaperPainter {
 
         // Fica abaixo do relógio e acima dos atalhos da tela de bloqueio
         float y = Math.max(height * 0.36f, height * 0.85f - total);
+
+        // Ilustração da palavra, no espaço entre o relógio e o texto
+        if (!word.emoji.isEmpty()) {
+            float top = height * 0.20f;
+            float bottom = y - 16 * u;
+            float area = bottom - top;
+            if (area > 60 * u) {
+                float cx = width / 2f;
+                float cy = top + area / 2f;
+                float emojiSize = Math.min(area * 0.62f, width * 0.46f);
+
+                // Halo suave atrás da ilustração
+                Paint halo = new Paint(Paint.ANTI_ALIAS_FLAG);
+                halo.setColor(WHITE);
+                halo.setAlpha(18);
+                canvas.drawCircle(cx, cy, emojiSize * 0.78f, halo);
+
+                Paint emoji = new Paint(Paint.ANTI_ALIAS_FLAG);
+                emoji.setTextSize(emojiSize);
+                emoji.setTextAlign(Paint.Align.CENTER);
+                Paint.FontMetrics efm = emoji.getFontMetrics();
+                canvas.drawText(word.emoji, cx, cy - (efm.ascent + efm.descent) / 2f, emoji);
+            }
+        }
 
         Paint fill = new Paint(Paint.ANTI_ALIAS_FLAG);
         fill.setColor(LIME);

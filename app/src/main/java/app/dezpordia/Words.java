@@ -23,13 +23,15 @@ public final class Words {
         public final String sentenceEn;
         public final String sentencePt;
         public final String review;
+        public final String emoji;
 
-        Word(String en, String pt, String sentenceEn, String sentencePt, String review) {
+        Word(String en, String pt, String sentenceEn, String sentencePt, String review, String emoji) {
             this.en = en;
             this.pt = pt;
             this.sentenceEn = sentenceEn;
             this.sentencePt = sentencePt;
             this.review = review;
+            this.emoji = emoji;
         }
     }
 
@@ -53,10 +55,11 @@ public final class Words {
                         o.getString("pt"),
                         o.getString("s"),
                         o.getString("t"),
-                        o.optString("r", "")));
+                        o.optString("r", ""),
+                        o.optString("e", "")));
             }
         } catch (Exception e) {
-            list.add(new Word("hello", "olá", "Hello, how are you?", "Olá, tudo bem?", ""));
+            list.add(new Word("hello", "olá", "Hello, how are you?", "Olá, tudo bem?", "", "👋"));
         }
         cache = Collections.unmodifiableList(list);
         return cache;
