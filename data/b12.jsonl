@@ -1,0 +1,100 @@
+{"w": "north", "pt": "norte", "s": "It's cold in the south and hot in the north.", "t": "Faz frio no sul e calor no norte.", "r": "cold", "e": "⬆️"}
+{"w": "south", "pt": "sul", "s": "Curitiba is in the south of Brazil.", "t": "Curitiba fica no sul do Brasil.", "r": "", "e": "⬇️"}
+{"w": "east", "pt": "leste", "s": "The sun rises in the east.", "t": "O sol nasce no leste.", "r": "", "e": "➡️"}
+{"w": "west", "pt": "oeste", "s": "Drive west for two hours.", "t": "Dirija para o oeste por duas horas.", "r": "drive", "e": "⬅️"}
+{"w": "left", "pt": "esquerda; deixou (passado de leave)", "s": "The bathroom is on the left.", "t": "O banheiro fica à esquerda.", "r": "bathroom", "e": "⬅️"}
+{"w": "sea", "pt": "mar", "s": "The water in the sea is warm today.", "t": "A água do mar está quente hoje.", "r": "water", "e": "🌊"}
+{"w": "ocean", "pt": "oceano", "s": "Brazil is next to the Atlantic Ocean.", "t": "O Brasil fica ao lado do Oceano Atlântico.", "r": "next", "e": "🐳"}
+{"w": "island", "pt": "ilha", "s": "Florianópolis is on an island.", "t": "Florianópolis fica numa ilha.", "r": "", "e": "🏝️"}
+{"w": "hill", "pt": "morro, colina", "s": "My house is at the top of the hill.", "t": "Minha casa fica no alto do morro.", "r": "house", "e": "⛰️"}
+{"w": "earth", "pt": "Terra; terra", "s": "The Earth goes around the sun.", "t": "A Terra gira em torno do sol.", "r": "", "e": "🌍"}
+{"w": "sun", "pt": "sol", "s": "Don't stay in the sun for too long.", "t": "Não fique no sol por muito tempo.", "r": "stay", "e": "☀️"}
+{"w": "moon", "pt": "lua", "s": "Look at the full moon tonight!", "t": "Olha a lua cheia hoje à noite!", "r": "full", "e": "🌕"}
+{"w": "star", "pt": "estrela", "s": "There are so many stars in the sky.", "t": "Há tantas estrelas no céu.", "r": "sky", "e": "⭐"}
+{"w": "plant", "pt": "planta; plantar", "s": "Water the plants twice a week.", "t": "Regue as plantas duas vezes por semana.", "r": "twice", "e": "🪴"}
+{"w": "leaf", "pt": "folha (de planta)", "s": "The leaves turn yellow in autumn.", "t": "As folhas ficam amarelas no outono.", "r": "autumn", "e": "🍃"}
+{"w": "grass", "pt": "grama", "s": "Please don't walk on the grass.", "t": "Por favor, não pise na grama.", "r": "walk", "e": "🌿"}
+{"w": "rock", "pt": "pedra, rocha; rock (música)", "s": "We sat on a big rock by the river.", "t": "Nós sentamos numa pedra grande à beira do rio.", "r": "river", "e": "🪨"}
+{"w": "wild", "pt": "selvagem", "s": "There are wild animals in this forest.", "t": "Há animais selvagens nesta floresta.", "r": "forest", "e": "🐆"}
+{"w": "field", "pt": "campo", "s": "The kids are playing soccer in the field.", "t": "As crianças estão jogando futebol no campo.", "r": "soccer", "e": "🌾"}
+{"w": "farm", "pt": "fazenda, sítio", "s": "My grandparents live on a farm.", "t": "Meus avós moram num sítio.", "r": "live", "e": "🚜"}
+{"w": "body", "pt": "corpo", "s": "Exercise is good for your body and mind.", "t": "Exercício faz bem para o corpo e para a mente.", "r": "mind", "e": "🧍"}
+{"w": "neck", "pt": "pescoço", "s": "My neck hurts from working on the computer.", "t": "Meu pescoço dói de tanto trabalhar no computador.", "r": "computer", "e": "🦒"}
+{"w": "shoulder", "pt": "ombro", "s": "My shoulder hurts when I lift my arm.", "t": "Meu ombro dói quando levanto o braço.", "r": "arm", "e": "🤷"}
+{"w": "knee", "pt": "joelho", "s": "I hurt my knee playing soccer.", "t": "Machuquei o joelho jogando futebol.", "r": "hurt", "e": "🦵"}
+{"w": "brain", "pt": "cérebro", "s": "Sleep is important for your brain.", "t": "O sono é importante para o cérebro.", "r": "important", "e": "🧠"}
+{"w": "asleep", "pt": "dormindo", "s": "The baby is asleep. Please be quiet.", "t": "O bebê está dormindo. Por favor, fique em silêncio.", "r": "quiet", "e": "😴"}
+{"w": "awake", "pt": "acordado", "s": "I was awake all night because of the noise.", "t": "Fiquei acordado a noite toda por causa do barulho.", "r": "noise", "e": "👁️"}
+{"w": "thirsty", "pt": "com sede", "s": "I'm thirsty. Can I have some water?", "t": "Estou com sede. Pode me dar um pouco de água?", "r": "water", "e": "🥵"}
+{"w": "scared", "pt": "assustado, com medo", "s": "My son is scared of the dark.", "t": "Meu filho tem medo do escuro.", "r": "son", "e": "😨"}
+{"w": "glad", "pt": "contente, feliz", "s": "I'm glad you came to my party.", "t": "Fico feliz que você veio à minha festa.", "r": "party", "e": "😊"}
+{"w": "strong", "pt": "forte", "s": "The coffee is too strong for me.", "t": "O café está forte demais para mim.", "r": "coffee", "e": "💪"}
+{"w": "weak", "pt": "fraco", "s": "I feel weak after the fever.", "t": "Estou me sentindo fraco depois da febre.", "r": "fever", "e": "🥀"}
+{"w": "dark", "pt": "escuro", "s": "It gets dark early in winter.", "t": "Escurece cedo no inverno.", "r": "winter", "e": "🌑"}
+{"w": "bright", "pt": "brilhante, claro; inteligente", "s": "This room is very bright and sunny.", "t": "Este cômodo é muito claro e ensolarado.", "r": "sunny", "e": "🔆"}
+{"w": "deep", "pt": "fundo, profundo", "s": "Be careful, the lake is very deep.", "t": "Cuidado, o lago é muito fundo.", "r": "lake", "e": "🕳️"}
+{"w": "wide", "pt": "largo, amplo", "s": "The river is very wide here.", "t": "O rio é muito largo aqui.", "r": "river", "e": "↔️"}
+{"w": "warm", "pt": "morno, quente (agradável)", "s": "Wear something warm. It's cold outside.", "t": "Vista algo quente. Está frio lá fora.", "r": "wear", "e": "🧣"}
+{"w": "sweet", "pt": "doce; fofo", "s": "This cake is too sweet.", "t": "Este bolo está doce demais.", "r": "cake", "e": "🍭"}
+{"w": "sharp", "pt": "afiado; em ponto (horário)", "s": "The meeting starts at nine sharp.", "t": "A reunião começa às nove em ponto.", "r": "meeting", "e": "🔪"}
+{"w": "fresh", "pt": "fresco", "s": "I buy fresh fruit at the market.", "t": "Eu compro fruta fresca na feira.", "r": "fruit", "e": "🥬"}
+{"w": "enjoy", "pt": "aproveitar, curtir", "s": "Enjoy your vacation!", "t": "Aproveite suas férias!", "r": "vacation", "e": "😄"}
+{"w": "cry", "pt": "chorar", "s": "The baby cries when she's hungry.", "t": "O bebê chora quando está com fome.", "r": "hungry", "e": "😭"}
+{"w": "smile", "pt": "sorrir; sorriso", "s": "She has a beautiful smile.", "t": "Ela tem um sorriso lindo.", "r": "beautiful", "e": "😁"}
+{"w": "shout", "pt": "gritar", "s": "Please don't shout. I can hear you.", "t": "Por favor, não grite. Eu estou te ouvindo.", "r": "hear", "e": "📢"}
+{"w": "jump", "pt": "pular", "s": "The kids love to jump in the pool.", "t": "As crianças adoram pular na piscina.", "r": "kid", "e": "🤸‍♂️"}
+{"w": "climb", "pt": "subir, escalar", "s": "We climbed to the top of the hill.", "t": "Nós subimos até o alto do morro.", "r": "hill", "e": "🧗"}
+{"w": "fly", "pt": "voar; mosca", "s": "I'm afraid to fly.", "t": "Tenho medo de voar.", "r": "afraid", "e": "🕊️"}
+{"w": "fight", "pt": "brigar, lutar; briga", "s": "My kids fight over the remote control.", "t": "Meus filhos brigam pelo controle remoto.", "r": "remote control", "e": "🥊"}
+{"w": "kiss", "pt": "beijar; beijo", "s": "She gave her son a kiss goodbye.", "t": "Ela deu um beijo de despedida no filho.", "r": "son", "e": "😘"}
+{"w": "lie", "pt": "mentir; mentira; deitar-se", "s": "Don't lie to me. Tell me the truth.", "t": "Não minta para mim. Me conte a verdade.", "r": "tell", "e": "🤥"}
+{"w": "desk", "pt": "escrivaninha, mesa de trabalho", "s": "My laptop is on my desk.", "t": "Meu notebook está na minha mesa.", "r": "", "e": "🗄️"}
+{"w": "pillow", "pt": "travesseiro", "s": "This hotel has very soft pillows.", "t": "Este hotel tem travesseiros muito macios.", "r": "soft", "e": "🛏️"}
+{"w": "soap", "pt": "sabonete, sabão", "s": "Wash your hands with soap and water.", "t": "Lave as mãos com água e sabão.", "r": "wash", "e": "🧼"}
+{"w": "umbrella", "pt": "guarda-chuva", "s": "Don't forget your umbrella. It's going to rain.", "t": "Não esqueça o guarda-chuva. Vai chover.", "r": "rain", "e": "☂️"}
+{"w": "hat", "pt": "chapéu, boné", "s": "Wear a hat at the beach.", "t": "Use chapéu na praia.", "r": "beach", "e": "👒"}
+{"w": "coat", "pt": "casaco", "s": "Take your coat. It's very cold.", "t": "Leve seu casaco. Está muito frio.", "r": "cold", "e": "🧥"}
+{"w": "sock", "pt": "meia", "s": "I can't find my other sock.", "t": "Não consigo achar minha outra meia.", "r": "find", "e": "🧦"}
+{"w": "toy", "pt": "brinquedo", "s": "Put your toys in the box, please.", "t": "Guarde seus brinquedos na caixa, por favor.", "r": "box", "e": "🧸"}
+{"w": "tool", "pt": "ferramenta", "s": "I need the right tool to fix this.", "t": "Preciso da ferramenta certa para consertar isso.", "r": "fix", "e": "🧰"}
+{"w": "pan", "pt": "frigideira, panela", "s": "Heat some oil in a pan.", "t": "Esquente um pouco de óleo numa frigideira.", "r": "oil", "e": "🍳"}
+{"w": "tea", "pt": "chá", "s": "Would you like a cup of tea?", "t": "Você aceita uma xícara de chá?", "r": "cup", "e": "🍵"}
+{"w": "pizza", "pt": "pizza", "s": "Let's order a pizza tonight.", "t": "Vamos pedir uma pizza hoje à noite.", "r": "order", "e": "🍕"}
+{"w": "salad", "pt": "salada", "s": "I'd like a salad without onions, please.", "t": "Eu queria uma salada sem cebola, por favor.", "r": "onion", "e": "🥗"}
+{"w": "sandwich", "pt": "sanduíche", "s": "I made a chicken sandwich for lunch.", "t": "Fiz um sanduíche de frango para o almoço.", "r": "chicken", "e": "🥪"}
+{"w": "lemon", "pt": "limão", "s": "Add some lemon to the fish.", "t": "Coloque um pouco de limão no peixe.", "r": "fish", "e": "🍋"}
+{"w": "ice", "pt": "gelo", "s": "A soda with ice, please.", "t": "Um refrigerante com gelo, por favor.", "r": "", "e": "🧊"}
+{"w": "apple", "pt": "maçã", "s": "An apple a day keeps the doctor away.", "t": "Uma maçã por dia mantém o médico longe.", "r": "doctor", "e": "🍎"}
+{"w": "banana", "pt": "banana", "s": "I eat a banana before I go to the gym.", "t": "Eu como uma banana antes de ir à academia.", "r": "gym", "e": "🍌"}
+{"w": "cookie", "pt": "biscoito, cookie", "s": "Don't eat all the cookies!", "t": "Não coma todos os biscoitos!", "r": "eat", "e": "🍪"}
+{"w": "cream", "pt": "creme; nata", "s": "Do you want cream in your coffee?", "t": "Você quer creme no seu café?", "r": "coffee", "e": "🍦"}
+{"w": "business", "pt": "negócio, empresa", "s": "My uncle has his own business.", "t": "Meu tio tem o próprio negócio.", "r": "uncle", "e": "💼"}
+{"w": "choice", "pt": "escolha", "s": "You have two choices: tea or coffee.", "t": "Você tem duas opções: chá ou café.", "r": "tea", "e": "🔀"}
+{"w": "area", "pt": "área, região", "s": "Is there a good school in this area?", "t": "Tem uma escola boa nesta região?", "r": "school", "e": "🗺️"}
+{"w": "center", "pt": "centro", "s": "The hotel is in the center of the city.", "t": "O hotel fica no centro da cidade.", "r": "hotel", "e": "🎯"}
+{"w": "side", "pt": "lado", "s": "The pharmacy is on the other side of the street.", "t": "A farmácia fica do outro lado da rua.", "r": "pharmacy", "e": "↔️"}
+{"w": "front", "pt": "frente", "s": "Let's meet in front of the bank.", "t": "Vamos nos encontrar na frente do banco.", "r": "meet", "e": "⏫"}
+{"w": "top", "pt": "topo, parte de cima", "s": "Write your name at the top of the page.", "t": "Escreva seu nome no alto da página.", "r": "page", "e": "🔝"}
+{"w": "bottom", "pt": "fundo, parte de baixo", "s": "Sign at the bottom of the form.", "t": "Assine no final do formulário.", "r": "form", "e": "⬇️"}
+{"w": "point", "pt": "ponto; apontar", "s": "That's a good point.", "t": "Esse é um bom argumento.", "r": "good", "e": "👉"}
+{"w": "shape", "pt": "forma, formato", "s": "I want to get in shape this year.", "t": "Quero entrar em forma este ano.", "r": "year", "e": "🔷"}
+{"w": "able", "pt": "capaz", "s": "I'm not able to come to the meeting.", "t": "Não vou conseguir ir à reunião.", "r": "meeting", "e": "🦾"}
+{"w": "certain", "pt": "certo, determinado", "s": "Are you certain about the date?", "t": "Você tem certeza da data?", "r": "date", "e": "✔️"}
+{"w": "serious", "pt": "sério, grave", "s": "Don't worry, it's nothing serious.", "t": "Não se preocupe, não é nada grave.", "r": "worry", "e": "😐"}
+{"w": "crazy", "pt": "louco", "s": "The traffic today is crazy!", "t": "O trânsito hoje está uma loucura!", "r": "traffic", "e": "🤪"}
+{"w": "lucky", "pt": "sortudo, com sorte", "s": "You're lucky to have such good friends.", "t": "Você tem sorte de ter amigos tão bons.", "r": "friend", "e": "🍀"}
+{"w": "favorite", "pt": "favorito, preferido", "s": "What's your favorite color?", "t": "Qual é a sua cor favorita?", "r": "", "e": "❤️"}
+{"w": "main", "pt": "principal", "s": "What's the main problem?", "t": "Qual é o principal problema?", "r": "problem", "e": "🥇"}
+{"w": "extra", "pt": "extra, a mais", "s": "Do you have an extra pen?", "t": "Você tem uma caneta a mais?", "r": "pen", "e": "➕"}
+{"w": "secret", "pt": "segredo; secreto", "s": "Can you keep a secret?", "t": "Você consegue guardar um segredo?", "r": "keep", "e": "🤫"}
+{"w": "fun", "pt": "diversão; divertido", "s": "The trip was really fun.", "t": "A viagem foi muito divertida.", "r": "trip", "e": "🎢"}
+{"w": "plane", "pt": "avião", "s": "The plane landed on time.", "t": "O avião pousou no horário.", "r": "on time", "e": "✈️"}
+{"w": "ship", "pt": "navio; enviar", "s": "They ship to all of Brazil.", "t": "Eles enviam para todo o Brasil.", "r": "", "e": "🚢"}
+{"w": "photo", "pt": "foto", "s": "Send me the photos from the party.", "t": "Me manda as fotos da festa.", "r": "party", "e": "🖼️"}
+{"w": "joke", "pt": "piada; brincar", "s": "My father always tells bad jokes.", "t": "Meu pai sempre conta piadas ruins.", "r": "father", "e": "🤡"}
+{"w": "sentence", "pt": "frase; sentença", "s": "Read this sentence out loud.", "t": "Leia esta frase em voz alta.", "r": "read", "e": "✏️"}
+{"w": "trouble", "pt": "problema, dificuldade", "s": "I have trouble sleeping.", "t": "Tenho dificuldade para dormir.", "r": "sleep", "e": "😣"}
+{"w": "evening", "pt": "noite (início), fim de tarde", "s": "Good evening! Do you have a reservation?", "t": "Boa noite! Vocês têm reserva?", "r": "reservation", "e": "🌆"}
+{"w": "about", "pt": "sobre; cerca de", "s": "The movie is about a family in Rio.", "t": "O filme é sobre uma família no Rio.", "r": "movie", "e": "💬"}
+{"w": "across", "pt": "do outro lado; através", "s": "The bakery is across the street.", "t": "A padaria fica do outro lado da rua.", "r": "bakery", "e": "🚶"}
+{"w": "against", "pt": "contra", "s": "Brazil plays against Argentina on Sunday.", "t": "O Brasil joga contra a Argentina no domingo.", "r": "play", "e": "⚔️"}

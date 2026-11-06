@@ -1,0 +1,100 @@
+{"w":"look for","pt":"procurar","s":"I'm looking for my keys.","t":"Estou procurando minhas chaves.","r":"key","e":"🔎"}
+{"w":"find out","pt":"descobrir","s":"I need to find out the price of the tickets.","t":"Preciso descobrir o preço das passagens.","r":"price","e":"🕵️‍♀️"}
+{"w":"give up","pt":"desistir","s":"Don't give up. You can do it!","t":"Não desista. Você consegue!","r":"do","e":"🏳️"}
+{"w":"turn on","pt":"ligar (aparelho)","s":"Can you turn on the light, please?","t":"Você pode acender a luz, por favor?","r":"","e":"🔛"}
+{"w":"turn off","pt":"desligar","s":"Turn off your phone during the movie.","t":"Desligue o celular durante o filme.","r":"during","e":"📴"}
+{"w":"pick up","pt":"buscar; pegar","s":"I pick up my kids at school at five.","t":"Eu busco meus filhos na escola às cinco.","r":"school","e":"🚸"}
+{"w":"put on","pt":"vestir, colocar","s":"Put on your jacket. It's cold outside.","t":"Vista a jaqueta. Está frio lá fora.","r":"outside","e":"🧤"}
+{"w":"take off","pt":"tirar (roupa); decolar","s":"The plane takes off at nine.","t":"O avião decola às nove.","r":"","e":"🛫"}
+{"w":"come back","pt":"voltar","s":"When are you coming back from vacation?","t":"Quando você volta das férias?","r":"vacation","e":"🔙"}
+{"w":"go out","pt":"sair (para se divertir)","s":"Do you want to go out tonight?","t":"Você quer sair hoje à noite?","r":"","e":"🌃"}
+{"w":"light","pt":"luz; leve","s":"The light in the kitchen doesn't work.","t":"A luz da cozinha não funciona.","r":"kitchen","e":"💡"}
+{"w":"electricity","pt":"eletricidade, energia","s":"The electricity bill is very high this month.","t":"A conta de luz está muito alta este mês.","r":"bill","e":"🔌"}
+{"w":"internet","pt":"internet","s":"The internet is down again.","t":"A internet caiu de novo.","r":"again","e":"🌐"}
+{"w":"password","pt":"senha","s":"I forgot my password.","t":"Esqueci minha senha.","r":"forget","e":"🔐"}
+{"w":"battery","pt":"bateria, pilha","s":"My phone battery is almost dead.","t":"A bateria do meu celular está quase acabando.","r":"almost","e":"🪫"}
+{"w":"charger","pt":"carregador","s":"Can I borrow your charger?","t":"Posso pegar seu carregador emprestado?","r":"borrow","e":"🔋"}
+{"w":"screen","pt":"tela","s":"The screen of my phone is broken.","t":"A tela do meu celular está quebrada.","r":"phone","e":"🖥️"}
+{"w":"app","pt":"aplicativo","s":"I use this app to learn English.","t":"Eu uso este aplicativo para aprender inglês.","r":"learn","e":"📲"}
+{"w":"download","pt":"baixar (arquivo)","s":"You can download the app for free.","t":"Você pode baixar o aplicativo de graça.","r":"free","e":"⬇️"}
+{"w":"update","pt":"atualizar; atualização","s":"Please update the app to the new version.","t":"Por favor, atualize o aplicativo para a nova versão.","r":"app","e":"🔄"}
+{"w":"loan","pt":"empréstimo","s":"I need a loan to buy a car.","t":"Preciso de um empréstimo para comprar um carro.","r":"buy","e":"🏦"}
+{"w":"debt","pt":"dívida","s":"He finally paid all his debts.","t":"Ele finalmente pagou todas as suas dívidas.","r":"pay","e":"📉"}
+{"w":"interest","pt":"juros; interesse","s":"The interest on this loan is too high.","t":"Os juros deste empréstimo são altos demais.","r":"loan","e":"💹"}
+{"w":"account","pt":"conta (bancária, de usuário)","s":"I want to open a bank account.","t":"Quero abrir uma conta no banco.","r":"bank","e":"🧾"}
+{"w":"transfer","pt":"transferir; transferência","s":"I'll transfer the money to your account.","t":"Vou transferir o dinheiro para a sua conta.","r":"account","e":"🔁"}
+{"w":"invoice","pt":"nota fiscal, fatura","s":"Please send me the invoice by email.","t":"Por favor, me mande a nota fiscal por e-mail.","r":"email","e":"🧾"}
+{"w":"budget","pt":"orçamento","s":"We have a small budget for the trip.","t":"Temos um orçamento pequeno para a viagem.","r":"trip","e":"📒"}
+{"w":"tax","pt":"imposto","s":"The price includes tax.","t":"O preço inclui o imposto.","r":"price","e":"🏛️"}
+{"w":"fee","pt":"taxa, tarifa","s":"Is there a fee to use the card?","t":"Tem alguma taxa para usar o cartão?","r":"card","e":"💲"}
+{"w":"refund","pt":"reembolso; reembolsar","s":"Can I get a refund for this ticket?","t":"Posso receber o reembolso desta passagem?","r":"ticket","e":"↩️"}
+{"w":"allow","pt":"permitir","s":"Dogs are not allowed in the restaurant.","t":"Não é permitido entrar com cachorros no restaurante.","r":"restaurant","e":"✔️"}
+{"w":"avoid","pt":"evitar","s":"I leave early to avoid the traffic.","t":"Eu saio cedo para evitar o trânsito.","r":"traffic","e":"🚧"}
+{"w":"offer","pt":"oferecer; oferta","s":"They offered me a better job.","t":"Eles me ofereceram um emprego melhor.","r":"better","e":"🎁"}
+{"w":"accept","pt":"aceitar","s":"Do you accept credit cards?","t":"Vocês aceitam cartão de crédito?","r":"card","e":"🆗"}
+{"w":"refuse","pt":"recusar","s":"I can't refuse such a good offer.","t":"Não posso recusar uma oferta tão boa.","r":"offer","e":"🙅"}
+{"w":"promise","pt":"prometer; promessa","s":"I promise I'll call you tomorrow.","t":"Prometo que te ligo amanhã.","r":"call","e":"🤙"}
+{"w":"suggest","pt":"sugerir","s":"Can you suggest a good restaurant?","t":"Você pode sugerir um bom restaurante?","r":"restaurant","e":"💡"}
+{"w":"complain","pt":"reclamar","s":"He always complains about the traffic.","t":"Ele sempre reclama do trânsito.","r":"traffic","e":"😤"}
+{"w":"prepare","pt":"preparar","s":"I need to prepare for the interview.","t":"Preciso me preparar para a entrevista.","r":"interview","e":"🧑‍🍳"}
+{"w":"include","pt":"incluir","s":"Does the price include breakfast?","t":"O preço inclui café da manhã?","r":"breakfast","e":"📎"}
+{"w":"kind","pt":"gentil; tipo","s":"Thank you, you are very kind.","t":"Obrigado, você é muito gentil.","r":"very","e":"🤗"}
+{"w":"friendly","pt":"simpático, amigável","s":"The people here are very friendly.","t":"As pessoas aqui são muito simpáticas.","r":"people","e":"😄"}
+{"w":"rude","pt":"grosseiro, mal-educado","s":"Don't be rude to the waiter.","t":"Não seja grosseiro com o garçom.","r":"","e":"🙄"}
+{"w":"honest","pt":"honesto","s":"To be honest, I don't like this plan.","t":"Para ser sincero, não gosto deste plano.","r":"plan","e":"😇"}
+{"w":"lazy","pt":"preguiçoso","s":"I feel lazy on Sunday mornings.","t":"Eu fico com preguiça nas manhãs de domingo.","r":"morning","e":"🦥"}
+{"w":"smart","pt":"inteligente, esperto","s":"Your daughter is very smart.","t":"Sua filha é muito inteligente.","r":"daughter","e":"🧠"}
+{"w":"funny","pt":"engraçado","s":"That movie was really funny.","t":"Aquele filme foi muito engraçado.","r":"","e":"😂"}
+{"w":"shy","pt":"tímido","s":"He is shy, so he doesn't talk much.","t":"Ele é tímido, então não fala muito.","r":"talk","e":"😳"}
+{"w":"polite","pt":"educado","s":"It's polite to say thank you.","t":"É educado dizer obrigado.","r":"say","e":"🎩"}
+{"w":"patient","pt":"paciente","s":"Be patient. The doctor will see you soon.","t":"Tenha paciência. O médico vai te atender logo.","r":"soon","e":"⏳"}
+{"w":"building","pt":"prédio","s":"I live in a tall building downtown.","t":"Eu moro num prédio alto no centro.","r":"tall","e":"🏢"}
+{"w":"bridge","pt":"ponte","s":"Cross the bridge and turn right.","t":"Atravesse a ponte e vire à direita.","r":"cross","e":"🌉"}
+{"w":"corner","pt":"esquina; canto","s":"The pharmacy is on the corner.","t":"A farmácia fica na esquina.","r":"pharmacy","e":"📐"}
+{"w":"square","pt":"praça; quadrado","s":"There is a market in the square on Sundays.","t":"Tem uma feira na praça aos domingos.","r":"market","e":"⛲"}
+{"w":"neighborhood","pt":"bairro, vizinhança","s":"This is a quiet neighborhood.","t":"Este é um bairro tranquilo.","r":"quiet","e":"🏘️"}
+{"w":"downtown","pt":"centro da cidade","s":"Parking downtown is expensive.","t":"Estacionar no centro é caro.","r":"expensive","e":"🌆"}
+{"w":"sidewalk","pt":"calçada","s":"Kids, stay on the sidewalk.","t":"Crianças, fiquem na calçada.","r":"","e":"🚶‍♀️"}
+{"w":"traffic light","pt":"semáforo","s":"Turn left at the traffic light.","t":"Vire à esquerda no semáforo.","r":"turn","e":"🚥"}
+{"w":"parking lot","pt":"estacionamento","s":"The parking lot is full.","t":"O estacionamento está lotado.","r":"full","e":"🅿️"}
+{"w":"police","pt":"polícia","s":"Call the police!","t":"Chame a polícia!","r":"call","e":"🚓"}
+{"w":"once","pt":"uma vez","s":"I go to the gym once a week.","t":"Eu vou à academia uma vez por semana.","r":"week","e":"1️⃣"}
+{"w":"twice","pt":"duas vezes","s":"Brush your teeth at least twice a day.","t":"Escove os dentes pelo menos duas vezes por dia.","r":"brush","e":"2️⃣"}
+{"w":"daily","pt":"diário; diariamente","s":"I read the news daily.","t":"Eu leio as notícias diariamente.","r":"read","e":"📰"}
+{"w":"recently","pt":"recentemente","s":"I recently moved to a new apartment.","t":"Eu me mudei recentemente para um apartamento novo.","r":"move","e":"🆕"}
+{"w":"finally","pt":"finalmente","s":"The bus finally arrived.","t":"O ônibus finalmente chegou.","r":"arrive","e":"🎉"}
+{"w":"suddenly","pt":"de repente","s":"Suddenly, it started to rain.","t":"De repente, começou a chover.","r":"rain","e":"⚡"}
+{"w":"immediately","pt":"imediatamente","s":"Call me immediately if there's a problem.","t":"Me liga imediatamente se houver um problema.","r":"call","e":"🚨"}
+{"w":"lately","pt":"ultimamente","s":"I've been very tired lately.","t":"Tenho andado muito cansado ultimamente.","r":"tired","e":"🗓️"}
+{"w":"anymore","pt":"mais (em negativas)","s":"I don't work there anymore.","t":"Eu não trabalho mais lá.","r":"there","e":"🚫"}
+{"w":"weekly","pt":"semanal; semanalmente","s":"We have a weekly meeting on Mondays.","t":"Temos uma reunião semanal às segundas.","r":"meeting","e":"📆"}
+{"w":"boil","pt":"ferver","s":"Boil the water for ten minutes.","t":"Ferva a água por dez minutos.","r":"water","e":"♨️"}
+{"w":"fry","pt":"fritar","s":"Fry the eggs in a little oil.","t":"Frite os ovos com um pouco de óleo.","r":"egg","e":"🍳"}
+{"w":"bake","pt":"assar (no forno)","s":"My grandmother bakes bread every Sunday.","t":"Minha avó assa pão todo domingo.","r":"bread","e":"🥖"}
+{"w":"cut","pt":"cortar; corte","s":"Cut the vegetables into small pieces.","t":"Corte os legumes em pedaços pequenos.","r":"piece","e":"✂️"}
+{"w":"mix","pt":"misturar","s":"Mix the sugar with the milk.","t":"Misture o açúcar com o leite.","r":"sugar","e":"🥣"}
+{"w":"add","pt":"adicionar, acrescentar","s":"Add a little salt to the beans.","t":"Acrescente um pouco de sal ao feijão.","r":"salt","e":"➕"}
+{"w":"taste","pt":"provar; gosto, sabor","s":"Taste the soup. Does it need more salt?","t":"Prove a sopa. Precisa de mais sal?","r":"salt","e":"👅"}
+{"w":"smell","pt":"cheirar; cheiro","s":"The cake smells delicious.","t":"O bolo está com um cheiro delicioso.","r":"cake","e":"👃"}
+{"w":"burn","pt":"queimar","s":"Be careful not to burn the rice.","t":"Cuidado para não queimar o arroz.","r":"rice","e":"🔥"}
+{"w":"recipe","pt":"receita (culinária)","s":"Can you send me the recipe for this cake?","t":"Você pode me mandar a receita deste bolo?","r":"cake","e":"📜"}
+{"w":"dog","pt":"cachorro","s":"I walk my dog every morning.","t":"Eu passeio com o meu cachorro toda manhã.","r":"walk","e":"🐕"}
+{"w":"cat","pt":"gato","s":"My cat sleeps all day.","t":"Meu gato dorme o dia inteiro.","r":"sleep","e":"🐈"}
+{"w":"bird","pt":"pássaro","s":"I wake up to the sound of birds.","t":"Eu acordo com o som dos pássaros.","r":"wake up","e":"🐦"}
+{"w":"horse","pt":"cavalo","s":"My uncle has three horses on his farm.","t":"Meu tio tem três cavalos no sítio dele.","r":"","e":"🐴"}
+{"w":"cow","pt":"vaca","s":"We get fresh milk from the cows.","t":"Nós tiramos leite fresco das vacas.","r":"milk","e":"🐄"}
+{"w":"animal","pt":"animal","s":"What's your favorite animal?","t":"Qual é o seu animal favorito?","r":"","e":"🐾"}
+{"w":"mountain","pt":"montanha","s":"We climbed the mountain last summer.","t":"Nós subimos a montanha no verão passado.","r":"last","e":"⛰️"}
+{"w":"forest","pt":"floresta","s":"There are many birds in this forest.","t":"Há muitos pássaros nesta floresta.","r":"bird","e":"🌲"}
+{"w":"lake","pt":"lago","s":"We went fishing at the lake.","t":"Nós fomos pescar no lago.","r":"fish","e":"🛶"}
+{"w":"sky","pt":"céu","s":"The sky is full of stars tonight.","t":"O céu está cheio de estrelas hoje à noite.","r":"full","e":"🌌"}
+{"w":"actually","pt":"na verdade","s":"Actually, I don't like coffee.","t":"Na verdade, eu não gosto de café.","r":"like","e":"☝️"}
+{"w":"really","pt":"realmente, muito; sério?","s":"I really like your new haircut.","t":"Gostei muito do seu corte de cabelo novo.","r":"hair","e":"😮"}
+{"w":"probably","pt":"provavelmente","s":"It will probably rain tomorrow.","t":"Provavelmente vai chover amanhã.","r":"rain","e":"🤔"}
+{"w":"of course","pt":"claro, com certeza","s":"Of course I can help you!","t":"Claro que posso te ajudar!","r":"help","e":"👌"}
+{"w":"exactly","pt":"exatamente","s":"That's exactly what I wanted.","t":"É exatamente o que eu queria.","r":"want","e":"🎯"}
+{"w":"especially","pt":"especialmente","s":"I love fruit, especially mangoes.","t":"Eu adoro fruta, especialmente manga.","r":"fruit","e":"⭐"}
+{"w":"together","pt":"juntos","s":"Let's have dinner together tonight.","t":"Vamos jantar juntos hoje à noite.","r":"dinner","e":"🧑‍🤝‍🧑"}
+{"w":"alone","pt":"sozinho","s":"She lives alone with her cat.","t":"Ela mora sozinha com o gato dela.","r":"cat","e":"🧍‍♀️"}
+{"w":"instead","pt":"em vez disso","s":"I don't want coffee. I'll have tea instead.","t":"Não quero café. Vou tomar chá em vez disso.","r":"coffee","e":"🔄"}
+{"w":"anyway","pt":"de qualquer forma, enfim","s":"It was raining, but we went out anyway.","t":"Estava chovendo, mas saímos mesmo assim.","r":"go out","e":"🤷"}

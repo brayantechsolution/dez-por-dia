@@ -1,0 +1,50 @@
+{"w": "meeting", "pt": "reunião", "s": "The meeting starts at nine.", "t": "A reunião começa às nove.", "r": "", "e": "👥"}
+{"w": "available", "pt": "disponível", "s": "Is the doctor available this afternoon?", "t": "O médico está disponível hoje à tarde?", "r": "", "e": "✅"}
+{"w": "schedule", "pt": "agenda, cronograma", "s": "Can we check the schedule before the meeting?", "t": "Podemos ver a agenda antes da reunião?", "r": "meeting", "e": "📅"}
+{"w": "borrow", "pt": "pegar emprestado", "s": "Can I borrow your pen for a minute?", "t": "Posso pegar sua caneta emprestada por um minuto?", "r": "", "e": "🤝"}
+{"w": "reliable", "pt": "confiável", "s": "My old car is slow but reliable.", "t": "Meu carro velho é lento, mas confiável.", "r": "", "e": "🛡️"}
+{"w": "deliver", "pt": "entregar", "s": "They deliver pizza until midnight.", "t": "Eles entregam pizza até meia-noite.", "r": "", "e": "📦"}
+{"w": "improve", "pt": "melhorar", "s": "I want to improve my English this year.", "t": "Quero melhorar meu inglês este ano.", "r": "", "e": "📈"}
+{"w": "receipt", "pt": "recibo, comprovante", "s": "Can I have the receipt, please?", "t": "Pode me dar o comprovante, por favor?", "r": "", "e": "🧾"}
+{"w": "appointment", "pt": "consulta, horário marcado", "s": "I have a dentist appointment on Friday.", "t": "Tenho consulta no dentista na sexta.", "r": "", "e": "🦷"}
+{"w": "figure out", "pt": "descobrir, entender", "s": "I can't figure out how this works.", "t": "Não consigo entender como isso funciona.", "r": "", "e": "🧩"}
+{"w": "deadline", "pt": "prazo", "s": "The deadline is next Monday, so check your schedule.", "t": "O prazo é na próxima segunda, então veja sua agenda.", "r": "schedule", "e": "⏳"}
+{"w": "cheap", "pt": "barato", "s": "This store is cheap and reliable.", "t": "Esta loja é barata e confiável.", "r": "reliable", "e": "🏷️"}
+{"w": "expensive", "pt": "caro", "s": "Coffee here is too expensive.", "t": "O café aqui é caro demais.", "r": "", "e": "💎"}
+{"w": "rent", "pt": "aluguel; alugar", "s": "The rent is due on the fifth.", "t": "O aluguel vence no dia cinco.", "r": "", "e": "🏠"}
+{"w": "neighbor", "pt": "vizinho", "s": "My neighbor can deliver the package for you.", "t": "Meu vizinho pode entregar o pacote para você.", "r": "deliver", "e": "🏘️"}
+{"w": "busy", "pt": "ocupado", "s": "Sorry, I'm busy right now.", "t": "Desculpa, estou ocupado agora.", "r": "", "e": "🏃"}
+{"w": "late", "pt": "atrasado, tarde", "s": "Don't be late for the meeting.", "t": "Não se atrase para a reunião.", "r": "meeting", "e": "⏰"}
+{"w": "early", "pt": "cedo", "s": "I wake up early on weekdays.", "t": "Eu acordo cedo nos dias úteis.", "r": "", "e": "🌅"}
+{"w": "bill", "pt": "conta", "s": "Can we have the bill, please?", "t": "A conta, por favor?", "r": "", "e": "🍽️"}
+{"w": "change", "pt": "troco; mudar", "s": "Keep the change.", "t": "Pode ficar com o troco.", "r": "", "e": "🪙"}
+{"w": "hungry", "pt": "com fome", "s": "I'm hungry. Is the kitchen still open?", "t": "Estou com fome. A cozinha ainda está aberta?", "r": "", "e": "🍔"}
+{"w": "tired", "pt": "cansado", "s": "I'm too tired to go out tonight.", "t": "Estou cansado demais para sair hoje à noite.", "r": "", "e": "😴"}
+{"w": "ready", "pt": "pronto", "s": "Dinner is ready!", "t": "O jantar está pronto!", "r": "", "e": "🍲"}
+{"w": "enough", "pt": "suficiente", "s": "Do we have enough money for the rent?", "t": "Temos dinheiro suficiente para o aluguel?", "r": "rent", "e": "💰"}
+{"w": "still", "pt": "ainda", "s": "Are you still busy?", "t": "Você ainda está ocupado?", "r": "busy", "e": "🕰️"}
+{"w": "already", "pt": "já", "s": "I already paid the bill.", "t": "Eu já paguei a conta.", "r": "bill", "e": "💸"}
+{"w": "yet", "pt": "já (em perguntas), ainda (em negativas)", "s": "Have you figured it out yet?", "t": "Você já descobriu?", "r": "figure out", "e": "❓"}
+{"w": "maybe", "pt": "talvez", "s": "Maybe we can borrow a car.", "t": "Talvez a gente possa pegar um carro emprestado.", "r": "borrow", "e": "🤔"}
+{"w": "almost", "pt": "quase", "s": "I'm almost ready.", "t": "Estou quase pronto.", "r": "ready", "e": "🔋"}
+{"w": "again", "pt": "de novo", "s": "Can you say that again, please?", "t": "Pode repetir, por favor?", "r": "", "e": "🔁"}
+{"w": "ask", "pt": "perguntar, pedir", "s": "Can I ask you something?", "t": "Posso te perguntar uma coisa?", "r": "", "e": "🙋"}
+{"w": "answer", "pt": "responder; resposta", "s": "She didn't answer my message.", "t": "Ela não respondeu minha mensagem.", "r": "", "e": "💬"}
+{"w": "explain", "pt": "explicar", "s": "Can you explain the deadline again?", "t": "Pode explicar o prazo de novo?", "r": "deadline", "e": "🧑‍🏫"}
+{"w": "remember", "pt": "lembrar", "s": "Do you remember my neighbor?", "t": "Você lembra do meu vizinho?", "r": "neighbor", "e": "🧠"}
+{"w": "forget", "pt": "esquecer", "s": "Don't forget your receipt.", "t": "Não esqueça o seu comprovante.", "r": "receipt", "e": "🙈"}
+{"w": "try", "pt": "tentar; experimentar", "s": "Try it again, it's almost working.", "t": "Tenta de novo, está quase funcionando.", "r": "almost", "e": "🎯"}
+{"w": "need", "pt": "precisar", "s": "I need to improve my English.", "t": "Preciso melhorar meu inglês.", "r": "improve", "e": "📚"}
+{"w": "wait", "pt": "esperar", "s": "Wait, I'm not ready yet.", "t": "Espera, ainda não estou pronto.", "r": "ready", "e": "✋"}
+{"w": "choose", "pt": "escolher", "s": "Choose the cheap one.", "t": "Escolhe o barato.", "r": "cheap", "e": "👆"}
+{"w": "finish", "pt": "terminar", "s": "I'll finish early today.", "t": "Vou terminar cedo hoje.", "r": "early", "e": "🏁"}
+{"w": "job", "pt": "emprego, trabalho", "s": "I'm looking for a new job.", "t": "Estou procurando um emprego novo.", "r": "", "e": "💼"}
+{"w": "boss", "pt": "chefe", "s": "My boss is busy all day.", "t": "Meu chefe está ocupado o dia todo.", "r": "busy", "e": "👔"}
+{"w": "salary", "pt": "salário", "s": "Is the salary enough to pay the rent?", "t": "O salário dá para pagar o aluguel?", "r": "rent", "e": "💵"}
+{"w": "coworker", "pt": "colega de trabalho", "s": "My coworker always arrives late.", "t": "Meu colega de trabalho sempre chega atrasado.", "r": "late", "e": "🧑‍💻"}
+{"w": "customer", "pt": "cliente", "s": "The customer asked for the receipt.", "t": "O cliente pediu o comprovante.", "r": "receipt", "e": "🛍️"}
+{"w": "price", "pt": "preço", "s": "What's the price of this one?", "t": "Qual é o preço deste?", "r": "", "e": "💲"}
+{"w": "discount", "pt": "desconto", "s": "Can I get a discount if I pay now?", "t": "Tenho desconto se pagar agora?", "r": "", "e": "✂️"}
+{"w": "store", "pt": "loja", "s": "The store is still open.", "t": "A loja ainda está aberta.", "r": "still", "e": "🏪"}
+{"w": "bank", "pt": "banco", "s": "I need to go to the bank before it closes.", "t": "Preciso ir ao banco antes de fechar.", "r": "need", "e": "🏦"}
+{"w": "weekend", "pt": "fim de semana", "s": "See you after the weekend!", "t": "Até depois do fim de semana!", "r": "", "e": "🏖️"}

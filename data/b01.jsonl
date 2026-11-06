@@ -1,0 +1,100 @@
+{"w":"family","pt":"família","s":"My family lives in a small town.","t":"Minha família mora numa cidade pequena.","r":"","e":"👨‍👩‍👧"}
+{"w":"mother","pt":"mãe","s":"My mother calls me every weekend.","t":"Minha mãe me liga todo fim de semana.","r":"weekend","e":"👩"}
+{"w":"father","pt":"pai","s":"My father wakes up early every day.","t":"Meu pai acorda cedo todos os dias.","r":"early","e":"👨"}
+{"w":"brother","pt":"irmão","s":"My brother is looking for a new job.","t":"Meu irmão está procurando um emprego novo.","r":"job","e":"👦"}
+{"w":"sister","pt":"irmã","s":"Can I borrow your car? My sister needs it.","t":"Posso pegar seu carro emprestado? Minha irmã precisa dele.","r":"borrow","e":"👧"}
+{"w":"son","pt":"filho","s":"Our son is ten years old.","t":"Nosso filho tem dez anos.","r":"","e":"👶"}
+{"w":"daughter","pt":"filha","s":"Their daughter studies in the morning.","t":"A filha deles estuda de manhã.","r":"","e":"👧"}
+{"w":"husband","pt":"marido","s":"Her husband is a reliable man.","t":"O marido dela é um homem confiável.","r":"reliable","e":"🤵"}
+{"w":"wife","pt":"esposa","s":"His wife is busy today.","t":"A esposa dele está ocupada hoje.","r":"busy","e":"👰"}
+{"w":"friend","pt":"amigo, amiga","s":"She is my best friend.","t":"Ela é minha melhor amiga.","r":"","e":"🫂"}
+{"w":"house","pt":"casa","s":"We pay rent for this house.","t":"Nós pagamos aluguel por esta casa.","r":"rent","e":"🏡"}
+{"w":"kitchen","pt":"cozinha","s":"The kitchen is clean and ready.","t":"A cozinha está limpa e pronta.","r":"ready","e":"🍳"}
+{"w":"bedroom","pt":"quarto","s":"My bedroom has a big window.","t":"Meu quarto tem uma janela grande.","r":"","e":"🛏️"}
+{"w":"bathroom","pt":"banheiro","s":"Excuse me, where is the bathroom?","t":"Com licença, onde fica o banheiro?","r":"","e":"🚿"}
+{"w":"door","pt":"porta","s":"Please close the door.","t":"Por favor, feche a porta.","r":"","e":"🚪"}
+{"w":"window","pt":"janela","s":"Can you open the window, please?","t":"Você pode abrir a janela, por favor?","r":"","e":"🪟"}
+{"w":"table","pt":"mesa","s":"Dinner is on the table.","t":"O jantar está na mesa.","r":"","e":"🍽️"}
+{"w":"chair","pt":"cadeira","s":"This chair is not very comfortable.","t":"Esta cadeira não é muito confortável.","r":"","e":"🪑"}
+{"w":"bed","pt":"cama","s":"I'm tired. I'm going to bed.","t":"Estou cansado. Vou para a cama.","r":"tired","e":"🛌"}
+{"w":"key","pt":"chave","s":"Don't forget your house key.","t":"Não esqueça a chave de casa.","r":"forget","e":"🔑"}
+{"w":"breakfast","pt":"café da manhã","s":"I usually have breakfast at seven.","t":"Eu costumo tomar café da manhã às sete.","r":"","e":"🥞"}
+{"w":"lunch","pt":"almoço","s":"Let's have lunch together after the meeting.","t":"Vamos almoçar juntos depois da reunião.","r":"meeting","e":"🥪"}
+{"w":"dinner","pt":"jantar","s":"What do you want for dinner tonight?","t":"O que você quer jantar hoje à noite?","r":"","e":"🍝"}
+{"w":"water","pt":"água","s":"Can I have a glass of water, please?","t":"Pode me dar um copo de água, por favor?","r":"","e":"💧"}
+{"w":"bread","pt":"pão","s":"The bread at this bakery is cheap.","t":"O pão desta padaria é barato.","r":"cheap","e":"🍞"}
+{"w":"coffee","pt":"café","s":"I need a coffee before work.","t":"Preciso de um café antes do trabalho.","r":"need","e":"☕"}
+{"w":"milk","pt":"leite","s":"We need milk and bread.","t":"Precisamos de leite e pão.","r":"bread","e":"🥛"}
+{"w":"egg","pt":"ovo","s":"I eat two eggs for breakfast.","t":"Eu como dois ovos no café da manhã.","r":"breakfast","e":"🥚"}
+{"w":"rice","pt":"arroz","s":"Rice and beans are on the menu every day.","t":"Arroz e feijão estão no cardápio todos os dias.","r":"","e":"🍚"}
+{"w":"beans","pt":"feijão","s":"My mother makes the best beans.","t":"Minha mãe faz o melhor feijão.","r":"mother","e":"🫘"}
+{"w":"today","pt":"hoje","s":"Today is a good day to start.","t":"Hoje é um bom dia para começar.","r":"","e":"📍"}
+{"w":"tomorrow","pt":"amanhã","s":"See you tomorrow!","t":"Até amanhã!","r":"","e":"➡️"}
+{"w":"yesterday","pt":"ontem","s":"I called my sister yesterday.","t":"Eu liguei para minha irmã ontem.","r":"sister","e":"⬅️"}
+{"w":"morning","pt":"manhã","s":"Good morning! Is the coffee ready?","t":"Bom dia! O café está pronto?","r":"coffee","e":"🌄"}
+{"w":"afternoon","pt":"tarde","s":"I have an appointment this afternoon.","t":"Tenho um compromisso hoje à tarde.","r":"appointment","e":"🌤️"}
+{"w":"night","pt":"noite","s":"Good night, sleep well!","t":"Boa noite, durma bem!","r":"","e":"🌙"}
+{"w":"week","pt":"semana","s":"I work five days a week.","t":"Eu trabalho cinco dias por semana.","r":"","e":"🗓️"}
+{"w":"month","pt":"mês","s":"The rent is due at the start of the month.","t":"O aluguel vence no começo do mês.","r":"rent","e":"📆"}
+{"w":"year","pt":"ano","s":"This year, I want to improve my English.","t":"Este ano, quero melhorar meu inglês.","r":"improve","e":"🎆"}
+{"w":"hour","pt":"hora","s":"The meeting lasts one hour.","t":"A reunião dura uma hora.","r":"meeting","e":"⌛"}
+{"w":"eat","pt":"comer","s":"What do you want to eat?","t":"O que você quer comer?","r":"","e":"🍴"}
+{"w":"drink","pt":"beber; bebida","s":"Drink more water during the day.","t":"Beba mais água durante o dia.","r":"water","e":"🥤"}
+{"w":"sleep","pt":"dormir; sono","s":"I sleep eight hours every night.","t":"Eu durmo oito horas toda noite.","r":"night","e":"💤"}
+{"w":"work","pt":"trabalhar; trabalho","s":"I work from Monday to Friday.","t":"Eu trabalho de segunda a sexta.","r":"","e":"🛠️"}
+{"w":"study","pt":"estudar","s":"I study English every morning.","t":"Eu estudo inglês toda manhã.","r":"morning","e":"📖"}
+{"w":"read","pt":"ler","s":"I like to read before bed.","t":"Eu gosto de ler antes de dormir.","r":"bed","e":"📰"}
+{"w":"write","pt":"escrever","s":"Please write your name here.","t":"Por favor, escreva seu nome aqui.","r":"","e":"✍️"}
+{"w":"listen","pt":"ouvir, escutar","s":"Listen to me, please.","t":"Me escute, por favor.","r":"","e":"🎧"}
+{"w":"speak","pt":"falar","s":"Do you speak English?","t":"Você fala inglês?","r":"","e":"🗣️"}
+{"w":"walk","pt":"caminhar, andar","s":"I walk to work every day.","t":"Eu vou a pé para o trabalho todos os dias.","r":"work","e":"🚶"}
+{"w":"big","pt":"grande","s":"They live in a big house.","t":"Eles moram numa casa grande.","r":"house","e":"🐘"}
+{"w":"small","pt":"pequeno","s":"Can I have a small coffee, please?","t":"Pode me dar um café pequeno, por favor?","r":"coffee","e":"🐭"}
+{"w":"new","pt":"novo","s":"I need a new phone.","t":"Preciso de um celular novo.","r":"need","e":"✨"}
+{"w":"old","pt":"velho, antigo","s":"This old chair is still good.","t":"Esta cadeira velha ainda está boa.","r":"chair","e":"🧓"}
+{"w":"hot","pt":"quente","s":"Be careful, the coffee is very hot.","t":"Cuidado, o café está muito quente.","r":"coffee","e":"🔥"}
+{"w":"cold","pt":"frio; resfriado","s":"It's cold today. Close the window.","t":"Está frio hoje. Feche a janela.","r":"window","e":"🥶"}
+{"w":"happy","pt":"feliz","s":"I'm happy to see you again.","t":"Estou feliz em te ver de novo.","r":"again","e":"😊"}
+{"w":"sad","pt":"triste","s":"Why are you sad today?","t":"Por que você está triste hoje?","r":"today","e":"😢"}
+{"w":"easy","pt":"fácil","s":"This exercise is easy.","t":"Este exercício é fácil.","r":"","e":"👌"}
+{"w":"hard","pt":"difícil; duro","s":"Learning English is hard, but possible.","t":"Aprender inglês é difícil, mas possível.","r":"","e":"🧗"}
+{"w":"street","pt":"rua","s":"I live on this street.","t":"Eu moro nesta rua.","r":"","e":"🛣️"}
+{"w":"city","pt":"cidade","s":"The city is busy in the morning.","t":"A cidade fica movimentada de manhã.","r":"busy","e":"🏙️"}
+{"w":"car","pt":"carro","s":"My car is old but reliable.","t":"Meu carro é velho, mas confiável.","r":"old","e":"🚗"}
+{"w":"bus","pt":"ônibus","s":"The bus is late again.","t":"O ônibus está atrasado de novo.","r":"late","e":"🚌"}
+{"w":"school","pt":"escola","s":"My son walks to school.","t":"Meu filho vai a pé para a escola.","r":"son","e":"🏫"}
+{"w":"hospital","pt":"hospital","s":"The hospital is near my house.","t":"O hospital fica perto da minha casa.","r":"house","e":"🏥"}
+{"w":"market","pt":"mercado, feira","s":"Fruit is cheap at the market.","t":"A fruta é barata na feira.","r":"cheap","e":"🧺"}
+{"w":"church","pt":"igreja","s":"The old church is beautiful.","t":"A igreja antiga é linda.","r":"old","e":"⛪"}
+{"w":"park","pt":"parque; estacionar","s":"We walk in the park on weekends.","t":"Nós caminhamos no parque nos fins de semana.","r":"walk","e":"🌳"}
+{"w":"restaurant","pt":"restaurante","s":"This restaurant is too expensive.","t":"Este restaurante é caro demais.","r":"expensive","e":"🍽️"}
+{"w":"buy","pt":"comprar","s":"I need to buy milk.","t":"Preciso comprar leite.","r":"milk","e":"🛒"}
+{"w":"sell","pt":"vender","s":"They sell fresh bread every morning.","t":"Eles vendem pão fresco toda manhã.","r":"bread","e":"🤑"}
+{"w":"pay","pt":"pagar","s":"Can I pay by card?","t":"Posso pagar com cartão?","r":"","e":"💳"}
+{"w":"open","pt":"abrir; aberto","s":"The store opens at eight.","t":"A loja abre às oito.","r":"store","e":"🔓"}
+{"w":"close","pt":"fechar","s":"The bank closes at four.","t":"O banco fecha às quatro.","r":"bank","e":"🔒"}
+{"w":"start","pt":"começar","s":"Class starts at seven.","t":"A aula começa às sete.","r":"","e":"🚦"}
+{"w":"stop","pt":"parar; ponto","s":"Stop here, please.","t":"Pare aqui, por favor.","r":"","e":"🛑"}
+{"w":"help","pt":"ajudar; ajuda","s":"Can you help me, please?","t":"Você pode me ajudar, por favor?","r":"","e":"🆘"}
+{"w":"call","pt":"ligar; chamar","s":"Call me when you're ready.","t":"Me liga quando estiver pronto.","r":"ready","e":"📞"}
+{"w":"send","pt":"enviar, mandar","s":"Send me the receipt, please.","t":"Me mande o comprovante, por favor.","r":"receipt","e":"📤"}
+{"w":"head","pt":"cabeça","s":"My head hurts.","t":"Minha cabeça está doendo.","r":"","e":"🗿"}
+{"w":"hand","pt":"mão","s":"Raise your hand if you have a question.","t":"Levante a mão se tiver uma pergunta.","r":"","e":"✋"}
+{"w":"eye","pt":"olho","s":"She has green eyes.","t":"Ela tem olhos verdes.","r":"","e":"👁️"}
+{"w":"mouth","pt":"boca","s":"Don't talk with your mouth full.","t":"Não fale de boca cheia.","r":"","e":"👄"}
+{"w":"back","pt":"costas; de volta","s":"My back hurts after work.","t":"Minhas costas doem depois do trabalho.","r":"work","e":"🔙"}
+{"w":"sick","pt":"doente","s":"I'm sick, so I can't work today.","t":"Estou doente, então não posso trabalhar hoje.","r":"work","e":"🤒"}
+{"w":"doctor","pt":"médico","s":"I have a doctor's appointment tomorrow.","t":"Tenho consulta no médico amanhã.","r":"tomorrow","e":"🧑‍⚕️"}
+{"w":"medicine","pt":"remédio","s":"Take this medicine after lunch.","t":"Tome este remédio depois do almoço.","r":"lunch","e":"💊"}
+{"w":"pain","pt":"dor","s":"I have a pain in my back.","t":"Estou com uma dor nas costas.","r":"back","e":"🤕"}
+{"w":"healthy","pt":"saudável","s":"Eat healthy food and sleep well.","t":"Coma comida saudável e durma bem.","r":"sleep","e":"🥗"}
+{"w":"because","pt":"porque","s":"I'm tired because I worked a lot.","t":"Estou cansado porque trabalhei muito.","r":"tired","e":"🔗"}
+{"w":"but","pt":"mas","s":"It's cheap, but it's not good.","t":"É barato, mas não é bom.","r":"cheap","e":"↔️"}
+{"w":"also","pt":"também","s":"I also need a new chair.","t":"Eu também preciso de uma cadeira nova.","r":"chair","e":"➕"}
+{"w":"very","pt":"muito","s":"The bus is very late today.","t":"O ônibus está muito atrasado hoje.","r":"bus","e":"💯"}
+{"w":"always","pt":"sempre","s":"She always arrives early.","t":"Ela sempre chega cedo.","r":"early","e":"♾️"}
+{"w":"never","pt":"nunca","s":"I never drink coffee at night.","t":"Eu nunca tomo café à noite.","r":"night","e":"🚫"}
+{"w":"sometimes","pt":"às vezes","s":"Sometimes I walk to work.","t":"Às vezes eu vou a pé para o trabalho.","r":"walk","e":"🎲"}
+{"w":"usually","pt":"geralmente","s":"I usually have lunch at noon.","t":"Eu geralmente almoço ao meio-dia.","r":"lunch","e":"🔂"}
+{"w":"often","pt":"com frequência","s":"How often do you go to the market?","t":"Com que frequência você vai à feira?","r":"market","e":"📶"}
+{"w":"only","pt":"só, apenas","s":"I only have ten minutes.","t":"Eu só tenho dez minutos.","r":"","e":"☝️"}

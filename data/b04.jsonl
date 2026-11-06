@@ -1,0 +1,100 @@
+{"w":"arm","pt":"braço","s":"I broke my arm last year.","t":"Eu quebrei o braço no ano passado.","r":"last","e":"💪"}
+{"w":"leg","pt":"perna","s":"My legs hurt after the run.","t":"Minhas pernas doem depois da corrida.","r":"run","e":"🦵"}
+{"w":"foot","pt":"pé","s":"I go to work on foot.","t":"Eu vou para o trabalho a pé.","r":"work","e":"🦶"}
+{"w":"finger","pt":"dedo","s":"I cut my finger with a knife.","t":"Eu cortei o dedo com uma faca.","r":"knife","e":"☝️"}
+{"w":"face","pt":"rosto; encarar","s":"Wash your face before bed.","t":"Lave o rosto antes de dormir.","r":"wash","e":"🙂"}
+{"w":"hair","pt":"cabelo","s":"She has long black hair.","t":"Ela tem cabelo preto e comprido.","r":"long","e":"💇"}
+{"w":"nose","pt":"nariz","s":"My nose is red because of the cold.","t":"Meu nariz está vermelho por causa do resfriado.","r":"cold","e":"👃"}
+{"w":"ear","pt":"orelha, ouvido","s":"I have a pain in my ear.","t":"Estou com dor de ouvido.","r":"pain","e":"👂"}
+{"w":"tooth","pt":"dente","s":"Brush your teeth after every meal.","t":"Escove os dentes depois de cada refeição.","r":"every","e":"🦷"}
+{"w":"heart","pt":"coração","s":"Exercise is good for your heart.","t":"Exercício faz bem para o coração.","r":"good","e":"🫀"}
+{"w":"hurt","pt":"doer; machucar","s":"Does it hurt when you walk?","t":"Dói quando você anda?","r":"walk","e":"🩹"}
+{"w":"fever","pt":"febre","s":"The baby has a fever.","t":"O bebê está com febre.","r":"baby","e":"🌡️"}
+{"w":"cough","pt":"tosse; tossir","s":"Drink hot tea for your cough.","t":"Beba chá quente para a tosse.","r":"hot","e":"😷"}
+{"w":"headache","pt":"dor de cabeça","s":"I have a terrible headache today.","t":"Estou com uma dor de cabeça terrível hoje.","r":"today","e":"🤯"}
+{"w":"rest","pt":"descansar; descanso; resto","s":"You need to rest this weekend.","t":"Você precisa descansar neste fim de semana.","r":"weekend","e":"🛌"}
+{"w":"exercise","pt":"exercício; exercitar-se","s":"I exercise three times a week.","t":"Eu me exercito três vezes por semana.","r":"week","e":"🤸"}
+{"w":"nurse","pt":"enfermeiro, enfermeira","s":"My sister is a nurse at the hospital.","t":"Minha irmã é enfermeira no hospital.","r":"hospital","e":"👩‍⚕️"}
+{"w":"pharmacy","pt":"farmácia","s":"Is there a pharmacy open now?","t":"Tem alguma farmácia aberta agora?","r":"open","e":"⚕️"}
+{"w":"emergency","pt":"emergência","s":"In an emergency, call 192.","t":"Em caso de emergência, ligue 192.","r":"call","e":"🚑"}
+{"w":"better","pt":"melhor","s":"I feel much better today, thanks.","t":"Estou me sentindo muito melhor hoje, obrigado.","r":"feel","e":"📈"}
+{"w":"train","pt":"trem; treinar","s":"The train leaves in ten minutes.","t":"O trem sai em dez minutos.","r":"leave","e":"🚆"}
+{"w":"subway","pt":"metrô","s":"The subway is faster than the bus.","t":"O metrô é mais rápido que o ônibus.","r":"fast","e":"🚇"}
+{"w":"taxi","pt":"táxi","s":"Let's take a taxi to the airport.","t":"Vamos pegar um táxi até o aeroporto.","r":"airport","e":"🚕"}
+{"w":"bike","pt":"bicicleta","s":"My son rides his bike to school.","t":"Meu filho vai de bicicleta para a escola.","r":"school","e":"🚲"}
+{"w":"truck","pt":"caminhão","s":"The truck delivers the furniture tomorrow.","t":"O caminhão entrega os móveis amanhã.","r":"deliver","e":"🚚"}
+{"w":"road","pt":"estrada","s":"The road to the beach is very long.","t":"A estrada para a praia é muito longa.","r":"beach","e":"🛣️"}
+{"w":"traffic","pt":"trânsito","s":"Sorry I'm late. The traffic was terrible.","t":"Desculpa o atraso. O trânsito estava terrível.","r":"sorry","e":"🚦"}
+{"w":"gas","pt":"gasolina; gás","s":"We need to stop for gas.","t":"Precisamos parar para abastecer.","r":"stop","e":"⛽"}
+{"w":"station","pt":"estação","s":"Where is the train station?","t":"Onde fica a estação de trem?","r":"train","e":"🚉"}
+{"w":"ride","pt":"carona; andar (de bicicleta, cavalo)","s":"Can you give me a ride home?","t":"Você pode me dar uma carona até em casa?","r":"give","e":"🛵"}
+{"w":"date","pt":"data; encontro","s":"What's the date today?","t":"Que dia é hoje?","r":"today","e":"📅"}
+{"w":"birthday","pt":"aniversário","s":"Happy birthday! Here's a gift for you.","t":"Feliz aniversário! Aqui está um presente para você.","r":"happy","e":"🎂"}
+{"w":"holiday","pt":"feriado","s":"Monday is a holiday, so the bank is closed.","t":"Segunda é feriado, então o banco está fechado.","r":"close","e":"🎌"}
+{"w":"vacation","pt":"férias","s":"We're going on vacation next week.","t":"Vamos sair de férias semana que vem.","r":"next","e":"🏖️"}
+{"w":"party","pt":"festa","s":"Are you coming to my party on Saturday?","t":"Você vem à minha festa no sábado?","r":"come","e":"🎉"}
+{"w":"celebrate","pt":"comemorar","s":"Let's celebrate your new job!","t":"Vamos comemorar seu emprego novo!","r":"job","e":"🥂"}
+{"w":"gift","pt":"presente","s":"This gift is for your mother.","t":"Este presente é para sua mãe.","r":"mother","e":"🎁"}
+{"w":"invite","pt":"convidar","s":"I want to invite you to my birthday party.","t":"Quero te convidar para a minha festa de aniversário.","r":"birthday","e":"💌"}
+{"w":"wedding","pt":"casamento (festa)","s":"Their wedding is in June.","t":"O casamento deles é em junho.","r":"","e":"💒"}
+{"w":"anniversary","pt":"aniversário (de casamento, de empresa)","s":"Today is our tenth wedding anniversary.","t":"Hoje é nosso décimo aniversário de casamento.","r":"wedding","e":"💍"}
+{"w":"something","pt":"algo, alguma coisa","s":"I want to tell you something.","t":"Quero te contar uma coisa.","r":"tell","e":"🎁"}
+{"w":"anything","pt":"qualquer coisa; nada (em negativas)","s":"Do you need anything from the market?","t":"Você precisa de alguma coisa da feira?","r":"market","e":"❓"}
+{"w":"nothing","pt":"nada","s":"There is nothing in the fridge.","t":"Não tem nada na geladeira.","r":"","e":"🫙"}
+{"w":"everything","pt":"tudo","s":"Thank you for everything.","t":"Obrigado por tudo.","r":"","e":"🌍"}
+{"w":"someone","pt":"alguém","s":"Someone is at the door.","t":"Tem alguém na porta.","r":"door","e":"👤"}
+{"w":"anyone","pt":"alguém (em perguntas); qualquer um","s":"Does anyone have a pen?","t":"Alguém tem uma caneta?","r":"pen","e":"🙋"}
+{"w":"everyone","pt":"todo mundo","s":"Everyone is invited to the party.","t":"Todo mundo está convidado para a festa.","r":"invite","e":"👨‍👩‍👧‍👦"}
+{"w":"nobody","pt":"ninguém","s":"Nobody answered the phone.","t":"Ninguém atendeu o telefone.","r":"answer","e":"🫥"}
+{"w":"somewhere","pt":"em algum lugar","s":"My keys are somewhere in this room.","t":"Minhas chaves estão em algum lugar deste cômodo.","r":"room","e":"📍"}
+{"w":"everywhere","pt":"em todo lugar","s":"I looked everywhere for my wallet.","t":"Procurei minha carteira em todo lugar.","r":"wallet","e":"🌐"}
+{"w":"wake up","pt":"acordar","s":"I wake up at six every day.","t":"Eu acordo às seis todos os dias.","r":"every","e":"⏰"}
+{"w":"get up","pt":"levantar-se","s":"I get up right after I wake up.","t":"Eu me levanto logo depois de acordar.","r":"wake up","e":"🛏️"}
+{"w":"brush","pt":"escovar; escova","s":"Brush your teeth before bed.","t":"Escove os dentes antes de dormir.","r":"tooth","e":"🪥"}
+{"w":"relax","pt":"relaxar","s":"I like to relax on the sofa after work.","t":"Gosto de relaxar no sofá depois do trabalho.","r":"sofa","e":"🧘"}
+{"w":"hurry","pt":"pressa; apressar-se","s":"Hurry up! The bus is leaving.","t":"Anda logo! O ônibus está saindo.","r":"leave","e":"🏃"}
+{"w":"practice","pt":"praticar; prática","s":"Practice makes perfect.","t":"A prática leva à perfeição.","r":"","e":"🎯"}
+{"w":"use","pt":"usar; uso","s":"Can I use your phone?","t":"Posso usar seu celular?","r":"phone","e":"🧰"}
+{"w":"play","pt":"jogar, brincar, tocar","s":"The kids play soccer in the park.","t":"As crianças jogam futebol no parque.","r":"park","e":"⚽"}
+{"w":"sing","pt":"cantar","s":"My daughter loves to sing.","t":"Minha filha adora cantar.","r":"daughter","e":"🎤"}
+{"w":"dance","pt":"dançar; dança","s":"Do you want to dance?","t":"Você quer dançar?","r":"want","e":"💃"}
+{"w":"bag","pt":"sacola, bolsa","s":"Do you need a bag?","t":"Você precisa de uma sacola?","r":"need","e":"👜"}
+{"w":"box","pt":"caixa","s":"Put the books in this box.","t":"Coloque os livros nesta caixa.","r":"book","e":"📦"}
+{"w":"bottle","pt":"garrafa","s":"Can I have a bottle of water, please?","t":"Pode me dar uma garrafa de água, por favor?","r":"water","e":"🍾"}
+{"w":"can","pt":"poder, saber (fazer); lata","s":"I can't swim, but I can ride a bike.","t":"Não sei nadar, mas sei andar de bicicleta.","r":"bike","e":"🥫"}
+{"w":"piece","pt":"pedaço, peça","s":"Would you like a piece of cake?","t":"Você quer um pedaço de bolo?","r":"cake","e":"🍰"}
+{"w":"pair","pt":"par","s":"I need a new pair of shoes.","t":"Preciso de um par de sapatos novo.","r":"shoes","e":"🧦"}
+{"w":"list","pt":"lista","s":"I made a shopping list.","t":"Eu fiz uma lista de compras.","r":"shopping","e":"🧾"}
+{"w":"kilo","pt":"quilo","s":"A kilo of rice costs five reais.","t":"Um quilo de arroz custa cinco reais.","r":"cost","e":"⚖️"}
+{"w":"liter","pt":"litro","s":"I drink two liters of water a day.","t":"Eu bebo dois litros de água por dia.","r":"drink","e":"🧴"}
+{"w":"dozen","pt":"dúzia","s":"I bought a dozen eggs.","t":"Comprei uma dúzia de ovos.","r":"egg","e":"🥚"}
+{"w":"free","pt":"grátis; livre","s":"The coffee is free for guests.","t":"O café é grátis para os hóspedes.","r":"guest","e":"🆓"}
+{"w":"full","pt":"cheio","s":"The bus is full. Let's wait for the next one.","t":"O ônibus está lotado. Vamos esperar o próximo.","r":"next","e":"🈵"}
+{"w":"empty","pt":"vazio","s":"The fridge is empty. We need to go shopping.","t":"A geladeira está vazia. Precisamos fazer compras.","r":"shopping","e":"🫗"}
+{"w":"rich","pt":"rico","s":"He isn't rich, but he is happy.","t":"Ele não é rico, mas é feliz.","r":"happy","e":"🤑"}
+{"w":"poor","pt":"pobre","s":"Many poor families need help.","t":"Muitas famílias pobres precisam de ajuda.","r":"help","e":"🥺"}
+{"w":"young","pt":"jovem, novo","s":"My grandmother looks very young.","t":"Minha avó parece muito jovem.","r":"look","e":"🧒"}
+{"w":"quiet","pt":"quieto, silencioso","s":"Please be quiet. The baby is sleeping.","t":"Por favor, fique quieto. O bebê está dormindo.","r":"baby","e":"🤫"}
+{"w":"loud","pt":"alto (som), barulhento","s":"The music is too loud.","t":"A música está alta demais.","r":"","e":"📢"}
+{"w":"dirty","pt":"sujo","s":"My shoes are dirty after the rain.","t":"Meus sapatos estão sujos depois da chuva.","r":"rain","e":"💩"}
+{"w":"wet","pt":"molhado","s":"Don't sit there. The chair is wet.","t":"Não sente aí. A cadeira está molhada.","r":"sit","e":"💦"}
+{"w":"employee","pt":"funcionário","s":"The company has two hundred employees.","t":"A empresa tem duzentos funcionários.","r":"company","e":"🧑‍🔧"}
+{"w":"hire","pt":"contratar","s":"They want to hire a new manager.","t":"Eles querem contratar um novo gerente.","r":"manager","e":"🤝"}
+{"w":"quit","pt":"pedir demissão; largar","s":"She quit her job last month.","t":"Ela pediu demissão no mês passado.","r":"job","e":"🚪"}
+{"w":"career","pt":"carreira","s":"I want to change my career.","t":"Quero mudar de carreira.","r":"change","e":"🪜"}
+{"w":"skill","pt":"habilidade","s":"English is an important skill for your career.","t":"Inglês é uma habilidade importante para a sua carreira.","r":"career","e":"🛠️"}
+{"w":"experience","pt":"experiência","s":"Do you have experience with customers?","t":"Você tem experiência com clientes?","r":"customer","e":"🎖️"}
+{"w":"training","pt":"treinamento","s":"New employees have one week of training.","t":"Os funcionários novos têm uma semana de treinamento.","r":"employee","e":"🏋️‍♀️"}
+{"w":"shift","pt":"turno","s":"I work the night shift this week.","t":"Eu trabalho no turno da noite esta semana.","r":"night","e":"🔄"}
+{"w":"overtime","pt":"hora extra","s":"I worked overtime on Saturday.","t":"Fiz hora extra no sábado.","r":"work","e":"🕙"}
+{"w":"retire","pt":"aposentar-se","s":"My father wants to retire next year.","t":"Meu pai quer se aposentar no ano que vem.","r":"father","e":"👴"}
+{"w":"so","pt":"então; tão","s":"It was raining, so we stayed home.","t":"Estava chovendo, então ficamos em casa.","r":"rain","e":"➡️"}
+{"w":"or","pt":"ou","s":"Do you want coffee or tea?","t":"Você quer café ou chá?","r":"coffee","e":"🔀"}
+{"w":"if","pt":"se","s":"Call me if you need help.","t":"Me liga se precisar de ajuda.","r":"help","e":"🔣"}
+{"w":"when","pt":"quando","s":"When does the store open?","t":"Quando a loja abre?","r":"store","e":"🕰️"}
+{"w":"then","pt":"então; depois","s":"First wash your hands, then sit down.","t":"Primeiro lave as mãos, depois sente-se.","r":"first","e":"🪜"}
+{"w":"too","pt":"também; demais","s":"This coffee is too sweet.","t":"Este café está doce demais.","r":"coffee","e":"➕"}
+{"w":"both","pt":"ambos, os dois","s":"Both of my sisters live in São Paulo.","t":"Minhas duas irmãs moram em São Paulo.","r":"sister","e":"✌️"}
+{"w":"each","pt":"cada","s":"Each ticket costs ten dollars.","t":"Cada ingresso custa dez dólares.","r":"ticket","e":"🔸"}
+{"w":"other","pt":"outro","s":"Do you have this shirt in other colors?","t":"Vocês têm esta camisa em outras cores?","r":"shirt","e":"🔄"}
+{"w":"same","pt":"mesmo, igual","s":"We work at the same company.","t":"Nós trabalhamos na mesma empresa.","r":"company","e":"🟰"}

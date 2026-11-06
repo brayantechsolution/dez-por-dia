@@ -1,0 +1,100 @@
+{"w":"clean","pt":"limpar; limpo","s":"I clean the house on Saturdays.","t":"Eu limpo a casa aos sábados.","r":"house","e":"🧽"}
+{"w":"cook","pt":"cozinhar","s":"My husband cooks dinner every night.","t":"Meu marido faz o jantar toda noite.","r":"husband","e":"👨‍🍳"}
+{"w":"dishes","pt":"louça","s":"I'll wash the dishes after dinner.","t":"Eu lavo a louça depois do jantar.","r":"wash","e":"🍽️"}
+{"w":"floor","pt":"chão; andar","s":"The floor is wet. Be careful!","t":"O chão está molhado. Cuidado!","r":"","e":"🟫"}
+{"w":"trash","pt":"lixo","s":"Can you take out the trash?","t":"Você pode levar o lixo para fora?","r":"take","e":"🗑️"}
+{"w":"cup","pt":"xícara, copo","s":"Would you like a cup of coffee?","t":"Você aceita uma xícara de café?","r":"coffee","e":"☕"}
+{"w":"plate","pt":"prato","s":"Put the plates on the table.","t":"Coloque os pratos na mesa.","r":"table","e":"🍽️"}
+{"w":"fork","pt":"garfo","s":"Can I have a fork, please?","t":"Pode me dar um garfo, por favor?","r":"","e":"🍴"}
+{"w":"knife","pt":"faca","s":"Be careful, this knife is very sharp.","t":"Cuidado, esta faca está muito afiada.","r":"very","e":"🔪"}
+{"w":"spoon","pt":"colher","s":"I need a spoon for my soup.","t":"Preciso de uma colher para a minha sopa.","r":"need","e":"🥄"}
+{"w":"meat","pt":"carne","s":"We don't eat meat on Fridays.","t":"Nós não comemos carne às sextas.","r":"eat","e":"🥩"}
+{"w":"chicken","pt":"frango, galinha","s":"Chicken with rice is my favorite meal.","t":"Frango com arroz é a minha refeição favorita.","r":"rice","e":"🍗"}
+{"w":"fish","pt":"peixe","s":"This restaurant serves fresh fish.","t":"Este restaurante serve peixe fresco.","r":"restaurant","e":"🐟"}
+{"w":"fruit","pt":"fruta","s":"Eat more fruit and drink more water.","t":"Coma mais fruta e beba mais água.","r":"water","e":"🍎"}
+{"w":"vegetables","pt":"legumes, verduras","s":"Vegetables are cheap at the market.","t":"Os legumes são baratos na feira.","r":"market","e":"🥦"}
+{"w":"salt","pt":"sal","s":"This soup needs more salt.","t":"Esta sopa precisa de mais sal.","r":"more","e":"🧂"}
+{"w":"sugar","pt":"açúcar","s":"I drink my coffee without sugar.","t":"Eu tomo meu café sem açúcar.","r":"coffee","e":"🍬"}
+{"w":"cheese","pt":"queijo","s":"I'd like a cheese sandwich, please.","t":"Eu queria um sanduíche de queijo, por favor.","r":"","e":"🧀"}
+{"w":"juice","pt":"suco","s":"Orange juice is my favorite drink.","t":"Suco de laranja é a minha bebida favorita.","r":"drink","e":"🧃"}
+{"w":"cake","pt":"bolo","s":"My mother made a cake for my birthday.","t":"Minha mãe fez um bolo para o meu aniversário.","r":"make","e":"🎂"}
+{"w":"now","pt":"agora","s":"I'm busy now. Can I call you later?","t":"Estou ocupado agora. Posso te ligar mais tarde?","r":"call","e":"⏱️"}
+{"w":"soon","pt":"logo, em breve","s":"See you soon!","t":"Até logo!","r":"","e":"🔜"}
+{"w":"later","pt":"mais tarde, depois","s":"Let's talk about it later.","t":"Vamos falar sobre isso depois.","r":"","e":"🕓"}
+{"w":"ago","pt":"atrás (tempo)","s":"I started this job two years ago.","t":"Comecei neste emprego há dois anos.","r":"job","e":"⏪"}
+{"w":"minute","pt":"minuto","s":"Wait a minute, please.","t":"Espere um minuto, por favor.","r":"wait","e":"⏲️"}
+{"w":"after","pt":"depois de","s":"Call me after work.","t":"Me liga depois do trabalho.","r":"call","e":"⏩"}
+{"w":"before","pt":"antes de","s":"Wash your hands before dinner.","t":"Lave as mãos antes do jantar.","r":"dinner","e":"⏮️"}
+{"w":"until","pt":"até (tempo)","s":"The store is open until ten.","t":"A loja fica aberta até as dez.","r":"open","e":"🏁"}
+{"w":"during","pt":"durante","s":"Please don't talk during the movie.","t":"Por favor, não fale durante o filme.","r":"","e":"🎬"}
+{"w":"while","pt":"enquanto","s":"I listen to music while I cook.","t":"Eu ouço música enquanto cozinho.","r":"cook","e":"🔀"}
+{"w":"want","pt":"querer","s":"I want to travel next year.","t":"Quero viajar no ano que vem.","r":"travel","e":"🙌"}
+{"w":"like","pt":"gostar; como","s":"Do you like fish?","t":"Você gosta de peixe?","r":"fish","e":"👍"}
+{"w":"love","pt":"amar, adorar; amor","s":"I love my family.","t":"Eu amo a minha família.","r":"family","e":"❤️"}
+{"w":"hate","pt":"odiar","s":"I hate waking up early.","t":"Eu odeio acordar cedo.","r":"early","e":"👎"}
+{"w":"prefer","pt":"preferir","s":"I prefer tea to coffee.","t":"Eu prefiro chá a café.","r":"coffee","e":"⚖️"}
+{"w":"hope","pt":"esperar (desejar); esperança","s":"I hope you feel better soon.","t":"Espero que você melhore logo.","r":"soon","e":"🤞"}
+{"w":"believe","pt":"acreditar","s":"I can't believe it's Friday already.","t":"Não acredito que já é sexta.","r":"already","e":"🙏"}
+{"w":"agree","pt":"concordar","s":"I agree with you.","t":"Eu concordo com você.","r":"","e":"🤝"}
+{"w":"decide","pt":"decidir","s":"We need to decide today.","t":"Precisamos decidir hoje.","r":"need","e":"🪙"}
+{"w":"plan","pt":"plano; planejar","s":"What are your plans for the weekend?","t":"Quais são seus planos para o fim de semana?","r":"weekend","e":"📋"}
+{"w":"man","pt":"homem","s":"The man behind the counter is very kind.","t":"O homem atrás do balcão é muito gentil.","r":"behind","e":"🧔"}
+{"w":"woman","pt":"mulher","s":"That woman is my new boss.","t":"Aquela mulher é a minha nova chefe.","r":"boss","e":"👩‍🦱"}
+{"w":"child","pt":"criança","s":"Every child needs love.","t":"Toda criança precisa de amor.","r":"love","e":"🧒"}
+{"w":"baby","pt":"bebê","s":"The baby is sleeping. Please be quiet.","t":"O bebê está dormindo. Por favor, fique em silêncio.","r":"sleep","e":"👶"}
+{"w":"people","pt":"pessoas","s":"Many people work from home now.","t":"Muitas pessoas trabalham de casa agora.","r":"many","e":"👥"}
+{"w":"teenager","pt":"adolescente","s":"My son is a teenager now.","t":"Meu filho é adolescente agora.","r":"son","e":"🧑‍🎤"}
+{"w":"adult","pt":"adulto","s":"The ticket costs twenty dollars for adults.","t":"A entrada custa vinte dólares para adultos.","r":"ticket","e":"🧑"}
+{"w":"guest","pt":"convidado, hóspede","s":"We have guests for dinner tonight.","t":"Temos convidados para o jantar hoje à noite.","r":"dinner","e":"🛎️"}
+{"w":"stranger","pt":"estranho, desconhecido","s":"Don't open the door to strangers.","t":"Não abra a porta para estranhos.","r":"door","e":"🕵️"}
+{"w":"couple","pt":"casal; alguns","s":"The couple next door is very nice.","t":"O casal da casa ao lado é muito simpático.","r":"next","e":"💑"}
+{"w":"say","pt":"dizer","s":"What did you say?","t":"O que você disse?","r":"","e":"💬"}
+{"w":"tell","pt":"contar, dizer (a alguém)","s":"Can you tell me the time?","t":"Você pode me dizer as horas?","r":"","e":"🗨️"}
+{"w":"talk","pt":"conversar, falar","s":"We need to talk.","t":"Precisamos conversar.","r":"need","e":"🗣️"}
+{"w":"message","pt":"mensagem","s":"I sent you a message this morning.","t":"Eu te mandei uma mensagem hoje de manhã.","r":"send","e":"✉️"}
+{"w":"question","pt":"pergunta","s":"Can I ask you a question?","t":"Posso te fazer uma pergunta?","r":"ask","e":"❔"}
+{"w":"word","pt":"palavra","s":"I learn ten new words every day.","t":"Eu aprendo dez palavras novas todos os dias.","r":"new","e":"🔤"}
+{"w":"mean","pt":"significar; querer dizer","s":"What does this word mean?","t":"O que significa esta palavra?","r":"word","e":"📖"}
+{"w":"repeat","pt":"repetir","s":"Could you repeat the question, please?","t":"Você poderia repetir a pergunta, por favor?","r":"question","e":"🔁"}
+{"w":"understand","pt":"entender","s":"Sorry, I don't understand.","t":"Desculpa, não entendi.","r":"sorry","e":"🤓"}
+{"w":"spell","pt":"soletrar","s":"How do you spell your name?","t":"Como se soletra o seu nome?","r":"","e":"🔡"}
+{"w":"good","pt":"bom","s":"This is a good restaurant.","t":"Este é um bom restaurante.","r":"restaurant","e":"👍"}
+{"w":"bad","pt":"ruim, mau","s":"The weather is bad today.","t":"O tempo está ruim hoje.","r":"weather","e":"👎"}
+{"w":"beautiful","pt":"lindo, bonito","s":"What a beautiful beach!","t":"Que praia linda!","r":"beach","e":"🌺"}
+{"w":"ugly","pt":"feio","s":"This shirt is ugly, but it's comfortable.","t":"Esta camisa é feia, mas é confortável.","r":"shirt","e":"👹"}
+{"w":"fast","pt":"rápido","s":"The internet here is very fast.","t":"A internet aqui é muito rápida.","r":"here","e":"⚡"}
+{"w":"slow","pt":"lento, devagar","s":"Please speak slowly.","t":"Por favor, fale devagar.","r":"speak","e":"🐢"}
+{"w":"tall","pt":"alto","s":"My brother is very tall.","t":"Meu irmão é muito alto.","r":"brother","e":"🦒"}
+{"w":"short","pt":"baixo; curto","s":"The meeting was short.","t":"A reunião foi curta.","r":"meeting","e":"📐"}
+{"w":"long","pt":"longo, comprido","s":"It was a long day at work.","t":"Foi um dia longo no trabalho.","r":"work","e":"🐍"}
+{"w":"heavy","pt":"pesado","s":"This luggage is too heavy.","t":"Esta bagagem está pesada demais.","r":"luggage","e":"🏋️"}
+{"w":"room","pt":"cômodo, quarto, sala","s":"Our hotel room has a beautiful view.","t":"Nosso quarto de hotel tem uma vista linda.","r":"hotel","e":"🚪"}
+{"w":"wall","pt":"parede, muro","s":"There is a big mirror on the wall.","t":"Tem um espelho grande na parede.","r":"big","e":"🧱"}
+{"w":"roof","pt":"telhado","s":"The roof leaks when it rains.","t":"O telhado vaza quando chove.","r":"rain","e":"🏠"}
+{"w":"stairs","pt":"escada","s":"Take the stairs. The elevator is broken.","t":"Vá pela escada. O elevador está quebrado.","r":"take","e":"🪜"}
+{"w":"garden","pt":"jardim, horta","s":"My father grows vegetables in the garden.","t":"Meu pai planta legumes na horta.","r":"vegetables","e":"🪴"}
+{"w":"garage","pt":"garagem","s":"The car is in the garage.","t":"O carro está na garagem.","r":"car","e":"🚙"}
+{"w":"sofa","pt":"sofá","s":"I fell asleep on the sofa.","t":"Eu peguei no sono no sofá.","r":"","e":"🛋️"}
+{"w":"lamp","pt":"luminária, abajur","s":"Turn on the lamp, please. It's dark.","t":"Acenda a luminária, por favor. Está escuro.","r":"","e":"💡"}
+{"w":"mirror","pt":"espelho","s":"Look in the mirror.","t":"Olhe no espelho.","r":"look","e":"🪞"}
+{"w":"shower","pt":"chuveiro; banho","s":"I take a shower every morning.","t":"Eu tomo banho toda manhã.","r":"morning","e":"🚿"}
+{"w":"run","pt":"correr","s":"I run in the park before work.","t":"Eu corro no parque antes do trabalho.","r":"park","e":"🏃‍♀️"}
+{"w":"sit","pt":"sentar","s":"Please sit down.","t":"Por favor, sente-se.","r":"","e":"🪑"}
+{"w":"stand","pt":"ficar de pé; aguentar","s":"I stand all day at work.","t":"Eu fico em pé o dia todo no trabalho.","r":"work","e":"🧍"}
+{"w":"turn","pt":"virar; vez","s":"Turn left at the church.","t":"Vire à esquerda na igreja.","r":"church","e":"↩️"}
+{"w":"cross","pt":"atravessar","s":"Look both ways before you cross the street.","t":"Olhe para os dois lados antes de atravessar a rua.","r":"street","e":"🚸"}
+{"w":"follow","pt":"seguir","s":"Follow me, please.","t":"Me siga, por favor.","r":"","e":"👣"}
+{"w":"move","pt":"mover; mudar-se","s":"We are moving to a new house next month.","t":"Vamos nos mudar para uma casa nova no mês que vem.","r":"month","e":"🚚"}
+{"w":"return","pt":"voltar; devolver","s":"I need to return this book to the library.","t":"Preciso devolver este livro à biblioteca.","r":"need","e":"🔙"}
+{"w":"enter","pt":"entrar; digitar","s":"Enter your password, please.","t":"Digite sua senha, por favor.","r":"","e":"⌨️"}
+{"w":"drive","pt":"dirigir","s":"I drive to work every day.","t":"Eu vou de carro para o trabalho todos os dias.","r":"work","e":"🚘"}
+{"w":"class","pt":"aula, turma","s":"My English class starts at seven.","t":"Minha aula de inglês começa às sete.","r":"start","e":"🧑‍🏫"}
+{"w":"teacher","pt":"professor","s":"Our teacher explains everything very well.","t":"Nossa professora explica tudo muito bem.","r":"explain","e":"👩‍🏫"}
+{"w":"student","pt":"aluno, estudante","s":"She is a good student.","t":"Ela é uma boa aluna.","r":"good","e":"🧑‍🎓"}
+{"w":"lesson","pt":"lição, aula","s":"Today's lesson is very easy.","t":"A lição de hoje é muito fácil.","r":"easy","e":"📘"}
+{"w":"test","pt":"prova, teste","s":"I have a test tomorrow, so I need to study.","t":"Tenho prova amanhã, então preciso estudar.","r":"study","e":"📝"}
+{"w":"homework","pt":"lição de casa","s":"Did you finish your homework?","t":"Você terminou sua lição de casa?","r":"finish","e":"📓"}
+{"w":"book","pt":"livro; reservar","s":"I'm reading a very good book.","t":"Estou lendo um livro muito bom.","r":"read","e":"📚"}
+{"w":"pen","pt":"caneta","s":"Can I borrow a pen?","t":"Posso pegar uma caneta emprestada?","r":"borrow","e":"🖊️"}
+{"w":"paper","pt":"papel","s":"Write your name on the paper.","t":"Escreva seu nome no papel.","r":"write","e":"📄"}
+{"w":"learn","pt":"aprender","s":"It's never too late to learn.","t":"Nunca é tarde para aprender.","r":"late","e":"🧠"}
