@@ -16,7 +16,8 @@ import android.os.Build;
  */
 public final class LockCard {
 
-    private static final String CHANNEL = "tela_bloqueio";
+    private static final String CHANNEL = "tela_bloqueio_v2";
+    private static final String OLD_CHANNEL = "tela_bloqueio";
     private static final int ID = 1;
 
     private LockCard() {}
@@ -70,9 +71,12 @@ public final class LockCard {
     }
 
     private static void createChannel(NotificationManager nm) {
+        if (nm.getNotificationChannel(OLD_CHANNEL) != null) nm.deleteNotificationChannel(OLD_CHANNEL);
         if (nm.getNotificationChannel(CHANNEL) != null) return;
+        // IMPORTANCE_DEFAULT aparece na tela de bloqueio (o Android esconde os de importância baixa).
+        // Continua sem som e sem vibrar, e não pula por cima de outros apps (isso só o HIGH faz).
         NotificationChannel ch = new NotificationChannel(CHANNEL, "Palavra na tela de bloqueio",
-                NotificationManager.IMPORTANCE_LOW);
+                NotificationManager.IMPORTANCE_DEFAULT);
         ch.setDescription("Botões Já vi e Próxima. Silencioso: sem som e sem vibrar.");
         ch.setSound(null, null);
         ch.enableVibration(false);

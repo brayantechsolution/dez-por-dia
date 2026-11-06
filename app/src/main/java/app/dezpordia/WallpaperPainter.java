@@ -79,19 +79,19 @@ public final class WallpaperPainter {
 
         // Ilustração da palavra, no espaço entre o relógio e o texto
         if (!word.emoji.isEmpty()) {
-            float top = height * 0.20f;
+            float top = height * 0.25f;
             float bottom = y - 16 * u;
             float area = bottom - top;
             if (area > 60 * u) {
                 float cx = width / 2f;
                 float cy = top + area / 2f;
-                float emojiSize = Math.min(area * 0.62f, width * 0.46f);
+                float emojiSize = Math.min(area * 0.58f, width * 0.42f);
 
-                // Halo suave atrás da ilustração
+                // Halo suave atrás da ilustração, sem passar do espaço livre
                 Paint halo = new Paint(Paint.ANTI_ALIAS_FLAG);
                 halo.setColor(WHITE);
                 halo.setAlpha(18);
-                canvas.drawCircle(cx, cy, emojiSize * 0.78f, halo);
+                canvas.drawCircle(cx, cy, Math.min(emojiSize * 0.78f, area / 2f), halo);
 
                 Paint emoji = new Paint(Paint.ANTI_ALIAS_FLAG);
                 emoji.setTextSize(emojiSize);

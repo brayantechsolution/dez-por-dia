@@ -64,10 +64,17 @@ public class MainActivity extends Activity {
         setContentView(scroll);
     }
 
+    private boolean askedPermission;
+
     @Override
     protected void onResume() {
         super.onResume();
         render();
+        // Quem ativou numa versão antiga nunca viu o pedido: pede ao abrir o app
+        if (prefs.getBoolean(Prefs.ENABLED, false) && !LockCard.canPost(this) && !askedPermission) {
+            askedPermission = true;
+            requestPermissions(new String[]{"android.permission.POST_NOTIFICATIONS"}, 1);
+        }
     }
 
     private void render() {
@@ -172,6 +179,7 @@ public class MainActivity extends Activity {
         prefs.edit().putBoolean(Prefs.ENABLED, enable).apply();
         if (enable) {
             if (!LockCard.canPost(this)) {
+                askedPermission = true;
                 requestPermissions(new String[]{"android.permission.POST_NOTIFICATIONS"}, 1);
             }
             Scheduler.schedule(this);
