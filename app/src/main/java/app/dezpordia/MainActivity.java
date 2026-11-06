@@ -158,9 +158,10 @@ public class MainActivity extends Activity {
         rules.addView(intervalRow());
         content.addView(rules);
 
-        TextView how = text("A frase vai só no fundo da tela de bloqueio. Ela aparece quando "
-                + "você liga a tela, nunca por cima de outro app, e não manda notificação. "
-                + "Ao desativar, a tela de bloqueio volta a usar o mesmo fundo da tela inicial.",
+        TextView how = text("A frase vai só no fundo da tela de bloqueio e aparece quando você "
+                + "liga a tela, nunca por cima de outro app. Na própria tela de bloqueio ficam "
+                + "os botões \"Já vi\", que volta o fundo normal, e \"Próxima\", que mostra a "
+                + "próxima palavra. Eles vêm num aviso silencioso: sem som e sem vibrar.",
                 13, MUTED, false);
         how.setLineSpacing(0, 1.2f);
         content.addView(how, margins(dp(16), 0));
@@ -170,6 +171,9 @@ public class MainActivity extends Activity {
         boolean enable = !prefs.getBoolean(Prefs.ENABLED, false);
         prefs.edit().putBoolean(Prefs.ENABLED, enable).apply();
         if (enable) {
+            if (!LockCard.canPost(this)) {
+                requestPermissions(new String[]{"android.permission.POST_NOTIFICATIONS"}, 1);
+            }
             Scheduler.schedule(this);
             runUpdate(false);
         } else {
@@ -186,6 +190,17 @@ public class MainActivity extends Activity {
 
     private void showNext() {
         runUpdate(true);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] results) {
+        super.onRequestPermissionsResult(requestCode, permissions, results);
+        if (LockCard.canPost(this)) {
+            // Mostra os botões já para a palavra que está na tela
+            runUpdate(true);
+        } else {
+            toast("Sem essa permissão, a palavra aparece, mas sem os botões Já vi e Próxima.");
+        }
     }
 
     private void runUpdate(boolean force) {

@@ -44,10 +44,12 @@ public final class Updater {
 
         List<Words.Word> words = Words.forDay(context, Prefs.studyDayIndex(p, today));
         try {
-            Bitmap bitmap = WallpaperPainter.paint(context, words.get(index), index + 1, seen);
+            Words.Word word = words.get(index);
+            Bitmap bitmap = WallpaperPainter.paint(context, word, index + 1, seen);
             WallpaperManager.getInstance(context)
                     .setBitmap(bitmap, null, true, WallpaperManager.FLAG_LOCK);
             bitmap.recycle();
+            LockCard.show(context, word, index + 1);
         } catch (Exception e) {
             return Result.ERROR;
         }
@@ -63,6 +65,7 @@ public final class Updater {
 
     /** Devolve a tela de bloqueio ao fundo normal do celular. */
     public static void clearLock(Context context) {
+        LockCard.cancel(context);
         SharedPreferences p = Prefs.get(context);
         if (!p.getBoolean(Prefs.LOCK_SET, false)) return;
         try {
