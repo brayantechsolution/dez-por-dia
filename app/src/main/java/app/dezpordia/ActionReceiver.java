@@ -20,8 +20,12 @@ public class ActionReceiver extends BroadcastReceiver {
                 if (ACTION_NEXT.equals(action)) {
                     Updater.tick(app, true);
                 } else if (ACTION_SEEN.equals(action)) {
-                    // Volta o fundo normal; a próxima palavra vem no horário de sempre
+                    // Volta o papel de parede da pessoa; o app continua ativo
                     Updater.clearLock(app);
+                }
+                // Recomeça a contagem: a próxima palavra vem só depois do intervalo inteiro
+                if (Prefs.get(app).getBoolean(Prefs.ENABLED, false)) {
+                    Scheduler.schedule(app);
                 }
             } finally {
                 result.finish();
