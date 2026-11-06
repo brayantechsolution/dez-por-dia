@@ -59,7 +59,8 @@ public final class Updater {
                 .putInt(Prefs.POINTER, pointer + 1)
                 .putInt(Prefs.SEEN, seen)
                 .putBoolean(Prefs.LOCK_SET, true)
-                .apply();
+                .commit();
+        WidgetProvider.refresh(context);
         return Result.SHOWN;
     }
 
@@ -73,7 +74,8 @@ public final class Updater {
         } catch (Exception ignored) {
             // segue mesmo assim
         }
-        p.edit().putBoolean(Prefs.LOCK_SET, false).apply();
+        p.edit().putBoolean(Prefs.LOCK_SET, false).commit();
+        WidgetProvider.refresh(context);
     }
 
     /** Modo foco / não perturbe ligado (inclui modos de direção, sono, reunião). */

@@ -45,7 +45,7 @@ public final class LockCard {
                 .setDeleteIntent(action(context, ActionReceiver.ACTION_SEEN, 1))
                 .addAction(new Notification.Action.Builder(
                         Icon.createWithResource(context, R.drawable.ic_stat_dez),
-                        "Já vi", action(context, ActionReceiver.ACTION_SEEN, 2)).build())
+                        "Meu fundo", action(context, ActionReceiver.ACTION_SEEN, 2)).build())
                 .addAction(new Notification.Action.Builder(
                         Icon.createWithResource(context, R.drawable.ic_stat_dez),
                         "Próxima", action(context, ActionReceiver.ACTION_NEXT, 3)).build())

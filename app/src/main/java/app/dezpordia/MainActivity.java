@@ -166,9 +166,10 @@ public class MainActivity extends Activity {
         content.addView(rules);
 
         TextView how = text("A frase vai só no fundo da tela de bloqueio e aparece quando você "
-                + "liga a tela, nunca por cima de outro app. Na própria tela de bloqueio ficam "
-                + "os botões \"Já vi\", que volta o fundo normal, e \"Próxima\", que mostra a "
-                + "próxima palavra. Eles vêm num aviso silencioso: sem som e sem vibrar.",
+                + "liga a tela, nunca por cima de outro app. Os botões \"Próxima\" e \"Meu fundo\" "
+                + "(volta seu papel de parede por um tempo) ficam num aviso silencioso na tela "
+                + "de bloqueio e no widget: segure o dedo na tela inicial, toque em Widgets e "
+                + "procure \"10 por Dia\".",
                 13, MUTED, false);
         how.setLineSpacing(0, 1.2f);
         content.addView(how, margins(dp(16), 0));

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">10 por Dia</string>
+    <string name="widget_description">Palavra atual com os botões Próxima e Meu fundo</string>
 </resources>
