@@ -1,100 +1,100 @@
-{"w":"clothes","pt":"roupas","s":"I need to buy new clothes for work.","t":"Preciso comprar roupas novas para o trabalho.","r":"buy","e":"👚"}
-{"w":"shirt","pt":"camisa","s":"This shirt is too small for me.","t":"Esta camisa é pequena demais para mim.","r":"small","e":"👕"}
-{"w":"pants","pt":"calça","s":"These pants are very comfortable.","t":"Esta calça é muito confortável.","r":"very","e":"👖"}
-{"w":"shoes","pt":"sapatos","s":"Take off your shoes at the door.","t":"Tire os sapatos na porta.","r":"door","e":"👞"}
-{"w":"dress","pt":"vestido; vestir-se","s":"She bought a new dress for the party.","t":"Ela comprou um vestido novo para a festa.","r":"new","e":"👗"}
-{"w":"jacket","pt":"jaqueta","s":"Take a jacket. It's cold outside.","t":"Leve uma jaqueta. Está frio lá fora.","r":"cold","e":"🧥"}
-{"w":"wear","pt":"usar, vestir","s":"I always wear a jacket in winter.","t":"Eu sempre uso jaqueta no inverno.","r":"jacket","e":"🧣"}
-{"w":"size","pt":"tamanho","s":"What size are these shoes?","t":"Qual é o tamanho destes sapatos?","r":"shoes","e":"📏"}
-{"w":"wash","pt":"lavar","s":"Wash your hands before lunch.","t":"Lave as mãos antes do almoço.","r":"hand","e":"🧼"}
-{"w":"pocket","pt":"bolso","s":"My key is in my pocket.","t":"Minha chave está no meu bolso.","r":"key","e":"👝"}
-{"w":"weather","pt":"tempo, clima","s":"How is the weather today?","t":"Como está o tempo hoje?","r":"today","e":"🌦️"}
-{"w":"rain","pt":"chuva; chover","s":"It's going to rain this afternoon.","t":"Vai chover hoje à tarde.","r":"afternoon","e":"🌧️"}
-{"w":"sunny","pt":"ensolarado","s":"It's sunny, so let's go to the park.","t":"Está ensolarado, então vamos ao parque.","r":"park","e":"☀️"}
-{"w":"cloud","pt":"nuvem","s":"There isn't a cloud in the sky.","t":"Não há uma nuvem no céu.","r":"","e":"☁️"}
-{"w":"snow","pt":"neve; nevar","s":"It never snows in my city.","t":"Nunca neva na minha cidade.","r":"never","e":"❄️"}
-{"w":"wind","pt":"vento","s":"The wind is very strong today.","t":"O vento está muito forte hoje.","r":"very","e":"🌬️"}
-{"w":"tree","pt":"árvore","s":"There is a big tree in front of my house.","t":"Há uma árvore grande na frente da minha casa.","r":"big","e":"🌲"}
-{"w":"flower","pt":"flor","s":"These flowers are for my mother.","t":"Estas flores são para a minha mãe.","r":"mother","e":"🌸"}
-{"w":"river","pt":"rio","s":"We walked along the river.","t":"Nós caminhamos ao longo do rio.","r":"walk","e":"🏞️"}
-{"w":"beach","pt":"praia","s":"Let's go to the beach this weekend.","t":"Vamos à praia neste fim de semana.","r":"weekend","e":"🏝️"}
-{"w":"travel","pt":"viajar; viagem","s":"I love to travel with my family.","t":"Eu adoro viajar com a minha família.","r":"family","e":"🧳"}
-{"w":"trip","pt":"viagem, passeio","s":"How was your trip?","t":"Como foi sua viagem?","r":"","e":"🗺️"}
-{"w":"airport","pt":"aeroporto","s":"The airport is far from the city.","t":"O aeroporto fica longe da cidade.","r":"city","e":"🛫"}
-{"w":"flight","pt":"voo","s":"My flight is late again.","t":"Meu voo está atrasado de novo.","r":"late","e":"✈️"}
-{"w":"ticket","pt":"passagem, ingresso","s":"I bought the tickets yesterday.","t":"Eu comprei as passagens ontem.","r":"yesterday","e":"🎟️"}
-{"w":"passport","pt":"passaporte","s":"Don't forget your passport.","t":"Não esqueça seu passaporte.","r":"forget","e":"🛂"}
-{"w":"hotel","pt":"hotel","s":"The hotel has a small restaurant.","t":"O hotel tem um pequeno restaurante.","r":"restaurant","e":"🏨"}
-{"w":"luggage","pt":"bagagem","s":"Can you help me with my luggage?","t":"Você pode me ajudar com a minha bagagem?","r":"help","e":"🧳"}
-{"w":"map","pt":"mapa","s":"Look at the map on your phone.","t":"Olhe o mapa no seu celular.","r":"","e":"🗺️"}
-{"w":"arrive","pt":"chegar","s":"What time does the flight arrive?","t":"A que horas o voo chega?","r":"flight","e":"🛬"}
-{"w":"money","pt":"dinheiro","s":"I don't have enough money.","t":"Não tenho dinheiro suficiente.","r":"enough","e":"💰"}
-{"w":"cash","pt":"dinheiro vivo","s":"Do you accept cash?","t":"Vocês aceitam dinheiro?","r":"","e":"💵"}
-{"w":"card","pt":"cartão","s":"I'll pay by card.","t":"Vou pagar com cartão.","r":"pay","e":"💳"}
-{"w":"cost","pt":"custar; custo","s":"How much does this shirt cost?","t":"Quanto custa esta camisa?","r":"shirt","e":"🏷️"}
-{"w":"sale","pt":"liquidação; venda","s":"These shoes are on sale.","t":"Estes sapatos estão em liquidação.","r":"shoes","e":"🛍️"}
-{"w":"wallet","pt":"carteira","s":"I lost my wallet on the bus.","t":"Perdi minha carteira no ônibus.","r":"bus","e":"👛"}
-{"w":"spend","pt":"gastar; passar (tempo)","s":"I spend too much money on coffee.","t":"Eu gasto dinheiro demais com café.","r":"money","e":"💸"}
-{"w":"save","pt":"economizar; salvar","s":"I want to save money for a trip.","t":"Quero economizar dinheiro para uma viagem.","r":"trip","e":"🐷"}
-{"w":"order","pt":"pedido; pedir","s":"Are you ready to order?","t":"Vocês estão prontos para pedir?","r":"ready","e":"📝"}
-{"w":"shopping","pt":"compras","s":"We go shopping on Saturdays.","t":"Nós fazemos compras aos sábados.","r":"","e":"🛍️"}
-{"w":"feel","pt":"sentir(-se)","s":"How do you feel today?","t":"Como você se sente hoje?","r":"today","e":"💗"}
-{"w":"angry","pt":"bravo, irritado","s":"My boss was angry about the deadline.","t":"Meu chefe ficou bravo com o prazo.","r":"deadline","e":"😠"}
-{"w":"afraid","pt":"com medo","s":"Don't be afraid to ask questions.","t":"Não tenha medo de fazer perguntas.","r":"ask","e":"😨"}
-{"w":"worried","pt":"preocupado","s":"I'm worried about my exam.","t":"Estou preocupado com a minha prova.","r":"","e":"😟"}
-{"w":"excited","pt":"animado, empolgado","s":"The kids are excited about the trip.","t":"As crianças estão animadas com a viagem.","r":"trip","e":"🤩"}
-{"w":"bored","pt":"entediado","s":"I'm bored. Let's go for a walk.","t":"Estou entediado. Vamos dar uma volta.","r":"walk","e":"🥱"}
-{"w":"nervous","pt":"nervoso","s":"I always feel nervous before an interview.","t":"Eu sempre fico nervoso antes de uma entrevista.","r":"feel","e":"😬"}
-{"w":"proud","pt":"orgulhoso","s":"Your father is very proud of you.","t":"Seu pai tem muito orgulho de você.","r":"father","e":"🥹"}
-{"w":"sorry","pt":"desculpa; arrependido","s":"Sorry, I'm late.","t":"Desculpa, estou atrasado.","r":"late","e":"🙏"}
-{"w":"calm","pt":"calmo","s":"Stay calm and listen to me.","t":"Fique calmo e me escute.","r":"listen","e":"😌"}
-{"w":"come","pt":"vir","s":"Can you come to my house tonight?","t":"Você pode vir à minha casa hoje à noite?","r":"house","e":"🫴"}
-{"w":"go","pt":"ir","s":"I go to the market on Saturdays.","t":"Eu vou à feira aos sábados.","r":"market","e":"🏃‍♂️"}
-{"w":"get","pt":"conseguir, pegar, receber","s":"Where can I get a ticket?","t":"Onde consigo uma passagem?","r":"ticket","e":"📥"}
-{"w":"give","pt":"dar","s":"Give me your hand.","t":"Me dê a sua mão.","r":"hand","e":"🎁"}
-{"w":"take","pt":"pegar, levar, tomar","s":"Take the bus. It's faster.","t":"Pegue o ônibus. É mais rápido.","r":"bus","e":"🫳"}
-{"w":"make","pt":"fazer, preparar","s":"I make breakfast for my kids.","t":"Eu faço o café da manhã para os meus filhos.","r":"breakfast","e":"🧑‍🍳"}
-{"w":"do","pt":"fazer","s":"What do you do on weekends?","t":"O que você faz nos fins de semana?","r":"weekend","e":"✅"}
-{"w":"have","pt":"ter","s":"I have two brothers.","t":"Eu tenho dois irmãos.","r":"brother","e":"🤲"}
-{"w":"know","pt":"saber, conhecer","s":"Do you know where the hotel is?","t":"Você sabe onde fica o hotel?","r":"hotel","e":"💡"}
-{"w":"think","pt":"pensar, achar","s":"I think it's going to rain.","t":"Acho que vai chover.","r":"rain","e":"💭"}
-{"w":"see","pt":"ver","s":"I can't see without my glasses.","t":"Não consigo ver sem meus óculos.","r":"","e":"👀"}
-{"w":"look","pt":"olhar; parecer","s":"Look! The bus is coming.","t":"Olha! O ônibus está vindo.","r":"come","e":"🔍"}
-{"w":"watch","pt":"assistir; relógio","s":"We watch a movie every Friday.","t":"Nós assistimos a um filme toda sexta.","r":"","e":"📺"}
-{"w":"hear","pt":"ouvir","s":"Can you hear me?","t":"Você está me ouvindo?","r":"","e":"👂"}
-{"w":"find","pt":"encontrar, achar","s":"I can't find my wallet.","t":"Não consigo achar minha carteira.","r":"wallet","e":"🔦"}
-{"w":"lose","pt":"perder","s":"Don't lose your passport.","t":"Não perca seu passaporte.","r":"passport","e":"❌"}
-{"w":"keep","pt":"guardar, manter","s":"Keep the receipt, please.","t":"Guarde o comprovante, por favor.","r":"receipt","e":"🗄️"}
-{"w":"leave","pt":"sair, partir; deixar","s":"The bus leaves at six.","t":"O ônibus sai às seis.","r":"bus","e":"🚪"}
-{"w":"bring","pt":"trazer","s":"Bring a jacket. It's cold at night.","t":"Traga uma jaqueta. Faz frio à noite.","r":"jacket","e":"🫱"}
-{"w":"carry","pt":"carregar","s":"Can you carry this bag for me?","t":"Você pode carregar esta bolsa para mim?","r":"","e":"🏋️"}
-{"w":"office","pt":"escritório","s":"Our office is on the third floor.","t":"Nosso escritório fica no terceiro andar.","r":"","e":"🏢"}
-{"w":"email","pt":"e-mail","s":"I'll send you an email tomorrow.","t":"Eu te mando um e-mail amanhã.","r":"send","e":"📧"}
-{"w":"computer","pt":"computador","s":"My computer is very slow.","t":"Meu computador está muito lento.","r":"very","e":"💻"}
-{"w":"phone","pt":"celular, telefone","s":"My phone is in my pocket.","t":"Meu celular está no meu bolso.","r":"pocket","e":"📱"}
-{"w":"company","pt":"empresa","s":"She works for a big company.","t":"Ela trabalha para uma empresa grande.","r":"big","e":"🏭"}
-{"w":"team","pt":"equipe, time","s":"Our team works very well together.","t":"Nossa equipe trabalha muito bem em conjunto.","r":"work","e":"🤜"}
-{"w":"project","pt":"projeto","s":"The project deadline is on Friday.","t":"O prazo do projeto é na sexta.","r":"deadline","e":"📂"}
-{"w":"report","pt":"relatório; relatar","s":"I need to finish this report today.","t":"Preciso terminar este relatório hoje.","r":"finish","e":"📊"}
-{"w":"manager","pt":"gerente","s":"The manager is in a meeting.","t":"O gerente está em reunião.","r":"meeting","e":"🧑‍💼"}
-{"w":"interview","pt":"entrevista","s":"I have a job interview tomorrow.","t":"Tenho uma entrevista de emprego amanhã.","r":"job","e":"🎤"}
-{"w":"first","pt":"primeiro","s":"Is this your first trip abroad?","t":"Esta é sua primeira viagem ao exterior?","r":"trip","e":"🥇"}
-{"w":"last","pt":"último; passado","s":"I saw her last week.","t":"Eu a vi semana passada.","r":"week","e":"🔚"}
-{"w":"next","pt":"próximo","s":"See you next month!","t":"Até o mês que vem!","r":"month","e":"⏭️"}
-{"w":"half","pt":"metade; meio","s":"I'll be there in half an hour.","t":"Chego aí em meia hora.","r":"hour","e":"🌓"}
-{"w":"few","pt":"poucos","s":"I only have a few minutes.","t":"Eu só tenho alguns minutos.","r":"only","e":"🤏"}
-{"w":"many","pt":"muitos","s":"How many brothers do you have?","t":"Quantos irmãos você tem?","r":"brother","e":"🔢"}
-{"w":"much","pt":"muito (quantidade)","s":"How much money do you need?","t":"De quanto dinheiro você precisa?","r":"money","e":"📦"}
-{"w":"more","pt":"mais","s":"Can I have some more rice?","t":"Pode me dar mais um pouco de arroz?","r":"rice","e":"⬆️"}
-{"w":"less","pt":"menos","s":"I want to spend less money this month.","t":"Quero gastar menos dinheiro este mês.","r":"spend","e":"⬇️"}
-{"w":"every","pt":"todo, cada","s":"I study English every day.","t":"Eu estudo inglês todo dia.","r":"study","e":"🔁"}
-{"w":"here","pt":"aqui","s":"Please sign here.","t":"Por favor, assine aqui.","r":"","e":"📌"}
-{"w":"there","pt":"lá, ali","s":"Put the bags over there.","t":"Coloque as malas ali.","r":"","e":"👉"}
-{"w":"near","pt":"perto","s":"Is there a bank near here?","t":"Tem um banco perto daqui?","r":"bank","e":"🧲"}
-{"w":"far","pt":"longe","s":"My office is far from my house.","t":"Meu escritório fica longe da minha casa.","r":"office","e":"🔭"}
-{"w":"inside","pt":"dentro","s":"It's raining. Let's stay inside.","t":"Está chovendo. Vamos ficar dentro de casa.","r":"rain","e":"🏠"}
-{"w":"outside","pt":"fora, lá fora","s":"The kids are playing outside.","t":"As crianças estão brincando lá fora.","r":"","e":"🌳"}
-{"w":"between","pt":"entre","s":"The bank is between the hotel and the church.","t":"O banco fica entre o hotel e a igreja.","r":"church","e":"↔️"}
-{"w":"behind","pt":"atrás","s":"The park is behind the school.","t":"O parque fica atrás da escola.","r":"school","e":"🔙"}
-{"w":"above","pt":"acima","s":"My bedroom is above the kitchen.","t":"Meu quarto fica em cima da cozinha.","r":"kitchen","e":"⏫"}
-{"w":"under","pt":"embaixo de","s":"The cat is under the bed.","t":"O gato está embaixo da cama.","r":"bed","e":"⏬"}
+{"w": "clothes", "pt": "roupas", "s": "I need to buy new clothes for work.", "t": "Preciso comprar roupas novas para o trabalho.", "r": "buy", "e": "👚"}
+{"w": "shirt", "pt": "camisa", "s": "This shirt is too small for me.", "t": "Esta camisa é pequena demais para mim.", "r": "small", "e": "👕"}
+{"w": "pants", "pt": "calça", "s": "These pants are very comfortable.", "t": "Esta calça é muito confortável.", "r": "very", "e": "👖"}
+{"w": "shoes", "pt": "sapatos", "s": "Take off your shoes at the door.", "t": "Tire os sapatos na porta.", "r": "door", "e": "👞"}
+{"w": "dress", "pt": "vestido; vestir-se", "s": "She bought a new dress for the party.", "t": "Ela comprou um vestido novo para a festa.", "r": "new", "e": "👗"}
+{"w": "jacket", "pt": "jaqueta", "s": "Take a jacket. It's cold outside.", "t": "Leve uma jaqueta. Está frio lá fora.", "r": "cold", "e": "🧥"}
+{"w": "wear", "pt": "usar, vestir", "s": "I always wear a jacket in winter.", "t": "Eu sempre uso jaqueta no inverno.", "r": "jacket", "e": "🧣"}
+{"w": "size", "pt": "tamanho", "s": "What size are these shoes?", "t": "Qual é o tamanho destes sapatos?", "r": "shoes", "e": "📏"}
+{"w": "wash", "pt": "lavar", "s": "Wash your hands before lunch.", "t": "Lave as mãos antes do almoço.", "r": "hand", "e": "🧼"}
+{"w": "pocket", "pt": "bolso", "s": "My key is in my pocket.", "t": "Minha chave está no meu bolso.", "r": "key", "e": "👝"}
+{"w": "weather", "pt": "tempo, clima", "s": "How is the weather today?", "t": "Como está o tempo hoje?", "r": "today", "e": "🌦️"}
+{"w": "rain", "pt": "chuva; chover", "s": "It's going to rain this afternoon.", "t": "Vai chover hoje à tarde.", "r": "afternoon", "e": "🌧️"}
+{"w": "sunny", "pt": "ensolarado", "s": "It's sunny, so let's go to the park.", "t": "Está ensolarado, então vamos ao parque.", "r": "park", "e": "☀️"}
+{"w": "cloud", "pt": "nuvem", "s": "There isn't a cloud in the sky.", "t": "Não há uma nuvem no céu.", "r": "", "e": "☁️"}
+{"w": "snow", "pt": "neve; nevar", "s": "It never snows in my city.", "t": "Nunca neva na minha cidade.", "r": "never", "e": "❄️"}
+{"w": "wind", "pt": "vento", "s": "The wind is very strong today.", "t": "O vento está muito forte hoje.", "r": "very", "e": "🌬️"}
+{"w": "tree", "pt": "árvore", "s": "There is a big tree in front of my house.", "t": "Há uma árvore grande na frente da minha casa.", "r": "big", "e": "🌲"}
+{"w": "flower", "pt": "flor", "s": "These flowers are for my mother.", "t": "Estas flores são para a minha mãe.", "r": "mother", "e": "🌸"}
+{"w": "river", "pt": "rio", "s": "We walked along the river.", "t": "Nós caminhamos ao longo do rio.", "r": "walk", "e": "🏞️"}
+{"w": "beach", "pt": "praia", "s": "Let's go to the beach this weekend.", "t": "Vamos à praia neste fim de semana.", "r": "weekend", "e": "🏝️"}
+{"w": "travel", "pt": "viajar; viagem", "s": "I love to travel with my family.", "t": "Eu adoro viajar com a minha família.", "r": "family", "e": "🧳"}
+{"w": "trip", "pt": "viagem, passeio", "s": "How was your trip?", "t": "Como foi sua viagem?", "r": "", "e": "🧭"}
+{"w": "airport", "pt": "aeroporto", "s": "The airport is far from the city.", "t": "O aeroporto fica longe da cidade.", "r": "city", "e": "🛫"}
+{"w": "flight", "pt": "voo", "s": "My flight is late again.", "t": "Meu voo está atrasado de novo.", "r": "late", "e": "✈️"}
+{"w": "ticket", "pt": "passagem, ingresso", "s": "I bought the tickets yesterday.", "t": "Eu comprei as passagens ontem.", "r": "yesterday", "e": "🎟️"}
+{"w": "passport", "pt": "passaporte", "s": "Don't forget your passport.", "t": "Não esqueça seu passaporte.", "r": "forget", "e": "🛂"}
+{"w": "hotel", "pt": "hotel", "s": "The hotel has a small restaurant.", "t": "O hotel tem um pequeno restaurante.", "r": "restaurant", "e": "🏨"}
+{"w": "luggage", "pt": "bagagem", "s": "Can you help me with my luggage?", "t": "Você pode me ajudar com a minha bagagem?", "r": "help", "e": "🛄"}
+{"w": "map", "pt": "mapa", "s": "Look at the map on your phone.", "t": "Olhe o mapa no seu celular.", "r": "", "e": "🗺️"}
+{"w": "arrive", "pt": "chegar", "s": "What time does the flight arrive?", "t": "A que horas o voo chega?", "r": "flight", "e": "🛬"}
+{"w": "money", "pt": "dinheiro", "s": "I don't have enough money.", "t": "Não tenho dinheiro suficiente.", "r": "enough", "e": "💰"}
+{"w": "cash", "pt": "dinheiro vivo", "s": "Do you accept cash?", "t": "Vocês aceitam dinheiro?", "r": "", "e": "💵"}
+{"w": "card", "pt": "cartão", "s": "I'll pay by card.", "t": "Vou pagar com cartão.", "r": "pay", "e": "💳"}
+{"w": "cost", "pt": "custar; custo", "s": "How much does this shirt cost?", "t": "Quanto custa esta camisa?", "r": "shirt", "e": "🏷️"}
+{"w": "sale", "pt": "liquidação; venda", "s": "These shoes are on sale.", "t": "Estes sapatos estão em liquidação.", "r": "shoes", "e": "🛍️"}
+{"w": "wallet", "pt": "carteira", "s": "I lost my wallet on the bus.", "t": "Perdi minha carteira no ônibus.", "r": "bus", "e": "👛"}
+{"w": "spend", "pt": "gastar; passar (tempo)", "s": "I spend too much money on coffee.", "t": "Eu gasto dinheiro demais com café.", "r": "money", "e": "💸"}
+{"w": "save", "pt": "economizar; salvar", "s": "I want to save money for a trip.", "t": "Quero economizar dinheiro para uma viagem.", "r": "trip", "e": "🐷"}
+{"w": "order", "pt": "pedido; pedir", "s": "Are you ready to order?", "t": "Vocês estão prontos para pedir?", "r": "ready", "e": "📝"}
+{"w": "shopping", "pt": "compras", "s": "We go shopping on Saturdays.", "t": "Nós fazemos compras aos sábados.", "r": "", "e": "🛍️"}
+{"w": "feel", "pt": "sentir(-se)", "s": "How do you feel today?", "t": "Como você se sente hoje?", "r": "today", "e": "💗"}
+{"w": "angry", "pt": "bravo, irritado", "s": "My boss was angry about the deadline.", "t": "Meu chefe ficou bravo com o prazo.", "r": "deadline", "e": "😠"}
+{"w": "afraid", "pt": "com medo", "s": "Don't be afraid to ask questions.", "t": "Não tenha medo de fazer perguntas.", "r": "ask", "e": "😨"}
+{"w": "worried", "pt": "preocupado", "s": "I'm worried about my exam.", "t": "Estou preocupado com a minha prova.", "r": "", "e": "😟"}
+{"w": "excited", "pt": "animado, empolgado", "s": "The kids are excited about the trip.", "t": "As crianças estão animadas com a viagem.", "r": "trip", "e": "🤩"}
+{"w": "bored", "pt": "entediado", "s": "I'm bored. Let's go for a walk.", "t": "Estou entediado. Vamos dar uma volta.", "r": "walk", "e": "🥱"}
+{"w": "nervous", "pt": "nervoso", "s": "I always feel nervous before an interview.", "t": "Eu sempre fico nervoso antes de uma entrevista.", "r": "feel", "e": "😬"}
+{"w": "proud", "pt": "orgulhoso", "s": "Your father is very proud of you.", "t": "Seu pai tem muito orgulho de você.", "r": "father", "e": "🥹"}
+{"w": "sorry", "pt": "desculpa; arrependido", "s": "Sorry, I'm late.", "t": "Desculpa, estou atrasado.", "r": "late", "e": "🙏"}
+{"w": "calm", "pt": "calmo", "s": "Stay calm and listen to me.", "t": "Fique calmo e me escute.", "r": "listen", "e": "😌"}
+{"w": "come", "pt": "vir", "s": "Can you come to my house tonight?", "t": "Você pode vir à minha casa hoje à noite?", "r": "house", "e": "🫴"}
+{"w": "go", "pt": "ir", "s": "I go to the market on Saturdays.", "t": "Eu vou à feira aos sábados.", "r": "market", "e": "🏃‍♂️"}
+{"w": "get", "pt": "conseguir, pegar, receber", "s": "Where can I get a ticket?", "t": "Onde consigo uma passagem?", "r": "ticket", "e": "📥"}
+{"w": "give", "pt": "dar", "s": "Give me your hand.", "t": "Me dê a sua mão.", "r": "hand", "e": "🎁"}
+{"w": "take", "pt": "pegar, levar, tomar", "s": "Take the bus. It's faster.", "t": "Pegue o ônibus. É mais rápido.", "r": "bus", "e": "🫳"}
+{"w": "make", "pt": "fazer, preparar", "s": "I make breakfast for my kids.", "t": "Eu faço o café da manhã para os meus filhos.", "r": "breakfast", "e": "🧑‍🍳"}
+{"w": "do", "pt": "fazer", "s": "What do you do on weekends?", "t": "O que você faz nos fins de semana?", "r": "weekend", "e": "✅"}
+{"w": "have", "pt": "ter", "s": "I have two brothers.", "t": "Eu tenho dois irmãos.", "r": "brother", "e": "👜"}
+{"w": "know", "pt": "saber, conhecer", "s": "Do you know where the hotel is?", "t": "Você sabe onde fica o hotel?", "r": "hotel", "e": "💡"}
+{"w": "think", "pt": "pensar, achar", "s": "I think it's going to rain.", "t": "Acho que vai chover.", "r": "rain", "e": "💭"}
+{"w": "see", "pt": "ver", "s": "I can't see without my glasses.", "t": "Não consigo ver sem meus óculos.", "r": "", "e": "👀"}
+{"w": "look", "pt": "olhar; parecer", "s": "Look! The bus is coming.", "t": "Olha! O ônibus está vindo.", "r": "come", "e": "🔍"}
+{"w": "watch", "pt": "assistir; relógio", "s": "We watch a movie every Friday.", "t": "Nós assistimos a um filme toda sexta.", "r": "", "e": "📺"}
+{"w": "hear", "pt": "ouvir", "s": "Can you hear me?", "t": "Você está me ouvindo?", "r": "", "e": "👂"}
+{"w": "find", "pt": "encontrar, achar", "s": "I can't find my wallet.", "t": "Não consigo achar minha carteira.", "r": "wallet", "e": "🔦"}
+{"w": "lose", "pt": "perder", "s": "Don't lose your passport.", "t": "Não perca seu passaporte.", "r": "passport", "e": "❌"}
+{"w": "keep", "pt": "guardar, manter", "s": "Keep the receipt, please.", "t": "Guarde o comprovante, por favor.", "r": "receipt", "e": "🗃️"}
+{"w": "leave", "pt": "sair, partir; deixar", "s": "The bus leaves at six.", "t": "O ônibus sai às seis.", "r": "bus", "e": "🚪"}
+{"w": "bring", "pt": "trazer", "s": "Bring a jacket. It's cold at night.", "t": "Traga uma jaqueta. Faz frio à noite.", "r": "jacket", "e": "🫱"}
+{"w": "carry", "pt": "carregar", "s": "Can you carry this bag for me?", "t": "Você pode carregar esta bolsa para mim?", "r": "", "e": "🎒"}
+{"w": "office", "pt": "escritório", "s": "Our office is on the third floor.", "t": "Nosso escritório fica no terceiro andar.", "r": "", "e": "🏢"}
+{"w": "email", "pt": "e-mail", "s": "I'll send you an email tomorrow.", "t": "Eu te mando um e-mail amanhã.", "r": "send", "e": "📧"}
+{"w": "computer", "pt": "computador", "s": "My computer is very slow.", "t": "Meu computador está muito lento.", "r": "very", "e": "💻"}
+{"w": "phone", "pt": "celular, telefone", "s": "My phone is in my pocket.", "t": "Meu celular está no meu bolso.", "r": "pocket", "e": "📱"}
+{"w": "company", "pt": "empresa", "s": "She works for a big company.", "t": "Ela trabalha para uma empresa grande.", "r": "big", "e": "🏭"}
+{"w": "team", "pt": "equipe, time", "s": "Our team works very well together.", "t": "Nossa equipe trabalha muito bem em conjunto.", "r": "work", "e": "🤜"}
+{"w": "project", "pt": "projeto", "s": "The project deadline is on Friday.", "t": "O prazo do projeto é na sexta.", "r": "deadline", "e": "📂"}
+{"w": "report", "pt": "relatório; relatar", "s": "I need to finish this report today.", "t": "Preciso terminar este relatório hoje.", "r": "finish", "e": "📊"}
+{"w": "manager", "pt": "gerente", "s": "The manager is in a meeting.", "t": "O gerente está em reunião.", "r": "meeting", "e": "👩‍💼"}
+{"w": "interview", "pt": "entrevista", "s": "I have a job interview tomorrow.", "t": "Tenho uma entrevista de emprego amanhã.", "r": "job", "e": "🎤"}
+{"w": "first", "pt": "primeiro", "s": "Is this your first trip abroad?", "t": "Esta é sua primeira viagem ao exterior?", "r": "trip", "e": "🥇"}
+{"w": "last", "pt": "último; passado", "s": "I saw her last week.", "t": "Eu a vi semana passada.", "r": "week", "e": "🔚"}
+{"w": "next", "pt": "próximo", "s": "See you next month!", "t": "Até o mês que vem!", "r": "month", "e": "⏭️"}
+{"w": "half", "pt": "metade; meio", "s": "I'll be there in half an hour.", "t": "Chego aí em meia hora.", "r": "hour", "e": "🌓"}
+{"w": "few", "pt": "poucos", "s": "I only have a few minutes.", "t": "Eu só tenho alguns minutos.", "r": "only", "e": "🤏"}
+{"w": "many", "pt": "muitos", "s": "How many brothers do you have?", "t": "Quantos irmãos você tem?", "r": "brother", "e": "🔢"}
+{"w": "much", "pt": "muito (quantidade)", "s": "How much money do you need?", "t": "De quanto dinheiro você precisa?", "r": "money", "e": "📦"}
+{"w": "more", "pt": "mais", "s": "Can I have some more rice?", "t": "Pode me dar mais um pouco de arroz?", "r": "rice", "e": "⬆️"}
+{"w": "less", "pt": "menos", "s": "I want to spend less money this month.", "t": "Quero gastar menos dinheiro este mês.", "r": "spend", "e": "⬇️"}
+{"w": "every", "pt": "todo, cada", "s": "I study English every day.", "t": "Eu estudo inglês todo dia.", "r": "study", "e": "🔁"}
+{"w": "here", "pt": "aqui", "s": "Please sign here.", "t": "Por favor, assine aqui.", "r": "", "e": "📌"}
+{"w": "there", "pt": "lá, ali", "s": "Put the bags over there.", "t": "Coloque as malas ali.", "r": "", "e": "👉"}
+{"w": "near", "pt": "perto", "s": "Is there a bank near here?", "t": "Tem um banco perto daqui?", "r": "bank", "e": "🧲"}
+{"w": "far", "pt": "longe", "s": "My office is far from my house.", "t": "Meu escritório fica longe da minha casa.", "r": "office", "e": "🔭"}
+{"w": "inside", "pt": "dentro", "s": "It's raining. Let's stay inside.", "t": "Está chovendo. Vamos ficar dentro de casa.", "r": "rain", "e": "🏠"}
+{"w": "outside", "pt": "fora, lá fora", "s": "The kids are playing outside.", "t": "As crianças estão brincando lá fora.", "r": "", "e": "🌳"}
+{"w": "between", "pt": "entre", "s": "The bank is between the hotel and the church.", "t": "O banco fica entre o hotel e a igreja.", "r": "church", "e": "↔️"}
+{"w": "behind", "pt": "atrás", "s": "The park is behind the school.", "t": "O parque fica atrás da escola.", "r": "school", "e": "🫣"}
+{"w": "above", "pt": "acima", "s": "My bedroom is above the kitchen.", "t": "Meu quarto fica em cima da cozinha.", "r": "kitchen", "e": "⏫"}
+{"w": "under", "pt": "embaixo de", "s": "The cat is under the bed.", "t": "O gato está embaixo da cama.", "r": "bed", "e": "⏬"}

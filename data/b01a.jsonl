@@ -1,50 +1,50 @@
-{"w":"red","pt":"vermelho","s":"Stop when the light is red.","t":"Pare quando o sinal estiver vermelho.","r":"stop","e":"🔴"}
-{"w":"blue","pt":"azul","s":"The sky is blue today.","t":"O céu está azul hoje.","r":"today","e":"🔵"}
-{"w":"green","pt":"verde","s":"My mother has green eyes.","t":"Minha mãe tem olhos verdes.","r":"eye","e":"🟢"}
-{"w":"yellow","pt":"amarelo","s":"I have a yellow car.","t":"Eu tenho um carro amarelo.","r":"car","e":"🟡"}
-{"w":"black","pt":"preto","s":"I drink my coffee black.","t":"Eu tomo meu café puro.","r":"coffee","e":"⚫"}
-{"w":"white","pt":"branco","s":"The kitchen walls are white.","t":"As paredes da cozinha são brancas.","r":"kitchen","e":"⚪"}
-{"w":"gray","pt":"cinza","s":"My father has gray hair.","t":"Meu pai tem cabelo grisalho.","r":"father","e":"🩶"}
-{"w":"brown","pt":"marrom; castanho","s":"She has big brown eyes.","t":"Ela tem olhos castanhos grandes.","r":"big","e":"🟤"}
-{"w":"orange","pt":"laranja","s":"I drink orange juice for breakfast.","t":"Eu tomo suco de laranja no café da manhã.","r":"breakfast","e":"🍊"}
-{"w":"pink","pt":"rosa","s":"My daughter loves pink.","t":"Minha filha adora rosa.","r":"daughter","e":"🩷"}
-{"w":"parents","pt":"pais (pai e mãe)","s":"My parents live in a small city.","t":"Meus pais moram numa cidade pequena.","r":"city","e":"👫"}
-{"w":"grandmother","pt":"avó","s":"My grandmother makes the best cake.","t":"Minha avó faz o melhor bolo.","r":"","e":"👵"}
-{"w":"grandfather","pt":"avô","s":"My grandfather is ninety years old.","t":"Meu avô tem noventa anos.","r":"year","e":"👴"}
-{"w":"uncle","pt":"tio","s":"My uncle works at the hospital.","t":"Meu tio trabalha no hospital.","r":"hospital","e":"🧔‍♂️"}
-{"w":"aunt","pt":"tia","s":"My aunt calls me every week.","t":"Minha tia me liga toda semana.","r":"week","e":"👩‍🦰"}
-{"w":"cousin","pt":"primo, prima","s":"My cousin is also my best friend.","t":"Meu primo também é meu melhor amigo.","r":"friend","e":"🧑‍🤝‍🧑"}
-{"w":"boy","pt":"menino","s":"The boy is walking to school.","t":"O menino está indo a pé para a escola.","r":"school","e":"👦"}
-{"w":"girl","pt":"menina","s":"That girl is my sister.","t":"Aquela menina é minha irmã.","r":"sister","e":"👧"}
-{"w":"kid","pt":"criança, filho","s":"How many kids do you have?","t":"Quantos filhos você tem?","r":"","e":"🧒"}
-{"w":"pet","pt":"animal de estimação","s":"Do you have a pet at home?","t":"Você tem algum animal de estimação em casa?","r":"","e":"🐶"}
-{"w":"live","pt":"morar; viver","s":"Where do you live?","t":"Onde você mora?","r":"","e":"🏡"}
-{"w":"meet","pt":"conhecer; encontrar","s":"Nice to meet you!","t":"Prazer em te conhecer!","r":"","e":"🤝"}
-{"w":"visit","pt":"visitar; visita","s":"We visit my grandmother every Sunday.","t":"Nós visitamos minha avó todo domingo.","r":"grandmother","e":"🚪"}
-{"w":"stay","pt":"ficar; hospedar-se","s":"I'm sick, so I'll stay home today.","t":"Estou doente, então vou ficar em casa hoje.","r":"sick","e":"🛋️"}
-{"w":"put","pt":"pôr, colocar","s":"Put your bag on the chair.","t":"Coloque sua bolsa na cadeira.","r":"chair","e":"📥"}
-{"w":"let","pt":"deixar, permitir","s":"Let me help you.","t":"Deixa eu te ajudar.","r":"help","e":"🫡"}
-{"w":"teach","pt":"ensinar","s":"My mother teaches English at a school.","t":"Minha mãe ensina inglês numa escola.","r":"mother","e":"👩‍🏫"}
-{"w":"become","pt":"tornar-se","s":"I want to become a doctor.","t":"Quero me tornar médico.","r":"doctor","e":"🦋"}
-{"w":"begin","pt":"começar","s":"The class begins at eight.","t":"A aula começa às oito.","r":"","e":"🟢"}
-{"w":"laugh","pt":"rir; risada","s":"My friends always make me laugh.","t":"Meus amigos sempre me fazem rir.","r":"always","e":"😆"}
-{"w":"time","pt":"tempo; hora; vez","s":"What time is it?","t":"Que horas são?","r":"","e":"🕐"}
-{"w":"day","pt":"dia","s":"Have a nice day!","t":"Tenha um bom dia!","r":"","e":"🌞"}
-{"w":"life","pt":"vida","s":"Life is short. Be happy.","t":"A vida é curta. Seja feliz.","r":"happy","e":"🌱"}
-{"w":"world","pt":"mundo","s":"I want to travel around the world.","t":"Quero viajar pelo mundo.","r":"","e":"🌎"}
-{"w":"home","pt":"casa, lar","s":"I'm tired. Let's go home.","t":"Estou cansado. Vamos para casa.","r":"tired","e":"🏠"}
-{"w":"thing","pt":"coisa","s":"I need to buy a few things at the market.","t":"Preciso comprar algumas coisas na feira.","r":"market","e":"📦"}
-{"w":"place","pt":"lugar","s":"This is my favorite place in the city.","t":"Este é o meu lugar favorito na cidade.","r":"city","e":"📍"}
-{"w":"way","pt":"caminho; jeito","s":"Is this the way to the station?","t":"Este é o caminho para a estação?","r":"","e":"🛤️"}
-{"w":"name","pt":"nome","s":"What's your name?","t":"Qual é o seu nome?","r":"","e":"🏷️"}
-{"w":"number","pt":"número","s":"Can I have your phone number?","t":"Pode me passar o seu número de telefone?","r":"","e":"🔢"}
-{"w":"Monday","pt":"segunda-feira","s":"I start my new job on Monday.","t":"Começo no meu emprego novo na segunda.","r":"job","e":"1️⃣"}
-{"w":"Tuesday","pt":"terça-feira","s":"The meeting is on Tuesday morning.","t":"A reunião é na terça de manhã.","r":"meeting","e":"2️⃣"}
-{"w":"Wednesday","pt":"quarta-feira","s":"I go to the gym on Wednesdays.","t":"Eu vou à academia às quartas.","r":"","e":"3️⃣"}
-{"w":"Thursday","pt":"quinta-feira","s":"The deadline is Thursday.","t":"O prazo é quinta.","r":"deadline","e":"4️⃣"}
-{"w":"Friday","pt":"sexta-feira","s":"Let's have dinner on Friday.","t":"Vamos jantar na sexta.","r":"dinner","e":"5️⃣"}
-{"w":"Saturday","pt":"sábado","s":"I clean the house on Saturday mornings.","t":"Eu limpo a casa nos sábados de manhã.","r":"house","e":"6️⃣"}
-{"w":"Sunday","pt":"domingo","s":"On Sundays, we have lunch with my family.","t":"Aos domingos, almoçamos com a minha família.","r":"lunch","e":"7️⃣"}
-{"w":"clock","pt":"relógio (de parede)","s":"The clock in the kitchen is slow.","t":"O relógio da cozinha está atrasado.","r":"kitchen","e":"🕰️"}
-{"w":"noon","pt":"meio-dia","s":"Lunch is at noon.","t":"O almoço é ao meio-dia.","r":"lunch","e":"🕛"}
-{"w":"weekday","pt":"dia útil","s":"The bank is only open on weekdays.","t":"O banco só abre nos dias úteis.","r":"bank","e":"🗓️"}
+{"w": "red", "pt": "vermelho", "s": "Stop when the light is red.", "t": "Pare quando o sinal estiver vermelho.", "r": "stop", "e": "🔴"}
+{"w": "blue", "pt": "azul", "s": "The sky is blue today.", "t": "O céu está azul hoje.", "r": "today", "e": "🔵"}
+{"w": "green", "pt": "verde", "s": "My mother has green eyes.", "t": "Minha mãe tem olhos verdes.", "r": "eye", "e": "🟢"}
+{"w": "yellow", "pt": "amarelo", "s": "I have a yellow car.", "t": "Eu tenho um carro amarelo.", "r": "car", "e": "🟡"}
+{"w": "black", "pt": "preto", "s": "I drink my coffee black.", "t": "Eu tomo meu café puro.", "r": "coffee", "e": "⚫"}
+{"w": "white", "pt": "branco", "s": "The kitchen walls are white.", "t": "As paredes da cozinha são brancas.", "r": "kitchen", "e": "⚪"}
+{"w": "gray", "pt": "cinza", "s": "My father has gray hair.", "t": "Meu pai tem cabelo grisalho.", "r": "father", "e": "🩶"}
+{"w": "brown", "pt": "marrom; castanho", "s": "She has big brown eyes.", "t": "Ela tem olhos castanhos grandes.", "r": "big", "e": "🟤"}
+{"w": "orange", "pt": "laranja", "s": "I drink orange juice for breakfast.", "t": "Eu tomo suco de laranja no café da manhã.", "r": "breakfast", "e": "🍊"}
+{"w": "pink", "pt": "rosa", "s": "My daughter loves pink.", "t": "Minha filha adora rosa.", "r": "daughter", "e": "🩷"}
+{"w": "parents", "pt": "pais (pai e mãe)", "s": "My parents live in a small city.", "t": "Meus pais moram numa cidade pequena.", "r": "city", "e": "👫"}
+{"w": "grandmother", "pt": "avó", "s": "My grandmother makes the best cake.", "t": "Minha avó faz o melhor bolo.", "r": "", "e": "👵"}
+{"w": "grandfather", "pt": "avô", "s": "My grandfather is ninety years old.", "t": "Meu avô tem noventa anos.", "r": "year", "e": "👴"}
+{"w": "uncle", "pt": "tio", "s": "My uncle works at the hospital.", "t": "Meu tio trabalha no hospital.", "r": "hospital", "e": "🧔‍♂️"}
+{"w": "aunt", "pt": "tia", "s": "My aunt calls me every week.", "t": "Minha tia me liga toda semana.", "r": "week", "e": "👩‍🦰"}
+{"w": "cousin", "pt": "primo, prima", "s": "My cousin is also my best friend.", "t": "Meu primo também é meu melhor amigo.", "r": "friend", "e": "🧑‍🤝‍🧑"}
+{"w": "boy", "pt": "menino", "s": "The boy is walking to school.", "t": "O menino está indo a pé para a escola.", "r": "school", "e": "👦"}
+{"w": "girl", "pt": "menina", "s": "That girl is my sister.", "t": "Aquela menina é minha irmã.", "r": "sister", "e": "👧"}
+{"w": "kid", "pt": "criança, filho", "s": "How many kids do you have?", "t": "Quantos filhos você tem?", "r": "", "e": "🧒"}
+{"w": "pet", "pt": "animal de estimação", "s": "Do you have a pet at home?", "t": "Você tem algum animal de estimação em casa?", "r": "", "e": "🐶"}
+{"w": "live", "pt": "morar; viver", "s": "Where do you live?", "t": "Onde você mora?", "r": "", "e": "🏡"}
+{"w": "meet", "pt": "conhecer; encontrar", "s": "Nice to meet you!", "t": "Prazer em te conhecer!", "r": "", "e": "🤝"}
+{"w": "visit", "pt": "visitar; visita", "s": "We visit my grandmother every Sunday.", "t": "Nós visitamos minha avó todo domingo.", "r": "grandmother", "e": "🚪"}
+{"w": "stay", "pt": "ficar; hospedar-se", "s": "I'm sick, so I'll stay home today.", "t": "Estou doente, então vou ficar em casa hoje.", "r": "sick", "e": "🛋️"}
+{"w": "put", "pt": "pôr, colocar", "s": "Put your bag on the chair.", "t": "Coloque sua bolsa na cadeira.", "r": "chair", "e": "📥"}
+{"w": "let", "pt": "deixar, permitir", "s": "Let me help you.", "t": "Deixa eu te ajudar.", "r": "help", "e": "🙌"}
+{"w": "teach", "pt": "ensinar", "s": "My mother teaches English at a school.", "t": "Minha mãe ensina inglês numa escola.", "r": "mother", "e": "👩‍🏫"}
+{"w": "become", "pt": "tornar-se", "s": "I want to become a doctor.", "t": "Quero me tornar médico.", "r": "doctor", "e": "🦋"}
+{"w": "begin", "pt": "começar", "s": "The class begins at eight.", "t": "A aula começa às oito.", "r": "", "e": "▶️"}
+{"w": "laugh", "pt": "rir; risada", "s": "My friends always make me laugh.", "t": "Meus amigos sempre me fazem rir.", "r": "always", "e": "😆"}
+{"w": "time", "pt": "tempo; hora; vez", "s": "What time is it?", "t": "Que horas são?", "r": "", "e": "🕐"}
+{"w": "day", "pt": "dia", "s": "Have a nice day!", "t": "Tenha um bom dia!", "r": "", "e": "🌞"}
+{"w": "life", "pt": "vida", "s": "Life is short. Be happy.", "t": "A vida é curta. Seja feliz.", "r": "happy", "e": "🌱"}
+{"w": "world", "pt": "mundo", "s": "I want to travel around the world.", "t": "Quero viajar pelo mundo.", "r": "", "e": "🌎"}
+{"w": "home", "pt": "casa, lar", "s": "I'm tired. Let's go home.", "t": "Estou cansado. Vamos para casa.", "r": "tired", "e": "🏠"}
+{"w": "thing", "pt": "coisa", "s": "I need to buy a few things at the market.", "t": "Preciso comprar algumas coisas na feira.", "r": "market", "e": "📦"}
+{"w": "place", "pt": "lugar", "s": "This is my favorite place in the city.", "t": "Este é o meu lugar favorito na cidade.", "r": "city", "e": "📍"}
+{"w": "way", "pt": "caminho; jeito", "s": "Is this the way to the station?", "t": "Este é o caminho para a estação?", "r": "", "e": "🛤️"}
+{"w": "name", "pt": "nome", "s": "What's your name?", "t": "Qual é o seu nome?", "r": "", "e": "🏷️"}
+{"w": "number", "pt": "número", "s": "Can I have your phone number?", "t": "Pode me passar o seu número de telefone?", "r": "", "e": "🔢"}
+{"w": "Monday", "pt": "segunda-feira", "s": "I start my new job on Monday.", "t": "Começo no meu emprego novo na segunda.", "r": "job", "e": "🌙"}
+{"w": "Tuesday", "pt": "terça-feira", "s": "The meeting is on Tuesday morning.", "t": "A reunião é na terça de manhã.", "r": "meeting", "e": "🌮"}
+{"w": "Wednesday", "pt": "quarta-feira", "s": "I go to the gym on Wednesdays.", "t": "Eu vou à academia às quartas.", "r": "", "e": "🐫"}
+{"w": "Thursday", "pt": "quinta-feira", "s": "The deadline is Thursday.", "t": "O prazo é quinta.", "r": "deadline", "e": "⚡"}
+{"w": "Friday", "pt": "sexta-feira", "s": "Let's have dinner on Friday.", "t": "Vamos jantar na sexta.", "r": "dinner", "e": "🎉"}
+{"w": "Saturday", "pt": "sábado", "s": "I clean the house on Saturday mornings.", "t": "Eu limpo a casa nos sábados de manhã.", "r": "house", "e": "🪐"}
+{"w": "Sunday", "pt": "domingo", "s": "On Sundays, we have lunch with my family.", "t": "Aos domingos, almoçamos com a minha família.", "r": "lunch", "e": "☀️"}
+{"w": "clock", "pt": "relógio (de parede)", "s": "The clock in the kitchen is slow.", "t": "O relógio da cozinha está atrasado.", "r": "kitchen", "e": "🕰️"}
+{"w": "noon", "pt": "meio-dia", "s": "Lunch is at noon.", "t": "O almoço é ao meio-dia.", "r": "lunch", "e": "🕛"}
+{"w": "weekday", "pt": "dia útil", "s": "The bank is only open on weekdays.", "t": "O banco só abre nos dias úteis.", "r": "bank", "e": "💼"}

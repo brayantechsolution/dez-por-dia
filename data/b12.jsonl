@@ -25,11 +25,11 @@
 {"w": "brain", "pt": "cérebro", "s": "Sleep is important for your brain.", "t": "O sono é importante para o cérebro.", "r": "important", "e": "🧠"}
 {"w": "asleep", "pt": "dormindo", "s": "The baby is asleep. Please be quiet.", "t": "O bebê está dormindo. Por favor, fique em silêncio.", "r": "quiet", "e": "😴"}
 {"w": "awake", "pt": "acordado", "s": "I was awake all night because of the noise.", "t": "Fiquei acordado a noite toda por causa do barulho.", "r": "noise", "e": "👁️"}
-{"w": "thirsty", "pt": "com sede", "s": "I'm thirsty. Can I have some water?", "t": "Estou com sede. Pode me dar um pouco de água?", "r": "water", "e": "🥵"}
+{"w": "thirsty", "pt": "com sede", "s": "I'm thirsty. Can I have some water?", "t": "Estou com sede. Pode me dar um pouco de água?", "r": "water", "e": "🥤"}
 {"w": "scared", "pt": "assustado, com medo", "s": "My son is scared of the dark.", "t": "Meu filho tem medo do escuro.", "r": "son", "e": "😨"}
 {"w": "glad", "pt": "contente, feliz", "s": "I'm glad you came to my party.", "t": "Fico feliz que você veio à minha festa.", "r": "party", "e": "😊"}
 {"w": "strong", "pt": "forte", "s": "The coffee is too strong for me.", "t": "O café está forte demais para mim.", "r": "coffee", "e": "💪"}
-{"w": "weak", "pt": "fraco", "s": "I feel weak after the fever.", "t": "Estou me sentindo fraco depois da febre.", "r": "fever", "e": "🥀"}
+{"w": "weak", "pt": "fraco", "s": "I feel weak after the fever.", "t": "Estou me sentindo fraco depois da febre.", "r": "fever", "e": "🪫"}
 {"w": "dark", "pt": "escuro", "s": "It gets dark early in winter.", "t": "Escurece cedo no inverno.", "r": "winter", "e": "🌑"}
 {"w": "bright", "pt": "brilhante, claro; inteligente", "s": "This room is very bright and sunny.", "t": "Este cômodo é muito claro e ensolarado.", "r": "sunny", "e": "🔆"}
 {"w": "deep", "pt": "fundo, profundo", "s": "Be careful, the lake is very deep.", "t": "Cuidado, o lago é muito fundo.", "r": "lake", "e": "🕳️"}
@@ -48,7 +48,7 @@
 {"w": "fight", "pt": "brigar, lutar; briga", "s": "My kids fight over the remote control.", "t": "Meus filhos brigam pelo controle remoto.", "r": "remote control", "e": "🥊"}
 {"w": "kiss", "pt": "beijar; beijo", "s": "She gave her son a kiss goodbye.", "t": "Ela deu um beijo de despedida no filho.", "r": "son", "e": "😘"}
 {"w": "lie", "pt": "mentir; mentira; deitar-se", "s": "Don't lie to me. Tell me the truth.", "t": "Não minta para mim. Me conte a verdade.", "r": "tell", "e": "🤥"}
-{"w": "desk", "pt": "escrivaninha, mesa de trabalho", "s": "My laptop is on my desk.", "t": "Meu notebook está na minha mesa.", "r": "", "e": "🗄️"}
+{"w": "desk", "pt": "escrivaninha, mesa de trabalho", "s": "My laptop is on my desk.", "t": "Meu notebook está na minha mesa.", "r": "", "e": "💻"}
 {"w": "pillow", "pt": "travesseiro", "s": "This hotel has very soft pillows.", "t": "Este hotel tem travesseiros muito macios.", "r": "soft", "e": "🛏️"}
 {"w": "soap", "pt": "sabonete, sabão", "s": "Wash your hands with soap and water.", "t": "Lave as mãos com água e sabão.", "r": "wash", "e": "🧼"}
 {"w": "umbrella", "pt": "guarda-chuva", "s": "Don't forget your umbrella. It's going to rain.", "t": "Não esqueça o guarda-chuva. Vai chover.", "r": "rain", "e": "☂️"}

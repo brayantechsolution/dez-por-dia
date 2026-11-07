@@ -27,8 +27,8 @@
 {"w": "settings", "pt": "configurações", "s": "Go to settings and change the language.", "t": "Vá em configurações e mude o idioma.", "r": "change", "e": "⚙️"}
 {"w": "keyboard", "pt": "teclado", "s": "This keyboard is very comfortable.", "t": "Este teclado é muito confortável.", "r": "comfortable", "e": "⌨️"}
 {"w": "relationship", "pt": "relacionamento, relação", "s": "I have a good relationship with my parents.", "t": "Tenho um bom relacionamento com os meus pais.", "r": "good", "e": "💞"}
-{"w": "boyfriend", "pt": "namorado", "s": "Her boyfriend is a nurse.", "t": "O namorado dela é enfermeiro.", "r": "nurse", "e": "👦"}
-{"w": "girlfriend", "pt": "namorada", "s": "I'm meeting my girlfriend's parents tonight.", "t": "Vou conhecer os pais da minha namorada hoje à noite.", "r": "", "e": "👧"}
+{"w": "boyfriend", "pt": "namorado", "s": "Her boyfriend is a nurse.", "t": "O namorado dela é enfermeiro.", "r": "nurse", "e": "💙"}
+{"w": "girlfriend", "pt": "namorada", "s": "I'm meeting my girlfriend's parents tonight.", "t": "Vou conhecer os pais da minha namorada hoje à noite.", "r": "", "e": "💖"}
 {"w": "marry", "pt": "casar-se com", "s": "Will you marry me?", "t": "Você quer se casar comigo?", "r": "", "e": "💍"}
 {"w": "divorced", "pt": "divorciado", "s": "My parents are divorced.", "t": "Meus pais são divorciados.", "r": "", "e": "💔"}
 {"w": "single", "pt": "solteiro; único", "s": "Are you married or single?", "t": "Você é casado ou solteiro?", "r": "", "e": "🙋"}
@@ -40,7 +40,7 @@
 {"w": "depend", "pt": "depender", "s": "It depends on the weather.", "t": "Depende do tempo.", "r": "weather", "e": "🔗"}
 {"w": "matter", "pt": "importar; assunto", "s": "It doesn't matter. Don't worry.", "t": "Não tem importância. Não se preocupe.", "r": "worry", "e": "❕"}
 {"w": "seem", "pt": "parecer", "s": "You seem tired today.", "t": "Você parece cansado hoje.", "r": "tired", "e": "🤔"}
-{"w": "happen", "pt": "acontecer", "s": "What happened to your car?", "t": "O que aconteceu com o seu carro?", "r": "car", "e": "💥"}
+{"w": "happen", "pt": "acontecer", "s": "What happened to your car?", "t": "O que aconteceu com o seu carro?", "r": "car", "e": "⁉️"}
 {"w": "appear", "pt": "aparecer; parecer", "s": "A message appeared on the screen.", "t": "Uma mensagem apareceu na tela.", "r": "screen", "e": "🪄"}
 {"w": "disappear", "pt": "desaparecer, sumir", "s": "My keys disappeared again!", "t": "Minhas chaves sumiram de novo!", "r": "key", "e": "🫥"}
 {"w": "exist", "pt": "existir", "s": "Do you think aliens exist?", "t": "Você acha que extraterrestres existem?", "r": "think", "e": "👽"}
@@ -73,7 +73,7 @@
 {"w": "one-way", "pt": "só de ida; mão única", "s": "I bought a one-way ticket.", "t": "Comprei uma passagem só de ida.", "r": "buy", "e": "➡️"}
 {"w": "customs", "pt": "alfândega", "s": "We waited an hour at customs.", "t": "Esperamos uma hora na alfândega.", "r": "wait", "e": "🛃"}
 {"w": "currency", "pt": "moeda (de um país)", "s": "What's the currency in Argentina?", "t": "Qual é a moeda da Argentina?", "r": "", "e": "💱"}
-{"w": "exchange", "pt": "trocar; câmbio, troca", "s": "Where can I exchange money?", "t": "Onde posso trocar dinheiro?", "r": "money", "e": "🔁"}
+{"w": "exchange", "pt": "trocar; câmbio, troca", "s": "Where can I exchange money?", "t": "Onde posso trocar dinheiro?", "r": "money", "e": "💱"}
 {"w": "sightseeing", "pt": "passeio turístico", "s": "We went sightseeing in the old city.", "t": "Fizemos um passeio turístico pela cidade antiga.", "r": "city", "e": "🏛️"}
 {"w": "brave", "pt": "corajoso", "s": "The firefighters were very brave.", "t": "Os bombeiros foram muito corajosos.", "r": "very", "e": "🦁"}
 {"w": "careful", "pt": "cuidadoso", "s": "Be careful with the knife.", "t": "Cuidado com a faca.", "r": "knife", "e": "⚠️"}
