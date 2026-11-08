@@ -2,6 +2,15 @@ plugins {
     id 'com.android.application'
 }
 
+// Chave fixa de assinatura (signing/): sem ela o Android recusa instalar a atualização por cima
+def signingProps = new Properties()
+def signingFile = rootProject.file('signing/keystore.properties')
+if (signingFile.exists()) {
+    signingFile.withInputStream { signingProps.load(it) }
+}
+// Cada build do GitHub tem um número maior que o anterior
+def buildNumber = (System.getenv('GITHUB_RUN_NUMBER') ?: '0').toInteger()
+
 android {
     namespace = 'app.dezpordia'
     compileSdk = 35
@@ -10,8 +19,27 @@ android {
         applicationId = 'app.dezpordia'
         minSdk = 26
         targetSdk = 35
-        versionCode = 1
-        versionName = '0.1'
+        versionCode = 100 + buildNumber
+        versionName = "0.2.${buildNumber}"
+    }
+
+    signingConfigs {
+        fixa {
+            if (signingFile.exists()) {
+                storeFile = rootProject.file("signing/${signingProps['storeFile']}")
+                storePassword = signingProps['storePassword']
+                keyAlias = signingProps['keyAlias']
+                keyPassword = signingProps['keyPassword']
+            }
+        }
+    }
+
+    buildTypes {
+        debug {
+            if (signingFile.exists()) {
+                signingConfig = signingConfigs.fixa
+            }
+        }
     }
 
     compileOptions {
