@@ -20,6 +20,9 @@ public final class Prefs {
     public static final String POINTER = "pointer";
     public static final String SEEN = "seen";
     public static final String LOCK_SET = "lock_set";
+    /** Dias pulados (ou voltados) à mão pela pessoa. */
+    public static final String DAY_OFFSET = "day_offset";
+    public static final int TOTAL_DAYS = 130;
 
     public static final int QUIET_START = 22;
     public static final int QUIET_END = 7;
@@ -50,7 +53,23 @@ public final class Prefs {
         for (LocalDate d = start; d.isBefore(today); d = d.plusDays(1)) {
             if (!weekdaysOnly || isWeekday(d)) count++;
         }
-        return count;
+        return Math.max(0, count + p.getInt(DAY_OFFSET, 0));
+    }
+
+    /**
+     * Muda o dia de estudo de hoje para {@code targetIndex} (0 = dia 1) e recomeça as 10 palavras.
+     * Usado pelos botões "dia anterior" e "próximo dia".
+     */
+    public static void setStudyDay(SharedPreferences p, LocalDate today, int targetIndex) {
+        int target = Math.max(0, Math.min(TOTAL_DAYS - 1, targetIndex));
+        int current = studyDayIndex(p, today);
+        int offset = p.getInt(DAY_OFFSET, 0) + (target - current);
+        p.edit()
+                .putInt(DAY_OFFSET, offset)
+                .putLong(LAST_DAY, today.toEpochDay())
+                .putInt(POINTER, 0)
+                .putInt(SEEN, 0)
+                .commit();
     }
 
     /** Hoje é dia de descanso (fim de semana com "só dias úteis" ligado)? */

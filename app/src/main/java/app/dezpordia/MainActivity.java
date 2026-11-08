@@ -91,6 +91,7 @@ public class MainActivity extends Activity {
         content.addView(text(capitalize(date), 14, MUTED, false));
         content.addView(text(restDay ? "Hoje é dia de descanso" : "Suas 10 palavras de hoje",
                 28, INK, true), margins(dp(4), 0));
+        content.addView(dayRow(today, dayIndex), margins(dp(14), 0));
 
         // Progresso do dia
         ProgressBar bar = new ProgressBar(this, null, android.R.attr.progressBarStyleHorizontal);
@@ -199,6 +200,48 @@ public class MainActivity extends Activity {
 
     private void showNext() {
         runUpdate(true);
+    }
+
+    /** Linha "◀  Dia 3 de 130  ▶" para voltar ou pular o dia de estudo. */
+    private View dayRow(LocalDate today, int dayIndex) {
+        LinearLayout row = card(CARD);
+        row.setOrientation(LinearLayout.HORIZONTAL);
+        row.setGravity(Gravity.CENTER_VERTICAL);
+        row.setPadding(dp(6), dp(6), dp(6), dp(6));
+
+        Button prev = button("◀", false);
+        prev.setContentDescription("Dia anterior");
+        prev.setEnabled(dayIndex > 0);
+        prev.setAlpha(dayIndex > 0 ? 1f : 0.35f);
+        prev.setOnClickListener(v -> goToDay(today, dayIndex - 1));
+        row.addView(prev, new LinearLayout.LayoutParams(dp(56), dp(48)));
+
+        LinearLayout col = new LinearLayout(this);
+        col.setOrientation(LinearLayout.VERTICAL);
+        col.setGravity(Gravity.CENTER);
+        col.addView(text("Dia " + (dayIndex + 1) + " de " + Prefs.TOTAL_DAYS, 18, INK, true));
+        col.addView(text("Use as setas para voltar ou pular um dia", 12, MUTED, false));
+        row.addView(col, new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f));
+
+        boolean last = dayIndex >= Prefs.TOTAL_DAYS - 1;
+        Button next = button("▶", false);
+        next.setContentDescription("Próximo dia");
+        next.setEnabled(!last);
+        next.setAlpha(last ? 0.35f : 1f);
+        next.setOnClickListener(v -> goToDay(today, dayIndex + 1));
+        row.addView(next, new LinearLayout.LayoutParams(dp(56), dp(48)));
+        return row;
+    }
+
+    private void goToDay(LocalDate today, int targetIndex) {
+        Prefs.setStudyDay(prefs, today, targetIndex);
+        toast("Agora você está no dia " + (Prefs.studyDayIndex(prefs, today) + 1) + ".");
+        if (prefs.getBoolean(Prefs.ENABLED, false)) {
+            runUpdate(true); // já mostra a 1ª palavra do novo dia na tela de bloqueio
+        } else {
+            WidgetProvider.refresh(this);
+            render();
+        }
     }
 
     @Override
