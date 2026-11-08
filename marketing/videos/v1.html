@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>Vídeo 1 — Desbloqueio</title>
+<style>html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#0F1B2D}</style>
+<script src="lib.js"></script></head>
+<body>
+<script>
+const DURATION = 15;
+document.body.style.background = '#0B1422';
+const ph = phone(210, 610, 660, 1400);
+const ls = lockScreen(ph.screen, ph.w, ph.h);
+const off = el('div', 'position:absolute;inset:0;background:#000;z-index:40', '', ph.screen);
+
+const seq = [
+  [0, W.available, 2, '08:42'],
+  [5.4, W.schedule, 3, '10:42'],
+  [7.0, W.reliable, 4, '12:42'],
+  [8.9, W.deadline, 5, '14:42'],
+  [9.45, { w: 'improve', pt: 'melhorar', s: 'I want to improve my English this year.', t: 'Quero melhorar meu inglês este ano.', e: '📈' }, 6, '15:10'],
+  [9.9, W.hungry, 7, '16:20'],
+  [10.35, W.borrow, 8, '17:05'],
+  [10.8, { w: 'receipt', pt: 'recibo, comprovante', s: 'Can I have the receipt, please?', t: 'Pode me dar o comprovante, por favor?', e: '🧾' }, 9, '18:30'],
+  [11.2, { w: 'meeting', pt: 'reunião', s: 'The meeting starts at nine.', t: 'A reunião começa às nove.', e: '👥' }, 10, '19:42'],
+];
+
+const c1 = caption('Aprendi inglês só *desbloqueando* o celular 📱', 230);
+const c2 = caption('Toda vez que você *olha o celular*…', 260);
+const c3 = caption('…aparece uma *palavra nova*, com frase e tradução', 230);
+const c4 = caption('*10 palavras* por dia. Sem abrir o app.', 260);
+const card = endCard(document.body);
+
+let current = -1;
+function render(t) {
+  popCaption(c1, t, 0.05, 2.6);
+  popCaption(c2, t, 2.6, 5.4);
+  popCaption(c3, t, 5.4, 8.9);
+  popCaption(c4, t, 8.9, 11.7);
+
+  // celular liga
+  off.style.opacity = 1 - prog(t, 0.75, 1.05);
+  ph.body.style.transformOrigin = '50% 0%';
+  ph.body.style.transform = `translateY(${(1 - out(prog(t, 0, 0.6))) * 220}px) scale(${1 + 0.03 * prog(t, 1, 11.6)})`;
+
+  // troca de palavra: some e aparece subindo
+  let idx = 0;
+  for (let i = 0; i < seq.length; i++) if (t >= seq[i][0]) idx = i;
+  const [start, w, n, clk] = seq[idx];
+  const fast = idx >= 4;
+  const d = fast ? 0.12 : 0.22;
+  if (idx !== current) { ls.set(w, n, n, n - 1); ls.clock.textContent = clk; current = idx; }
+  const pin = idx === 0 ? 1 : out(prog(t, start, start + d));
+  ls.block.style.opacity = pin; ls.emoji.style.opacity = pin;
+  ls.block.style.transform = `translateY(${(1 - pin) * 40}px)`;
+  ls.emoji.style.transform = `scale(${0.7 + 0.3 * back(idx === 0 ? 1 : prog(t, start, start + d * 1.6))})`;
+
+  playEnd(card, t, 11.7);
+}
+render(0);
+</script>
+</body></html>

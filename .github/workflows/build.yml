@@ -3,6 +3,8 @@ name: Gerar APK
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - 'marketing/**'
   workflow_dispatch:
 
 permissions:

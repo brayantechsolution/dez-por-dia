@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>Vídeo 2 — A conta</title>
+<style>html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#0B1422}</style>
+<script src="lib.js"></script></head>
+<body>
+<script>
+const DURATION = 15;
+
+// Gancho grande no centro
+const hook = el('div', `position:absolute;left:80px;right:80px;top:640px;text-align:center;font:800 96px/1.15 Inter;color:#fff;letter-spacing:-2px;opacity:0`,
+  'Quantas palavras em inglês você aprende em <span style="background:#C6F432;color:#0F1B2D;padding:0 16px;border-radius:16px">6 meses</span>?');
+const think = el('div', `position:absolute;left:0;right:0;top:1180px;text-align:center;font-size:150px;opacity:0`, '🤔');
+
+// A conta
+const rows = [];
+function row(top, num, label) {
+  const r = el('div', `position:absolute;left:110px;right:110px;top:${top}px;display:flex;align-items:baseline;gap:30px;opacity:0`);
+  el('div', `font:900 150px/1 Inter;color:#C6F432;letter-spacing:-5px;min-width:330px;text-align:right`, num, r);
+  el('div', `font:700 58px/1.15 Inter;color:#fff`, label, r);
+  rows.push(r); return r;
+}
+row(420, '10', 'palavras<br>por dia');
+row(680, '× 5', 'dias por<br>semana');
+row(940, '× 26', 'semanas<br>(6 meses)');
+const line = el('div', `position:absolute;left:110px;right:110px;top:1185px;height:8px;border-radius:4px;background:#2A3A52;transform-origin:left;opacity:0`);
+const total = el('div', `position:absolute;left:0;right:0;top:1230px;text-align:center;opacity:0`);
+const totalNum = el('div', `font:900 230px/1 Inter;color:#C6F432;letter-spacing:-8px`, '0', total);
+el('div', `font:800 70px/1.1 Inter;color:#fff;margin-top:10px`, 'palavras em inglês', total);
+const capTop = caption('Só *10 por dia*. Faz a conta:', 210);
+
+// Tela do app
+const ph = phone(230, 640, 620, 1320);
+ph.body.style.opacity = 0;
+const app = el('div', `position:absolute;inset:0;background:#F4F5F0;font-family:Inter;color:#0F1B2D;padding:${86}px ${36}px 0;box-sizing:border-box`, '', ph.screen);
+el('div', `font:400 22px Inter;color:#5A6270`, 'Sexta, 6 de novembro', app);
+el('div', `font:800 40px/1.1 Inter;letter-spacing:-1px;margin-top:6px`, 'Suas 10 palavras de hoje', app);
+const barBox = el('div', `height:14px;border-radius:7px;background:#E1E4DA;margin-top:24px;overflow:hidden`, '', app);
+const bar = el('div', `height:14px;width:0;background:#0F1B2D`, '', barBox);
+const listCard = el('div', `margin-top:26px;background:#fff;border-radius:28px;padding:6px 24px`, '', app);
+const words = [['👥','meeting','reunião'],['✅','available','disponível'],['📅','schedule','agenda'],['🤝','borrow','pegar emprestado'],
+  ['🛡️','reliable','confiável'],['📦','deliver','entregar'],['📈','improve','melhorar'],['🧾','receipt','comprovante'],['🦷','appointment','consulta'],['🧩','figure out','descobrir']];
+const checks = [];
+words.forEach((w, i) => {
+  const r = el('div', `display:flex;align-items:center;gap:18px;height:78px;${i ? 'border-top:1px solid #EEF0EA' : ''}`, '', listCard);
+  el('div', `font-size:36px;width:48px;text-align:center`, w[0], r);
+  const col = el('div', `flex:1`, '', r);
+  el('div', `font:700 28px Inter`, w[1], col);
+  el('div', `font:400 20px Inter;color:#5A6270`, w[2], col);
+  const c = el('div', `width:36px;height:36px;border-radius:50%;border:3px solid #B7BDB0;box-sizing:border-box;display:flex;align-items:center;justify-content:center;font:900 22px Inter`, '', r);
+  checks.push(c);
+});
+const capApp = caption('Sem aula e sem cobrança: a palavra aparece *na sua tela*', 200);
+const card = endCard(document.body);
+
+let lastSeen = -1;
+function render(t) {
+  // gancho
+  const h = win(t, 0.05, 2.8, 0.2);
+  show(hook, h, (1 - out(prog(t, 0.05, 0.4))) * 40, 0.9 + 0.1 * back(prog(t, 0.05, 0.45)));
+  show(think, win(t, 0.5, 2.8, 0.2), 0, 0.6 + 0.4 * back(prog(t, 0.5, 0.9)));
+
+  // a conta
+  popCaption(capTop, t, 2.8, 9.6);
+  rows.forEach((r, i) => {
+    const a = 3.0 + i * 0.9;
+    show(r, win(t, a, 9.6, 0.2), (1 - out(prog(t, a, a + 0.35))) * 60);
+  });
+  line.style.opacity = win(t, 5.9, 9.6, 0.2);
+  line.style.transform = `scaleX(${out(prog(t, 5.9, 6.3))})`;
+  show(total, win(t, 6.3, 9.6, 0.2), 0, 0.85 + 0.15 * back(prog(t, 6.3, 6.7)));
+  const n = Math.round(1300 * ease(prog(t, 6.4, 8.0)));
+  totalNum.textContent = n.toLocaleString('pt-BR');
+  totalNum.style.transform = `scale(${1 + 0.06 * Math.max(0, 1 - Math.abs(t - 8.1) * 4)})`;
+
+  // tela do app
+  const pa = win(t, 9.6, 12.5, 0.25);
+  ph.body.style.opacity = pa;
+  ph.body.style.transform = `translateY(${(1 - out(prog(t, 9.6, 10.1))) * 300}px)`;
+  popCaption(capApp, t, 9.7, 12.5);
+  const seen = Math.min(10, Math.max(0, Math.floor((t - 10.1) / 0.22) + 1));
+  if (seen !== lastSeen) {
+    checks.forEach((c, i) => {
+      if (i < seen) { c.style.background = '#C6F432'; c.style.borderColor = '#C6F432'; c.textContent = '✓'; }
+      else { c.style.background = 'transparent'; c.style.borderColor = '#B7BDB0'; c.textContent = ''; }
+    });
+    bar.style.width = (seen * 10) + '%';
+    lastSeen = seen;
+  }
+  playEnd(card, t, 12.5);
+}
+render(0);
+</script>
+</body></html>

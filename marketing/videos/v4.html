@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>Vídeo 4 — Grátis e sem propaganda</title>
+<style>html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#0B1422}</style>
+<script src="lib.js"></script></head>
+<body>
+<script>
+const DURATION = 15;
+const ph = phone(210, 610, 660, 1400);
+const S = ph.screen, sw = ph.w, sh = ph.h, u = sw / 390;
+
+// Cena A: um app de inglês qualquer (genérico, sem marca)
+const viewOther = el('div', `position:absolute;inset:0;background:#FFFFFF;font-family:Inter;color:#1B1F2A`, '', S);
+el('div', `position:absolute;top:${70 * u}px;left:${24 * u}px;right:${24 * u}px;height:${12 * u}px;border-radius:${6 * u}px;background:#E5E7EB`, '', viewOther);
+el('div', `position:absolute;top:${70 * u}px;left:${24 * u}px;width:${120 * u}px;height:${12 * u}px;border-radius:${6 * u}px;background:#9CA3AF`, '', viewOther);
+el('div', `position:absolute;top:${120 * u}px;left:${24 * u}px;right:${24 * u}px;font:800 ${24 * u}px/1.2 Inter`, 'Traduza a frase:', viewOther);
+el('div', `position:absolute;top:${165 * u}px;left:${24 * u}px;right:${24 * u}px;font:500 ${20 * u}px/1.3 Inter;color:#374151`, '"The cat is black."', viewOther);
+['O gato é preto', 'O carro é preto', 'O gato é branco'].forEach((o, i) => el('div', `position:absolute;left:${24 * u}px;right:${24 * u}px;top:${(240 + i * 70) * u}px;height:${54 * u}px;
+  border:2px solid #E5E7EB;border-radius:${14 * u}px;display:flex;align-items:center;padding:0 ${16 * u}px;box-sizing:border-box;font:600 ${17 * u}px Inter`, o, viewOther));
+
+// Propagandas chatas
+const ads = [];
+function ad(top, h, html, bg, color) {
+  const a = el('div', `position:absolute;left:${14 * u}px;right:${14 * u}px;top:${top * u}px;height:${h * u}px;border-radius:${18 * u}px;background:${bg};color:${color};
+    box-shadow:0 ${10 * u}px ${30 * u}px rgba(0,0,0,.35);font-family:Inter;padding:${16 * u}px;box-sizing:border-box;opacity:0;z-index:20`, html, S);
+  ads.push(a); return a;
+}
+ad(110, 150, `<div style="display:flex;justify-content:space-between;font:700 ${12 * u}px Inter;opacity:.8"><span>ANÚNCIO</span><span>Pular em 5 ✕</span></div>
+  <div style="margin-top:${12 * u}px;font:800 ${22 * u}px/1.2 Inter">Baixe agora o jogo mais viciante do ano!</div>`, '#7C3AED', '#fff');
+ad(290, 170, `<div style="font:800 ${24 * u}px/1.2 Inter">Seja Premium 👑</div><div style="margin-top:${6 * u}px;font:500 ${15 * u}px Inter">Desbloqueie as lições por apenas</div>
+  <div style="margin-top:${8 * u}px;font:900 ${30 * u}px Inter">R$ 29,90/mês</div>`, '#F59E0B', '#1B1F2A');
+ad(490, 120, `<div style="font:800 ${20 * u}px/1.25 Inter">Assista a um vídeo de 30 segundos para continuar</div><div style="margin-top:${8 * u}px;font:700 ${14 * u}px Inter;opacity:.8">▶ ANÚNCIO</div>`, '#111827', '#fff');
+ad(640, 110, `<div style="font:800 ${22 * u}px Inter">Você ficou sem vidas 💔</div><div style="margin-top:${6 * u}px;font:500 ${15 * u}px Inter">Espere 4 horas ou pague para continuar</div>`, '#EF4444', '#fff');
+
+// Cena B: o 10 por Dia limpo (lista do dia)
+const viewApp = el('div', `position:absolute;inset:0;background:#F4F5F0;font-family:Inter;color:#0F1B2D;padding:${86}px ${36}px 0;box-sizing:border-box;opacity:0`, '', S);
+el('div', `font:400 22px Inter;color:#5A6270`, 'Sexta, 6 de novembro', viewApp);
+el('div', `font:800 40px/1.1 Inter;letter-spacing:-1px;margin-top:6px`, 'Suas 10 palavras de hoje', viewApp);
+const barBox = el('div', `height:14px;border-radius:7px;background:#E1E4DA;margin-top:24px;overflow:hidden`, '', viewApp);
+el('div', `height:14px;width:30%;background:#0F1B2D`, '', barBox);
+const listCard = el('div', `margin-top:26px;background:#fff;border-radius:28px;padding:6px 24px`, '', viewApp);
+[['👥','meeting','reunião',1],['✅','available','disponível',1],['📅','schedule','agenda',1],['🤝','borrow','pegar emprestado',0],
+ ['🛡️','reliable','confiável',0],['📦','deliver','entregar',0],['📈','improve','melhorar',0],['🧾','receipt','comprovante',0]].forEach((w, i) => {
+  const r = el('div', `display:flex;align-items:center;gap:18px;height:84px;${i ? 'border-top:1px solid #EEF0EA' : ''}`, '', listCard);
+  el('div', `font-size:36px;width:48px;text-align:center`, w[0], r);
+  const col = el('div', 'flex:1', '', r);
+  el('div', `font:700 28px Inter`, w[1], col);
+  el('div', `font:400 20px Inter;color:#5A6270`, w[2], col);
+  el('div', `width:36px;height:36px;border-radius:50%;box-sizing:border-box;display:flex;align-items:center;justify-content:center;font:900 22px Inter;
+    ${w[3] ? 'background:#C6F432' : 'border:3px solid #B7BDB0'}`, w[3] ? '✓' : '', r);
+});
+
+// Selo "R$ 0"
+const price = el('div', `position:absolute;left:50%;top:${300 * u}px;width:${250 * u}px;height:${250 * u}px;margin-left:-${125 * u}px;border-radius:50%;
+  background:#C6F432;color:#0F1B2D;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:Inter;z-index:30;opacity:0;
+  box-shadow:0 ${20 * u}px ${50 * u}px rgba(0,0,0,.35)`, `<div style="font:900 ${78 * u}px/1 Inter;letter-spacing:-${3 * u}px">R$ 0</div>
+  <div style="font:800 ${16 * u}px Inter;margin-top:${6 * u}px">PARA SEMPRE</div>`, S);
+
+// Cena C: tela de bloqueio com a palavra
+const viewWord = el('div', 'position:absolute;inset:0;opacity:0', '', S);
+const ls = lockScreen(viewWord, sw, sh);
+ls.set(W.borrow, 4, 4, 3);
+const noAd = el('div', `position:absolute;left:${24 * u}px;right:${24 * u}px;top:${174 * u}px;text-align:center;opacity:0;z-index:30`, '', S);
+el('span', `display:inline-block;padding:${7 * u}px ${14 * u}px;border-radius:999px;background:rgba(198,244,50,.95);color:#0F1B2D;font:800 ${14 * u}px Inter`, '🚫 0 anúncios', noAd);
+
+const c1 = caption('Cansado de app de inglês *cheio de propaganda*? 😤', 200);
+const c2 = caption('Aqui é *diferente*.', 260);
+const c3 = caption('*100% grátis.* Sem assinatura, sem versão premium.', 200);
+const c4 = caption('*Zero propaganda.* Feito pra uma coisa só: você aprender.', 200);
+
+// Final: cartão do app + selos
+const card = endCard(document.body);
+const chips = el('div', `display:flex;gap:18px;flex-wrap:wrap;justify-content:center;max-width:900px`, '', card.root);
+['Grátis', 'Sem anúncios', 'Sem cobrança'].forEach((c) => el('div', `padding:16px 28px;border-radius:999px;border:3px solid #C6F432;color:#C6F432;font:800 40px Inter`, '✓ ' + c, chips));
+card.root.insertBefore(chips, card.cta);
+
+function render(t) {
+  popCaption(c1, t, 0.05, 2.8);
+  popCaption(c2, t, 2.8, 5.2);
+  popCaption(c3, t, 5.2, 8.4);
+  popCaption(c4, t, 8.4, 11.6);
+  ph.body.style.transform = `translateY(${(1 - out(prog(t, 0, 0.5))) * 220}px)`;
+
+  // propagandas pulando na tela, uma atrás da outra, e sendo varridas
+  ads.forEach((a, i) => {
+    const s = 0.35 + i * 0.5;
+    const away = out(prog(t, 3.0 + i * 0.1, 3.45 + i * 0.1));
+    a.style.opacity = prog(t, s, s + 0.12) * (1 - away);
+    const shake = t > s && t < s + 0.4 ? Math.sin((t - s) * 60) * 6 * (1 - prog(t, s, s + 0.4)) : 0;
+    a.style.transform = `scale(${0.7 + 0.3 * back(prog(t, s, s + 0.3))}) translateX(${shake + away * (i % 2 ? -700 : 700)}px) rotate(${away * (i % 2 ? -12 : 12)}deg)`;
+  });
+  viewOther.style.opacity = 1 - prog(t, 3.7, 4.0);
+  viewOther.style.filter = `blur(${prog(t, 3.4, 3.9) * 6}px)`;
+
+  // o 10 por Dia limpo
+  viewApp.style.opacity = prog(t, 3.8, 4.1) * (1 - prog(t, 8.4, 8.7));
+  price.style.opacity = win(t, 5.4, 8.3, 0.2);
+  price.style.transform = `scale(${0.4 + 0.6 * back(prog(t, 5.4, 5.8))}) rotate(${(1 - out(prog(t, 5.4, 5.9))) * -20}deg)`;
+
+  // tela de bloqueio com a palavra
+  viewWord.style.opacity = prog(t, 8.4, 8.7);
+  show(noAd, prog(t, 9.0, 9.3), (1 - out(prog(t, 9.0, 9.35))) * -20, 0.8 + 0.2 * back(prog(t, 9.0, 9.4)));
+
+  playEnd(card, t, 11.6);
+  chips.style.opacity = prog(t, 12.0, 12.4);
+}
+render(0);
+</script>
+</body></html>

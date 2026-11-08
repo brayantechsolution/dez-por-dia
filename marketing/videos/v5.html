@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>Vídeo 5 — Um dia com a Ana</title>
+<style>html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#0B1422}
+.scene{position:absolute;inset:0;opacity:0;transform-origin:50% 45%}
+.scene svg{position:absolute;inset:0}</style>
+<script src="lib.js"></script></head>
+<body>
+<script>
+const DURATION = 25;
+const SKIN = '#F2C4A5', SKIN_D = '#E2A988', HAIR = '#F2C94C', HAIR_D = '#D9A93A', INK = '#2B2B38';
+
+// Relógio de ponteiro
+function clockSvg(cx, cy, r, h, m, face = '#FFFFFF', rim = '#3A3A48') {
+  const ha = ((h % 12) + m / 60) * 30 - 90, ma = m * 6 - 90, rad = Math.PI / 180;
+  let ticks = '';
+  for (let i = 0; i < 12; i++) { const a = i * 30 * rad; ticks += `<line x1="${cx + Math.cos(a) * r * 0.78}" y1="${cy + Math.sin(a) * r * 0.78}" x2="${cx + Math.cos(a) * r * 0.9}" y2="${cy + Math.sin(a) * r * 0.9}" stroke="${rim}" stroke-width="5" stroke-linecap="round"/>`; }
+  return `<circle cx="${cx}" cy="${cy}" r="${r}" fill="${face}" stroke="${rim}" stroke-width="10"/>${ticks}
+    <line x1="${cx}" y1="${cy}" x2="${cx + Math.cos(ha * rad) * r * 0.45}" y2="${cy + Math.sin(ha * rad) * r * 0.45}" stroke="${rim}" stroke-width="10" stroke-linecap="round"/>
+    <line x1="${cx}" y1="${cy}" x2="${cx + Math.cos(ma * rad) * r * 0.68}" y2="${cy + Math.sin(ma * rad) * r * 0.68}" stroke="${rim}" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="${cx}" cy="${cy}" r="9" fill="${rim}"/>`;
+}
+
+// A Ana (personagem original), sentada, segurando o celular
+function ana(shirt, id) {
+  return `<g id="ana-${id}">
+  <path d="M405 800 C385 630 695 630 675 800 L705 1050 C640 1095 440 1095 375 1050 Z" fill="${HAIR_D}"/>
+  <rect x="505" y="915" width="70" height="95" rx="20" fill="${SKIN_D}"/>
+  <path d="M325 1420 C325 1100 395 1012 540 1002 C685 1012 755 1100 755 1420 Z" fill="${shirt}"/>
+  <path d="M490 1004 L540 1060 L590 1004" fill="none" stroke="rgba(0,0,0,.15)" stroke-width="8" stroke-linecap="round"/>
+  <path d="M385 1085 Q330 1235 382 1335" fill="none" stroke="${shirt}" stroke-width="92" stroke-linecap="round"/>
+  <path d="M385 1325 Q455 1365 525 1352" fill="none" stroke="${SKIN}" stroke-width="56" stroke-linecap="round"/>
+  <circle cx="540" cy="820" r="125" fill="${SKIN}"/>
+  <path d="M415 800 C405 680 480 645 560 655 C645 665 685 720 668 805 C640 742 592 728 562 698 C530 742 468 762 415 800 Z" fill="${HAIR}"/>
+  <path d="M417 785 C395 880 405 965 432 1012 L462 1000 C444 935 442 862 448 800 Z" fill="${HAIR}"/>
+  <path d="M663 785 C685 880 675 965 648 1012 L618 1000 C636 935 638 862 632 800 Z" fill="${HAIR}"/>
+  <path d="M470 795 Q495 782 520 792" fill="none" stroke="#B88A3A" stroke-width="6" stroke-linecap="round"/>
+  <path d="M562 792 Q587 782 612 795" fill="none" stroke="#B88A3A" stroke-width="6" stroke-linecap="round"/>
+  <g class="eyesOpen"><ellipse cx="500" cy="838" rx="11" ry="14" fill="${INK}"/><ellipse cx="588" cy="838" rx="11" ry="14" fill="${INK}"/>
+    <circle cx="503" cy="833" r="3.5" fill="#fff"/><circle cx="591" cy="833" r="3.5" fill="#fff"/></g>
+  <g class="eyesClosed" style="display:none"><path d="M486 840 Q500 850 514 840" fill="none" stroke="${INK}" stroke-width="6" stroke-linecap="round"/>
+    <path d="M574 840 Q588 850 602 840" fill="none" stroke="${INK}" stroke-width="6" stroke-linecap="round"/></g>
+  <path d="M538 852 Q530 872 544 874" fill="none" stroke="${SKIN_D}" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="470" cy="874" r="19" fill="#F49C9C" opacity=".45"/><circle cx="612" cy="874" r="19" fill="#F49C9C" opacity=".45"/>
+  <path class="smile" d="M507 892 Q542 920 577 892" fill="none" stroke="#B5615A" stroke-width="7" stroke-linecap="round"/>
+  <path d="M700 1085 Q765 1225 722 1302" fill="none" stroke="${shirt}" stroke-width="92" stroke-linecap="round"/>
+  <path d="M722 1295 Q695 1238 628 1188" fill="none" stroke="${SKIN}" stroke-width="58" stroke-linecap="round"/>
+  <g transform="rotate(-14 605 1135)"><rect x="560" y="1050" width="92" height="168" rx="16" fill="#111827"/>
+    <rect class="screen" x="567" y="1060" width="78" height="148" rx="10" fill="#C6F432"/></g>
+  <ellipse cx="622" cy="1196" rx="40" ry="30" fill="${SKIN}"/>
+  <circle class="glow" cx="600" cy="1060" r="260" fill="url(#glow)" opacity="0"/>
+  </g>`;
+}
+const DEFS = `<defs><radialGradient id="glow"><stop offset="0" stop-color="#C6F432" stop-opacity=".35"/><stop offset="1" stop-color="#C6F432" stop-opacity="0"/></radialGradient>
+  <linearGradient id="sunrise" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFC48A"/><stop offset="1" stop-color="#FFE7B3"/></linearGradient>
+  <linearGradient id="day" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8FD0FF"/><stop offset="1" stop-color="#D9F0FF"/></linearGradient>
+  <linearGradient id="night" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0D1530"/><stop offset="1" stop-color="#26345F"/></linearGradient>
+  <radialGradient id="lamp"><stop offset="0" stop-color="#FFD58A" stop-opacity=".55"/><stop offset="1" stop-color="#FFD58A" stop-opacity="0"/></radialGradient></defs>`;
+
+const scenes = [
+  { // Manhã: acordando na cama
+    bg: `<rect width="1080" height="1920" fill="#FBE3CF"/>
+      <rect x="70" y="230" width="330" height="430" rx="18" fill="url(#sunrise)" stroke="#FFFFFF" stroke-width="18"/>
+      <circle cx="235" cy="560" r="70" fill="#FF9F5A"/><line x1="235" y1="240" x2="235" y2="650" stroke="#fff" stroke-width="12"/>
+      <path d="M50 210 L130 210 L110 700 L40 700 Z" fill="#F7A8A0"/><path d="M420 210 L340 210 L360 700 L430 700 Z" fill="#F7A8A0"/>
+      <rect x="230" y="560" width="620" height="560" rx="50" fill="#C98B5E"/>
+      <rect x="290" y="660" width="500" height="300" rx="140" fill="#FFFFFF"/>
+      <rect x="840" y="1130" width="220" height="330" rx="18" fill="#B07A52"/>
+      ${clockSvg(950, 1060, 62, 7, 0, '#FFFFFF', '#3A3A48')}`,
+    fg: `<path d="M0 1330 C200 1285 380 1365 540 1322 C710 1280 880 1352 1080 1305 L1080 1920 L0 1920 Z" fill="#9CC3FF"/>
+      <path d="M0 1450 C260 1410 520 1480 760 1440 C900 1418 1000 1440 1080 1430" fill="none" stroke="#7FAEF5" stroke-width="16"/>`,
+    shirt: '#F7A8C8',
+  },
+  { // Almoço
+    bg: `<rect width="1080" height="1920" fill="#E3F1E8"/>
+      <rect x="640" y="220" width="370" height="440" rx="18" fill="url(#day)" stroke="#FFFFFF" stroke-width="18"/>
+      <ellipse cx="760" cy="380" rx="70" ry="34" fill="#fff"/><ellipse cx="820" cy="360" rx="55" ry="32" fill="#fff"/>
+      <line x1="825" y1="230" x2="825" y2="650" stroke="#fff" stroke-width="12"/>
+      ${clockSvg(200, 380, 90, 12, 30, '#FFFFFF', '#2F4B3D')}
+      <rect x="0" y="1180" width="1080" height="40" fill="#CFE5D7"/>`,
+    fg: `<rect x="0" y="1340" width="1080" height="580" fill="#E0A96D"/><rect x="0" y="1340" width="1080" height="26" fill="#C98F55"/>
+      <ellipse cx="350" cy="1470" rx="190" ry="70" fill="#FFFFFF"/><ellipse cx="350" cy="1462" rx="150" ry="50" fill="#F4F4F4"/>
+      <ellipse cx="300" cy="1455" rx="62" ry="26" fill="#FFFFFF" stroke="#EDEDED" stroke-width="4"/><ellipse cx="392" cy="1458" rx="58" ry="25" fill="#5B3A29"/>
+      <circle cx="345" cy="1432" r="20" fill="#7CC36E"/><circle cx="372" cy="1428" r="15" fill="#E85D4F"/>
+      <rect x="760" y="1300" width="90" height="170" rx="16" fill="rgba(255,255,255,.6)" stroke="#fff" stroke-width="6"/><rect x="768" y="1350" width="74" height="112" rx="10" fill="#FFB24A"/>`,
+    shirt: '#6FA8F5',
+  },
+  { // Café da tarde
+    bg: `<rect width="1080" height="1920" fill="#EAD8C3"/>
+      <rect x="90" y="300" width="900" height="26" rx="10" fill="#9B6A47"/>
+      <rect x="140" y="200" width="80" height="100" rx="14" fill="#D9C2A5"/><rect x="250" y="220" width="70" height="80" rx="14" fill="#C5A27F"/>
+      <circle cx="840" cy="250" r="44" fill="#7EAD6B"/><rect x="815" y="250" width="50" height="50" rx="8" fill="#C0784C"/>
+      ${clockSvg(540, 480, 80, 15, 30, '#FFF8EE', '#5A3E2B')}
+      <path d="M180 0 L180 560" stroke="#5A3E2B" stroke-width="6"/><path d="M120 560 L240 560 L215 610 L145 610 Z" fill="#2F4858"/>
+      <circle cx="180" cy="640" r="120" fill="url(#lamp)"/>`,
+    fg: `<rect x="0" y="1340" width="1080" height="580" fill="#8C5A3C"/><rect x="0" y="1340" width="1080" height="26" fill="#6E4329"/>
+      <ellipse cx="300" cy="1480" rx="120" ry="34" fill="#FFFFFF"/>
+      <path d="M215 1360 L385 1360 L370 1470 C365 1490 235 1490 230 1470 Z" fill="#FFFFFF"/><path d="M380 1385 C440 1385 440 1450 372 1450" fill="none" stroke="#FFFFFF" stroke-width="18"/>
+      <ellipse cx="300" cy="1362" rx="85" ry="16" fill="#6B3E22"/>
+      <path class="steam s1" d="M270 1330 C250 1290 290 1270 270 1230" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" opacity=".7"/>
+      <path class="steam s2" d="M320 1330 C300 1290 340 1270 320 1230" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" opacity=".7"/>
+      <path d="M720 1450 C700 1380 880 1380 860 1450 C840 1480 740 1480 720 1450 Z" fill="#E8A44A"/><path d="M745 1430 C790 1400 820 1400 840 1430" fill="none" stroke="#C47F2C" stroke-width="8"/>`,
+    shirt: '#F2A65A',
+  },
+  { // Noite no sofá
+    bg: `<rect width="1080" height="1920" fill="#1F2B4D"/>
+      <rect x="620" y="220" width="380" height="460" rx="18" fill="url(#night)" stroke="#33426E" stroke-width="18"/>
+      <circle cx="880" cy="340" r="54" fill="#FFF3C4"/><circle cx="905" cy="325" r="50" fill="#0F1934"/>
+      <circle cx="700" cy="300" r="5" fill="#fff"/><circle cx="760" cy="460" r="4" fill="#fff"/><circle cx="950" cy="520" r="5" fill="#fff"/><circle cx="680" cy="580" r="3" fill="#fff"/>
+      <circle cx="150" cy="560" r="330" fill="url(#lamp)"/>
+      <path d="M95 450 L205 450 L235 560 L65 560 Z" fill="#FFD58A"/><rect x="143" y="560" width="14" height="560" fill="#C9A86A"/>
+      <rect x="150" y="960" width="780" height="460" rx="90" fill="#4A5C8C"/>`,
+    fg: `<path d="M0 1350 C220 1310 420 1380 600 1340 C780 1300 920 1360 1080 1330 L1080 1920 L0 1920 Z" fill="#6E83B8"/>
+      <path d="M0 1500 C300 1460 600 1530 1080 1480" fill="none" stroke="#8496C6" stroke-width="14"/>`,
+    shirt: '#9B8CF2',
+  },
+];
+
+const els = scenes.map((s, i) => {
+  const d = el('div', '', '', document.body); d.className = 'scene';
+  d.innerHTML = `<svg viewBox="0 0 1080 1920" width="1080" height="1920">${DEFS}${s.bg}${ana(s.shirt, i)}${s.fg}</svg>`;
+  return d;
+});
+const dim = el('div', 'position:absolute;inset:0;background:#0B1422;opacity:0');
+
+// Close no celular, na mão dela
+const ph = phone(250, 560, 580, 1230);
+ph.body.style.opacity = 0;
+const ls = lockScreen(ph.screen, ph.w, ph.h);
+const hand = el('div', 'position:absolute;inset:0;opacity:0;pointer-events:none');
+hand.innerHTML = `<svg viewBox="0 0 1080 1920" width="1080" height="1920" style="position:absolute;inset:0">
+  <path d="M330 1920 C330 1830 380 1772 470 1764 L690 1764 C770 1772 812 1830 818 1920 Z" fill="${SKIN}"/>
+  <path d="M345 1830 C300 1790 282 1720 300 1672 C316 1640 352 1650 358 1690 L378 1790 Z" fill="${SKIN}" stroke="${SKIN_D}" stroke-width="4"/>
+  ${[1520, 1584, 1648, 1710].map((y) => `<rect x="806" y="${y}" width="72" height="52" rx="26" fill="${SKIN}" stroke="${SKIN_D}" stroke-width="4"/>`).join('')}
+  </svg>`;
+
+const timeChip = el('div', `position:absolute;left:70px;top:150px;display:flex;align-items:center;gap:22px;opacity:0;font-family:Inter`);
+const tcTime = el('div', `padding:14px 28px;border-radius:999px;background:#C6F432;color:#0F1B2D;font:900 56px Inter;letter-spacing:-1px`, '', timeChip);
+const tcLabel = el('div', `font:800 52px Inter;color:#0F1B2D;text-shadow:0 2px 10px rgba(255,255,255,.6)`, '', timeChip);
+
+const plan = [
+  { s: 0, wide: [0.0, 2.7], close: [2.7, 5.6], time: '07:00', label: 'Acordando', labelColor: '#0F1B2D',
+    capW: 'A Ana não tem tempo pra *estudar inglês*.', capC: 'Mas toda vez que ela *pega o celular*…',
+    word: { w: 'morning', pt: 'manhã', s: 'Good morning! Is the coffee ready?', t: 'Bom dia! O café está pronto?', e: '🌄' }, n: 1, clk: '07:02' },
+  { s: 1, wide: [5.6, 7.8], close: [7.8, 10.6], time: '12:30', label: 'No almoço', labelColor: '#0F1B2D',
+    capW: 'Na pausa do almoço, ela olha o celular…', capC: '…aparece uma *palavra nova*, com frase e tradução.',
+    word: { w: 'lunch', pt: 'almoço', s: "Let's have lunch together after the meeting.", t: 'Vamos almoçar juntos depois da reunião.', e: '🥪' }, n: 4, clk: '12:31' },
+  { s: 2, wide: [10.6, 12.8], close: [12.8, 15.6], time: '15:30', label: 'No café', labelColor: '#0F1B2D',
+    capW: 'No café da tarde, *mais uma*…', capC: 'Ela aprende *sem nem perceber*.',
+    word: { w: 'break', pt: 'quebrar; intervalo', s: "Let's take a ten-minute break.", t: 'Vamos fazer um intervalo de dez minutos.', e: '☕' }, n: 7, clk: '15:32' },
+  { s: 3, wide: [15.6, 17.8], close: [17.8, 20.6], time: '21:00', label: 'No sofá', labelColor: '#FFFFFF',
+    capW: 'E à noite, no sofá, *a última do dia*.', capC: '*10 palavras por dia.* Sem abrir app nenhum.',
+    word: { w: 'tired', pt: 'cansado', s: "I'm too tired to go out tonight.", t: 'Estou cansado demais para sair hoje à noite.', e: '😴' }, n: 10, clk: '21:03' },
+];
+plan.forEach((p) => {
+  p.cw = caption(p.capW, 290); p.cc = caption(p.capC, 200);
+  p.cw.style.cssText += ';background:rgba(15,27,45,.84);padding:22px 30px;border-radius:30px;font-size:64px;text-shadow:none';
+});
+
+const card = endCard(document.body);
+const chips = el('div', `display:flex;gap:18px;flex-wrap:wrap;justify-content:center;max-width:900px`, '', card.root);
+['Grátis', 'Sem anúncios', 'Sem cobrança'].forEach((c) => el('div', `padding:16px 28px;border-radius:999px;border:3px solid #C6F432;color:#C6F432;font:800 40px Inter`, '✓ ' + c, chips));
+card.root.insertBefore(chips, card.cta);
+
+let lastWord = -1;
+function render(t) {
+  let anyClose = 0;
+  plan.forEach((p, i) => {
+    const sc = els[p.s];
+    const [a, b] = p.wide, [c, d] = p.close;
+    // cena aparece no plano aberto e continua (desfocada) atrás do close
+    const o = Math.min(prog(t, a, a + 0.3), 1 - prog(t, d - 0.3, d));
+    sc.style.opacity = i === 0 ? Math.min(1, 1 - prog(t, d - 0.3, d)) : o;
+    const blur = 14 * prog(t, c - 0.1, c + 0.25);
+    sc.style.filter = blur > 0.2 ? `blur(${blur}px)` : 'none';
+    sc.style.transform = `scale(${1 + 0.06 * prog(t, a, d)})`;
+    // detalhes vivos: olhos, brilho do celular, vapor
+    const svg = sc.querySelector('svg');
+    const sleepy = p.s === 0 && t < a + 0.9;
+    const blink = Math.abs(((t - a) % 2.3) - 1.6) < 0.06;
+    svg.querySelector('.eyesOpen').style.display = sleepy || blink ? 'none' : '';
+    svg.querySelector('.eyesClosed').style.display = sleepy || blink ? '' : 'none';
+    svg.querySelector('.glow').setAttribute('opacity', (0.6 + 0.4 * Math.sin(t * 5)) * prog(t, a + (p.s === 0 ? 0.9 : 0.2), a + 1.2));
+    svg.querySelector('.screen').setAttribute('opacity', 0.55 + 0.45 * prog(t, a + (p.s === 0 ? 0.9 : 0.2), a + 1.2));
+    svg.querySelectorAll('.steam').forEach((st, k) => st.setAttribute('transform', `translate(0 ${-((t * 40 + k * 20) % 40)})`));
+    svg.querySelector(`#ana-${p.s}`).setAttribute('transform', `translate(0 ${Math.sin(t * 2.2) * 6})`);
+
+    popCaption(p.cw, t, a + 0.1, b);
+    popCaption(p.cc, t, c, d);
+    if (t >= a && t < b) {
+      timeChip.style.opacity = Math.min(prog(t, a + 0.1, a + 0.35), 1 - prog(t, b - 0.2, b));
+      timeChip.style.transform = `translateX(${(1 - out(prog(t, a + 0.1, a + 0.45))) * -80}px)`;
+      tcTime.textContent = p.time; tcLabel.textContent = p.label; tcLabel.style.color = p.labelColor;
+      tcLabel.style.textShadow = p.labelColor === '#FFFFFF' ? '0 2px 10px rgba(0,0,0,.5)' : '0 2px 10px rgba(255,255,255,.6)';
+    }
+    if (t >= c - 0.1 && t < d) {
+      anyClose = Math.min(prog(t, c - 0.1, c + 0.25), 1 - prog(t, d - 0.3, d));
+      if (lastWord !== i) { ls.set(p.word, p.n, p.n, p.n - 1); ls.clock.textContent = p.clk; lastWord = i; }
+    }
+  });
+  if (t < 0.1 || plan.every((p) => t < p.wide[0] || t >= p.wide[1])) timeChip.style.opacity = 0;
+  dim.style.opacity = anyClose * 0.45;
+  ph.body.style.opacity = anyClose; hand.style.opacity = anyClose;
+  const rise = (1 - out(anyClose)) * 160;
+  ph.body.style.transform = `translateY(${rise}px) rotate(${-2 + 2 * anyClose}deg)`;
+  hand.style.transform = `translateY(${rise}px)`;
+
+  playEnd(card, t, 20.6);
+  chips.style.opacity = prog(t, 21.0, 21.4);
+}
+render(0);
+</script>
+</body></html>

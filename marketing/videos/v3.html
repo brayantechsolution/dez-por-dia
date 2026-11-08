@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>Vídeo 3 — Sem cobrança</title>
+<style>html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#0B1422}</style>
+<script src="lib.js"></script></head>
+<body>
+<script>
+const DURATION = 15;
+const ph = phone(210, 610, 660, 1400);
+const S = ph.screen, sw = ph.w, sh = ph.h, u = sw / 390;
+
+// Papel de parede "da pessoa" (pôr do sol com montanhas)
+function personalWallpaper(parent) {
+  const r = el('div', `position:absolute;inset:0;background:linear-gradient(180deg,#F6B26B 0%,#E9787A 38%,#7B5EA7 70%,#3B3F7A 100%)`, '', parent);
+  el('div', `position:absolute;left:50%;top:${sh * 0.47}px;width:${140 * u}px;height:${140 * u}px;margin-left:-${70 * u}px;border-radius:50%;background:#FFE3A3;opacity:.9`, '', r);
+  el('div', `position:absolute;left:0;right:0;bottom:0;height:${sh * 0.45}px;background:#4A3F78;clip-path:polygon(0 35%,22% 10%,42% 38%,63% 6%,85% 30%,100% 18%,100% 100%,0 100%)`, '', r);
+  el('div', `position:absolute;left:0;right:0;bottom:0;height:${sh * 0.3}px;background:#2C2A55;clip-path:polygon(0 30%,18% 52%,40% 20%,62% 48%,82% 22%,100% 40%,100% 100%,0 100%)`, '', r);
+  return r;
+}
+
+// Cena A: tela de bloqueio da pessoa com avisos chatos
+const viewLock = el('div', 'position:absolute;inset:0', '', S);
+personalWallpaper(viewLock);
+el('div', `position:absolute;top:${70 * u}px;width:100%;text-align:center;font:400 ${15 * u}px Inter;color:#fff`, 'Sex, 6 de novembro', viewLock);
+const clockA = el('div', `position:absolute;top:${88 * u}px;width:100%;text-align:center;font:600 ${80 * u}px/1 Inter;color:#fff;letter-spacing:-${2 * u}px`, '21:07', viewLock);
+const notes = [['📚', 'Você não estudou hoje 😢'], ['🔥', 'Sua sequência vai acabar!'], ['⏰', 'Volte a praticar agora!']].map((n, i) => {
+  const c = el('div', `position:absolute;left:${16 * u}px;right:${16 * u}px;top:${(230 + i * 78) * u}px;height:${66 * u}px;border-radius:${18 * u}px;
+    background:rgba(255,255,255,.88);display:flex;align-items:center;gap:${12 * u}px;padding:0 ${14 * u}px;box-sizing:border-box;font-family:Inter;color:#1B1F2A;opacity:0`, '', viewLock);
+  el('div', `width:${38 * u}px;height:${38 * u}px;border-radius:${10 * u}px;background:#E9ECF2;display:flex;align-items:center;justify-content:center;font-size:${22 * u}px`, n[0], c);
+  const col = el('div', 'flex:1', '', c);
+  el('div', `font:600 ${12 * u}px Inter;color:#6B7280`, 'App de idiomas · agora', col);
+  el('div', `font:700 ${15 * u}px Inter`, n[1], col);
+  return c;
+});
+const later = el('div', `position:absolute;left:${30 * u}px;right:${30 * u}px;top:${240 * u}px;padding:${14 * u}px ${18 * u}px;border-radius:${18 * u}px;
+  background:rgba(15,27,45,.85);color:#fff;text-align:center;font:700 ${16 * u}px/1.3 Inter;opacity:0`, 'Daqui a pouco vem a próxima palavra 😉', viewLock);
+const stamp = el('div', `position:absolute;left:0;right:0;top:${330 * u}px;text-align:center;font:900 ${150 * u}px/1 Inter;color:#FF4D4D;opacity:0`, '✕', viewLock);
+
+// Cena B: tela de bloqueio com a palavra do app
+const viewWord = el('div', 'position:absolute;inset:0;opacity:0', '', S);
+const ls = lockScreen(viewWord, sw, sh);
+ls.set(W.borrow, 4, 4, 3);
+ls.clock.textContent = '21:08';
+
+// Cena C: tela inicial com o widget
+const viewHome = el('div', 'position:absolute;inset:0;opacity:0', '', S);
+personalWallpaper(viewHome);
+const grid = el('div', `position:absolute;left:${24 * u}px;right:${24 * u}px;top:${450 * u}px;display:grid;grid-template-columns:repeat(4,1fr);gap:${22 * u}px ${18 * u}px`, '', viewHome);
+['📞', '💬', '📷', '🗺️', '🎵', '📧', '⚙️', '🛒'].forEach((ic) => el('div', `height:${62 * u}px;border-radius:${16 * u}px;background:rgba(255,255,255,.28);display:flex;align-items:center;justify-content:center;font-size:${30 * u}px`, ic, grid));
+const wd = el('div', `position:absolute;left:${18 * u}px;right:${18 * u}px;top:${70 * u}px;background:#0F1B2D;border-radius:${24 * u}px;padding:${16 * u}px;box-sizing:border-box;font-family:Inter;color:#fff`, '', viewHome);
+const wTop = el('div', 'display:flex;align-items:center;gap:8px', '', wd);
+const wCol = el('div', 'flex:1', '', wTop);
+const wChip = el('div', `display:inline-block;padding:${3 * u}px ${10 * u}px;border-radius:999px;background:#C6F432;color:#0F1B2D;font:700 ${11 * u}px Inter`, 'PALAVRA 4 DE 10', wCol);
+const wWord = el('div', `margin-top:${6 * u}px;font:800 ${32 * u}px/1.05 Inter;color:#C6F432`, '', wCol);
+const wPt = el('div', `font:400 ${14 * u}px Inter;color:#A9B4C4`, '', wCol);
+const wEmoji = el('div', `font-size:${44 * u}px`, '', wTop);
+const wSen = el('div', `margin-top:${10 * u}px;font:700 ${15 * u}px/1.3 Inter`, '', wd);
+const wSenPt = el('div', `font:400 ${13 * u}px/1.3 Inter;color:#A9B4C4`, '', wd);
+const btns = el('div', `display:flex;gap:${10 * u}px;margin-top:${12 * u}px`, '', wd);
+const bNext = el('div', `flex:1;height:${44 * u}px;border-radius:${14 * u}px;background:#C6F432;color:#0F1B2D;display:flex;align-items:center;justify-content:center;font:700 ${15 * u}px Inter`, 'Próxima →', btns);
+const bMine = el('div', `flex:1;height:${44 * u}px;border-radius:${14 * u}px;background:#22324A;border:1px solid #3A4D68;box-sizing:border-box;color:#fff;display:flex;align-items:center;justify-content:center;font:700 ${15 * u}px Inter`, 'Meu fundo', btns);
+const wStatus = el('div', `margin-top:${8 * u}px;text-align:center;font:400 ${11 * u}px Inter;color:#A9B4C4`, 'Na sua tela de bloqueio agora', wd);
+function setWidget(w, n) { wWord.textContent = w.w; wPt.textContent = w.pt; wEmoji.textContent = w.e; wSen.textContent = w.s; wSenPt.textContent = w.t; wChip.textContent = `PALAVRA ${n} DE 10`; }
+setWidget(W.borrow, 4);
+
+// Dedo (toque)
+const tap = el('div', `position:absolute;width:${90 * u}px;height:${90 * u}px;border-radius:50%;background:rgba(255,255,255,.55);border:4px solid #fff;box-sizing:border-box;opacity:0;z-index:60`, '', S);
+function placeTap(target, t, a) {
+  const r = target.getBoundingClientRect(), s = S.getBoundingClientRect();
+  const k = s.width / sw; // escala do celular
+  const x = (r.left - s.left) / k + r.width / k / 2, y = (r.top - s.top) / k + r.height / k / 2;
+  const p = prog(t, a - 0.35, a), q = prog(t, a, a + 0.35);
+  tap.style.left = (x - 45 * u) + 'px'; tap.style.top = (y - 45 * u) + 'px';
+  tap.style.opacity = Math.min(p, 1 - q);
+  tap.style.transform = `scale(${1.3 - 0.4 * p + 0.5 * q})`;
+}
+
+const c1 = caption('POV: você largou o app de inglês na *primeira semana* 😅', 200);
+const c2 = caption('Aqui *não tem cobrança*. A palavra só aparece na sua tela.', 200);
+const c3 = caption('Quer a próxima palavra? *Um toque.*', 230);
+const c4 = caption('Quer seu papel de parede de volta? *Também é um toque.*', 200);
+const card = endCard(document.body);
+
+let widgetState = -1;
+function render(t) {
+  popCaption(c1, t, 0.05, 2.6);
+  popCaption(c2, t, 2.6, 5.3);
+  popCaption(c3, t, 5.3, 8.8);
+  popCaption(c4, t, 8.8, 12.3);
+  ph.body.style.transform = `translateY(${(1 - out(prog(t, 0, 0.5))) * 220}px)`;
+
+  // A: avisos chatos chegando e sendo descartados
+  notes.forEach((n, i) => {
+    const a = 0.35 + i * 0.45;
+    const gone = out(prog(t, 3.0 + i * 0.08, 3.4 + i * 0.08));
+    n.style.opacity = prog(t, a, a + 0.2) * (1 - gone);
+    n.style.transform = `translateY(${(1 - out(prog(t, a, a + 0.3))) * -40}px) translateX(${gone * 500}px)`;
+  });
+  stamp.style.opacity = win(t, 2.75, 3.25, 0.12);
+  stamp.style.transform = `scale(${0.6 + 0.4 * back(prog(t, 2.75, 3.0))})`;
+
+  // B: vira a tela da palavra
+  const wIn = prog(t, 3.5, 3.9), wOut = prog(t, 5.25, 5.5);
+  viewWord.style.opacity = wIn * (1 - wOut);
+  // C: tela inicial com widget
+  const hIn = prog(t, 5.25, 5.55);
+  const backToMine = prog(t, 10.2, 10.6);
+  viewHome.style.opacity = hIn;
+  viewLock.style.opacity = t < 5 ? 1 : (t > 10 ? backToMine : 0);
+  if (t > 10) { viewHome.style.opacity = 1 - backToMine; clockA.textContent = '21:09'; notes.forEach((n) => (n.style.opacity = 0)); }
+  else clockA.textContent = '21:07';
+  show(later, prog(t, 10.6, 10.9), (1 - out(prog(t, 10.6, 10.95))) * 30);
+
+  // toque em "Próxima" (6.9s) e em "Meu fundo" (9.8s)
+  const state = t < 6.95 ? 0 : 1;
+  if (state !== widgetState) { setWidget(state ? W.reliable : W.borrow, state ? 5 : 4); widgetState = state; }
+  const pop = prog(t, 6.95, 7.2);
+  wd.style.transform = `scale(${t > 6.95 && t < 7.3 ? 1 + 0.03 * Math.sin(pop * Math.PI) : 1})`;
+  wStatus.textContent = t > 9.85 ? 'Seu papel de parede está de volta' : 'Na sua tela de bloqueio agora';
+  if (t > 6.3 && t < 7.5) placeTap(bNext, t, 6.9);
+  else if (t > 9.2 && t < 10.3) placeTap(bMine, t, 9.8);
+  else tap.style.opacity = 0;
+  bNext.style.filter = t > 6.85 && t < 7.05 ? 'brightness(.8)' : 'none';
+  bMine.style.filter = t > 9.75 && t < 9.95 ? 'brightness(1.4)' : 'none';
+
+  playEnd(card, t, 12.3);
+}
+render(0);
+</script>
+</body></html>
