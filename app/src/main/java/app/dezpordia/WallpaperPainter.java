@@ -33,7 +33,7 @@ public final class WallpaperPainter {
 
     private WallpaperPainter() {}
 
-    public static Bitmap paint(Context context, Words.Word word, int number, int seen) {
+    public static Bitmap paint(Context context, Words.Word word, int number, int seen, boolean review) {
         int[] size = screenSize(context);
         int width = size[0];
         int height = size[1];
@@ -52,7 +52,7 @@ public final class WallpaperPainter {
         // Selo "PALAVRA 2 DE 10"
         TextPaint chipText = paint(12 * u, ground, bold);
         chipText.setLetterSpacing(0.08f);
-        String chip = "PALAVRA " + number + " DE " + Words.PER_DAY;
+        String chip = (review ? "REVISÃO " : "PALAVRA ") + number + " DE " + Words.PER_DAY;
         float chipH = 28 * u;
         float chipW = chipText.measureText(chip) + 24 * u;
 

@@ -39,13 +39,15 @@ public class WidgetProvider extends AppWidgetProvider {
         int pointer = sameDay ? p.getInt(Prefs.POINTER, 0) : 0;
         int index = pointer > 0 ? (pointer - 1) % Words.PER_DAY : 0;
 
+        // a palavra que está na tela agora foi a de número (pointer - 1) do dia
+        int round = pointer > 0 ? Words.roundOf(pointer - 1) : 0;
         List<Words.Word> words = Words.forDay(context, Prefs.studyDayIndex(p, today));
-        Words.Word w = words.get(index);
+        Words.Word w = words.get(index).inRound(round);
         boolean onLock = p.getBoolean(Prefs.LOCK_SET, false);
 
         RemoteViews v = new RemoteViews(context.getPackageName(), R.layout.widget);
         v.setTextViewText(R.id.w_chip, pointer > 0
-                ? "PALAVRA " + (index + 1) + " DE " + Words.PER_DAY
+                ? (round > 0 ? "REVISÃO " : "PALAVRA ") + (index + 1) + " DE " + Words.PER_DAY
                 : "TOQUE EM PRÓXIMA PARA COMEÇAR");
         v.setTextViewText(R.id.w_emoji, w.emoji);
         v.setViewVisibility(R.id.w_emoji, w.emoji.isEmpty() ? View.GONE : View.VISIBLE);

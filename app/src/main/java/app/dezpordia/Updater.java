@@ -44,8 +44,9 @@ public final class Updater {
 
         List<Words.Word> words = Words.forDay(context, Prefs.studyDayIndex(p, today));
         try {
-            Words.Word word = words.get(index);
-            Bitmap bitmap = WallpaperPainter.paint(context, word, index + 1, seen);
+            int round = Words.roundOf(pointer);
+            Words.Word word = words.get(index).inRound(round);
+            Bitmap bitmap = WallpaperPainter.paint(context, word, index + 1, seen, round > 0);
             WallpaperManager.getInstance(context)
                     .setBitmap(bitmap, null, true, WallpaperManager.FLAG_LOCK);
             bitmap.recycle();

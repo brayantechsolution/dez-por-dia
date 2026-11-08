@@ -24,15 +24,35 @@ public final class Words {
         public final String sentencePt;
         public final String review;
         public final String emoji;
+        /** Segunda frase, usada quando as 10 palavras do dia começam a repetir. */
+        public final String sentenceEn2;
+        public final String sentencePt2;
 
-        Word(String en, String pt, String sentenceEn, String sentencePt, String review, String emoji) {
+        Word(String en, String pt, String sentenceEn, String sentencePt, String review, String emoji,
+             String sentenceEn2, String sentencePt2) {
             this.en = en;
             this.pt = pt;
             this.sentenceEn = sentenceEn;
             this.sentencePt = sentencePt;
             this.review = review;
             this.emoji = emoji;
+            this.sentenceEn2 = sentenceEn2;
+            this.sentencePt2 = sentencePt2;
         }
+
+        /**
+         * A palavra na volta {@code round} do dia: 0 = frase principal,
+         * 1 = segunda frase, 2 = principal de novo, e assim por diante.
+         */
+        public Word inRound(int round) {
+            if (round % 2 == 0 || sentenceEn2.isEmpty()) return this;
+            return new Word(en, pt, sentenceEn2, sentencePt2, "", emoji, sentenceEn, sentencePt);
+        }
+    }
+
+    /** Volta do dia a partir de quantas palavras já foram mostradas antes desta. */
+    public static int roundOf(int shownBefore) {
+        return Math.max(0, shownBefore) / PER_DAY;
     }
 
     private static List<Word> cache;
@@ -56,10 +76,13 @@ public final class Words {
                         o.getString("s"),
                         o.getString("t"),
                         o.optString("r", ""),
-                        o.optString("e", "")));
+                        o.optString("e", ""),
+                        o.optString("s2", ""),
+                        o.optString("t2", "")));
             }
         } catch (Exception e) {
-            list.add(new Word("hello", "olá", "Hello, how are you?", "Olá, tudo bem?", "", "👋"));
+            list.add(new Word("hello", "olá", "Hello, how are you?", "Olá, tudo bem?", "", "👋",
+                    "Say hello to your friends.", "Diga oi para os seus amigos."));
         }
         cache = Collections.unmodifiableList(list);
         return cache;
