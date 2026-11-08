@@ -13,7 +13,7 @@ import android.widget.RemoteViews;
 import java.time.LocalDate;
 import java.util.List;
 
-/** Widget da tela inicial: palavra atual + botões "Próxima" e "Meu fundo". */
+/** Widget da tela inicial: palavra atual, botões de áudio e botões "Próxima" e "Meu fundo". */
 public class WidgetProvider extends AppWidgetProvider {
 
     @Override
@@ -31,18 +31,33 @@ public class WidgetProvider extends AppWidgetProvider {
         for (int id : ids) manager.updateAppWidget(id, views);
     }
 
+    /** Quantas palavras de hoje já foram mostradas (0 = ainda nenhuma). */
+    private static int pointer(SharedPreferences p, LocalDate today) {
+        boolean sameDay = p.getLong(Prefs.LAST_DAY, -1) == today.toEpochDay();
+        return sameDay ? p.getInt(Prefs.POINTER, 0) : 0;
+    }
+
+    /** A palavra que está no widget agora, já com a frase da rodada certa. */
+    static Words.Word current(Context context) {
+        SharedPreferences p = Prefs.get(context);
+        Prefs.ensureStart(p);
+        LocalDate today = LocalDate.now();
+        int pointer = pointer(p, today);
+        int index = pointer > 0 ? (pointer - 1) % Words.PER_DAY : 0;
+        // a palavra que está na tela agora foi a de número (pointer - 1) do dia
+        int round = pointer > 0 ? Words.roundOf(pointer - 1) : 0;
+        List<Words.Word> words = Words.forDay(context, Prefs.studyDayIndex(p, today));
+        return words.get(index).inRound(round);
+    }
+
     private static RemoteViews build(Context context) {
         SharedPreferences p = Prefs.get(context);
         Prefs.ensureStart(p);
         LocalDate today = LocalDate.now();
-        boolean sameDay = p.getLong(Prefs.LAST_DAY, -1) == today.toEpochDay();
-        int pointer = sameDay ? p.getInt(Prefs.POINTER, 0) : 0;
+        int pointer = pointer(p, today);
         int index = pointer > 0 ? (pointer - 1) % Words.PER_DAY : 0;
-
-        // a palavra que está na tela agora foi a de número (pointer - 1) do dia
         int round = pointer > 0 ? Words.roundOf(pointer - 1) : 0;
-        List<Words.Word> words = Words.forDay(context, Prefs.studyDayIndex(p, today));
-        Words.Word w = words.get(index).inRound(round);
+        Words.Word w = current(context);
         boolean onLock = p.getBoolean(Prefs.LOCK_SET, false);
 
         RemoteViews v = new RemoteViews(context.getPackageName(), R.layout.widget);
@@ -61,6 +76,8 @@ public class WidgetProvider extends AppWidgetProvider {
 
         v.setOnClickPendingIntent(R.id.w_next, action(context, ActionReceiver.ACTION_NEXT, 20));
         v.setOnClickPendingIntent(R.id.w_mine, action(context, ActionReceiver.ACTION_SEEN, 21));
+        v.setOnClickPendingIntent(R.id.w_say_word, action(context, ActionReceiver.ACTION_SAY_WORD, 23));
+        v.setOnClickPendingIntent(R.id.w_say_sentence, action(context, ActionReceiver.ACTION_SAY_SENTENCE, 24));
 
         Intent open = new Intent(context, MainActivity.class)
                 .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
