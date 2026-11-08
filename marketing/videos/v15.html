@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>Vídeo 15 — Como funciona</title>
+<style>html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#0B1422}</style>
+<script src="lib.js"></script></head>
+<body>
+<script>
+const DURATION = 24;
+const D1 = [
+  { w: 'meeting', pt: 'reunião', s: 'The meeting starts at nine.', t: 'A reunião começa às nove.', e: '👥' },
+  { w: 'available', pt: 'disponível', s: 'Is the doctor available this afternoon?', t: 'O médico está disponível hoje à tarde?', e: '✅' },
+  { w: 'schedule', pt: 'agenda, cronograma', s: 'Can we check the schedule before the meeting?', t: 'Podemos ver a agenda antes da reunião?', e: '🗒️' },
+  { w: 'borrow', pt: 'pegar emprestado', s: 'Can I borrow your pen for a minute?', t: 'Posso pegar sua caneta emprestada por um minuto?', e: '🤝' },
+  { w: 'reliable', pt: 'confiável', s: 'My old car is slow but reliable.', t: 'Meu carro velho é lento, mas confiável.', e: '🛡️' },
+  { w: 'deliver', pt: 'entregar', s: 'They deliver pizza until midnight.', t: 'Eles entregam pizza até meia-noite.', e: '📦' },
+  { w: 'improve', pt: 'melhorar', s: 'I want to improve my English this year.', t: 'Quero melhorar meu inglês este ano.', e: '📈' },
+  { w: 'receipt', pt: 'recibo, comprovante', s: 'Can I have the receipt, please?', t: 'Pode me dar o comprovante, por favor?', e: '🧾' },
+  { w: 'appointment', pt: 'consulta, horário marcado', s: 'I have a dentist appointment on Friday.', t: 'Tenho consulta no dentista na sexta.', e: '🗓️' },
+  { w: 'figure out', pt: 'descobrir, entender', s: "I can't figure out how this works.", t: 'Não consigo entender como isso funciona.', e: '🧩' },
+];
+const NEIGHBOR = { w: 'neighbor', pt: 'vizinho', s: 'My neighbor can deliver the package for you.', t: 'Meu vizinho pode entregar o pacote para você.', e: '🏘️' };
+const LATE = { w: 'late', pt: 'atrasado, tarde', s: "Don't be late for the meeting.", t: 'Não se atrase para a reunião.', s2: "Sorry, I'm late.", t2: 'Desculpa, estou atrasado.', e: '⌚' };
+
+const ph = phone(240, 560, 600, 1272);
+const ls = lockScreen(ph.screen, ph.w, ph.h);
+const u = ls.u;
+
+// Notificação silenciosa do app com os botões (como no Android)
+const notif = el('div', `position:absolute;left:${12 * u}px;right:${12 * u}px;bottom:${14 * u}px;padding:${12 * u}px ${14 * u}px ${8 * u}px;
+  border-radius:${22 * u}px;background:rgba(232,236,242,.94);color:#0F1B2D;font-family:Inter;z-index:30;opacity:0`, '', ph.screen);
+const nh = el('div', `display:flex;align-items:center;gap:${8 * u}px;font:500 ${11 * u}px Inter;color:#5A6270`, '', notif);
+el('div', `width:${20 * u}px;height:${20 * u}px;border-radius:${6 * u}px;background:${C.lime};color:${C.navy};font:900 ${11 * u}px/${20 * u}px Inter;text-align:center`, '10', nh);
+el('span', '', '10 por Dia · agora', nh);
+const ntext = el('div', `margin-top:${6 * u}px;font:700 ${15 * u}px Inter`, '', notif);
+const nbtns = el('div', `display:flex;gap:${22 * u}px;margin-top:${6 * u}px;font:700 ${13 * u}px Inter;color:#3D5A00`, '', notif);
+const bNext = el('span', `padding:${6 * u}px ${10 * u}px;margin-left:-${10 * u}px;border-radius:${10 * u}px`, 'Próxima', nbtns);
+el('span', `padding:${6 * u}px 0`, 'Meu fundo', nbtns);
+// dedo tocando
+const tap = el('div', `position:absolute;width:${40 * u}px;height:${40 * u}px;border-radius:50%;background:rgba(15,27,45,.28);border:${3 * u}px solid rgba(255,255,255,.9);z-index:60;opacity:0;pointer-events:none`, '', ph.screen);
+
+// marcação em volta da linha "Revisão:"
+const ring = el('div', `position:absolute;border:7px solid ${C.lime};border-radius:26px;opacity:0;z-index:70;box-shadow:0 0 40px rgba(198,244,50,.45)`);
+const tag = el('div', `position:absolute;padding:12px 26px;border-radius:999px;background:${C.lime};color:${C.navy};font:800 40px Inter;z-index:71;opacity:0;white-space:nowrap`, 'deliver = palavra do dia 1 ↩');
+const ghost = el('div', `position:absolute;left:70px;right:70px;top:1590px;text-align:center;font:600 44px/1.3 Inter;color:${C.grey};opacity:0`, '');
+ghost.innerHTML = '<span style="text-decoration:line-through;text-decoration-thickness:4px">Don\'t be late for the meeting.</span><br><span style="color:#C6F432;font-weight:800">→ Sorry, I\'m late.</span>';
+
+const caps = [
+  [caption('Como funciona o app que te ensina *inglês* sem você abrir ele 👇', 170), 0.05, 3.0],
+  [caption('*1.* A palavra aparece na sua *tela de bloqueio*', 200), 3.0, 7.0],
+  [caption('*2.* Toque em *Próxima* ou espere: são *10 por dia*', 200), 7.0, 11.5],
+  [caption('*3.* No dia seguinte, as de ontem *voltam nas frases*', 200), 11.5, 16.5],
+  [caption('*4.* Viu as 10? Elas voltam com *outra frase*', 200), 16.5, 21.0],
+];
+const card = endCard(document.body);
+
+let key = '';
+function setLock(k, fn) { if (k !== key) { fn(); key = k; } }
+
+function render(t) {
+  for (const [c, a, b] of caps) popCaption(c, t, a, b);
+  ph.body.style.transformOrigin = '50% 30%';
+  ph.body.style.transform = `translateY(${(1 - out(prog(t, 0, 0.6))) * 260}px) scale(${1 + 0.025 * prog(t, 0.6, 21)})`;
+
+  // ---- telas ----
+  let pop = 1, popStart = 0;
+  if (t < 8.2) {
+    setLock('m', () => { ls.set(D1[0], 1, 1, 0); ls.clock.textContent = '08:42'; ls.date.textContent = 'Seg, 9 de novembro'; });
+    popStart = 3.0;
+  } else if (t < 11.5) {
+    // toque em Próxima às 8.2 e depois as palavras correm até a 10
+    const steps = [8.2, 9.35, 9.7, 10.0, 10.3, 10.55, 10.8, 11.0, 11.2];
+    let i = 0; for (let j = 0; j < steps.length; j++) if (t >= steps[j]) i = j;
+    const n = i + 2;
+    setLock('d1-' + n, () => { ls.set(D1[n - 1], n, n, n - 1); ls.clock.textContent = ['09:15', '10:42', '11:30', '12:42', '13:20', '14:42', '15:30', '16:42', '18:10'][i]; });
+    popStart = steps[i];
+  } else if (t < 16.5) {
+    setLock('nb', () => { ls.set(NEIGHBOR, 5, 5, 4, { review: 'deliver' }); ls.clock.textContent = '13:05'; ls.date.textContent = 'Ter, 10 de novembro'; });
+    popStart = 11.5;
+  } else if (t < 18.4) {
+    setLock('late1', () => { ls.set(LATE, 7, 7, 1); ls.clock.textContent = '14:20'; });
+    popStart = 16.5;
+  } else {
+    setLock('late2', () => { ls.set(LATE, 7, 10, 1, { round2: true }); ls.clock.textContent = '19:20'; });
+    popStart = 18.4;
+  }
+  const fast = t >= 9.3 && t < 11.5;
+  pop = out(prog(t, popStart, popStart + (fast ? 0.12 : 0.3)));
+  if (t < 3.0) pop = 1;
+  ls.block.style.opacity = pop; ls.emoji.style.opacity = pop;
+  ls.block.style.transform = `translateY(${(1 - pop) * 40}px)`;
+  ls.emoji.style.transform = `scale(${0.7 + 0.3 * back(t < 3.0 ? 1 : prog(t, popStart, popStart + (fast ? 0.2 : 0.5)))})`;
+
+  // ---- notificação (passo 2) ----
+  const nOn = win(t, 7.2, 11.5, 0.3);
+  notif.style.opacity = nOn;
+  notif.style.transform = `translateY(${(1 - out(prog(t, 7.2, 7.6))) * 60}px)`;
+  ntext.textContent = t < 8.2 ? 'meeting — reunião' : (key.startsWith('d1-') ? D1[+key.slice(3) - 1].w + ' — ' + D1[+key.slice(3) - 1].pt : '');
+  const press = win(t, 7.85, 8.45, 0.12);
+  bNext.style.background = `rgba(198,244,50,${0.9 * press})`;
+  const nr = notif.getBoundingClientRect(), br = bNext.getBoundingClientRect(), sr = ph.screen.getBoundingClientRect();
+  const k = sr.width / ph.w; // escala atual do celular
+  tap.style.left = ((br.left + br.width / 2 - sr.left) / k - 20 * u) + 'px';
+  tap.style.top = ((br.top + br.height / 2 - sr.top) / k - 20 * u + (1 - out(prog(t, 7.5, 7.85))) * 60 * u) + 'px';
+  tap.style.opacity = win(t, 7.5, 8.6, 0.15);
+  tap.style.transform = `scale(${1 - 0.18 * press})`;
+
+  // ---- marcação da revisão (passo 3) ----
+  const rOn = win(t, 12.4, 16.3, 0.25);
+  if (rOn > 0) {
+    const range = document.createRange(); range.selectNodeContents(ls.review);
+    const r = range.getBoundingClientRect();
+    const pad = 12;
+    ring.style.left = (r.left - pad - 4) + 'px'; ring.style.top = (r.top - pad) + 'px';
+    ring.style.width = (r.width + pad * 2 + 8) + 'px'; ring.style.height = (r.height + pad * 2) + 'px';
+    tag.style.left = (r.left - 16) + 'px'; tag.style.top = (r.bottom + 70) + 'px';
+  }
+  ring.style.opacity = rOn; tag.style.opacity = win(t, 12.8, 16.3, 0.25);
+  ring.style.transform = `scale(${1 + 0.04 * Math.sin((t - 12.4) * 7) * rOn})`;
+  tag.style.transform = `translateY(${(1 - out(prog(t, 12.8, 13.2))) * 30}px)`;
+
+  // ---- troca de frase (passo 4): o selo pisca ----
+  const flash = win(t, 18.4, 19.4, 0.15);
+  ls.chip.style.transform = `scale(${1 + 0.25 * flash})`;
+  ls.chip.style.transformOrigin = '0 50%';
+
+  const g = win(t, 19.0, 20.9, 0.3);
+  ghost.style.opacity = g;
+  ghost.style.transform = `translateY(${(1 - out(prog(t, 19.0, 19.4))) * 30}px)`;
+
+  playEnd(card, t, 21.0);
+}
+render(0);
+</script>
+</body></html>

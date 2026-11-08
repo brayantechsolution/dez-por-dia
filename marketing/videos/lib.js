@@ -53,7 +53,7 @@ function lockScreen(parent, sw, sh) {
   const u = sw / 390;
   const root = el('div', `position:absolute;inset:0;font-family:Inter;color:#fff;transition:none`, '', parent);
   const bg = el('div', `position:absolute;inset:0;background:${C.navy}`, '', root);
-  el('div', `position:absolute;top:${70 * u}px;width:100%;text-align:center;font:400 ${15 * u}px Inter;color:#E6EAF0`, 'Sex, 6 de novembro', root);
+  const date = el('div', `position:absolute;top:${70 * u}px;width:100%;text-align:center;font:400 ${15 * u}px Inter;color:#E6EAF0`, 'Sex, 6 de novembro', root);
   const clock = el('div', `position:absolute;top:${88 * u}px;width:100%;text-align:center;font:600 ${80 * u}px/1 Inter;letter-spacing:-${2 * u}px`, '08:42', root);
   const halo = el('div', `position:absolute;left:50%;top:${300 * u}px;width:${200 * u}px;height:${200 * u}px;margin:-${100 * u}px 0 0 -${100 * u}px;
     border-radius:50%;background:rgba(255,255,255,.07)`, '', root);
@@ -65,16 +65,22 @@ function lockScreen(parent, sw, sh) {
   el('div', `margin:${16 * u}px 0;height:1px;background:${C.line}`, '', block);
   const sen = el('div', `font:700 ${21 * u}px/1.25 Inter`, '', block);
   const senPt = el('div', `margin-top:${6 * u}px;font:400 ${15 * u}px/1.35 Inter;color:${C.grey}`, '', block);
+  const review = el('div', `margin-top:${12 * u}px;font:400 ${14 * u}px Inter;color:${C.lime};display:none`, '', block);
   const dots = el('div', `display:flex;gap:${6 * u}px;margin-top:${18 * u}px`, '', block);
   const ds = [];
   for (let i = 0; i < 10; i++) ds.push(el('span', `width:${24 * u}px;height:${6 * u}px;border-radius:${3 * u}px;background:${C.line}`, '', dots));
-  function set(w, n, seen, gi) {
+  // opts: { round2: true } troca para a segunda frase e o selo REVISÃO (como o app faz quando as 10 repetem);
+  //       { review: 'palavra' } mostra a linha "Revisão: palavra" (palavra de um dia anterior dentro da frase)
+  function set(w, n, seen, gi, opts = {}) {
     bg.style.background = GROUNDS[(gi ?? n - 1) % GROUNDS.length];
-    emoji.textContent = w.e; chip.textContent = `PALAVRA ${n} DE 10`; word.textContent = w.w;
-    pt.textContent = w.pt; sen.textContent = w.s; senPt.textContent = w.t;
+    const r2 = !!opts.round2;
+    emoji.textContent = w.e; chip.textContent = `${r2 ? 'REVISÃO' : 'PALAVRA'} ${n} DE 10`; word.textContent = w.w;
+    pt.textContent = w.pt; sen.textContent = r2 ? w.s2 : w.s; senPt.textContent = r2 ? w.t2 : w.t;
+    const rv = r2 ? '' : (opts.review || '');
+    review.textContent = rv ? 'Revisão: ' + rv : ''; review.style.display = rv ? 'block' : 'none';
     ds.forEach((d, i) => { d.style.background = i < seen ? C.lime : C.line; });
   }
-  return { root, set, clock, block, emoji, halo };
+  return { root, set, clock, block, emoji, halo, date, chip, sen, senPt, review, u };
 }
 
 // Frame inicial/final com o ícone do app
