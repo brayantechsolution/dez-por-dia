@@ -14,7 +14,8 @@ Cada execução começa do zero. Tudo o que ela precisa saber está aqui.
   - `render.py` gera o MP4 (1080×1920, 30 fps) ou só alguns quadros para conferir.
   - Os vídeos de exemplo são `v1.html` a `v5.html`. Cada vídeo é um HTML com `DURATION` e uma função `render(t)`.
 - **Palavras do app**: `app/src/main/assets/words.json`, com 1.300 palavras.
-  - Campos: `w` (palavra), `pt` (tradução), `s`/`t` (frase e tradução), `s2`/`t2` (segunda frase) e `e` (emoji).
+  - Campos: `w` (palavra), `pt` (tradução), `s`/`t` (frase e tradução), `s2`/`t2` (frase no passado, mostrada quando as 10 palavras repetem), `p` (passado do verbo, só nos verbos) e `e` (emoji).
+  - No `lockScreen()` do kit, passe `p` na palavra para mostrar o passado ao lado (borrow → borrowed) e `{ round2: true }` para a rodada "REVISÃO NO PASSADO".
   - Use palavras e frases daqui sempre que o vídeo mostrar o app.
 
 ## Coleções do banco do painel

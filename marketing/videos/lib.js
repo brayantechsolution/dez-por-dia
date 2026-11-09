@@ -74,7 +74,12 @@ function lockScreen(parent, sw, sh) {
   function set(w, n, seen, gi, opts = {}) {
     bg.style.background = GROUNDS[(gi ?? n - 1) % GROUNDS.length];
     const r2 = !!opts.round2;
-    emoji.textContent = w.e; chip.textContent = `${r2 ? 'REVISÃO' : 'PALAVRA'} ${n} DE 10`; word.textContent = w.w;
+    emoji.textContent = w.e; chip.textContent = `${r2 ? 'REVISÃO NO PASSADO ·' : 'PALAVRA'} ${n} DE 10`; word.textContent = w.w;
+    if (w.p) {
+      // passado do verbo ao lado da palavra, como no app (ask   asked)
+      const sp = el('span', `position:relative;display:inline-block;margin-left:${16 * u}px;font:700 ${24 * u}px Inter;color:#fff`, w.p, word);
+      el('span', `position:absolute;left:0;bottom:100%;margin-bottom:${2 * u}px;font:700 ${10 * u}px Inter;letter-spacing:.1em;color:${C.grey}`, 'PASSADO', sp);
+    }
     pt.textContent = w.pt; sen.textContent = r2 ? w.s2 : w.s; senPt.textContent = r2 ? w.t2 : w.t;
     const rv = r2 ? '' : (opts.review || '');
     review.textContent = rv ? 'Revisão: ' + rv : ''; review.style.display = rv ? 'block' : 'none';

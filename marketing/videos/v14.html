@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR"><head><meta charset="utf-8"><title>Vídeo 14 — A mesma palavra, outra frase</title>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>Vídeo 14 — A mesma palavra, no passado</title>
 <style>html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#0B1422}</style>
 <script src="lib.js"></script></head>
 <body>
@@ -9,14 +9,14 @@ const D1 = [
   { w: 'meeting', pt: 'reunião', s: 'The meeting starts at nine.', t: 'A reunião começa às nove.', e: '👥' },
   { w: 'available', pt: 'disponível', s: 'Is the doctor available this afternoon?', t: 'O médico está disponível hoje à tarde?', e: '✅' },
   { w: 'schedule', pt: 'agenda, cronograma', s: 'Can we check the schedule before the meeting?', t: 'Podemos ver a agenda antes da reunião?', e: '🗒️' },
-  { w: 'borrow', pt: 'pegar emprestado', s: 'Can I borrow your pen for a minute?', t: 'Posso pegar sua caneta emprestada por um minuto?', e: '🤝' },
+  { w: 'borrow', p: 'borrowed', pt: 'pegar emprestado', s: 'Can I borrow your pen for a minute?', t: 'Posso pegar sua caneta emprestada por um minuto?', e: '🤝' },
   { w: 'reliable', pt: 'confiável', s: 'My old car is slow but reliable.', t: 'Meu carro velho é lento, mas confiável.',
-    s2: 'Her husband is a reliable man.', t2: 'O marido dela é um homem confiável.', e: '🛡️' },
-  { w: 'deliver', pt: 'entregar', s: 'They deliver pizza until midnight.', t: 'Eles entregam pizza até meia-noite.', e: '📦' },
-  { w: 'improve', pt: 'melhorar', s: 'I want to improve my English this year.', t: 'Quero melhorar meu inglês este ano.', e: '📈' },
+    s2: 'My old phone was very reliable.', t2: 'Meu celular antigo era muito confiável.', e: '🛡️' },
+  { w: 'deliver', p: 'delivered', pt: 'entregar', s: 'They deliver pizza until midnight.', t: 'Eles entregam pizza até meia-noite.', e: '📦' },
+  { w: 'improve', p: 'improved', pt: 'melhorar', s: 'I want to improve my English this year.', t: 'Quero melhorar meu inglês este ano.', e: '📈' },
   { w: 'receipt', pt: 'recibo, comprovante', s: 'Can I have the receipt, please?', t: 'Pode me dar o comprovante, por favor?', e: '🧾' },
   { w: 'appointment', pt: 'consulta, horário marcado', s: 'I have a dentist appointment on Friday.', t: 'Tenho consulta no dentista na sexta.', e: '🗓️' },
-  { w: 'figure out', pt: 'descobrir, entender', s: "I can't figure out how this works.", t: 'Não consigo entender como isso funciona.', e: '🧩' },
+  { w: 'figure out', p: 'figured out', pt: 'descobrir, entender', s: "I can't figure out how this works.", t: 'Não consigo entender como isso funciona.', e: '🧩' },
 ];
 
 const ph = phone(240, 560, 600, 1272);
@@ -24,13 +24,13 @@ const ls = lockScreen(ph.screen, ph.w, ph.h);
 
 // frase antiga que sai riscada (só no vídeo, para mostrar a troca)
 const ghost = el('div', `position:absolute;left:70px;right:70px;top:1590px;text-align:center;font:600 44px/1.3 Inter;color:${C.grey};opacity:0`, '');
-ghost.innerHTML = '<span style="text-decoration:line-through;text-decoration-thickness:4px">My old car is slow but reliable.</span><br><span style="color:#C6F432;font-weight:800">→ Her husband is a reliable man.</span>';
+ghost.innerHTML = '<span style="text-decoration:line-through;text-decoration-thickness:4px">My old car is slow but reliable.</span><br><span style="color:#C6F432;font-weight:800">→ My old phone was very reliable.</span>';
 
 const caps = [
-  [caption('Viu a palavra de manhã? À tarde ela volta numa *frase nova* 🔁', 170), 0.05, 3.0],
+  [caption('Viu a palavra de manhã? À tarde ela volta *no passado* 🔁', 170), 0.05, 3.0],
   [caption('Primeiro, as *10 palavras* do dia…', 200), 3.0, 6.3],
   [caption('Acabou? *Começa de novo.*', 230), 6.3, 7.6],
-  [caption('*Mesma palavra*, frase diferente', 200), 7.6, 11.4],
+  [caption('*Mesma palavra*, agora *no passado*', 200), 7.6, 11.4],
   [caption('Outro contexto: a palavra *fixa* 🧠', 200), 11.4, 12.7],
 ];
 const card = endCard(document.body);
