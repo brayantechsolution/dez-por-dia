@@ -44,15 +44,22 @@ final class Speaker {
 
     private Speaker() {}
 
-    /** A palavra duas vezes: no ritmo normal e depois bem devagar. */
-    static void sayWord(Context app, String word, BroadcastReceiver.PendingResult result) {
+    /** A palavra duas vezes (normal e bem devagar) e, se for verbo, o passado: "ask… ask… asked". */
+    static void sayWord(Context app, String word, String past, BroadcastReceiver.PendingResult result) {
         run(app, result, () -> {
             String id = newId();
             tts.setSpeechRate(RATE_NORMAL);
             tts.speak(word, TextToSpeech.QUEUE_FLUSH, null, id + "a");
             tts.playSilentUtterance(500, TextToSpeech.QUEUE_ADD, id + "b");
             tts.setSpeechRate(RATE_SLOW);
-            speakLast(word, id);
+            if (past.isEmpty()) {
+                speakLast(word, id);
+                return;
+            }
+            tts.speak(word, TextToSpeech.QUEUE_ADD, null, id + "c");
+            tts.playSilentUtterance(700, TextToSpeech.QUEUE_ADD, id + "d");
+            // "was/were about to" → lê "was about to"
+            speakLast(past.replace("was/were", "was"), id);
         });
     }
 

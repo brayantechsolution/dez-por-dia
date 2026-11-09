@@ -20,7 +20,7 @@ public class ActionReceiver extends BroadcastReceiver {
         if (ACTION_SAY_WORD.equals(action) || ACTION_SAY_SENTENCE.equals(action)) {
             Words.Word w = WidgetProvider.current(app);
             PendingResult spoken = goAsync();
-            if (ACTION_SAY_WORD.equals(action)) Speaker.sayWord(app, w.en, spoken);
+            if (ACTION_SAY_WORD.equals(action)) Speaker.sayWord(app, w.en, w.past, spoken);
             else Speaker.saySentence(app, w.sentenceEn, spoken);
             return;
         }

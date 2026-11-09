@@ -6,6 +6,9 @@ import android.content.res.ColorStateList;
 import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.style.ForegroundColorSpan;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -296,7 +299,16 @@ public class MainActivity extends Activity {
 
         LinearLayout col = new LinearLayout(this);
         col.setOrientation(LinearLayout.VERTICAL);
-        col.addView(text(word.en, 17, INK, true));
+        TextView en = text(word.en, 17, INK, true);
+        if (!word.past.isEmpty()) {
+            // "ask · asked": o passado vem ao lado, numa cor mais suave
+            SpannableString both = new SpannableString(word.en + "  ·  " + word.past);
+            both.setSpan(new ForegroundColorSpan(MUTED), word.en.length(), both.length(),
+                    Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+            en.setText(both);
+            en.setContentDescription(word.en + ", passado " + word.past);
+        }
+        col.addView(en);
         col.addView(text(word.pt, 13, MUTED, false));
         row.addView(col, new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f));
 

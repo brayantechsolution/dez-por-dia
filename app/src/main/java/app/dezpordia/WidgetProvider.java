@@ -56,17 +56,18 @@ public class WidgetProvider extends AppWidgetProvider {
         LocalDate today = LocalDate.now();
         int pointer = pointer(p, today);
         int index = pointer > 0 ? (pointer - 1) % Words.PER_DAY : 0;
-        int round = pointer > 0 ? Words.roundOf(pointer - 1) : 0;
         Words.Word w = current(context);
         boolean onLock = p.getBoolean(Prefs.LOCK_SET, false);
 
         RemoteViews v = new RemoteViews(context.getPackageName(), R.layout.widget);
         v.setTextViewText(R.id.w_chip, pointer > 0
-                ? (round > 0 ? "REVISÃO " : "PALAVRA ") + (index + 1) + " DE " + Words.PER_DAY
+                ? (w.pastRound ? "REVISÃO NO PASSADO · " : "PALAVRA ") + (index + 1) + " DE " + Words.PER_DAY
                 : "TOQUE EM PRÓXIMA PARA COMEÇAR");
         v.setTextViewText(R.id.w_emoji, w.emoji);
         v.setViewVisibility(R.id.w_emoji, w.emoji.isEmpty() ? View.GONE : View.VISIBLE);
         v.setTextViewText(R.id.w_word, w.en);
+        v.setTextViewText(R.id.w_past, w.past);
+        v.setViewVisibility(R.id.w_past, w.past.isEmpty() ? View.GONE : View.VISIBLE);
         v.setTextViewText(R.id.w_pt, w.pt);
         v.setTextViewText(R.id.w_sentence, w.sentenceEn);
         v.setTextViewText(R.id.w_sentence_pt, w.sentencePt);

@@ -52,7 +52,7 @@ public final class WallpaperPainter {
         // Selo "PALAVRA 2 DE 10"
         TextPaint chipText = paint(12 * u, ground, bold);
         chipText.setLetterSpacing(0.08f);
-        String chip = (reviewRound ? "REVISÃO " : "PALAVRA ") + number + " DE " + Words.PER_DAY;
+        String chip = (reviewRound ? "REVISÃO NO PASSADO · " : "PALAVRA ") + number + " DE " + Words.PER_DAY;
         float chipH = 28 * u;
         float chipW = chipText.measureText(chip) + 24 * u;
 
@@ -61,6 +61,29 @@ public final class WallpaperPainter {
         while (wordPaint.measureText(word.en) > maxW && wordPaint.getTextSize() > 20 * u) {
             wordPaint.setTextSize(wordPaint.getTextSize() * 0.92f);
         }
+
+        // Passado do verbo ao lado da palavra (ask   asked). Se não couber, desce para a linha de baixo.
+        boolean hasPast = !word.past.isEmpty();
+        TextPaint pastPaint = paint(24 * u, WHITE, bold);
+        TextPaint pastLabel = paint(10 * u, GREY, bold);
+        pastLabel.setLetterSpacing(0.1f);
+        String pastTag = "PASSADO";
+        float gap = 16 * u;
+        boolean pastInline = false;
+        if (hasPast) {
+            float stackedW = pastLabel.measureText(pastTag) + 8 * u;
+            while (stackedW + pastPaint.measureText(word.past) > maxW && pastPaint.getTextSize() > 14 * u) {
+                pastPaint.setTextSize(pastPaint.getTextSize() * 0.92f);
+            }
+            float need = gap + Math.max(pastPaint.measureText(word.past), pastLabel.measureText(pastTag));
+            while (wordPaint.measureText(word.en) + need > maxW && wordPaint.getTextSize() > 40 * u) {
+                wordPaint.setTextSize(wordPaint.getTextSize() * 0.92f);
+            }
+            pastInline = wordPaint.measureText(word.en) + need <= maxW;
+        }
+        Paint.FontMetrics pfm = pastPaint.getFontMetrics();
+        float pastLineH = hasPast && !pastInline ? (pfm.descent - pfm.ascent) + 4 * u : 0;
+
         Paint.FontMetrics wfm = wordPaint.getFontMetrics();
         float wordH = wfm.descent - wfm.ascent;
 
@@ -70,7 +93,7 @@ public final class WallpaperPainter {
         StaticLayout review = word.review.isEmpty() ? null
                 : layout("Revisão: " + word.review, paint(14 * u, LIME, regular), maxW);
 
-        float total = chipH + 22 * u + wordH + 6 * u + translation.getHeight() + 20 * u
+        float total = chipH + 22 * u + wordH + pastLineH + 6 * u + translation.getHeight() + 20 * u
                 + 1 * u + 20 * u + sentenceEn.getHeight() + 8 * u + sentencePt.getHeight()
                 + (review != null ? 14 * u + review.getHeight() : 0) + 22 * u + 6 * u;
 
@@ -108,8 +131,21 @@ public final class WallpaperPainter {
         canvas.drawText(chip, x + 12 * u, y + chipH / 2 - (cfm.ascent + cfm.descent) / 2, chipText);
         y += chipH + 22 * u;
 
-        canvas.drawText(word.en, x, y - wfm.ascent, wordPaint);
-        y += wordH + 6 * u;
+        float base = y - wfm.ascent;
+        canvas.drawText(word.en, x, base, wordPaint);
+        if (hasPast && pastInline) {
+            float px = x + wordPaint.measureText(word.en) + gap;
+            canvas.drawText(word.past, px, base, pastPaint);
+            canvas.drawText(pastTag, px, base - pastPaint.getTextSize() * 0.75f - 6 * u, pastLabel);
+        }
+        y += wordH;
+        if (hasPast && !pastInline) {
+            float pb = y + 4 * u - pfm.ascent;
+            canvas.drawText(pastTag, x, pb, pastLabel);
+            canvas.drawText(word.past, x + pastLabel.measureText(pastTag) + 8 * u, pb, pastPaint);
+            y += pastLineH;
+        }
+        y += 6 * u;
 
         y = draw(canvas, translation, x, y) + 20 * u;
 

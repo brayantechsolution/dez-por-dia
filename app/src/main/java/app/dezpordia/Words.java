@@ -24,12 +24,16 @@ public final class Words {
         public final String sentencePt;
         public final String review;
         public final String emoji;
-        /** Segunda frase, usada quando as 10 palavras do dia começam a repetir. */
+        /** Frase no passado, usada quando as 10 palavras do dia começam a repetir. */
         public final String sentenceEn2;
         public final String sentencePt2;
+        /** Passado simples, só para verbos (ex.: ask → asked). Vazio nas outras palavras. */
+        public final String past;
+        /** Verdadeiro na rodada de revisão, quando a frase mostrada é a frase no passado. */
+        public final boolean pastRound;
 
         Word(String en, String pt, String sentenceEn, String sentencePt, String review, String emoji,
-             String sentenceEn2, String sentencePt2) {
+             String sentenceEn2, String sentencePt2, String past, boolean pastRound) {
             this.en = en;
             this.pt = pt;
             this.sentenceEn = sentenceEn;
@@ -38,15 +42,17 @@ public final class Words {
             this.emoji = emoji;
             this.sentenceEn2 = sentenceEn2;
             this.sentencePt2 = sentencePt2;
+            this.past = past;
+            this.pastRound = pastRound;
         }
 
         /**
          * A palavra na volta {@code round} do dia: 0 = frase principal,
-         * 1 = segunda frase, 2 = principal de novo, e assim por diante.
+         * 1 = frase no passado, 2 = principal de novo, e assim por diante.
          */
         public Word inRound(int round) {
             if (round % 2 == 0 || sentenceEn2.isEmpty()) return this;
-            return new Word(en, pt, sentenceEn2, sentencePt2, "", emoji, sentenceEn, sentencePt);
+            return new Word(en, pt, sentenceEn2, sentencePt2, "", emoji, sentenceEn, sentencePt, past, true);
         }
     }
 
@@ -78,11 +84,13 @@ public final class Words {
                         o.optString("r", ""),
                         o.optString("e", ""),
                         o.optString("s2", ""),
-                        o.optString("t2", "")));
+                        o.optString("t2", ""),
+                        o.optString("p", ""),
+                        false));
             }
         } catch (Exception e) {
             list.add(new Word("hello", "olá", "Hello, how are you?", "Olá, tudo bem?", "", "👋",
-                    "Say hello to your friends.", "Diga oi para os seus amigos."));
+                    "I said hello to my neighbor.", "Eu disse oi para o meu vizinho.", "", false));
         }
         cache = Collections.unmodifiableList(list);
         return cache;

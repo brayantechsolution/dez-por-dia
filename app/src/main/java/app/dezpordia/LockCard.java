@@ -35,8 +35,10 @@ public final class LockCard {
 
         Notification n = new Notification.Builder(context, CHANNEL)
                 .setSmallIcon(R.drawable.ic_stat_dez)
-                .setContentTitle(word.en + " · " + word.pt)
-                .setContentText("Palavra " + number + " de " + Words.PER_DAY)
+                .setContentTitle((word.past.isEmpty() ? word.en : word.en + " (" + word.past + ")")
+                        + " · " + word.pt)
+                .setContentText((word.pastRound ? "Revisão no passado " : "Palavra ")
+                        + number + " de " + Words.PER_DAY)
                 .setVisibility(Notification.VISIBILITY_PUBLIC)
                 .setCategory(Notification.CATEGORY_STATUS)
                 .setOnlyAlertOnce(true)
