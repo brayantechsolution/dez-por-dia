@@ -1,0 +1,18 @@
+# Painel do 10 por Dia no Netlify.
+# No Netlify, use "Base directory" = marketing/painel (o resto vem daqui).
+[build]
+  publish = "."
+  # Copia os MP4 públicos para dentro do site.
+  command = "mkdir -p videos && cp ../site/videos/*.mp4 videos/"
+  # Só publica de novo quando o painel ou os vídeos mudam (sai com 0 = pula).
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- . ../site/videos"
+
+[[headers]]
+  for = "/dados.json"
+  [headers.values]
+    Cache-Control = "no-cache"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"

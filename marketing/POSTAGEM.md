@@ -44,3 +44,7 @@ TikTok e YouTube quem posta é o dono do app. Esta tarefa cuida só do Instagram
 - Não apague nem edite posts já publicados, e não responda comentários sem o dono pedir.
 - Nunca peça nem use senhas.
 - Se o repositório virar privado, o link do jsDelivr para de funcionar. Nesse caso, registre o problema em `meta/agent` e pare.
+
+## Painel no Netlify
+
+No fim, se algo mudou no painel (postagem ou views), siga a seção "Atualizar o painel do Netlify" do `marketing/AGENTE.md` e faça push do `marketing/painel/dados.json`.

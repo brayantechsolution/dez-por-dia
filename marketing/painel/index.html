@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Painel 10 por Dia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F4F6F1; --surface:#FFFFFF; --surface2:#EEF1EA; --ink:#0F1B2D; --muted:#5B6878;
+  --line:#DDE3D8; --accent:#C6F432; --accent-ink:#0F1B2D; --accent-strong:#5E7A00;
+  --tiktok:#111111; --insta:#C13584; --yt:#D32F2F; --ok:#2E7D32; --ok-bg:#E3F3E1; --warn:#8A6100; --warn-bg:#FFF3D6;
+  --shadow:0 1px 2px rgba(15,27,45,.06),0 4px 16px rgba(15,27,45,.05);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0B1422; --surface:#122033; --surface2:#18283E; --ink:#EEF2F7; --muted:#9AA8BA;
+  --line:#22344D; --accent-strong:#C6F432;
+  --tiktok:#EEF2F7; --insta:#F06BB5; --yt:#FF6B6B; --ok:#8BD88F; --ok-bg:#16351F; --warn:#F2C35B; --warn-bg:#3A2E10;
+  --shadow:none;
+}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:880px;margin:0 auto;padding:20px 16px 64px}
+header{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.mark{width:46px;height:46px;border-radius:12px;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;font-weight:800;font-size:20px;flex:none}
+h1{font-size:22px;line-height:1.2;margin:0;font-weight:800;letter-spacing:-.01em}
+.sub{color:var(--muted);font-size:13px;margin-top:2px}
+.agent{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:13px;color:var(--muted);margin-bottom:14px}
+.agent b{color:var(--ink);font-weight:600}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:18px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;box-shadow:var(--shadow)}
+.stat .n{font-size:22px;font-weight:800;line-height:1.1;font-variant-numeric:tabular-nums}
+.stat .l{font-size:12px;color:var(--muted)}
+nav{display:flex;gap:6px;margin-bottom:16px;overflow-x:auto;scrollbar-width:none}
+nav button{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:8px 14px;font:600 14px Inter,sans-serif;cursor:pointer;white-space:nowrap}
+nav button[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.notice{background:var(--warn-bg);color:var(--warn);border-radius:12px;padding:12px 14px;font-size:14px;margin-bottom:16px}
+.week{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:22px 0 10px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;margin-bottom:12px;box-shadow:var(--shadow);overflow:hidden}
+.card.today{border-color:var(--accent-strong);box-shadow:0 0 0 2px color-mix(in srgb,var(--accent) 55%,transparent)}
+.card.past{opacity:.75}
+.day{display:flex;gap:14px;padding:14px}
+.date{flex:none;width:52px;text-align:center}
+.date .wd{font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase}
+.date .dn{font-size:26px;font-weight:800;line-height:1.1}
+.date .mo{font-size:12px;color:var(--muted)}
+.body{flex:1;min-width:0}
+.titlerow{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.ptitle{font-weight:700;font-size:16px}
+.badge{font-size:11px;font-weight:700;border-radius:999px;padding:2px 8px;letter-spacing:.02em;white-space:nowrap}
+.b-today{background:var(--accent);color:var(--accent-ink)}
+.b-ready{background:var(--ok-bg);color:var(--ok)}
+.b-todo{background:var(--warn-bg);color:var(--warn)}
+.hook{color:var(--muted);font-size:14px;margin-top:4px}
+.hook b{color:var(--ink);font-weight:600}
+.note{font-size:13px;color:var(--muted);margin-top:6px;font-style:italic}
+.thumb{flex:none;width:68px;height:120px;border-radius:10px;background:var(--surface2);overflow:hidden;border:1px solid var(--line);cursor:pointer}
+.thumb video{width:100%;height:100%;object-fit:cover;display:block}
+.plats{border-top:1px solid var(--line)}
+.plat{display:grid;grid-template-columns:110px 1fr auto;gap:10px;align-items:center;padding:10px 14px;border-top:1px solid var(--line)}
+.plat:first-child{border-top:0}
+.pname{font-weight:700;font-size:13px;display:flex;align-items:center;gap:6px}
+.dot{width:8px;height:8px;border-radius:50%;flex:none}
+.ptime{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.ptext{font-size:13px;min-width:0}
+.ptext .cap{white-space:pre-line;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.ptext.open .cap{display:block}
+.tags{color:var(--accent-strong);font-weight:600;font-size:12px;margin-top:2px;word-break:break-word}
+.more{background:none;border:0;color:var(--muted);font:600 12px Inter,sans-serif;padding:0;cursor:pointer;text-decoration:underline}
+.acts{display:flex;gap:6px;align-items:center}
+.btn{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:8px;padding:6px 10px;font:600 12px Inter,sans-serif;cursor:pointer;white-space:nowrap;text-decoration:none;display:inline-block}
+.btn:hover{background:var(--surface2)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:transparent}
+.views{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+.views b{color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+.vcard{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
+.vcard video{width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#000}
+.vcard .ph{aspect-ratio:9/16;display:grid;place-items:center;background:var(--surface2);color:var(--muted);font-size:13px;text-align:center;padding:16px}
+.vcard .vi{padding:10px 12px}
+.vcard .vt{font-weight:700;font-size:14px}
+.vcard .vm{font-size:12px;color:var(--muted);margin:2px 0 8px}
+.idea{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:10px;display:flex;gap:12px;align-items:flex-start}
+.idea .it{font-weight:700}
+.idea .ih{font-size:14px;color:var(--muted)}
+.idea .im{font-size:12px;color:var(--muted);margin-top:4px}
+.idea .acts{margin-left:auto}
+.rule{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:12px;box-shadow:var(--shadow)}
+.rule h3{margin:0 0 4px;font-size:17px;display:flex;align-items:center;gap:8px}
+.rule .rs{color:var(--muted);font-size:14px;margin-bottom:10px}
+.rule ul{margin:0;padding-left:18px}
+.rule li{margin:4px 0;font-size:14px}
+.rule li.on{color:var(--muted);text-decoration:line-through}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:13px;margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
+.kv dt{color:var(--muted);font-weight:600}
+.kv dd{margin:0}
+.empty{color:var(--muted);text-align:center;padding:32px 0;font-size:14px}
+.foot{color:var(--muted);font-size:12px;text-align:center;margin-top:28px}
+.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:8px 14px;border-radius:999px;font-size:13px;font-weight:600;opacity:0;transition:opacity .2s;pointer-events:none}
+.toast.show{opacity:1}
+[hidden]{display:none!important}
+@media (max-width:620px){
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .plat{grid-template-columns:1fr;gap:6px}
+  .acts{flex-wrap:wrap}
+  .thumb{width:54px;height:96px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="mark">10</div>
+    <div>
+      <h1>Painel de conteúdo</h1>
+      <div class="sub">10 por Dia · TikTok, Instagram Reels e YouTube Shorts</div>
+    </div>
+  </header>
+
+  <div class="agent" id="agent" hidden></div>
+  <div class="notice" id="offline" hidden>Não consegui carregar os dados do painel. Recarregue a página em alguns segundos.</div>
+
+  <div class="stats">
+    <div class="stat"><div class="n" id="s-today">–</div><div class="l">Postagem de hoje</div></div>
+    <div class="stat"><div class="n" id="s-week">–</div><div class="l">Postados nesta semana</div></div>
+    <div class="stat"><div class="n" id="s-videos">–</div><div class="l">Vídeos prontos</div></div>
+    <div class="stat"><div class="n" id="s-ideas">–</div><div class="l">Ideias na fila</div></div>
+  </div>
+
+  <nav role="tablist">
+    <button role="tab" data-tab="cal" aria-selected="true">Calendário</button>
+    <button role="tab" data-tab="vid" aria-selected="false">Vídeos</button>
+    <button role="tab" data-tab="ide" aria-selected="false">Ideias</button>
+    <button role="tab" data-tab="reg" aria-selected="false">Regras e horários</button>
+  </nav>
+
+  <section id="cal"><div class="empty">Carregando…</div></section>
+  <section id="vid" hidden><div class="grid" id="vgrid"></div></section>
+  <section id="ide" hidden><div id="ilist"></div></section>
+  <section id="reg"></section>
+
+  <div class="foot" id="foot"></div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+const PLATS = {
+  tiktok:   {name:"TikTok", color:"var(--tiktok)"},
+  instagram:{name:"Reels",  color:"var(--insta)"},
+  youtube:  {name:"Shorts", color:"var(--yt)"}
+};
+const WD = ["dom","seg","ter","qua","qui","sex","sáb"];
+const MO = ["jan","fev","mar","abr","mai","jun","jul","ago","set","out","nov","dez"];
+let state = {posts:[], videos:{}, ideas:[], guide:[], setup:null, agent:null};
+
+const $ = s => document.querySelector(s);
+function el(tag, attrs, ...kids){
+  const e = document.createElement(tag);
+  for (const [k,v] of Object.entries(attrs||{})){
+    if (v == null || v === false) continue;
+    if (k === "class") e.className = v;
+    else if (k === "text") e.textContent = v;
+    else if (k.startsWith("on")) e.addEventListener(k.slice(2), v);
+    else e.setAttribute(k, v === true ? "" : v);
+  }
+  for (const k of kids.flat()) if (k != null) e.append(k.nodeType ? k : document.createTextNode(k));
+  return e;
+}
+function toast(msg){ const t=$("#toast"); t.textContent=msg; t.classList.add("show"); clearTimeout(toast.t); toast.t=setTimeout(()=>t.classList.remove("show"),1600); }
+function todayISO(){ return new Intl.DateTimeFormat("en-CA",{timeZone:"America/Sao_Paulo"}).format(new Date()); }
+function parseDate(s){ const [y,m,d]=s.split("-").map(Number); return new Date(y,m-1,d); }
+function weekStart(s){ const d=parseDate(s); const wd=(d.getDay()+6)%7; d.setDate(d.getDate()-wd); return d; }
+function fmt(n){ return Number(n).toLocaleString("pt-BR"); }
+
+async function copy(text){
+  try { await navigator.clipboard.writeText(text); toast("Copiado"); return; } catch(e){}
+  const ta = el("textarea",{style:"position:fixed;opacity:0"}); ta.value=text; document.body.append(ta); ta.select();
+  try { document.execCommand("copy"); toast("Copiado"); } catch(e){ toast("Não deu pra copiar"); }
+  ta.remove();
+}
+
+function renderStats(){
+  const t = todayISO();
+  const p = state.posts.find(x=>x.date===t);
+  if (p){ const ps=Object.values(p.platforms||{}); $("#s-today").textContent = ps.filter(x=>x.status==="postado").length+"/"+ps.length; }
+  else $("#s-today").textContent = "—";
+  const ws = weekStart(t).getTime(), we = ws + 7*864e5;
+  let n=0, tot=0;
+  for (const x of state.posts){ const d=parseDate(x.date).getTime(); if (d>=ws && d<we) for (const pl of Object.values(x.platforms||{})){ tot++; if (pl.status==="postado") n++; } }
+  $("#s-week").textContent = tot ? n+"/"+tot : "—";
+  $("#s-videos").textContent = Object.values(state.videos).filter(v=>v.status==="pronto").length;
+  $("#s-ideas").textContent = state.ideas.filter(i=>i.status==="ideia").length;
+  const a = state.agent;
+  $("#agent").hidden = !a;
+  if (a) $("#agent").replaceChildren(el("b",{text:"Agente · "+(a.when||"")+": "}), a.message||"");
+}
+
+function platRow(post, key){
+  const pl = post.platforms[key]; const meta = PLATS[key];
+  const full = [pl.text, (pl.tags||[]).join(" ")].filter(Boolean).join("\n\n");
+  const txt = el("div",{class:"ptext"},
+    el("div",{class:"cap",text:pl.text||""}),
+    el("div",{class:"tags",text:(pl.tags||[]).join(" ")}));
+  const more = el("button",{class:"more",type:"button",text:"ver tudo",onclick:()=>{txt.classList.toggle("open"); more.textContent = txt.classList.contains("open")?"recolher":"ver tudo";}});
+  if ((pl.text||"").length > 90 || (pl.text||"").includes("\n")) txt.append(more);
+  const posted = pl.status === "postado";
+  return el("div",{class:"plat"},
+    el("div",{}, el("div",{class:"pname"}, el("span",{class:"dot",style:"background:"+meta.color}), meta.name),
+                 el("div",{class:"ptime",text:pl.time ? "às "+pl.time : ""})),
+    txt,
+    el("div",{class:"acts"},
+      el("button",{class:"btn",type:"button",text:key==="youtube"?"Copiar título":"Copiar legenda",onclick:()=>copy(full)}),
+      el("span",{class:"badge "+(posted?"b-ready":"b-todo"),text:posted?"postado ✓":"pendente"}),
+      posted && pl.views != null ? el("span",{class:"views"}, el("b",{text:fmt(pl.views)}), " views") : null));
+}
+
+function showVideo(id){
+  document.querySelector('nav button[data-tab="vid"]').click();
+  const c = document.getElementById("v-"+id);
+  if (c){ c.scrollIntoView({behavior:"smooth",block:"center"}); }
+}
+
+function renderCal(){
+  const box = $("#cal"); box.replaceChildren();
+  if (!state.posts.length){ box.append(el("div",{class:"empty",text:"Nenhuma postagem no calendário ainda."})); return; }
+  const t = todayISO(); let lastWeek = null;
+  for (const p of state.posts){
+    const d = parseDate(p.date); const ws = weekStart(p.date).getTime();
+    if (ws !== lastWeek){
+      lastWeek = ws; const we = new Date(ws+6*864e5); const s = new Date(ws);
+      box.append(el("div",{class:"week",text:"Semana de "+s.getDate()+" "+MO[s.getMonth()]+" a "+we.getDate()+" "+MO[we.getMonth()]}));
+    }
+    const v = state.videos[p.video];
+    const ready = v && v.status === "pronto";
+    const src = ready && v.src;
+    const card = el("div",{class:"card"+(p.date===t?" today":p.date<t?" past":""), id:"d-"+p.date},
+      el("div",{class:"day"},
+        el("div",{class:"date"}, el("div",{class:"wd",text:WD[d.getDay()]}), el("div",{class:"dn",text:d.getDate()}), el("div",{class:"mo",text:MO[d.getMonth()]})),
+        el("div",{class:"body"},
+          el("div",{class:"titlerow"},
+            el("span",{class:"ptitle",text:p.title||""}),
+            p.date===t ? el("span",{class:"badge b-today",text:"HOJE"}) : null,
+            el("span",{class:"badge "+(ready?"b-ready":"b-todo"),text:ready?"vídeo pronto":"vídeo a produzir"})),
+          p.hook ? el("div",{class:"hook"}, el("b",{text:"Abertura: "}), p.hook) : null,
+          p.note ? el("div",{class:"note",text:p.note}) : null),
+        src ? el("div",{class:"thumb",title:"Ver o vídeo",onclick:()=>showVideo(p.video)}, el("video",{src: src+"#t=2", muted:true, playsinline:true, preload:"metadata"})) : null),
+      el("div",{class:"plats"}, ...["tiktok","instagram","youtube"].filter(k=>p.platforms && p.platforms[k]).map(k=>platRow(p,k))));
+    box.append(card);
+  }
+  const today = document.getElementById("d-"+t);
+  if (today && !renderCal.scrolled){ renderCal.scrolled = true; setTimeout(()=>today.scrollIntoView({block:"start"}), 50); }
+}
+
+function renderVideos(){
+  const g = $("#vgrid"); g.replaceChildren();
+  const list = Object.values(state.videos).sort((a,b)=>(a.order??999)-(b.order??999));
+  if (!list.length){ g.append(el("div",{class:"empty",text:"Nenhum vídeo ainda."})); return; }
+  for (const v of list){
+    const src = v.src;
+    g.append(el("div",{class:"vcard",id:"v-"+v.id},
+      src ? el("video",{src, controls:true, playsinline:true, preload:"metadata"}) : el("div",{class:"ph",text:v.status==="pronto"?"Arquivo ainda não publicado":"A produzir"}),
+      el("div",{class:"vi"},
+        el("div",{class:"vt",text:v.title||v.id}),
+        el("div",{class:"vm",text:[v.id, v.duration, v.date ? "para "+parseDate(v.date).getDate()+"/"+(parseDate(v.date).getMonth()+1) : null, v.status==="pronto"?"pronto":"a produzir"].filter(Boolean).join(" · ")}),
+        v.hook ? el("div",{class:"hook",text:v.hook}) : null,
+        src ? el("a",{class:"btn primary",href:src,download:(v.file||v.id+".mp4"),style:"margin-top:8px",text:"Baixar vídeo"}) : null)));
+  }
+}
+
+function renderIdeas(){
+  const box = $("#ilist"); box.replaceChildren();
+  const order = {ideia:0, agendada:1, feito:2};
+  const list = [...state.ideas].sort((a,b)=>(order[a.status]??0)-(order[b.status]??0) || String(a.date||"").localeCompare(String(b.date||"")));
+  if (!list.length){ box.append(el("div",{class:"empty",text:"Sem ideias por enquanto."})); return; }
+  for (const i of list){
+    const lbl = i.status==="feito" ? "feito" : i.status==="agendada" ? "no calendário" + (i.date ? " · "+parseDate(i.date).getDate()+"/"+(parseDate(i.date).getMonth()+1) : "") : "na fila";
+    box.append(el("div",{class:"idea"},
+      el("div",{},
+        el("div",{class:"it",text:i.title||""}),
+        i.hook ? el("div",{class:"ih",text:"“"+i.hook+"”"}) : null,
+        el("div",{class:"im",text:[i.format, lbl, i.by==="voce"?"ideia sua":null].filter(Boolean).join(" · ")})),
+      el("div",{class:"acts"},
+        el("span",{class:"badge "+(i.status==="feito"?"b-ready":i.status==="agendada"?"b-today":"b-todo"),text:lbl.split(" · ")[0]}))));
+  }
+}
+
+function renderRules(){
+  const box = $("#reg"); box.replaceChildren();
+  if (state.setup){
+    const s = state.setup;
+    box.append(el("div",{class:"rule"}, el("h3",{text:s.title||"Antes de começar"}), s.summary ? el("div",{class:"rs",text:s.summary}) : null,
+      el("ul",{}, ...(s.items||[]).map(it=>el("li",{class:it.done?"on":null,text:(it.done?"✓ ":"")+it.text})))));
+  }
+  for (const g of state.guide){
+    const r = el("div",{class:"rule"},
+      el("h3",{}, g.color ? el("span",{class:"dot",style:"background:"+g.color}) : null, g.name||""),
+      g.summary ? el("div",{class:"rs",text:g.summary}) : null,
+      el("ul",{}, ...(g.rules||[]).map(x=>el("li",{text:x}))));
+    const kv = [["Horários",g.times],["Hashtags",g.hashtags],["Frequência",g.frequency]].filter(x=>x[1]);
+    if (kv.length) r.append(el("dl",{class:"kv"}, ...kv.flatMap(([k,v])=>[el("dt",{text:k}), el("dd",{text:v})])));
+    box.append(r);
+  }
+}
+
+function renderAll(){ renderStats(); renderCal(); renderVideos(); renderIdeas(); renderRules(); }
+
+document.querySelectorAll("nav button").forEach(b=>b.addEventListener("click",()=>{
+  document.querySelectorAll("nav button").forEach(x=>x.setAttribute("aria-selected", x===b));
+  for (const id of ["cal","vid","ide","reg"]) $("#"+id).hidden = id !== b.dataset.tab;
+}));
+
+fetch("dados.json", {cache:"no-store"})
+  .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+  .then(d => {
+    state = {posts:d.posts||[], videos:d.videos||{}, ideas:d.ideas||[], guide:d.guide||[], setup:d.setup||null, agent:d.agent||null};
+    $("#foot").textContent = d.updated ? "Atualizado em "+d.updated+" (horário de Brasília)" : "";
+    renderAll();
+  })
+  .catch(() => { $("#offline").hidden = false; $("#cal").replaceChildren(); });
+</script>
+</body>
+</html>

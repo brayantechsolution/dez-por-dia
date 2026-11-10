@@ -13,6 +13,9 @@ Cada execução começa do zero. Tudo o que ela precisa saber está aqui.
   - `lib.js` traz as cores, a animação, o celular e as legendas.
   - `render.py` gera o MP4 (1080×1920, 30 fps) ou só alguns quadros para conferir.
   - Os vídeos de exemplo são `v1.html` a `v5.html`. Cada vídeo é um HTML com `DURATION` e uma função `render(t)`.
+- **Painel no Netlify** (cópia só de leitura do painel, para abrir fora do claude.ai): `marketing/painel/`
+  - `index.html` lê `dados.json`; os vídeos vêm de `marketing/site/videos/` (o `netlify.toml` copia na hora de publicar).
+  - O painel do claude.ai continua sendo o principal. O Netlify é só um espelho, atualizado pelo passo "Atualizar o painel do Netlify".
 - **Palavras do app**: `app/src/main/assets/words.json`, com 1.300 palavras.
   - Campos: `w` (palavra), `pt` (tradução), `s`/`t` (frase e tradução), `s2`/`t2` (frase no passado, mostrada quando as 10 palavras repetem), `p` (passado do verbo, só nos verbos) e `e` (emoji).
   - No `lockScreen()` do kit, passe `p` na palavra para mostrar o passado ao lado (borrow → borrowed) e `{ round2: true }` para a rodada "REVISÃO NO PASSADO".
@@ -71,9 +74,19 @@ Toda escrita em documento que já existe leva `if_version` com a versão lida. S
    - palavras por tema (trabalho, viagem, comida);
    - demonstração do app.
 8. **Atualizar `meta/agent`**: `when` recebe a data em português curto (ex.: "10 nov") e `message` uma frase dizendo o que foi feito.
-9. **Salvar no GitHub** o `.html` novo e o `marketing/site/videos/<vN>.mp4`. Nenhum outro MP4 (nada de `out/` ou `frames/`).
+9. **Atualizar o painel do Netlify** (veja a seção abaixo), para que o `dados.json` entre no mesmo commit.
+10. **Salvar no GitHub** o `.html` novo, o `marketing/site/videos/<vN>.mp4` e o `marketing/painel/dados.json`. Nenhum outro MP4 (nada de `out/` ou `frames/`).
    - Use um commit em português e faça `git push` na `main`.
    - Pastas em `marketing/` não disparam a geração do APK.
+
+## Atualizar o painel do Netlify
+
+Faça isto no fim de toda execução que mudou o painel (vídeo novo, dia novo, postagem, views).
+
+1. Exporte as cinco coleções com `ArtifactData`, `action: "list"`, `query: {"limit": 1000}` e o mesmo `out_dir` (uma pasta temporária, fora do repositório): `posts`, `videos`, `ideas`, `guide` e `meta`.
+2. Rode `python3 marketing/painel/exportar.py <out_dir>`. Ele escreve `marketing/painel/dados.json` e só liga o vídeo que já tem MP4 em `marketing/site/videos/`.
+3. Faça commit de `marketing/painel/dados.json` (junto com o resto da execução) e `git push` na `main`. O Netlify publica sozinho em 1 ou 2 minutos.
+4. Se o export falhar, não apague o `dados.json` antigo: só registre em `meta/agent` e siga.
 
 ## Postagem no Instagram (tarefa "Postar no Instagram")
 
@@ -93,7 +106,8 @@ TikTok (@10.pordia) e YouTube (canal "10 por dia") estão ligados só para leitu
    - TikTok e YouTube: views por vídeo; ache o dia pelo título ou pela legenda.
    - Grave em `platforms.<rede>.views` de cada dia. No TikTok e no YouTube, se achar o vídeo, mude também `status` para `postado`.
 7. Atualize `meta/agent` com uma frase (ex.: "Reel de 15/11 postado; views atualizadas.").
-8. Se a postagem falhar, registre o erro em `meta/agent`, não tente de novo mais de uma vez e avise o dono.
+8. Faça o passo "Atualizar o painel do Netlify" e o `git push` só do `marketing/painel/dados.json` (commit em português).
+9. Se a postagem falhar, registre o erro em `meta/agent`, não tente de novo mais de uma vez e avise o dono.
 
 ## Regras
 
