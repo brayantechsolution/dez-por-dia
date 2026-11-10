@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>Vídeo 8 — POV: o celular te ensinando</title>
+<style>html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#0B1422}</style>
+<script src="lib.js"></script></head>
+<body>
+<script>
+const DURATION = 12;
+// palavras e frases do words.json do app
+const WAKE = { w: 'wake up', p: 'woke up', pt: 'acordar', s: 'I wake up at six every day.', t: 'Eu acordo às seis todos os dias.', e: '⏰' };
+const LUNCH = { w: 'lunch', pt: 'almoço', s: "Let's have lunch together after the meeting.", t: 'Vamos almoçar juntos depois da reunião.', e: '🥪' };
+const TRAFFIC = { w: 'traffic', pt: 'trânsito', s: "Sorry I'm late. The traffic was terrible.", t: 'Desculpa o atraso. O trânsito estava terrível.', e: '🚦' };
+const TIRED = { w: 'tired', pt: 'cansado', s: "I'm too tired to go out tonight.", t: 'Estou cansado demais para sair hoje à noite.', e: '😴' };
+
+// [hora em que a tela acende, palavra, número, relógio]
+const looks = [
+  [0.75, WAKE, 1, '07:10'],
+  [4.5, LUNCH, 4, '12:30'],
+  [6.1, TRAFFIC, 7, '18:15'],
+  [7.6, TIRED, 10, '23:40'],
+];
+
+const ph = phone(240, 560, 600, 1272);
+const ls = lockScreen(ph.screen, ph.w, ph.h);
+ls.date.textContent = 'Seg, 16 de novembro';
+const off = el('div', 'position:absolute;inset:0;background:#000;z-index:40', '', ph.screen);
+// anel destacando o relógio (o que a pessoa queria ver)
+const u = ls.u;
+const ring = el('div', `position:absolute;left:50%;top:${85 * u}px;width:${240 * u}px;height:${92 * u}px;margin-left:-${120 * u}px;
+  border:${4 * u}px solid ${C.lime};border-radius:${30 * u}px;box-sizing:border-box;opacity:0`, '', ls.root);
+
+const caps = [
+  [caption('POV: você só queria *ver as horas* ⏰', 190), 0.05, 2.7],
+  [caption('…e saiu sabendo *uma palavra* em inglês', 190), 2.7, 4.5],
+  [caption('É assim *o dia inteiro* 🔁', 230), 4.5, 7.6],
+  [caption("Sem abrir o app.<br>*10 por dia.*", 230), 7.6, 9.3],
+];
+const card = endCard(document.body);
+
+let key = -1;
+function render(t) {
+  for (const [c, a, b] of caps) popCaption(c, t, a, b);
+  ph.body.style.transformOrigin = '50% 30%';
+  ph.body.style.transform = `translateY(${(1 - out(prog(t, 0, 0.6))) * 260}px) scale(${1 + 0.03 * prog(t, 0.6, 9.3)})`;
+
+  let idx = 0;
+  for (let i = 0; i < looks.length; i++) if (t >= looks[i][0] - 0.15) idx = i;
+  const [on, w, n, clk] = looks[idx];
+  if (idx !== key) { ls.set(w, n, n, n - 1); ls.clock.textContent = clk; key = idx; }
+
+  // tela apaga e acende entre uma olhada e outra
+  let dark = t < 0.75 ? 1 : 1 - prog(t, 0.75, 1.0);
+  for (let i = 1; i < looks.length; i++) dark = Math.max(dark, win(t, looks[i][0] - 0.4, looks[i][0] + 0.05, 0.15));
+  off.style.opacity = dark;
+
+  // na primeira olhada só aparece o relógio; a palavra surge logo depois
+  const ws = idx === 0 ? 1.7 : on;
+  const pin = out(prog(t, ws, ws + 0.3));
+  ls.block.style.opacity = pin; ls.emoji.style.opacity = pin; ls.halo.style.opacity = pin;
+  ls.block.style.transform = `translateY(${(1 - pin) * 40}px)`;
+  ls.emoji.style.transform = `scale(${0.7 + 0.3 * back(prog(t, ws, ws + 0.5))})`;
+
+  const r = win(t, 1.0, 1.75, 0.2);
+  ring.style.opacity = r;
+  ls.clock.style.transform = `scale(${1 + 0.06 * r})`;
+
+  playEnd(card, t, 9.3);
+}
+render(0);
+</script>
+</body></html>
