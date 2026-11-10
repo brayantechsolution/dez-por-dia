@@ -9,6 +9,9 @@ on:
       - '.github/workflows/ios.yml'
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: macos-26
@@ -29,3 +32,28 @@ jobs:
             -configuration Debug -sdk iphonesimulator \
             CODE_SIGNING_ALLOWED=NO build 2>&1 | tee build.log | grep -E "error:|BUILD (SUCCEEDED|FAILED)" || true
           grep -q "BUILD SUCCEEDED" build.log
+
+      - name: Abrir no simulador e fotografar a tela
+        run: |
+          cd ios
+          DEVICE=$(xcrun simctl list devices available | grep -m1 -E "^ +iPhone [0-9]+ " | sed -E 's/.*\(([A-F0-9-]{36})\).*/\1/')
+          echo "Simulador: $DEVICE"
+          xcrun simctl boot "$DEVICE"
+          xcrun simctl bootstatus "$DEVICE" -b
+          xcrun simctl status_bar "$DEVICE" override --time "9:41" --batteryLevel 100 || true
+          xcrun simctl install "$DEVICE" build/Debug-iphonesimulator/DezPorDia.app
+          xcrun simctl launch "$DEVICE" app.dezpordia
+          sleep 10
+          mkdir -p shots
+          xcrun simctl io "$DEVICE" screenshot shots/app.png
+          xcrun simctl ui "$DEVICE" appearance light || true
+
+      - name: Guardar a foto no ramo ios-telas
+        run: |
+          cd ios/shots
+          git init -q -b ios-telas
+          git config user.email "actions@github.com"
+          git config user.name "GitHub Actions"
+          git add app.png
+          git commit -q -m "Tela do app no simulador (${GITHUB_SHA::7})"
+          git push -q -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" ios-telas
