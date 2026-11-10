@@ -5,6 +5,8 @@ on:
     branches: [main]
     paths-ignore:
       - 'marketing/**'
+      - 'ios/**'
+      - '.github/workflows/ios.yml'
   workflow_dispatch:
 
 permissions:
