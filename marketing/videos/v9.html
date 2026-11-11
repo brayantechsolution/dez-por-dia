@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>Vídeo 9 — A conta dos desbloqueios</title>
+<style>html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#0B1422}</style>
+<script src="lib.js"></script></head>
+<body>
+<script>
+const DURATION = 15;
+// palavras e frases do words.json do app
+const WORDS = [
+  { w: 'wake up', p: 'woke up', pt: 'acordar', s: 'I wake up at six every day.', t: 'Eu acordo às seis todos os dias.', s2: 'I woke up at six today.', t2: 'Acordei às seis hoje.', e: '⏰' },
+  { w: 'coffee', pt: 'café', s: 'I need a coffee before work.', t: 'Preciso de um café antes do trabalho.', s2: 'The coffee was too strong.', t2: 'O café estava forte demais.', e: '☕' },
+  { w: 'traffic', pt: 'trânsito', s: "Sorry I'm late. The traffic was terrible.", t: 'Desculpa o atraso. O trânsito estava terrível.', s2: 'We got stuck in traffic for an hour.', t2: 'Ficamos presos no trânsito por uma hora.', e: '🚦' },
+  { w: 'meeting', pt: 'reunião', s: 'The meeting starts at nine.', t: 'A reunião começa às nove.', s2: 'The meeting ended late yesterday.', t2: 'A reunião terminou tarde ontem.', e: '👥' },
+  { w: 'busy', pt: 'ocupado', s: "Sorry, I'm busy right now.", t: 'Desculpa, estou ocupado agora.', s2: 'I was very busy last week.', t2: 'Eu estava muito ocupado na semana passada.', e: '🤹' },
+  { w: 'lunch', pt: 'almoço', s: "Let's have lunch together after the meeting.", t: 'Vamos almoçar juntos depois da reunião.', s2: 'We had lunch at a new place.', t2: 'Almoçamos num lugar novo.', e: '🥪' },
+  { w: 'message', pt: 'mensagem', s: 'I sent you a message this morning.', t: 'Eu te mandei uma mensagem hoje de manhã.', s2: 'I got your message too late.', t2: 'Recebi sua mensagem tarde demais.', e: '✉️' },
+  { w: 'phone', pt: 'celular, telefone', s: 'My phone is in my pocket.', t: 'Meu celular está no meu bolso.', s2: 'My phone died in the middle of the call.', t2: 'Meu celular descarregou no meio da ligação.', e: '📱' },
+  { w: 'tired', pt: 'cansado', s: "I'm too tired to go out tonight.", t: 'Estou cansado demais para sair hoje à noite.', s2: 'We were tired after the long trip.', t2: 'Estávamos cansados depois da viagem longa.', e: '😴' },
+  { w: 'dinner', pt: 'jantar', s: 'What do you want for dinner tonight?', t: 'O que você quer jantar hoje à noite?', s2: 'Dinner was delicious last night.', t2: 'O jantar estava delicioso ontem à noite.', e: '🍝' },
+];
+const T1 = 2.9, STEP = 0.45;          // desbloqueios 1..10, um a cada STEP s
+const FF0 = T1 + 10 * STEP, FF1 = FF0 + 1.6;   // avanço rápido até 50
+const TOTAL = 50;
+const startMin = 7 * 60 + 2;          // 07:02, cada desbloqueio da manhã ~17 min depois
+const endMin = 23 * 60 + 40;          // 23:40
+
+// Gancho
+const hook = el('div', `position:absolute;left:80px;right:80px;top:600px;text-align:center;font:800 104px/1.12 Inter;color:#fff;letter-spacing:-2px;opacity:0`,
+  'Quantas vezes você <span style="background:#C6F432;color:#0F1B2D;padding:0 16px;border-radius:16px">pegou o celular</span> hoje?');
+const think = el('div', `position:absolute;left:0;right:0;top:1180px;text-align:center;font-size:170px;opacity:0`, '📱🤔');
+
+// Contador
+const counter = el('div', `position:absolute;left:0;right:0;top:405px;text-align:center;opacity:0`);
+const pill = el('div', `display:inline-flex;align-items:baseline;gap:22px;padding:16px 40px;border-radius:999px;background:#16243A;box-shadow:inset 0 0 0 3px #2A3A52`, '', counter);
+el('div', `font:700 46px Inter;color:#A9B4C4`, '🔓 desbloqueios hoje', pill);
+const num = el('div', `font:900 78px/1 Inter;color:#C6F432;letter-spacing:-2px;min-width:90px;text-align:left`, '0', pill);
+
+// Celular
+const ph = phone(240, 560, 600, 1272);
+const ls = lockScreen(ph.screen, ph.w, ph.h);
+ls.date.textContent = 'Ter, 17 de novembro';
+const off = el('div', 'position:absolute;inset:0;background:#000;z-index:40', '', ph.screen);
+const ff = el('div', `position:absolute;right:${26 * ls.u}px;top:${30 * ls.u}px;padding:${6 * ls.u}px ${12 * ls.u}px;border-radius:999px;background:#C6F432;color:#0F1B2D;font:800 ${14 * ls.u}px Inter;z-index:45;opacity:0`, '⏩ o dia passando', ph.screen);
+
+const caps = [
+  [caption('Cada desbloqueio,<br>*uma palavra*', 190), 2.6, FF0],
+  [caption('Pegou o celular<br>*50 vezes*?', 190), FF0, FF1 + 0.3],
+  [caption('Cada palavra passou<br>*5 vezes* na sua frente', 190), FF1 + 0.3, 11.4],
+  [caption('Sem abrir o app.<br>*Só desbloquear.*', 190), 11.4, 12.9],
+];
+const card = endCard(document.body);
+
+const hhmm = (m) => { m = Math.round(m); return String(Math.floor(m / 60)).padStart(2, '0') + ':' + String(m % 60).padStart(2, '0'); };
+
+let key = -1;
+function render(t) {
+  // gancho
+  show(hook, win(t, 0.0, 2.6, 0.2), (1 - out(prog(t, 0, 0.4))) * 40, 0.92 + 0.08 * back(prog(t, 0, 0.45)));
+  show(think, win(t, 0.5, 2.6, 0.2), 0, 0.6 + 0.4 * back(prog(t, 0.5, 0.9)));
+
+  for (const [c, a, b] of caps) popCaption(c, t, a, b);
+
+  // celular e contador entram juntos
+  const pv = win(t, 2.5, 12.9, 0.25);
+  ph.body.style.opacity = pv;
+  ph.body.style.transform = `translateY(${(1 - out(prog(t, 2.5, 3.0))) * 300}px)`;
+  show(counter, pv, (1 - out(prog(t, 2.6, 3.0))) * 30);
+
+  // quantos desbloqueios até agora
+  let n = 0;
+  if (t >= T1) n = Math.min(10, Math.floor((t - T1) / STEP) + 1);
+  if (t >= FF0) n = 10 + Math.round((TOTAL - 10) * ease(prog(t, FF0, FF1)));
+  num.textContent = n;
+  num.style.transform = `scale(${t >= T1 && t < FF0 ? 1 + 0.12 * (1 - prog((t - T1) % STEP, 0, 0.2)) : 1 + 0.08 * win(t, FF1 - 0.1, FF1 + 0.3, 0.1)})`;
+
+  // relógio: manhã devagar, depois o resto do dia em avanço rápido
+  const morningEnd = startMin + 9 * 17;
+  let mins = startMin + Math.max(0, n - 1) * 17;
+  if (t >= FF0) mins = morningEnd + (endMin - morningEnd) * ease(prog(t, FF0, FF1));
+  ls.clock.textContent = hhmm(mins);
+
+  if (n > 0) {
+    const r2 = n > 10;
+    const wi = (n - 1) % 10;
+    const k = n;
+    if (k !== key) { ls.set(WORDS[wi], wi + 1, r2 ? 10 : wi + 1, wi, { round2: r2 }); key = k; }
+  }
+
+  // tela apaga e acende a cada desbloqueio da manhã
+  let dark = t < T1 ? 1 : 1 - prog(t, T1, T1 + 0.12);
+  if (t >= T1 + STEP && t < FF0) {
+    const ph2 = (t - T1) % STEP;
+    dark = Math.max(0, 1 - ph2 / 0.12) * 0.85;
+  }
+  off.style.opacity = dark;
+  ff.style.opacity = win(t, FF0, FF1 + 0.2, 0.15);
+  ls.emoji.style.transform = `scale(${t < FF0 ? 0.8 + 0.2 * back(prog((t - T1) % STEP, 0, 0.3)) : 1})`;
+
+  playEnd(card, t, 12.9);
+}
+render(0);
+</script>
+</body></html>

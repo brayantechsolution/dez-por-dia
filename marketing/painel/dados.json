@@ -1,8 +1,8 @@
 {
- "updated": "10/11/2026 18:58",
+ "updated": "11/11/2026 07:26",
  "agent": {
-  "message": "Reel de 10/11 (\"A conta: 1.300 palavras\") postado no Instagram às 18h54; views atualizadas (IG 9/11: 2, IG 10/11: 0, TikTok 9/11: 0).",
-  "when": "10 nov"
+  "message": "Vídeo v9 \"A conta dos desbloqueios\" (15 s) pronto e anexado para 17/11; calendário já cobre até 23/11. Próximo a produzir: v10 \"Falsos amigos #2\" (18/11).",
+  "when": "11 nov"
  },
  "posts": [
   {
@@ -884,13 +884,13 @@
    "brief": "Um contador de desbloqueios ao longo do dia. A cada desbloqueio, uma palavra. No fim do dia, as 10 palavras já passaram várias vezes pela sua frente.",
    "date": "2026-11-17",
    "duration": "15 s",
-   "file": null,
+   "file": "v9-conta-desbloqueios.mp4",
    "hook": "Quantas vezes você pegou o celular hoje?",
    "order": 9,
-   "status": "a produzir",
+   "status": "pronto",
    "title": "A conta dos desbloqueios",
    "id": "v9",
-   "src": null
+   "src": "videos/v9.mp4"
   }
  },
  "ideas": [
@@ -990,7 +990,7 @@
    "date": "2026-11-17",
    "format": "demonstração",
    "hook": "Quantas vezes você pegou o celular hoje?",
-   "status": "agendada",
+   "status": "feito",
    "title": "A conta dos desbloqueios",
    "video": "v9"
   },
