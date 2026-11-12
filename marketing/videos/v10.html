@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>Vídeo 10 — Falsos amigos #2</title>
+<style>html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#0F1B2D}</style>
+<script src="lib.js"></script></head>
+<body>
+<script>
+const DURATION = 15;
+// palavras e frases do words.json ("college" não está lá: frase s2 de "parents"); "fake" é o que o brasileiro acha que significa
+const FF = [
+  { w: 'library', fake: 'livraria', pt: 'biblioteca', s: 'I study at the library after class.', t: 'Eu estudo na biblioteca depois da aula.', e: '📚' },
+  { w: 'college', fake: 'colégio', pt: 'faculdade', s: 'My parents met in college.', t: 'Meus pais se conheceram na faculdade.', e: '🎓' },
+  { w: 'parents', fake: 'parentes', pt: 'pais (pai e mãe)', s: 'My parents live in a small city.', t: 'Meus pais moram numa cidade pequena.', e: '👫' },
+];
+const T0 = [0, 4.2, 7.6];   // início de cada palavra
+const LEN = [4.2, 3.4, 3.4];
+
+const bg = el('div', `position:absolute;inset:0;background:${C.navy}`);
+
+// cartão central de cada palavra
+const card = el('div', `position:absolute;left:80px;right:80px;top:640px;font-family:Inter;color:#fff;text-align:center`);
+const chip = el('div', `display:inline-block;padding:12px 30px;border-radius:999px;background:${C.lime};color:${C.navy};font:800 34px Inter;letter-spacing:2px`, '', card);
+const emoji = el('div', `margin-top:34px;font-size:150px;line-height:170px;font-family:'Noto Color Emoji'`, '', card);
+const word = el('div', `margin-top:18px;font:900 150px/1 Inter;color:${C.lime};letter-spacing:-4px`, '', card);
+const fake = el('div', `margin-top:56px;font:700 68px/1.1 Inter;color:#FF6B6B`, '', card);
+const real = el('div', `margin-top:26px;font:800 84px/1.1 Inter;color:#fff`, '', card);
+const sen = el('div', `margin-top:60px;font:700 46px/1.3 Inter;color:#fff`, '', card);
+const senPt = el('div', `margin-top:12px;font:400 40px/1.3 Inter;color:${C.grey}`, '', card);
+
+const caps = [
+  [caption("*'Library'* não é livraria 📚", 180), 0.05, 4.1],
+  [caption('Colégio? Nada disso 🎓', 210), 4.2, 7.5],
+  [caption('Parentes é *relatives* 👀', 210), 7.6, 11.0],
+  [caption('Salva pra *não errar mais*', 820), 11.0, 12.9],
+];
+const end = endCard(document.body);
+
+let key = -1;
+function render(t) {
+  for (const [c, a, b] of caps) popCaption(c, t, a, b);
+  let i = 0; for (let j = 0; j < 3; j++) if (t >= T0[j]) i = j;
+  const a = T0[i], L = LEN[i];
+  if (i !== key) {
+    const f = FF[i];
+    bg.style.background = GROUNDS[[0, 2, 1][i]];
+    chip.textContent = `FALSO AMIGO ${i + 1} DE 3`;
+    emoji.textContent = f.e; word.textContent = f.w;
+    fake.innerHTML = `❌ <span style="text-decoration:line-through;text-decoration-thickness:6px">${f.fake}</span>`;
+    real.innerHTML = `✅ ${f.pt}`;
+    sen.textContent = f.s; senPt.textContent = f.t;
+    key = i;
+  }
+  const r = t - a;                       // tempo dentro da palavra
+  const fk = i === 0 ? 0.9 : 0.5;        // quando aparece o "falso"
+  const rl = i === 0 ? 1.9 : 1.3;        // quando aparece o certo
+  const sn = i === 0 ? 2.5 : 1.8;        // frase de exemplo
+  const inC = out(prog(r, 0, 0.35));
+  const outC = t < 11.0 ? 1 - prog(r, L - 0.2, L) : 0;
+  const cardO = t >= 11.0 ? 1 - prog(t, 11.0, 11.3) : Math.min(i === 0 ? 1 : inC, outC);
+  card.style.opacity = cardO;
+  card.style.transform = `translateY(${(i === 0 ? 0 : (1 - inC) * 60)}px)`;
+  emoji.style.transform = `scale(${0.7 + 0.3 * back(i === 0 ? 1 : prog(r, 0, 0.5))})`;
+  word.style.transform = `scale(${1 + 0.04 * Math.sin(r * 3)})`;
+  const fo = out(prog(r, fk, fk + 0.3));
+  fake.style.opacity = fo; fake.style.transform = `translateX(${(1 - fo) * -80}px)`;
+  const ro = prog(r, rl, rl + 0.35);
+  real.style.opacity = out(ro); real.style.transform = `scale(${0.8 + 0.2 * back(ro)})`;
+  const so = out(prog(r, sn, sn + 0.3));
+  sen.style.opacity = so; senPt.style.opacity = so;
+  sen.style.transform = senPt.style.transform = `translateY(${(1 - so) * 30}px)`;
+
+  // resumo: as três palavras juntas
+  sum.style.opacity = win(t, 11.0, 12.9, 0.3);
+  sumRows.forEach((row, k) => {
+    const p = out(prog(t, 11.2 + k * 0.2, 11.5 + k * 0.2));
+    row.style.opacity = p; row.style.transform = `translateX(${(1 - p) * 100}px)`;
+  });
+  playEnd(end, t, 12.9);
+}
+
+const sum = el('div', `position:absolute;left:90px;right:90px;top:1150px;font-family:Inter;opacity:0`);
+const sumRows = FF.map(f => el('div', `display:flex;justify-content:space-between;align-items:baseline;padding:30px 0;border-bottom:2px solid ${C.line}`,
+  `<span style="font:900 72px Inter;color:${C.lime};letter-spacing:-2px">${f.w}</span><span style="font:700 58px Inter;color:#fff">${f.pt}</span>`, sum));
+document.body.appendChild(end.root);   // cartão final por cima de tudo
+render(0);
+</script>
+</body></html>

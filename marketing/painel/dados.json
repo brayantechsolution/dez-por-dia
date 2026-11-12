@@ -1,8 +1,8 @@
 {
- "updated": "11/11/2026 18:58",
+ "updated": "12/11/2026 07:26",
  "agent": {
-  "message": "Reel de 11/11 (v4) postado no Instagram às 18h55; views atualizadas.",
-  "when": "11 nov"
+  "message": "Vídeo v10 (Falsos amigos #2: library, college, parents) pronto para 18/11; calendário segue com 11 dias à frente, até 23/11.",
+  "when": "12 nov"
  },
  "posts": [
   {
@@ -728,13 +728,13 @@
    "brief": "Library = biblioteca. College = faculdade. Parents = pais (não parentes). Mais três falsos amigos.",
    "date": "2026-11-18",
    "duration": "15 s",
-   "file": null,
+   "file": "v10-falsos-amigos-2.mp4",
    "hook": "'Library' não é livraria.",
    "order": 10,
-   "status": "a produzir",
+   "status": "pronto",
    "title": "Falsos amigos #2",
    "id": "v10",
-   "src": null
+   "src": "videos/v10.mp4"
   },
   "v11": {
    "brief": "Bread, butter, scrambled eggs, juice: um quiz rápido com palavras do café da manhã. Pausa e responde antes da resposta aparecer.",
@@ -900,7 +900,7 @@
    "date": "2026-11-18",
    "format": "série",
    "hook": "'Library' não é livraria.",
-   "status": "agendada",
+   "status": "feito",
    "title": "Falsos amigos #2",
    "video": "v10"
   },
