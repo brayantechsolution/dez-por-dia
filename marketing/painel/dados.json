@@ -1,7 +1,7 @@
 {
- "updated": "12/11/2026 10:59",
+ "updated": "12/11/2026 18:55",
  "agent": {
-  "message": "Views atualizadas (Reels 10/11: 29, 11/11: 2); Reel de hoje sai às 19:00.",
+  "message": "Reel do dia postado no Instagram às 19h",
   "when": "12 nov"
  },
  "posts": [
@@ -153,7 +153,7 @@
    "note": null,
    "platforms": {
     "instagram": {
-     "status": "pendente",
+     "status": "postado",
      "tags": [
       "#aprenderingles",
       "#inglesonline",
