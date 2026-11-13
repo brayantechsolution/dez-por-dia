@@ -1,7 +1,7 @@
 {
- "updated": "13/11/2026 12:34",
+ "updated": "13/11/2026 18:55",
  "agent": {
-  "message": "Views atualizadas (12/11 Reel: 3; Shorts 09/11: 175). Reel de hoje (v5) fica para as 19:00.",
+  "message": "Reel do dia (v5 – Um dia com a Ana) postado no Instagram às 19h.",
   "when": "13 nov"
  },
  "posts": [
@@ -200,7 +200,7 @@
    "note": "Vídeo mais longo (25 s): veja na sexta se a retenção caiu em relação aos de 15 s.",
    "platforms": {
     "instagram": {
-     "status": "pendente",
+     "status": "postado",
      "tags": [
       "#aprenderingles",
       "#inglesonline",
