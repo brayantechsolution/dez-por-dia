@@ -1,8 +1,8 @@
 {
- "updated": "12/11/2026 18:58",
+ "updated": "13/11/2026 07:30",
  "agent": {
-  "message": "Reel de 12/11 já estava postado; views atualizadas às 18h57.",
-  "when": "12 nov"
+  "message": "Vídeo v11 (Quiz: café da manhã — bread, butter, eggs, juice, 15 s) pronto para 19/11; calendário segue com 10 dias à frente (até 23/11).",
+  "when": "13 nov"
  },
  "posts": [
   {
@@ -740,13 +740,13 @@
    "brief": "Bread, butter, scrambled eggs, juice: um quiz rápido com palavras do café da manhã. Pausa e responde antes da resposta aparecer.",
    "date": "2026-11-19",
    "duration": "15 s",
-   "file": null,
+   "file": "v11-quiz-cafe-da-manha.mp4",
    "hook": "Você sabe pedir café da manhã em inglês?",
    "order": 11,
-   "status": "a produzir",
+   "status": "pronto",
    "title": "Quiz: café da manhã",
    "id": "v11",
-   "src": null
+   "src": "videos/v11.mp4"
   },
   "v12": {
    "brief": "Começa a série: um vídeo por semana mostrando o progresso no desafio de 130 dias com o 10 por Dia. Hoje, as 10 palavras do dia 1.",
@@ -910,7 +910,7 @@
    "date": "2026-11-19",
    "format": "quiz",
    "hook": "Você sabe pedir café da manhã em inglês?",
-   "status": "agendada",
+   "status": "feito",
    "title": "Quiz: café da manhã",
    "video": "v11"
   },

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>Vídeo 11 — Quiz: café da manhã</title>
+<style>html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#0F1B2D}</style>
+<script src="lib.js"></script></head>
+<body>
+<script>
+const DURATION = 15;
+// palavras e frases do words.json ("scrambled eggs" não está lá: usamos "egg" no plural, frase s de "egg")
+const QZ = [
+  { pt: 'pão', e: '🍞', opts: ['break', 'bread', 'beard'], ok: 1, s: 'The bread at this bakery is cheap.' },
+  { pt: 'manteiga', e: '🧈', opts: ['butter', 'better', 'bitter'], ok: 0, s: 'I like bread with butter.' },
+  { pt: 'ovos', e: '🥚', opts: ['legs', 'ice', 'eggs'], ok: 2, s: 'I eat two eggs for breakfast.' },
+  { pt: 'suco', e: '🧃', opts: ['June', 'juice', 'just'], ok: 1, s: 'Orange juice is my favorite drink.' },
+];
+const Q0 = 1.0, QL = 2.6, QEND = Q0 + QL * 4;   // 11.4
+const REVEAL = 1.6;                             // tempo da resposta dentro da pergunta
+const END = 12.8;
+
+const bg = el('div', `position:absolute;inset:0;background:${C.navy}`);
+
+const card = el('div', `position:absolute;left:80px;right:80px;top:470px;font-family:Inter;color:#fff;text-align:center;opacity:0`);
+const chip = el('div', `display:inline-block;padding:12px 30px;border-radius:999px;background:${C.lime};color:${C.navy};font:800 34px Inter;letter-spacing:2px`, '', card);
+const emoji = el('div', `margin-top:30px;font-size:150px;line-height:170px;font-family:'Noto Color Emoji'`, '', card);
+const ask = el('div', `margin-top:14px;font:600 54px/1.1 Inter;color:${C.grey}`, 'Como se diz', card);
+const ptw = el('div', `margin-top:10px;font:900 120px/1 Inter;color:#fff;letter-spacing:-3px`, '', card);
+const timer = el('div', `margin:44px auto 0;width:760px;height:14px;border-radius:7px;background:${C.line};overflow:hidden`, '', card);
+const bar = el('div', `height:100%;width:100%;background:${C.lime};border-radius:7px`, '', timer);
+const optBox = el('div', `margin:40px auto 0;width:760px;display:flex;flex-direction:column;gap:24px`, '', card);
+const opts = [0, 1, 2].map(k => el('div', `display:flex;align-items:center;gap:30px;padding:0 40px;height:118px;border-radius:30px;border:4px solid ${C.line};background:rgba(255,255,255,.04);font:800 66px Inter;color:#fff;text-align:left`, '', optBox));
+const sen = el('div', `margin-top:44px;font:600 44px/1.3 Inter;color:#fff`, '', card);
+
+const caps = [
+  [caption('Você sabe pedir *café da manhã* em inglês? ☕', 150), 0.05, 3.5],
+  [caption('Responde *antes do tempo* ⏱️', 190), 3.6, 6.1],
+  [caption('Essa todo mundo *erra* 👀', 190), 6.2, 8.7],
+  [caption('Última, *valendo!* 🔥', 190), 8.8, 11.3],
+  [caption('Quantas você *acertou?*', 380), 11.4, 12.8],
+];
+const intro = el('div', `position:absolute;left:0;right:0;top:640px;text-align:center;font-size:300px;line-height:340px;font-family:'Noto Color Emoji';opacity:0`, '☕');
+const end = endCard(document.body);
+
+let key = -1;
+function render(t) {
+  for (const [c, a, b] of caps) popCaption(c, t, a, b);
+  intro.style.opacity = 1 - prog(t, 0.8, 1.0);
+  intro.style.transform = `scale(${0.6 + 0.4 * back(prog(t, 0, 0.5))}) rotate(${Math.sin(t * 5) * 6}deg)`;
+  const i = Math.max(0, Math.min(3, Math.floor((t - Q0) / QL)));
+  const a = Q0 + i * QL, r = t - a;
+  const q = QZ[i];
+  if (i !== key) {
+    bg.style.background = GROUNDS[[0, 1, 5, 2][i]];
+    chip.textContent = `PERGUNTA ${i + 1} DE 4`;
+    emoji.textContent = q.e; ptw.textContent = q.pt;
+    opts.forEach((o, k) => o.innerHTML = `<span style="font:800 44px Inter;color:${C.grey};width:50px">${'ABC'[k]}</span><span class="w">${q.opts[k]}</span><span class="m" style="margin-left:auto;font-family:'Noto Color Emoji';font-size:56px"></span>`);
+    sen.innerHTML = q.s.replace(new RegExp(q.opts[q.ok], 'i'), m => `<span style="color:${C.lime};font-weight:800">${m}</span>`);
+    key = i;
+  }
+  const inC = out(prog(r, 0, 0.35));
+  const outC = 1 - prog(r, QL - 0.2, QL);
+  card.style.opacity = t < Q0 ? 0 : (t >= QEND ? 0 : Math.min(inC, i === 3 ? 1 - prog(t, QEND - 0.25, QEND) : outC));
+  card.style.transform = `translateY(${(1 - inC) * 60}px)`;
+  emoji.style.transform = `scale(${0.7 + 0.3 * back(prog(r, 0, 0.5))})`;
+  bar.style.width = `${(1 - prog(r, 0.3, REVEAL)) * 100}%`;
+  bar.style.background = r > REVEAL - 0.5 ? '#FF6B6B' : C.lime;
+  const rv = prog(r, REVEAL, REVEAL + 0.25);
+  opts.forEach((o, k) => {
+    const oin = out(prog(r, 0.1 + k * 0.08, 0.4 + k * 0.08));
+    const good = k === q.ok;
+    o.style.transform = `translateX(${(1 - oin) * 80}px) scale(${good ? 1 + 0.06 * back(rv) - 0.06 * rv : 1})`;
+    o.style.opacity = oin * (good ? 1 : 1 - 0.65 * rv);
+    o.style.borderColor = good && rv > 0 ? C.lime : C.line;
+    o.style.background = good && rv > 0 ? C.lime : 'rgba(255,255,255,.04)';
+    o.querySelector('.w').style.color = good && rv > 0 ? C.navy : '#fff';
+    o.firstChild.style.color = good && rv > 0 ? C.navy : C.grey;
+    o.querySelector('.m').textContent = rv > 0 ? (good ? '✅' : '') : '';
+  });
+  const so = out(prog(r, REVEAL + 0.15, REVEAL + 0.45));
+  sen.style.opacity = so; sen.style.transform = `translateY(${(1 - so) * 30}px)`;
+
+  // resumo: as quatro palavras
+  sum.style.opacity = win(t, QEND, END, 0.3);
+  sumRows.forEach((row, k) => {
+    const p = out(prog(t, QEND + 0.15 + k * 0.15, QEND + 0.45 + k * 0.15));
+    row.style.opacity = p; row.style.transform = `translateX(${(1 - p) * 100}px)`;
+  });
+  if (t >= QEND) bg.style.background = C.navy;
+  playEnd(end, t, END);
+}
+
+const sum = el('div', `position:absolute;left:90px;right:90px;top:620px;font-family:Inter;opacity:0`);
+const sumRows = QZ.map(q => el('div', `display:flex;justify-content:space-between;align-items:center;padding:30px 0;border-bottom:2px solid ${C.line}`,
+  `<span style="font:900 76px Inter;color:${C.lime};letter-spacing:-2px">${q.opts[q.ok]}</span><span style="font:700 60px Inter;color:#fff">${q.pt} <span style="font-family:'Noto Color Emoji'">${q.e}</span></span>`, sum));
+document.body.appendChild(end.root);
+render(0);
+</script>
+</body></html>
