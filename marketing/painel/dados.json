@@ -1,8 +1,8 @@
 {
- "updated": "13/11/2026 18:59",
+ "updated": "14/11/2026 07:26",
  "agent": {
-  "message": "Reel do dia (v5 – Um dia com a Ana) postado no Instagram às 19h; views atualizadas.",
-  "when": "13 nov"
+  "message": "Vídeo v12 (Desafio 130 dias: dia 1) pronto e anexado para 20/11; calendário já tem 9 dias à frente (até 23/11).",
+  "when": "14 nov"
  },
  "posts": [
   {
@@ -752,13 +752,13 @@
    "brief": "Começa a série: um vídeo por semana mostrando o progresso no desafio de 130 dias com o 10 por Dia. Hoje, as 10 palavras do dia 1.",
    "date": "2026-11-20",
    "duration": "20 s",
-   "file": null,
+   "file": "v12-desafio-130-dias-dia-1.mp4",
    "hook": "Hoje começo a aprender 1.300 palavras. Dia 1 de 130.",
    "order": 12,
-   "status": "a produzir",
+   "status": "pronto",
    "title": "Desafio 130 dias: dia 1",
    "id": "v12",
-   "src": null
+   "src": "videos/v12.mp4"
   },
   "v13": {
    "brief": "Além da tela de bloqueio, o 10 por Dia tem um widget para a tela inicial: toca em 'Próxima' e aparece a próxima palavra.",
@@ -920,7 +920,7 @@
    "date": "2026-11-20",
    "format": "série",
    "hook": "Hoje começo a aprender 1.300 palavras. Dia 1 de 130.",
-   "status": "agendada",
+   "status": "feito",
    "title": "Desafio 130 dias: dia 1",
    "video": "v12"
   },

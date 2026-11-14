@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>Vídeo 12 — Desafio 130 dias: dia 1</title>
+<style>html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#0B1422}</style>
+<script src="lib.js"></script></head>
+<body>
+<script>
+const DURATION = 20;
+// As 10 primeiras palavras do app (words.json), na ordem do dia 1
+const D1 = [
+  { w: 'meeting', pt: 'reunião', s: 'The meeting starts at nine.', t: 'A reunião começa às nove.', e: '👥' },
+  { w: 'available', pt: 'disponível', s: 'Is the doctor available this afternoon?', t: 'O médico está disponível hoje à tarde?', e: '✅' },
+  { w: 'schedule', pt: 'agenda, cronograma', s: 'Can we check the schedule before the meeting?', t: 'Podemos ver a agenda antes da reunião?', e: '🗒️' },
+  { w: 'borrow', p: 'borrowed', pt: 'pegar emprestado', s: 'Can I borrow your pen for a minute?', t: 'Posso pegar sua caneta emprestada por um minuto?', e: '🤝' },
+  { w: 'reliable', pt: 'confiável', s: 'My old car is slow but reliable.', t: 'Meu carro velho é lento, mas confiável.', e: '🛡️' },
+  { w: 'deliver', p: 'delivered', pt: 'entregar', s: 'They deliver pizza until midnight.', t: 'Eles entregam pizza até meia-noite.', e: '📦' },
+  { w: 'improve', p: 'improved', pt: 'melhorar', s: 'I want to improve my English this year.', t: 'Quero melhorar meu inglês este ano.', e: '📈' },
+  { w: 'receipt', pt: 'recibo, comprovante', s: 'Can I have the receipt, please?', t: 'Pode me dar o comprovante, por favor?', e: '🧾' },
+  { w: 'appointment', pt: 'consulta, horário marcado', s: 'I have a dentist appointment on Friday.', t: 'Tenho consulta no dentista na sexta.', e: '🗓️' },
+  { w: 'figure out', p: 'figured out', pt: 'descobrir, entender', s: "I can't figure out how this works.", t: 'Não consigo entender como isso funciona.', e: '🧩' },
+];
+const SHORT = ['reunião', 'disponível', 'agenda', 'pegar emprestado', 'confiável', 'entregar', 'melhorar', 'comprovante', 'consulta', 'descobrir'];
+
+// ---- 1. Gancho: dia 1 de 130 ----
+const hook = el('div', `position:absolute;left:80px;right:80px;top:330px;text-align:center;font:800 92px/1.15 Inter;color:#fff;letter-spacing:-2px;opacity:0`,
+  'Hoje começo a aprender <span style="background:#C6F432;color:#0F1B2D;padding:0 16px;border-radius:16px">1.300 palavras</span> em inglês.');
+const dayBox = el('div', `position:absolute;left:0;right:0;top:880px;text-align:center;opacity:0`);
+el('div', `font:700 52px Inter;color:${C.grey};letter-spacing:6px`, 'DIA', dayBox);
+const dayNum = el('div', `font:900 300px/1 Inter;color:${C.lime};letter-spacing:-10px;margin-top:6px`, '1', dayBox);
+el('div', `font:800 70px Inter;color:#fff;margin-top:6px`, 'de 130', dayBox);
+const barBox = el('div', `position:absolute;left:140px;right:140px;top:1420px;height:26px;border-radius:13px;background:${C.line};overflow:hidden;opacity:0`);
+const bar = el('div', `height:100%;width:0;background:${C.lime};border-radius:13px`, '', barBox);
+const barLbl = el('div', `position:absolute;left:0;right:0;top:1475px;text-align:center;font:600 42px Inter;color:${C.grey};opacity:0`, '0 de 1.300 palavras');
+
+// ---- 2. Celular com as 10 palavras ----
+const ph = phone(240, 560, 600, 1272);
+ph.body.style.opacity = 0;
+const ls = lockScreen(ph.screen, ph.w, ph.h);
+ls.date.textContent = 'Sex, 20 de novembro';
+const capA = caption('As 10 palavras do *dia 1* 👇', 200);
+const capB = caption('Uma por vez, *na tela de bloqueio*', 200);
+const STEP = 0.9, T0 = 3.0;
+const CLOCKS = ['07:10', '08:42', '09:55', '11:20', '12:35', '14:05', '15:40', '17:15', '19:30', '21:50'];
+
+// ---- 3. Resumo do dia ----
+const capC = caption('Dia 1: *feito* ✅', 170);
+const grid = el('div', `position:absolute;left:70px;right:70px;top:380px;display:grid;grid-template-columns:1fr 1fr;gap:26px;opacity:0`);
+const cells = D1.map((w, i) => {
+  const c = el('div', `display:flex;align-items:center;gap:22px;padding:24px 26px;border-radius:30px;background:${GROUNDS[i % GROUNDS.length]};box-shadow:inset 0 0 0 2px ${C.line};opacity:0`, '', grid);
+  el('div', `font-size:66px;line-height:1;font-family:'Noto Color Emoji'`, w.e, c);
+  const col = el('div', `min-width:0`, '', c);
+  el('div', `font:800 48px/1.05 Inter;color:${C.lime};letter-spacing:-1px;white-space:nowrap`, w.w, col);
+  el('div', `font:500 32px/1.2 Inter;color:${C.grey};margin-top:6px;white-space:nowrap`, SHORT[i], col);
+  return c;
+});
+const tally = el('div', `position:absolute;left:0;right:0;top:1420px;text-align:center;opacity:0`);
+el('div', `font:900 120px/1 Inter;color:#fff;letter-spacing:-4px`, '<span style="color:#C6F432">10</span> / 1.300', tally);
+el('div', `font:600 46px Inter;color:${C.grey};margin-top:16px`, 'faltam 129 dias', tally);
+
+// ---- 4. Convite ----
+const capD = caption('Toda semana eu mostro o progresso aqui', 520);
+const capE = caption('Faz junto comigo? Comenta *eu* 👇', 900);
+const card = endCard(document.body);
+
+let key = '';
+function render(t) {
+  // gancho (já na tela no primeiro quadro)
+  const h = 1 - prog(t, 2.8, 3.0);
+  show(hook, h, 0, 1);
+  show(dayBox, h, 0, 1 + 0.06 * Math.max(0, 1 - Math.abs(t - 1.6) * 3));
+  barBox.style.opacity = h; barLbl.style.opacity = h;
+  // 1 de 130 dias: barra começa num pontinho e cresce até 1/130 (mínimo visível de 26px)
+  bar.style.width = `max(26px, ${100 / 130 * out(prog(t, 0.8, 1.6))}%)`;
+  bar.style.opacity = 0.35 + 0.65 * out(prog(t, 0.8, 1.6));
+  barLbl.textContent = t < 1.6 ? '0 de 1.300 palavras' : 'meta de hoje: 10 palavras';
+
+  // celular
+  const pa = win(t, 3.0, 12.2, 0.25);
+  ph.body.style.opacity = pa;
+  ph.body.style.transform = `translateY(${(1 - out(prog(t, 3.0, 3.5))) * 260}px)`;
+  popCaption(capA, t, 3.0, 7.5);
+  popCaption(capB, t, 7.5, 12.1);
+  const i = Math.max(0, Math.min(9, Math.floor((t - T0) / STEP)));
+  const k = 'w' + i;
+  if (k !== key) { ls.set(D1[i], i + 1, i + 1, i); ls.clock.textContent = CLOCKS[i]; key = k; }
+  const st = T0 + i * STEP;
+  const pop = i === 0 && t < T0 ? 1 : out(prog(t, st, st + 0.25));
+  ls.block.style.opacity = pop; ls.emoji.style.opacity = pop;
+  ls.block.style.transform = `translateY(${(1 - pop) * 40}px)`;
+  ls.emoji.style.transform = `scale(${0.7 + 0.3 * back(prog(t, st, st + 0.45))})`;
+
+  // resumo
+  popCaption(capC, t, 12.2, 15.2);
+  grid.style.opacity = win(t, 12.2, 15.2, 0.2);
+  cells.forEach((c, j) => {
+    const a = 12.3 + j * 0.12;
+    show(c, prog(t, a, a + 0.2), (1 - out(prog(t, a, a + 0.3))) * 40, 0.9 + 0.1 * back(prog(t, a, a + 0.35)));
+  });
+  show(tally, win(t, 13.6, 15.2, 0.2), 0, 0.85 + 0.15 * back(prog(t, 13.6, 14.0)));
+
+  // convite
+  popCaption(capD, t, 15.2, 17.7);
+  popCaption(capE, t, 15.8, 17.7);
+
+  playEnd(card, t, 17.7);
+}
+render(0);
+</script>
+</body></html>
