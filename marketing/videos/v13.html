@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>Vídeo 13 — O widget da tela inicial</title>
+<style>html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#0B1422}</style>
+<script src="lib.js"></script></head>
+<body>
+<script>
+const DURATION = 15;
+// palavras do words.json (as 5 primeiras de um dia)
+const WD = [
+  { w: 'coffee', pt: 'café', s: 'I need a coffee before work.', t: 'Preciso de um café antes do trabalho.', e: '☕' },
+  { w: 'weekend', pt: 'fim de semana', s: 'See you after the weekend!', t: 'Até depois do fim de semana!', e: '🏖️' },
+  { w: 'tired', pt: 'cansado', s: "I'm too tired to go out tonight.", t: 'Estou cansado demais para sair hoje à noite.', e: '😴' },
+  { w: 'travel', p: 'traveled', pt: 'viajar; viagem', s: 'I love to travel with my family.', t: 'Eu adoro viajar com a minha família.', e: '🧳' },
+  { w: 'umbrella', pt: 'guarda-chuva', s: "Don't forget your umbrella. It's going to rain.", t: 'Não esqueça o guarda-chuva. Vai chover.', e: '☂️' },
+];
+const TAPS = [3.75, 5.35, 6.95, 8.55]; // toques em "Próxima →"
+
+const ph = phone(240, 560, 600, 1272);
+const sw = ph.w, u = sw / 390;
+const S = ph.screen;
+
+// ---- tela inicial (papel de parede + ícones genéricos) ----
+el('div', `position:absolute;inset:0;background:linear-gradient(160deg,#1E3A5F 0%,#2B2350 55%,#3A1E3F 100%)`, '', S);
+el('div', `position:absolute;top:${16 * u}px;left:${26 * u}px;font:600 ${15 * u}px Inter;color:#fff`, '09:41', S);
+el('div', `position:absolute;top:${16 * u}px;right:${26 * u}px;font:600 ${13 * u}px Inter;color:#fff`, '▮▮▮ 87%', S);
+el('div', `position:absolute;top:${54 * u}px;left:${24 * u}px;font:500 ${15 * u}px Inter;color:rgba(255,255,255,.85)`, 'Sábado, 21 de novembro', S);
+
+// widget (igual ao layout do app: widget.xml)
+const wg = el('div', `position:absolute;left:${20 * u}px;right:${20 * u}px;top:${86 * u}px;background:#0F1B2D;border-radius:${24 * u}px;
+  padding:${16 * u}px;box-sizing:border-box;font-family:Inter;color:#fff;box-shadow:0 ${10 * u}px ${30 * u}px rgba(0,0,0,.45)`, '', S);
+const topRow = el('div', `display:flex;align-items:center`, '', wg);
+const left = el('div', `flex:1;min-width:0`, '', topRow);
+const chip = el('div', `display:inline-block;padding:${3 * u}px ${10 * u}px;border-radius:999px;background:${C.lime};color:${C.navy};font:700 ${11 * u}px Inter;letter-spacing:${0.5 * u}px`, '', left);
+const wordRow = el('div', `margin-top:${6 * u}px;white-space:nowrap`, '', left);
+const word = el('span', `font:800 ${30 * u}px/1.1 Inter;color:${C.lime};letter-spacing:-${0.5 * u}px`, '', wordRow);
+const past = el('span', `margin-left:${10 * u}px;font:700 ${18 * u}px Inter;color:#fff`, '', wordRow);
+const pt = el('div', `font:400 ${14 * u}px Inter;color:${C.grey}`, '', left);
+const emo = el('div', `margin-left:${8 * u}px;font-size:${42 * u}px;line-height:1;font-family:'Noto Color Emoji'`, '', topRow);
+const sen = el('div', `margin-top:${10 * u}px;font:700 ${15 * u}px/1.3 Inter;min-height:${39 * u}px`, '', wg);
+const senPt = el('div', `font:400 ${13 * u}px/1.3 Inter;color:${C.grey};min-height:${34 * u}px`, '', wg);
+const btnS = (txt, color, bg, h, extra = '') => `flex:1;height:${h * u}px;display:flex;align-items:center;justify-content:center;border-radius:${14 * u}px;
+  font:700 ${(h > 40 ? 15 : 14) * u}px Inter;color:${color};background:${bg};${extra}`;
+const row1 = el('div', `display:flex;gap:${10 * u}px;margin-top:${10 * u}px`, '', wg);
+el('div', btnS('', C.lime, '#22324A', 36, `box-shadow:inset 0 0 0 ${u}px #3A4D68`), '🔊 Palavra', row1);
+el('div', btnS('', C.lime, '#22324A', 36, `box-shadow:inset 0 0 0 ${u}px #3A4D68`), '🔊 Frase', row1);
+const row2 = el('div', `display:flex;gap:${10 * u}px;margin-top:${8 * u}px`, '', wg);
+const next = el('div', btnS('', C.navy, C.lime, 44, 'position:relative;overflow:hidden'), 'Próxima →', row2);
+el('div', btnS('', '#fff', '#22324A', 44, `box-shadow:inset 0 0 0 ${u}px #3A4D68`), 'Meu fundo', row2);
+el('div', `margin-top:${8 * u}px;text-align:center;font:400 ${11 * u}px Inter;color:${C.grey}`, 'Na sua tela de bloqueio agora', wg);
+const ripple = el('div', `position:absolute;left:50%;top:50%;width:${60 * u}px;height:${60 * u}px;margin:-${30 * u}px 0 0 -${30 * u}px;border-radius:50%;background:rgba(15,27,45,.25);opacity:0`, '', next);
+
+// ícones genéricos da tela inicial
+const grid = el('div', `position:absolute;left:${28 * u}px;right:${28 * u}px;top:${470 * u}px;display:grid;grid-template-columns:repeat(4,1fr);row-gap:${22 * u}px`, '', S);
+const apps = [['📷', 'Câmera', '#3B4A5E'], ['💬', 'Mensagens', '#2E6B4A'], ['🎵', 'Música', '#7A2E4F'], ['🗺️', 'Mapas', '#2F5A7A'],
+  ['📅', 'Agenda', '#5A4A2E'], ['🌤️', 'Tempo', '#2E4F7A'], ['📝', 'Notas', '#6B5A2E'], ['⚙️', 'Ajustes', '#4A4F5A']];
+for (const [i, n, c] of apps) {
+  const a = el('div', `display:flex;flex-direction:column;align-items:center;gap:${6 * u}px`, '', grid);
+  el('div', `width:${58 * u}px;height:${58 * u}px;border-radius:${16 * u}px;background:${c};display:flex;align-items:center;justify-content:center;font-size:${30 * u}px;font-family:'Noto Color Emoji'`, i, a);
+  el('div', `font:500 ${11 * u}px Inter;color:#fff`, n, a);
+}
+el('div', `position:absolute;left:${28 * u}px;right:${28 * u}px;bottom:${40 * u}px;height:${48 * u}px;border-radius:999px;background:rgba(255,255,255,.18);
+  display:flex;align-items:center;padding-left:${20 * u}px;font:500 ${14 * u}px Inter;color:rgba(255,255,255,.8)`, '🔍&nbsp; Pesquisar', S);
+
+// dedo (círculo) que toca no botão
+const finger = el('div', `position:absolute;width:${46 * u}px;height:${46 * u}px;margin:-${23 * u}px 0 0 -${23 * u}px;border-radius:50%;
+  background:rgba(255,255,255,.55);box-shadow:0 0 0 ${4 * u}px rgba(255,255,255,.25);opacity:0;z-index:40`, '', S);
+
+function setWord(i) {
+  const w = WD[i];
+  chip.textContent = `PALAVRA ${i + 1} DE 10`;
+  word.textContent = w.w; past.textContent = w.p || ''; pt.textContent = w.pt;
+  emo.textContent = w.e; sen.textContent = w.s; senPt.textContent = w.t;
+}
+
+const caps = [
+  [caption('Esse widget *troca de palavra* quando você toca 👆', 170), 0.05, 3.2],
+  [caption('Toca em *Próxima*…', 230), 3.2, 5.0],
+  [caption('…e vem *outra palavra*, com frase e tradução', 170), 5.0, 8.3],
+  [caption('Direto na *tela inicial*, sem abrir o app 📱', 170), 8.3, 12.6],
+];
+const card = endCard(document.body);
+
+let cur = -1;
+function render(t) {
+  for (const [c, a, b] of caps) popCaption(c, t, a, b);
+  // celular sobe e depois aproxima no widget
+  ph.body.style.transformOrigin = '50% 22%';
+  const z = 1 + 0.16 * ease(prog(t, 3.05, 3.6)) - 0.16 * ease(prog(t, 9.6, 10.6));
+  const zl = ease(prog(t, 3.05, 3.6)) - ease(prog(t, 9.6, 10.6));
+  ph.body.style.transform = `translateY(${(1 - out(prog(t, 0, 0.6))) * 260 - 120 * zl}px) scale(${z + 0.02 * prog(t, 10.6, 12.6)})`;
+
+  let i = 0, last = -10;
+  for (let k = 0; k < TAPS.length; k++) if (t >= TAPS[k] + 0.12) { i = k + 1; last = TAPS[k] + 0.12; }
+  if (i !== cur) { setWord(i); cur = i; }
+  const pop = i === 0 ? 1 : out(prog(t, last, last + 0.3));
+  for (const e of [word, past, pt, sen, senPt]) { e.style.opacity = pop; e.style.display = e === word || e === past ? 'inline' : 'block'; }
+  word.style.opacity = past.style.opacity = pop;
+  emo.style.transform = `scale(${0.6 + 0.4 * back(i === 0 ? 1 : prog(t, last, last + 0.45))})`;
+  chip.style.transformOrigin = '0 50%';
+  chip.style.transform = `scale(${1 + 0.15 * win(t, last, last + 0.5, 0.15)})`;
+
+  // dedo: aparece em 2.9, toca em cada TAPS, some em 9.4
+  const nb = next.getBoundingClientRect(), sb = S.getBoundingClientRect(), sc = sb.width / sw;
+  const fx = (nb.left + nb.width / 2 - sb.left) / sc, fy = (nb.top + nb.height / 2 - sb.top) / sc;
+  finger.style.left = fx + 'px'; finger.style.top = fy + 'px';
+  let press = 0, rp = 1;
+  for (const k of TAPS) { press = Math.max(press, win(t, k - 0.08, k + 0.2, 0.08)); if (t >= k && t < k + 0.5) rp = prog(t, k, k + 0.5); }
+  finger.style.opacity = win(t, 3.25, 9.4, 0.3) * (0.8 + 0.2 * press);
+  finger.style.transform = `scale(${1 - 0.25 * press})`;
+  next.style.transform = `scale(${1 - 0.05 * press})`;
+  ripple.style.opacity = rp < 1 ? 0.9 * (1 - rp) : 0;
+  ripple.style.transform = `scale(${1 + 5 * out(rp)})`;
+
+  playEnd(card, t, 12.6);
+}
+render(0);
+</script>
+</body></html>

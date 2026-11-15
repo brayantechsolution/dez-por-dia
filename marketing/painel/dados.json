@@ -1,8 +1,8 @@
 {
- "updated": "14/11/2026 18:58",
+ "updated": "15/11/2026 07:27",
  "agent": {
-  "message": "Reel do dia (v15) já postado de manhã; views atualizadas às 18h58 (Reel de 13/11 chegou a 50).",
-  "when": "14 nov"
+  "message": "Vídeo v13 (O widget da tela inicial, 15 s) pronto e anexado para 21/11; calendário segue com 8 dias à frente (até 23/11); 1 ideia nova.",
+  "when": "15 nov"
  },
  "posts": [
   {
@@ -764,13 +764,13 @@
    "brief": "Além da tela de bloqueio, o 10 por Dia tem um widget para a tela inicial: toca em 'Próxima' e aparece a próxima palavra.",
    "date": "2026-11-21",
    "duration": "15 s",
-   "file": null,
+   "file": "v13-widget-tela-inicial.mp4",
    "hook": "Esse widget troca de palavra quando você toca.",
    "order": 13,
-   "status": "a produzir",
+   "status": "pronto",
    "title": "O widget da tela inicial",
    "id": "v13",
-   "src": null
+   "src": "videos/v13.mp4"
   },
   "v14": {
    "brief": "Quando as 10 palavras do dia acabam, elas voltam numa frase diferente. Ver a mesma palavra em outro contexto ajuda a fixar.",
@@ -930,7 +930,7 @@
    "date": "2026-11-21",
    "format": "demonstração",
    "hook": "Esse widget troca de palavra quando você toca.",
-   "status": "agendada",
+   "status": "feito",
    "title": "O widget da tela inicial",
    "video": "v13"
   },
@@ -1065,6 +1065,16 @@
    "hook": "'Attend' não é atender.",
    "status": "ideia",
    "title": "Falsos amigos #3: attend, pull, college"
+  },
+  {
+   "id": "fila-10",
+   "by": "claude",
+   "date": null,
+   "format": "POV",
+   "hook": "POV: a palavra do dia era 'umbrella'… e começou a chover.",
+   "status": "ideia",
+   "title": "POV: aprendeu 'umbrella' e começou a chover",
+   "video": null
   }
  ],
  "setup": {
