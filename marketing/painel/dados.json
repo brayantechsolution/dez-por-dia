@@ -1,8 +1,8 @@
 {
- "updated": "15/11/2026 18:58",
+ "updated": "16/11/2026 07:26",
  "agent": {
-  "message": "Reel de 15/11 já postado; views atualizadas (Reel de hoje: 10).",
-  "when": "15 nov"
+  "message": "Vídeo v6 (Quiz: bill, fair, mean) pronto para 23/11; calendário segue com 7 dias à frente (até 23/11).",
+  "when": "16 nov"
  },
  "posts": [
   {
@@ -848,13 +848,13 @@
    "brief": "Bill, fair e mean: três palavras que confundem muita gente. Pausa o vídeo, chuta, e depois confere a resposta.",
    "date": "2026-11-23",
    "duration": "15 s",
-   "file": null,
+   "file": "v6-quiz-bill.mp4",
    "hook": "3 palavras que parecem fáceis. Quantas você acerta?",
    "order": 15,
-   "status": "a produzir",
+   "status": "pronto",
    "title": "Quiz: você sabe o que é 'bill'?",
    "id": "v6",
-   "src": null
+   "src": "videos/v6.mp4"
   },
   "v7": {
    "brief": "Actually = na verdade. Pretend = fingir. Push = empurrar. Três falsos amigos que todo brasileiro já errou.",
@@ -960,7 +960,7 @@
    "date": "2026-11-23",
    "format": "quiz",
    "hook": "3 palavras que parecem fáceis. Quantas você acerta?",
-   "status": "agendada",
+   "status": "feito",
    "title": "Quiz: você sabe o que é 'bill'?",
    "video": "v6"
   },
