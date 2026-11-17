@@ -1,8 +1,8 @@
 {
- "updated": "16/11/2026 18:59",
+ "updated": "17/11/2026 07:26",
  "agent": {
-  "message": "Reel de 16/11 (v8) já postado às 18h53; views atualizadas às 18h57.",
-  "when": "16 nov"
+  "message": "Vídeo v16 (Uma letra muda tudo: tire x tired) pronto e agendado para 24/11; calendário com 7 dias à frente.",
+  "when": "17 nov"
  },
  "posts": [
   {
@@ -709,6 +709,53 @@
    },
    "title": "Quiz: você sabe o que é 'bill'?",
    "video": "v6"
+  },
+  {
+   "id": "2026-11-24",
+   "date": "2026-11-24",
+   "hook": "'Tire' é pneu. 'Tired' é cansado.",
+   "note": "Peça nos comentários outros pares de uma letra só; dá ideia pra próximos vídeos.",
+   "platforms": {
+    "instagram": {
+     "status": "pendente",
+     "tags": [
+      "#aprenderingles",
+      "#inglesonline",
+      "#dicasdeingles",
+      "#vocabularioingles",
+      "#palavrasemingles"
+     ],
+     "text": "Tire é pneu, tired é cansado. Hair é cabelo, chair é cadeira. Water é água, waiter é garçom. Uma letra a mais e a palavra vira outra.\n\nManda pra quem vive trocando essas palavras.\nSiga pra saber quando o app lança 🚀",
+     "time": "19:00",
+     "views": null
+    },
+    "tiktok": {
+     "status": "pendente",
+     "tags": [
+      "#aprenderingles",
+      "#inglesfacil",
+      "#dicasdeingles",
+      "#ingles",
+      "#palavrasemingles"
+     ],
+     "text": "Tire é pneu, tired é cansado. Hair é cabelo, chair é cadeira. Water é água, waiter é garçom. Uma letra a mais e a palavra vira outra.\n\nConhece outro par assim? Escreve aqui 👇\nSiga pra saber quando o app lança 🚀",
+     "time": "20:00",
+     "views": null
+    },
+    "youtube": {
+     "status": "pendente",
+     "tags": [
+      "#aprenderingles",
+      "#ingles",
+      "#shorts"
+     ],
+     "text": "Uma letra muda tudo em inglês: tire x tired",
+     "time": "12:00",
+     "views": null
+    }
+   },
+   "title": "Uma letra muda tudo: tire x tired",
+   "video": "v16"
   }
  ],
  "videos": {
@@ -795,6 +842,18 @@
    "title": "Como funciona o 10 por Dia",
    "id": "v15",
    "src": "videos/v15.mp4"
+  },
+  "v16": {
+   "brief": "Três pares em que uma letra muda a palavra: tire → tired (pneu / cansado), hair → chair (cabelo / cadeira), water → waiter (água / garçom). A letra nova aparece destacada, com a frase de exemplo do app. Fecha com o resumo dos três pares.",
+   "date": "2026-11-24",
+   "duration": "15 s",
+   "file": "v16-uma-letra-muda-tudo.mp4",
+   "hook": "'Tire' é pneu. 'Tired' é cansado.",
+   "order": 16,
+   "status": "pronto",
+   "title": "Uma letra muda tudo: tire x tired",
+   "id": "v16",
+   "src": "videos/v16.mp4"
   },
   "v2": {
    "brief": "Parece pouco, mas 10 palavras por dia viram 1.300 em 130 dias. É o vocabulário que aparece na maior parte das conversas do dia a dia.",
@@ -997,10 +1056,12 @@
   {
    "id": "fila-01",
    "by": "claude",
+   "date": "2026-11-24",
    "format": "comparação",
    "hook": "'Tire' é pneu. 'Tired' é cansado.",
-   "status": "ideia",
-   "title": "Uma letra muda tudo: tire x tired"
+   "status": "feito",
+   "title": "Uma letra muda tudo: tire x tired",
+   "video": "v16"
   },
   {
    "id": "fila-02",

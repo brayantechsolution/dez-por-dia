@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>Vídeo 16 — Uma letra muda tudo: tire x tired</title>
+<style>html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#0F1B2D}</style>
+<script src="lib.js"></script></head>
+<body>
+<script>
+const DURATION = 15;
+// palavras, traduções e frases do words.json; "add" é a letra que entra e "at" a posição dela na palavra nova
+const PR = [
+  { a: { w: 'tire', pt: 'pneu', e: '🛞' }, b: { w: 'tired', pt: 'cansado', e: '😴' }, add: 'd', at: 4,
+    s: "I'm too tired to go out tonight.", t: 'Estou cansado demais para sair hoje à noite.' },
+  { a: { w: 'hair', pt: 'cabelo', e: '💇' }, b: { w: 'chair', pt: 'cadeira', e: '🪑' }, add: 'c', at: 0,
+    s: 'This chair is not very comfortable.', t: 'Esta cadeira não é muito confortável.' },
+  { a: { w: 'water', pt: 'água', e: '💧' }, b: { w: 'waiter', pt: 'garçom', e: '🤵' }, add: 'i', at: 2,
+    s: 'The waiter brought our food quickly.', t: 'O garçom trouxe nossa comida rapidamente.' },
+];
+const T0 = [0, 4.0, 7.4];
+const LEN = [4.0, 3.4, 3.4];
+const SUM = 10.8, END = 12.6;
+
+const bg = el('div', `position:absolute;inset:0;background:${C.navy}`);
+
+const card = el('div', `position:absolute;left:80px;right:80px;top:540px;font-family:Inter;color:#fff;text-align:center`);
+const chip = el('div', `display:inline-block;padding:12px 30px;border-radius:999px;background:${C.lime};color:${C.navy};font:800 34px Inter;letter-spacing:2px`, '', card);
+function row(parent) {
+  const r = el('div', `margin:34px auto 0;width:860px;height:230px;box-sizing:border-box;display:flex;align-items:center;gap:40px;padding:0 50px;border-radius:40px;background:rgba(255,255,255,.05);border:4px solid ${C.line};text-align:left`, '', parent);
+  const em = el('div', `width:150px;font-size:120px;line-height:140px;text-align:center;font-family:'Noto Color Emoji'`, '', r);
+  const col = el('div', ``, '', r);
+  const w = el('div', `font:900 120px/1 Inter;letter-spacing:-3px;color:#fff`, '', col);
+  const pt = el('div', `margin-top:14px;font:700 54px/1 Inter;color:${C.grey}`, '', col);
+  return { r, em, w, pt };
+}
+const A = row(card);
+const plus = el('div', `margin-top:34px;font:900 64px/1 Inter;color:${C.lime}`, '', card);
+const B = row(card);
+const sen = el('div', `margin-top:50px;font:700 46px/1.3 Inter;color:#fff`, '', card);
+const senPt = el('div', `margin-top:10px;font:400 40px/1.3 Inter;color:${C.grey}`, '', card);
+
+const caps = [
+  [caption("*'Tire'* é pneu. *'Tired'* é cansado 😴", 170), -0.4, 3.9],
+  [caption('Uma letra a mais… 🤯', 210), 4.0, 7.3],
+  [caption('Essa no restaurante *faz diferença*', 170), 7.4, 10.7],
+  [caption('Uma letra *muda tudo*', 400), 10.8, END],
+];
+const end = endCard(document.body);
+
+let key = -1;
+function render(t) {
+  for (const [c, a, b] of caps) popCaption(c, t, a, b);
+  let i = 0; for (let j = 0; j < 3; j++) if (t >= T0[j]) i = j;
+  const p = PR[i], r = t - T0[i], L = LEN[i];
+  if (i !== key) {
+    bg.style.background = GROUNDS[[0, 1, 2][i]];
+    chip.textContent = `UMA LETRA · ${i + 1} DE 3`;
+    A.em.textContent = p.a.e; A.w.textContent = p.a.w; A.pt.textContent = p.a.pt;
+    B.em.textContent = p.b.e; B.pt.textContent = p.b.pt;
+    const w = p.b.w;
+    B.w.innerHTML = w.slice(0, p.at) +
+      `<span style="background:${C.lime};color:${C.navy};padding:0 12px;border-radius:18px;margin:0 4px">${w[p.at]}</span>` + w.slice(p.at + 1);
+    plus.textContent = `+ ${p.add}`;
+    sen.innerHTML = p.s.replace(new RegExp(`\\b${w}\\b`, 'i'), m => `<span style="color:${C.lime};font-weight:900">${m}</span>`);
+    senPt.textContent = p.t;
+    key = i;
+  }
+  // primeira dupla já na tela no quadro 0 (é o gancho)
+  const first = i === 0;
+  const inC = first ? 1 : out(prog(r, 0, 0.35));
+  const outC = t < SUM ? 1 - prog(r, L - 0.2, L) : 0;
+  card.style.opacity = t >= SUM ? 1 - prog(t, SUM, SUM + 0.3) : Math.min(inC, outC);
+  card.style.transform = `translateY(${(1 - inC) * 60}px)`;
+  const pl = first ? 0.6 : 0.5, bb = first ? 0.9 : 0.75, sn = first ? 1.8 : 1.5;
+  const po = out(prog(r, pl, pl + 0.25));
+  plus.style.opacity = po; plus.style.transform = `scale(${0.6 + 0.4 * back(prog(r, pl, pl + 0.35))})`;
+  const bo = prog(r, bb, bb + 0.4);
+  B.r.style.opacity = out(bo);
+  B.r.style.transform = `translateY(${(1 - out(bo)) * 50}px) scale(${0.9 + 0.1 * back(bo)})`;
+  B.r.style.borderColor = bo > 0.5 ? C.lime : C.line;
+  const so = out(prog(r, sn, sn + 0.3));
+  sen.style.opacity = so; senPt.style.opacity = so;
+  sen.style.transform = senPt.style.transform = `translateY(${(1 - so) * 30}px)`;
+
+  // resumo
+  sum.style.opacity = win(t, SUM, END, 0.3);
+  sumRows.forEach((rw, k) => {
+    const q = out(prog(t, SUM + 0.15 + k * 0.15, SUM + 0.45 + k * 0.15));
+    rw.style.opacity = q; rw.style.transform = `translateX(${(1 - q) * 100}px)`;
+  });
+  if (t >= SUM) bg.style.background = C.navy;
+  playEnd(end, t, END);
+}
+
+const sum = el('div', `position:absolute;left:80px;right:80px;top:680px;font-family:Inter;opacity:0`);
+const sumRows = PR.map(p => el('div', `display:flex;justify-content:space-between;align-items:center;padding:34px 0;border-bottom:2px solid ${C.line}`,
+  `<span style="font:800 60px Inter;color:#fff">${p.a.w} <span style="color:${C.grey};font-weight:600">→</span> <span style="color:${C.lime};font-weight:900">${p.b.w}</span></span><span style="font:700 50px Inter;color:${C.grey}">${p.a.pt} / ${p.b.pt}</span>`, sum));
+document.body.appendChild(end.root);
+render(0);
+</script>
+</body></html>
