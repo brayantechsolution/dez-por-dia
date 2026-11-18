@@ -1,8 +1,8 @@
 {
- "updated": "17/11/2026 18:58",
+ "updated": "18/11/2026 07:26",
  "agent": {
-  "message": "Reel do dia (v9) já estava postado; views do Instagram atualizadas às 19h.",
-  "when": "17 nov"
+  "message": "Vídeo v17 (5 palavras que você ouve em toda série) pronto e agendado para 25/11; calendário com 7 dias à frente.",
+  "when": "18 nov"
  },
  "posts": [
   {
@@ -756,6 +756,53 @@
    },
    "title": "Uma letra muda tudo: tire x tired",
    "video": "v16"
+  },
+  {
+   "id": "2026-11-25",
+   "date": "2026-11-25",
+   "hook": "Você ouve essas palavras em toda série e nem percebe.",
+   "note": "Peça nos comentários a palavra que a pessoa mais ouve nas séries; dá ideia pra próximos vídeos.",
+   "platforms": {
+    "instagram": {
+     "status": "pendente",
+     "tags": [
+      "#aprenderingles",
+      "#inglesonline",
+      "#dicasdeingles",
+      "#vocabularioingles",
+      "#series"
+     ],
+     "text": "Wait é esperar, actually é na verdade, trust é confiar, lie é mentir e sorry é desculpa. Você ouve as cinco em quase todo episódio.\n\nManda pra quem maratona série com você.\nSiga pra saber quando o app lança 🚀",
+     "time": "19:00",
+     "views": null
+    },
+    "tiktok": {
+     "status": "pendente",
+     "tags": [
+      "#aprenderingles",
+      "#inglesfacil",
+      "#dicasdeingles",
+      "#ingles",
+      "#series"
+     ],
+     "text": "Wait é esperar, actually é na verdade, trust é confiar, lie é mentir e sorry é desculpa. Você ouve as cinco em quase todo episódio.\n\nQual palavra você mais ouve nas séries? 👇\nSiga pra saber quando o app lança 🚀",
+     "time": "20:00",
+     "views": null
+    },
+    "youtube": {
+     "status": "pendente",
+     "tags": [
+      "#aprenderingles",
+      "#ingles",
+      "#shorts"
+     ],
+     "text": "5 palavras em inglês que você ouve em toda série",
+     "time": "12:00",
+     "views": null
+    }
+   },
+   "title": "5 palavras que você ouve em toda série",
+   "video": "v17"
   }
  ],
  "videos": {
@@ -854,6 +901,18 @@
    "title": "Uma letra muda tudo: tire x tired",
    "id": "v16",
    "src": "videos/v16.mp4"
+  },
+  "v17": {
+   "brief": "Uma 'TV' mostra a fala da série com a legenda em inglês e, embaixo, a palavra e a tradução: wait (esperar), actually (na verdade), trust (confiar), lie (mentir), sorry (desculpa). Frases do app. Fecha com o resumo das cinco.",
+   "date": "2026-11-25",
+   "duration": "16 s",
+   "file": "v17-palavras-de-serie.mp4",
+   "hook": "Você ouve essas palavras em toda série e nem percebe.",
+   "order": 17,
+   "status": "pronto",
+   "title": "5 palavras que você ouve em toda série",
+   "id": "v17",
+   "src": "videos/v17.mp4"
   },
   "v2": {
    "brief": "Parece pouco, mas 10 palavras por dia viram 1.300 em 130 dias. É o vocabulário que aparece na maior parte das conversas do dia a dia.",
@@ -1066,10 +1125,12 @@
   {
    "id": "fila-02",
    "by": "claude",
+   "date": "2026-11-25",
    "format": "lista",
    "hook": "Você ouve essas palavras em toda série e nem percebe.",
-   "status": "ideia",
-   "title": "5 palavras que você ouve em toda série"
+   "status": "feito",
+   "title": "5 palavras que você ouve em toda série",
+   "video": "v17"
   },
   {
    "id": "fila-03",
@@ -1136,6 +1197,14 @@
    "status": "ideia",
    "title": "POV: aprendeu 'umbrella' e começou a chover",
    "video": null
+  },
+  {
+   "id": "fila-11",
+   "by": "claude",
+   "format": "série",
+   "hook": "Mais três palavras que todo personagem fala.",
+   "status": "ideia",
+   "title": "Palavras de série #2: deal, guess, promise"
   }
  ],
  "setup": {
