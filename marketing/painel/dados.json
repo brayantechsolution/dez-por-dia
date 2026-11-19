@@ -1,8 +1,8 @@
 {
- "updated": "18/11/2026 18:59",
+ "updated": "19/11/2026 07:27",
  "agent": {
-  "message": "Reel do dia (v10, Falsos amigos #2) postado no Instagram às 19h; views atualizadas às 19h.",
-  "when": "18 nov"
+  "message": "Vídeo v18 (Inglês do trabalho: meeting, deadline, schedule) pronto e agendado para 26/11; calendário com 7 dias à frente e nova ideia na fila.",
+  "when": "19 nov"
  },
  "posts": [
   {
@@ -803,6 +803,53 @@
    },
    "title": "5 palavras que você ouve em toda série",
    "video": "v17"
+  },
+  {
+   "id": "2026-11-26",
+   "date": "2026-11-26",
+   "hook": "3 palavras que todo mundo fala no escritório.",
+   "note": "Peça nos comentários outras palavras de trabalho; dá ideia pra um vídeo #2 de inglês do escritório.",
+   "platforms": {
+    "instagram": {
+     "status": "pendente",
+     "tags": [
+      "#aprenderingles",
+      "#inglesonline",
+      "#dicasdeingles",
+      "#vocabularioingles",
+      "#inglesparatrabalho"
+     ],
+     "text": "Meeting é reunião, deadline é prazo e schedule é agenda. Três palavras que aparecem todo dia no trabalho, até em empresa brasileira.\n\nManda pra quem vive marcando meeting.\nSiga pra saber quando o app lança 🚀",
+     "time": "19:00",
+     "views": null
+    },
+    "tiktok": {
+     "status": "pendente",
+     "tags": [
+      "#aprenderingles",
+      "#inglesfacil",
+      "#dicasdeingles",
+      "#ingles",
+      "#inglesparatrabalho"
+     ],
+     "text": "Meeting é reunião, deadline é prazo e schedule é agenda. Três palavras que aparecem todo dia no trabalho, até em empresa brasileira.\n\nQual palavra em inglês você mais ouve no trabalho? 👇\nSiga pra saber quando o app lança 🚀",
+     "time": "20:00",
+     "views": null
+    },
+    "youtube": {
+     "status": "pendente",
+     "tags": [
+      "#aprenderingles",
+      "#ingles",
+      "#shorts"
+     ],
+     "text": "3 palavras em inglês que todo mundo fala no trabalho",
+     "time": "12:00",
+     "views": null
+    }
+   },
+   "title": "Inglês do trabalho: meeting, deadline, schedule",
+   "video": "v18"
   }
  ],
  "videos": {
@@ -913,6 +960,18 @@
    "title": "5 palavras que você ouve em toda série",
    "id": "v17",
    "src": "videos/v17.mp4"
+  },
+  "v18": {
+   "brief": "Mensagens de trabalho (do chefe, da gerente e de um colega) chegam com meeting, deadline e schedule, e o celular mostra cada palavra na tela de bloqueio do 10 por Dia, com tradução e a frase do app. Fecha com o resumo das três.",
+   "date": "2026-11-26",
+   "duration": "15 s",
+   "file": "v18-ingles-do-trabalho.mp4",
+   "hook": "3 palavras que todo mundo fala no escritório.",
+   "order": 18,
+   "status": "pronto",
+   "title": "Inglês do trabalho: meeting, deadline, schedule",
+   "id": "v18",
+   "src": "videos/v18.mp4"
   },
   "v2": {
    "brief": "Parece pouco, mas 10 palavras por dia viram 1.300 em 130 dias. É o vocabulário que aparece na maior parte das conversas do dia a dia.",
@@ -1135,10 +1194,12 @@
   {
    "id": "fila-03",
    "by": "claude",
+   "date": "2026-11-26",
    "format": "lista",
    "hook": "3 palavras que todo mundo fala no escritório.",
-   "status": "ideia",
-   "title": "Inglês do trabalho: meeting, deadline, schedule"
+   "status": "feito",
+   "title": "Inglês do trabalho: meeting, deadline, schedule",
+   "video": "v18"
   },
   {
    "id": "fila-04",
@@ -1205,6 +1266,16 @@
    "hook": "Mais três palavras que todo personagem fala.",
    "status": "ideia",
    "title": "Palavras de série #2: deal, guess, promise"
+  },
+  {
+   "id": "fila-12",
+   "by": "claude",
+   "date": null,
+   "format": "lista",
+   "hook": "Seu chefe, seu colega e seu salário, em inglês.",
+   "status": "ideia",
+   "title": "Inglês do trabalho #2: boss, coworker, salary",
+   "video": null
   }
  ],
  "setup": {
