@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>Vídeo 19 — Antes x depois: 30 dias, 300 palavras</title>
+<style>html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#0F1B2D}</style>
+<script src="lib.js"></script></head>
+<body>
+<script>
+const DURATION = 16;
+// frases (s/t) do words.json; todas as palavras destacadas estão entre as 300 primeiras do app (até o dia 28)
+const SS = [
+  { s: 'I need to finish this report today.', t: 'Preciso terminar este relatório hoje.', e: '📊',
+    keys: { need: 'preciso', finish: 'terminar', report: 'relatório', today: 'hoje' } },
+  { s: 'Is the salary enough to pay the rent?', t: 'O salário dá para pagar o aluguel?', e: '💵',
+    keys: { salary: 'salário', enough: 'suficiente', pay: 'pagar', rent: 'aluguel' } },
+  { s: "I'm hungry. Is the kitchen still open?", t: 'Estou com fome. A cozinha ainda está aberta?', e: '🍳',
+    keys: { hungry: 'com fome', kitchen: 'cozinha', still: 'ainda', open: 'aberta' } },
+];
+// cada frase: DIA 1 (palavras borradas) e depois DIA 30 (palavras acendem com a tradução)
+const SLOTS = [[0, 2.0, 4.4], [4.4, 5.4, 8.0], [8.0, 9.0, 11.6]];   // [início, vira dia 30, fim]
+const SUM = 11.6, END = 14.0;
+
+const bg = el('div', `position:absolute;inset:0;background:${C.navy}`);
+
+// cartão com a frase
+const card = el('div', `position:absolute;left:70px;right:70px;top:560px;padding:50px 56px 56px;border-radius:44px;background:#1C2B44;
+  box-shadow:0 30px 80px rgba(0,0,0,.45), inset 0 0 0 3px ${C.line};font-family:Inter;color:#fff;box-sizing:border-box`);
+const head = el('div', `display:flex;align-items:center;justify-content:space-between`, '', card);
+const pill = el('div', `padding:12px 28px;border-radius:999px;background:${C.line};color:#fff;font:800 36px Inter;letter-spacing:2px`, '', head);
+const cEmoji = el('div', `font-family:'Noto Color Emoji';font-size:72px;line-height:1`, '', head);
+const sen = el('div', `margin-top:40px;font:800 78px/1.9 Inter;letter-spacing:-1px`, '', card);
+el('div', `margin:40px 0 30px;height:3px;background:${C.line}`, '', card);
+const senPt = el('div', `font:600 46px/1.3 Inter;color:${C.grey}`, '', card);
+
+// barra dos 130 dias embaixo do cartão
+const bar = el('div', `position:absolute;left:110px;right:110px;top:1360px;font-family:Inter`);
+const barTxt = el('div', `display:flex;justify-content:space-between;font:700 40px Inter;color:${C.grey};margin-bottom:22px`,
+  '<span class="a"></span><span>130 dias</span>', bar);
+const barA = barTxt.querySelector('.a');
+const track = el('div', `height:28px;border-radius:14px;background:${C.line};overflow:hidden`, '', bar);
+const fill = el('div', `height:100%;width:0;border-radius:14px;background:${C.lime}`, '', track);
+
+const caps = [
+  [caption('Em 30 dias, *300 palavras novas*. Olha a diferença.', 160), -0.4, 2.0],
+  [caption('No dia 30, *você entende* 💡', 200), 2.1, 4.3],
+  [caption('10 palavras por dia, *na tela de bloqueio*', 160), 4.5, 7.9],
+  [caption('Sem abrir app, *sem decorar lista*', 160), 8.1, 11.5],
+  [caption('E isso é só o *dia 30* 🤯', 300), SUM, END],
+];
+
+// resumo: dia 1, dia 30, dia 130
+const sum = el('div', `position:absolute;left:90px;right:90px;top:640px;font-family:Inter;opacity:0`);
+const ROWS = [['Dia 1', '10'], ['Dia 30', '300'], ['Dia 130', '1.300']];
+const sumRows = ROWS.map(([d, n], k) => el('div', `display:flex;justify-content:space-between;align-items:baseline;padding:40px 0;border-bottom:2px solid ${C.line}`,
+  `<span style="font:700 58px Inter;color:${C.grey}">${d}</span><span style="font:900 ${k === 2 ? 96 : 80}px Inter;color:${k === 2 ? C.lime : '#fff'}">${n} <span style="font:700 40px Inter;color:${C.grey}">palavras</span></span>`, sum));
+
+const end = endCard(document.body);
+
+let key = -1, spans = [];
+function build(i) {
+  const p = SS[i];
+  sen.innerHTML = p.s.replace(/[A-Za-z']+/g, m => {
+    const g = p.keys[m.toLowerCase()];
+    if (!g) return m;
+    return `<span class="k" style="position:relative;display:inline-block;line-height:1.1"><span class="w">${m}</span>` +
+      `<span class="g" style="position:absolute;left:50%;top:100%;margin-top:4px;transform:translateX(-50%);white-space:nowrap;font:700 34px Inter;color:${C.lime};letter-spacing:0">${g}</span></span>`;
+  });
+  spans = [...sen.querySelectorAll('.k')].map(k => ({ w: k.querySelector('.w'), g: k.querySelector('.g') }));
+  senPt.textContent = p.t;
+  cEmoji.textContent = p.e;
+}
+
+function render(t) {
+  for (const [c, a, b] of caps) popCaption(c, t, a, b);
+
+  const i = t < SLOTS[1][0] ? 0 : t < SLOTS[2][0] ? 1 : 2;
+  const [a, flip, b] = SLOTS[i];
+  if (key !== i) { build(i); key = i; }
+
+  const inS = t < SUM;
+  // cartão entra (a 1ª frase já está na tela no quadro 0)
+  const ci = i === 0 ? 1 : out(prog(t, a, a + 0.35));
+  const co = 1 - prog(t, b - 0.2, b);
+  card.style.opacity = inS ? Math.min(ci, co) : 0;
+  card.style.transform = `translateY(${(1 - ci) * 60}px)`;
+
+  // DIA 1 -> DIA 30: contador rola de 10 a 300
+  const f = prog(t, flip - 0.1, flip + 0.5);
+  const n = Math.round(10 + 290 * out(f));
+  pill.textContent = f <= 0 ? 'DIA 1 · 10 PALAVRAS' : `DIA ${Math.round(1 + 29 * out(f))} · ${n} PALAVRAS`;
+  pill.style.background = f >= 1 ? C.lime : C.line;
+  pill.style.color = f >= 1 ? C.navy : '#fff';
+
+  spans.forEach((s, k) => {
+    const q = out(prog(t, flip + k * 0.18, flip + 0.35 + k * 0.18));
+    s.w.style.filter = `blur(${(1 - q) * 16}px)`;
+    s.w.style.color = q > 0.5 ? C.lime : C.grey;
+    s.g.style.opacity = q;
+    s.g.style.transform = `translateX(-50%) translateY(${(1 - q) * 14}px)`;
+  });
+  const day = f <= 0 ? 1 : Math.round(1 + 29 * out(f));
+  barA.innerHTML = `<span style="color:#fff">Dia ${day}</span> de`;
+  fill.style.width = (day / 130 * 100) + '%';
+  bar.style.opacity = card.style.opacity;
+  const tq = out(prog(t, flip + 0.8, flip + 1.2));
+  senPt.style.opacity = tq;
+  senPt.style.filter = `blur(${(1 - tq) * 10}px)`;
+
+  bg.style.background = t >= SUM ? C.navy : GROUNDS[i % GROUNDS.length];
+  sum.style.opacity = win(t, SUM, END, 0.3);
+  sumRows.forEach((rw, k) => {
+    const q = out(prog(t, SUM + 0.15 + k * 0.25, SUM + 0.5 + k * 0.25));
+    rw.style.opacity = q; rw.style.transform = `translateX(${(1 - q) * 100}px)`;
+  });
+  playEnd(end, t, END);
+}
+document.body.appendChild(end.root);
+render(0);
+</script>
+</body></html>

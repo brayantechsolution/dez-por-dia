@@ -1,8 +1,8 @@
 {
- "updated": "19/11/2026 18:59",
+ "updated": "20/11/2026 07:27",
  "agent": {
-  "message": "Reel do dia (v11, Quiz: café da manhã) postado no Instagram às 18h55; views atualizadas às 18h58.",
-  "when": "19 nov"
+  "message": "Vídeo v19 (Antes x depois: 30 dias, 300 palavras) pronto e anexado; dia 27/11 criado no calendário com as três legendas; nova ideia (quiz relâmpago) na fila.",
+  "when": "20 nov"
  },
  "posts": [
   {
@@ -850,6 +850,53 @@
    },
    "title": "Inglês do trabalho: meeting, deadline, schedule",
    "video": "v18"
+  },
+  {
+   "id": "2026-11-27",
+   "date": "2026-11-27",
+   "hook": "Em 30 dias, 300 palavras novas. Olha a diferença.",
+   "note": "Frases do app: no dia 1 as palavras aparecem borradas; no dia 30 todas acendem com a tradução. Bom pra puxar comentários de quem começaria o desafio.",
+   "platforms": {
+    "instagram": {
+     "status": "pendente",
+     "tags": [
+      "#aprenderingles",
+      "#inglesonline",
+      "#dicasdeingles",
+      "#vocabularioingles",
+      "#vocabulario"
+     ],
+     "text": "Dia 1: a frase em inglês parece um borrão. Dia 30: 300 palavras depois, você lê e entende. Só 10 palavras por dia, direto na tela de bloqueio.\n\nManda pra quem sempre diz que vai começar o inglês segunda.\nSiga pra saber quando o app lança 🚀",
+     "time": "19:00",
+     "views": null
+    },
+    "tiktok": {
+     "status": "pendente",
+     "tags": [
+      "#aprenderingles",
+      "#inglesfacil",
+      "#dicasdeingles",
+      "#ingles",
+      "#vocabulario"
+     ],
+     "text": "No dia 1 você lê 'I need to finish this report today' e trava. No dia 30, com 10 palavras por dia, você já entende tudo. São 300 palavras novas sem decorar lista.\n\nVocê entenderia essa frase hoje? 👇\nSiga pra saber quando o app lança 🚀",
+     "time": "20:00",
+     "views": null
+    },
+    "youtube": {
+     "status": "pendente",
+     "tags": [
+      "#aprenderingles",
+      "#ingles",
+      "#shorts"
+     ],
+     "text": "Inglês: dia 1 x dia 30 aprendendo 10 palavras por dia",
+     "time": "12:00",
+     "views": null
+    }
+   },
+   "title": "Antes x depois: 30 dias, 300 palavras",
+   "video": "v19"
   }
  ],
  "videos": {
@@ -972,6 +1019,18 @@
    "title": "Inglês do trabalho: meeting, deadline, schedule",
    "id": "v18",
    "src": "videos/v18.mp4"
+  },
+  "v19": {
+   "brief": "Três frases do app (report, salary/rent, hungry/kitchen). No 'Dia 1' as palavras-chave aparecem borradas; o contador rola até 'Dia 30 · 300 palavras' e elas acendem em verde com a tradução embaixo. Barra dos 130 dias embaixo. Fecha com o resumo dia 1 / dia 30 / dia 130.",
+   "date": "2026-11-27",
+   "duration": "16 s",
+   "file": "v19-antes-depois-30-dias.mp4",
+   "hook": "Em 30 dias, 300 palavras novas. Olha a diferença.",
+   "order": 19,
+   "status": "pronto",
+   "title": "Antes x depois: 30 dias, 300 palavras",
+   "id": "v19",
+   "src": "videos/v19.mp4"
   },
   "v2": {
    "brief": "Parece pouco, mas 10 palavras por dia viram 1.300 em 130 dias. É o vocabulário que aparece na maior parte das conversas do dia a dia.",
@@ -1204,10 +1263,12 @@
   {
    "id": "fila-04",
    "by": "claude",
+   "date": "2026-11-27",
    "format": "série",
    "hook": "Em 30 dias, 300 palavras novas. Olha a diferença.",
-   "status": "ideia",
-   "title": "Antes x depois: 30 dias, 300 palavras"
+   "status": "feito",
+   "title": "Antes x depois: 30 dias, 300 palavras",
+   "video": "v19"
   },
   {
    "id": "fila-05",
@@ -1275,6 +1336,16 @@
    "hook": "Seu chefe, seu colega e seu salário, em inglês.",
    "status": "ideia",
    "title": "Inglês do trabalho #2: boss, coworker, salary",
+   "video": null
+  },
+  {
+   "id": "fila-13",
+   "by": "claude",
+   "date": null,
+   "format": "quiz",
+   "hook": "Você entende essa frase? Tem 3 segundos.",
+   "status": "ideia",
+   "title": "Quiz relâmpago: entenda a frase em 3 segundos",
    "video": null
   }
  ],
