@@ -1,8 +1,8 @@
 {
- "updated": "20/11/2026 18:59",
+ "updated": "21/11/2026 07:26",
  "agent": {
-  "message": "Reel do dia (v12, Desafio 130 dias: dia 1) postado no Instagram às 18h53; views atualizadas às 19h.",
-  "when": "20 nov"
+  "message": "Vídeo v20 (Desafio com amigo: quem lembra mais) pronto e agendado para 28/11; calendário com 7 dias à frente e 1 ideia nova na fila.",
+  "when": "21 nov"
  },
  "posts": [
   {
@@ -897,6 +897,53 @@
    },
    "title": "Antes x depois: 30 dias, 300 palavras",
    "video": "v19"
+  },
+  {
+   "id": "2026-11-28",
+   "date": "2026-11-28",
+   "hook": "Eu e meu amigo, 10 palavras. Quem lembra mais?",
+   "note": "Sábado: formato de desafio pra puxar marcação de amigos nos comentários. Palavras do app: tired, borrow, wallet, weather, remember (placar final 4 x 3).",
+   "platforms": {
+    "instagram": {
+     "status": "pendente",
+     "tags": [
+      "#aprenderingles",
+      "#inglesonline",
+      "#dicasdeingles",
+      "#vocabularioingles",
+      "#desafio"
+     ],
+     "text": "Mesmas 10 palavras, mesmo dia: quem lembra mais? Fiz o desafio com um amigo e o placar ficou 4 x 3 (ele esqueceu justo o remember 😂). Aprender junto é mais fácil e bem mais divertido.\n\nManda pra quem você desafiaria nessa.\nSiga pra saber quando o app lança 🚀",
+     "time": "11:00",
+     "views": null
+    },
+    "tiktok": {
+     "status": "pendente",
+     "tags": [
+      "#aprenderingles",
+      "#inglesfacil",
+      "#dicasdeingles",
+      "#ingles",
+      "#desafio"
+     ],
+     "text": "Eu e meu amigo vimos as mesmas 10 palavras na tela de bloqueio. Ele confundiu borrow com lend e esqueceu o remember 😂 Placar: 4 x 3.\n\nQuem ganharia de você nesse desafio? 👇\nSiga pra saber quando o app lança 🚀",
+     "time": "18:00",
+     "views": null
+    },
+    "youtube": {
+     "status": "pendente",
+     "tags": [
+      "#aprenderingles",
+      "#ingles",
+      "#shorts"
+     ],
+     "text": "Desafio de inglês com amigo: quem lembra mais das 10 palavras?",
+     "time": "11:00",
+     "views": null
+    }
+   },
+   "title": "Desafio com amigo: quem lembra mais do dia",
+   "video": "v20"
   }
  ],
  "videos": {
@@ -1043,6 +1090,18 @@
    "title": "A conta: 1.300 palavras",
    "id": "v2",
    "src": "videos/v2.mp4"
+  },
+  "v20": {
+   "brief": "Placar EU x AMIGO no topo. Cinco rodadas com palavras do app (tired, borrow, wallet, weather, remember): a palavra aparece, os dois respondem, acende certo/errado e o placar sobe. Dicas nos erros: emprestar é lend, bolsa é bag, esquecer é forget. Fecha com 4 x 3, 'Desafia alguém nos comentários' e o cartão final.",
+   "date": "2026-11-28",
+   "duration": "17,5 s",
+   "file": "v20-desafio-com-amigo.mp4",
+   "hook": "Eu e meu amigo, 10 palavras. Quem lembra mais?",
+   "order": 20,
+   "status": "pronto",
+   "title": "Desafio com amigo: quem lembra mais do dia",
+   "id": "v20",
+   "src": "videos/v20.mp4"
   },
   "v3": {
    "brief": "Sem sequência pra perder, sem notificação brigando com você. As palavras aparecem sozinhas na tela de bloqueio, no seu ritmo.",
@@ -1273,10 +1332,12 @@
   {
    "id": "fila-05",
    "by": "claude",
+   "date": "2026-11-28",
    "format": "desafio",
    "hook": "Eu e meu amigo, 10 palavras, quem lembra mais?",
-   "status": "ideia",
-   "title": "Desafio com amigo: quem lembra mais do dia"
+   "status": "feito",
+   "title": "Desafio com amigo: quem lembra mais do dia",
+   "video": "v20"
   },
   {
    "id": "fila-06",
@@ -1347,6 +1408,14 @@
    "status": "ideia",
    "title": "Quiz relâmpago: entenda a frase em 3 segundos",
    "video": null
+  },
+  {
+   "id": "fila-14",
+   "by": "claude",
+   "format": "quiz",
+   "hook": "Você sabe o passado desses 3 verbos?",
+   "status": "ideia",
+   "title": "Quiz do passado: forget, lose, win"
   }
  ],
  "setup": {

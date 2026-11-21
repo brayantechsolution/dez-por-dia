@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>Vídeo 20 — Desafio com amigo: quem lembra mais do dia</title>
+<style>html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#0F1B2D}</style>
+<script src="lib.js"></script></head>
+<body>
+<script>
+const DURATION = 17.5;
+// palavras e traduções do words.json; "eu" e "amigo" são as respostas de cada um
+const RS = [
+  { w: 'tired', pt: 'cansado', e: '😴', eu: 'cansado', am: 'cansado', okE: 1, okA: 1 },
+  { w: 'borrow', pt: 'pegar emprestado', e: '🤝', eu: 'pegar emprestado', am: 'emprestar', okE: 1, okA: 0,
+    tip: 'Emprestar é *lend* 😉' },
+  { w: 'wallet', pt: 'carteira', e: '👛', eu: 'bolsa', am: 'carteira', okE: 0, okA: 1,
+    tip: 'Bolsa é *bag* 👜' },
+  { w: 'weather', pt: 'tempo, clima', e: '🌦️', eu: 'tempo', am: 'clima', okE: 1, okA: 1 },
+  { w: 'remember', pt: 'lembrar', e: '🧠', eu: 'lembrar', am: 'esquecer', okE: 1, okA: 0,
+    tip: 'Esquecer é *forget* 🤦' },
+];
+const W0 = 0.6, RL = 2.4, RES = W0 + RL * RS.length, END = RES + 2.4;   // RES = 12.6, END = 15.0
+
+const bg = el('div', `position:absolute;inset:0;background:${C.navy}`);
+
+// placar
+const board = el('div', `position:absolute;left:80px;right:80px;top:420px;height:230px;display:flex;align-items:center;justify-content:space-between;font-family:Inter`);
+function side(name, emo) {
+  const c = el('div', `width:390px;height:230px;border-radius:40px;background:#1C2B44;box-shadow:inset 0 0 0 3px ${C.line};
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:#fff`, '', board);
+  el('div', `font:700 40px Inter;color:${C.grey}`, `<span style="font-family:'Noto Color Emoji';margin-right:12px">${emo}</span>${name}`, c);
+  const n = el('div', `font:900 120px/1 Inter;color:${C.lime}`, '0', c);
+  return { c, n };
+}
+const sE = side('EU', '🙋');
+el('div', `font:900 60px Inter;color:${C.grey}`, 'x', board);
+const sA = side('AMIGO', '🧑');
+
+// cartão da palavra
+const card = el('div', `position:absolute;left:110px;right:110px;top:730px;height:500px;border-radius:48px;background:rgba(255,255,255,.06);
+  box-shadow:inset 0 0 0 3px ${C.line};font-family:Inter;text-align:center;color:#fff`);
+const round = el('div', `margin-top:44px;display:inline-block;padding:10px 26px;border-radius:999px;background:${C.lime};color:${C.navy};font:800 30px Inter;letter-spacing:2px`, '', card);
+const emo = el('div', `margin-top:20px;font-family:'Noto Color Emoji';font-size:130px;line-height:150px`, '', card);
+const word = el('div', `margin-top:6px;font:900 128px/1.05 Inter;color:${C.lime};letter-spacing:-3px`, '', card);
+const ptl = el('div', `margin-top:10px;font:600 50px Inter;color:${C.grey}`, '', card);
+
+// respostas
+function ans(left) {
+  const a = el('div', `position:absolute;left:${left}px;width:420px;top:1290px;height:150px;border-radius:32px;font-family:Inter;
+    display:flex;align-items:center;justify-content:center;gap:16px;color:#fff;font:800 46px/1.1 Inter;text-align:center;padding:0 20px;box-sizing:border-box`);
+  const tx = el('span', ``, '', a);
+  const mk = el('span', `font-family:'Noto Color Emoji';font-size:52px`, '', a);
+  return { a, tx, mk };
+}
+const aE = ans(80), aA = ans(580);
+
+const tips = RS.map((r, i) => r.tip ? [caption(r.tip, 1540), W0 + i * RL + 1.25, W0 + (i + 1) * RL - 0.05] : null).filter(Boolean);
+const caps = [
+  [caption('Eu e meu amigo, 10 palavras.<br>*Quem lembra mais?*', 90), -0.4, RES - 0.1],
+  ...tips,
+];
+
+// resultado
+const res = el('div', `position:absolute;left:80px;right:80px;top:720px;text-align:center;font-family:Inter;color:#fff;opacity:0`);
+el('div', `font-family:'Noto Color Emoji';font-size:170px;line-height:200px`, '🏆', res);
+el('div', `margin-top:10px;font:900 150px/1 Inter;color:${C.lime};letter-spacing:-4px`, '4 x 3', res);
+el('div', `margin-top:30px;font:700 56px/1.25 Inter;color:#fff`, 'Ganhei! O amigo<br>esqueceu o <span style="color:#C6F432">remember</span> 😂', res);
+const resCap = caption('Desafia alguém *nos comentários* 👇', 1440);
+
+const end = endCard(document.body);
+
+function score(t) {
+  let e = 0, a = 0;
+  RS.forEach((r, i) => { if (t >= W0 + i * RL + 1.05) { e += r.okE; a += r.okA; } });
+  return [e, a];
+}
+function paint(x, ok, shown) {
+  x.a.style.background = !shown ? '#1C2B44' : ok ? '#1F5132' : '#5A1E26';
+  x.a.style.boxShadow = `inset 0 0 0 3px ${!shown ? C.line : ok ? '#4ADE80' : '#F87171'}`;
+  x.mk.textContent = shown ? (ok ? '✅' : '❌') : '';
+}
+
+let key = -1;
+function render(t) {
+  for (const [c, a, b] of caps) popCaption(c, t, a, b);
+  popCaption(resCap, t, RES + 0.6, END);
+
+  const i = Math.min(RS.length - 1, Math.max(0, Math.floor((t - W0) / RL)));
+  const r = t - W0 - i * RL;   // pode ser negativo antes da 1ª rodada
+  const R = RS[i];
+  if (key !== i) {
+    round.textContent = `RODADA ${i + 1} DE 5`;
+    emo.textContent = R.e; word.textContent = R.w; ptl.textContent = R.pt;
+    aE.tx.textContent = R.eu; aA.tx.textContent = R.am;
+    bg.style.background = GROUNDS[i % GROUNDS.length];
+    key = i;
+  }
+  const inRounds = t < RES;
+  const [e, a] = score(t);
+  sE.n.textContent = e; sA.n.textContent = a;
+  // pulo no número quando marca ponto
+  const bump = r >= 1.05 && r < 1.45 ? 1 + 0.18 * Math.sin(prog(r, 1.05, 1.45) * Math.PI) : 1;
+  sE.n.style.transform = `scale(${R.okE ? bump : 1})`;
+  sA.n.style.transform = `scale(${R.okA ? bump : 1})`;
+
+  // palavra entra (a 1ª já está na tela no quadro 0)
+  const wi = i === 0 ? 1 : out(prog(r, 0, 0.3));
+  const wo = 1 - prog(r, RL - 0.15, RL);
+  card.style.opacity = inRounds ? Math.min(wi, wo) : 0;
+  card.style.transform = `scale(${i === 0 && r < 0.3 ? 1 : 0.85 + 0.15 * back(prog(r, 0, 0.35))})`;
+  ptl.style.opacity = prog(r, 1.05, 1.3);
+
+  // respostas aparecem, depois a correção
+  const ai = out(prog(r, 0.45, 0.75));
+  for (const [x, ok] of [[aE, R.okE], [aA, R.okA]]) {
+    x.a.style.opacity = inRounds ? Math.min(ai, wo) : 0;
+    x.a.style.transform = `translateY(${(1 - ai) * 40}px)`;
+    paint(x, ok, r >= 1.05);
+  }
+
+  board.style.opacity = t < END ? 1 : 0;
+  if (!inRounds) bg.style.background = C.navy;
+  res.style.opacity = win(t, RES, END + 0.4, 0.3);
+  res.style.transform = `scale(${0.8 + 0.2 * back(prog(t, RES, RES + 0.45))})`;
+  playEnd(end, t, END);
+}
+document.body.appendChild(end.root);
+render(0);
+</script>
+</body></html>
