@@ -1,8 +1,8 @@
 {
- "updated": "21/11/2026 18:59",
+ "updated": "22/11/2026 07:27",
  "agent": {
-  "message": "Reel de hoje já estava postado; views atualizadas às 19h (desafio de 20/11 com 87 views no Instagram).",
-  "when": "21 nov"
+  "message": "Vídeo v21 (5 telas de bloqueio, 5 palavras) pronto e agendado para 29/11, com as legendas das 3 redes; calendário com 7 dias à frente.",
+  "when": "22 nov"
  },
  "posts": [
   {
@@ -944,6 +944,53 @@
    },
    "title": "Desafio com amigo: quem lembra mais do dia",
    "video": "v20"
+  },
+  {
+   "id": "2026-11-29",
+   "date": "2026-11-29",
+   "hook": "Cada cor de fundo é uma palavra nova.",
+   "note": "Domingo: vídeo estético e calmo, com as cores de fundo do app. Palavras do app: coffee, ocean, forest, dream, sky. Pergunta 'qual é a sua favorita?' pra puxar comentário.",
+   "platforms": {
+    "instagram": {
+     "status": "pendente",
+     "tags": [
+      "#aprenderingles",
+      "#inglesonline",
+      "#dicasdeingles",
+      "#vocabularioingles",
+      "#papeldeparede"
+     ],
+     "text": "Cinco desbloqueios, cinco cores, cinco palavras: coffee (café), ocean (oceano), forest (floresta), dream (sonho) e sky (céu). Cada tela traz a frase e a tradução, e você aprende só de olhar o celular.\n\nManda pra quem vive desbloqueando o celular à toa.\nSiga pra saber quando o app lança 🚀",
+     "time": "11:00",
+     "views": null
+    },
+    "tiktok": {
+     "status": "pendente",
+     "tags": [
+      "#aprenderingles",
+      "#inglesfacil",
+      "#dicasdeingles",
+      "#ingles",
+      "#papeldeparede"
+     ],
+     "text": "Cada vez que eu desbloqueio o celular, a tela muda de cor e aparece uma palavra nova em inglês: coffee, ocean, forest, dream, sky. Com frase e tradução, sem abrir app nenhum.\n\nQual dessas telas você colocaria no seu celular? 👇\nSiga pra saber quando o app lança 🚀",
+     "time": "18:00",
+     "views": null
+    },
+    "youtube": {
+     "status": "pendente",
+     "tags": [
+      "#aprenderingles",
+      "#ingles",
+      "#shorts"
+     ],
+     "text": "5 telas de bloqueio, 5 palavras em inglês",
+     "time": "11:00",
+     "views": null
+    }
+   },
+   "title": "5 telas de bloqueio, 5 palavras",
+   "video": "v21"
   }
  ],
  "videos": {
@@ -1102,6 +1149,18 @@
    "title": "Desafio com amigo: quem lembra mais do dia",
    "id": "v20",
    "src": "videos/v20.mp4"
+  },
+  "v21": {
+   "brief": "O celular mostra cinco desbloqueios ao longo do domingo; a cada um, a cor de fundo do app muda num círculo que cresce e aparece uma palavra nova com frase e tradução: coffee, ocean, forest, dream, sky (frases do app). Fecha com as cinco faixas coloridas, 'Qual é a sua favorita?' e o cartão final.",
+   "date": "2026-11-29",
+   "duration": "15 s",
+   "file": "v21-5-telas-5-palavras.mp4",
+   "hook": "Cada cor de fundo é uma palavra nova.",
+   "order": 21,
+   "status": "pronto",
+   "title": "5 telas de bloqueio, 5 palavras",
+   "id": "v21",
+   "src": "videos/v21.mp4"
   },
   "v3": {
    "brief": "Sem sequência pra perder, sem notificação brigando com você. As palavras aparecem sozinhas na tela de bloqueio, no seu ritmo.",
@@ -1342,10 +1401,12 @@
   {
    "id": "fila-06",
    "by": "claude",
+   "date": "2026-11-29",
    "format": "estética",
    "hook": "Cada cor de fundo é uma palavra nova.",
-   "status": "ideia",
-   "title": "5 telas de bloqueio, 5 palavras"
+   "status": "feito",
+   "title": "5 telas de bloqueio, 5 palavras",
+   "video": "v21"
   },
   {
    "id": "fila-07",

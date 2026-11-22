@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>Vídeo 21 — 5 telas de bloqueio, 5 palavras</title>
+<style>html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#0B1422}</style>
+<script src="lib.js"></script></head>
+<body>
+<script>
+const DURATION = 15;
+// palavras, frases e emojis do words.json; cada tela usa uma cor de fundo do app (GROUNDS)
+const SEQ = [
+  { t: 0,    gi: 4, clk: '07:50', w: { w: 'coffee', pt: 'café', s: 'I need a coffee before work.', t: 'Preciso de um café antes do trabalho.', e: '☕' } },
+  { t: 2.4,  gi: 1, clk: '10:30', w: { w: 'ocean', pt: 'oceano', s: 'Brazil is next to the Atlantic Ocean.', t: 'O Brasil fica ao lado do Oceano Atlântico.', e: '🐳' } },
+  { t: 4.6,  gi: 3, clk: '13:05', w: { w: 'forest', pt: 'floresta', s: 'There are many birds in this forest.', t: 'Há muitos pássaros nesta floresta.', e: '🌲' } },
+  { t: 6.8,  gi: 2, clk: '17:40', w: { w: 'dream', pt: 'sonho; sonhar', s: 'My dream is to travel around the world.', t: 'Meu sonho é viajar pelo mundo.', e: '🌠' } },
+  { t: 9.0,  gi: 5, clk: '21:15', w: { w: 'sky', pt: 'céu', s: 'The sky is full of stars tonight.', t: 'O céu está cheio de estrelas hoje à noite.', e: '🌌' } },
+];
+const SUM = 11.2, END = 13.4;
+
+// brilho da cor atual atrás do celular
+const glow = el('div', `position:absolute;left:-200px;right:-200px;top:500px;height:1500px;border-radius:50%;filter:blur(120px);opacity:.55`);
+
+const ph = phone(210, 610, 660, 1400);
+const ls = lockScreen(ph.screen, ph.w, ph.h);
+ls.date.textContent = 'Dom, 29 de novembro';
+const bgEl = ls.root.firstChild;
+// "onda" da cor nova, que cresce a partir do emoji
+const wipe = el('div', `position:absolute;inset:0`, '', ls.root);
+ls.root.insertBefore(wipe, bgEl.nextSibling);
+
+const caps = [
+  [caption('Cada cor de fundo é uma *palavra nova* 🎨', 230), -0.4, 2.4],
+  [caption('Toda vez que você *desbloqueia*…', 260), 2.5, 4.6],
+  [caption('…muda a cor e *muda a palavra*', 260), 4.7, 6.8],
+  [caption('Com frase e *tradução* 💬', 260), 6.9, 9.0],
+  [caption('*10 por dia*, sem abrir nada', 260), 9.1, SUM - 0.1],
+  [caption('Qual é a *sua favorita*? 👇', 230), SUM, END],
+];
+
+// resumo: as 5 telas lado a lado em faixas coloridas
+const sum = el('div', `position:absolute;left:90px;right:90px;top:560px;font-family:Inter;opacity:0`);
+const rows = SEQ.map(({ gi, w }) => el('div', `display:flex;align-items:center;gap:36px;height:150px;margin-bottom:28px;padding:0 44px;border-radius:36px;
+  background:${GROUNDS[gi]};box-shadow:0 20px 50px rgba(0,0,0,.4), inset 0 0 0 3px rgba(255,255,255,.08)`,
+  `<span style="font:84px/1 'Noto Color Emoji'">${w.e}</span>` +
+  `<span style="font:800 72px/1 Inter;color:${C.lime};letter-spacing:-1px">${w.w}</span>` +
+  `<span style="margin-left:auto;font:600 44px Inter;color:${C.grey}">${w.pt.split(';')[0]}</span>`, sum));
+
+const end = endCard(document.body);
+
+let cur = -1;
+function render(t) {
+  for (const [c, a, b] of caps) popCaption(c, t, a, b);
+
+  let i = 0;
+  for (let k = 0; k < SEQ.length; k++) if (t >= SEQ[k].t) i = k;
+  const s = SEQ[i];
+  if (i !== cur) { ls.set(s.w, i + 1, i + 1, s.gi); ls.clock.textContent = s.clk; cur = i; }
+
+  // celular sobe no começo e sai antes do resumo
+  const pIn = out(prog(t, 0, 0.6)), pOut = ease(prog(t, SUM - 0.35, SUM + 0.1));
+  ph.body.style.transformOrigin = '50% 0%';
+  ph.body.style.visibility = t >= SUM + 0.1 ? 'hidden' : 'visible';
+  ph.body.style.transform = `translateY(${(1 - pIn) * 220 + pOut * 1600}px) scale(${1 + 0.03 * prog(t, 0.6, SUM)})`;
+
+  // troca de cor: a nova cor cresce em círculo sobre a anterior
+  const newC = GROUNDS[s.gi], oldC = i === 0 ? newC : GROUNDS[SEQ[i - 1].gi];
+  const w = i === 0 ? 1 : out(prog(t, s.t, s.t + 0.5));
+  bgEl.style.background = oldC;
+  wipe.style.background = newC;
+  wipe.style.clipPath = `circle(${w * 130}% at 50% 33%)`;
+  glow.style.background = newC;
+
+  const pin = i === 0 ? 1 : out(prog(t, s.t + 0.15, s.t + 0.45));
+  ls.block.style.opacity = pin;
+  ls.block.style.transform = `translateY(${(1 - pin) * 40}px)`;
+  const ep = i === 0 ? 1 : prog(t, s.t + 0.05, s.t + 0.45);
+  ls.emoji.style.opacity = clamp(ep * 2);
+  ls.emoji.style.transform = `scale(${0.6 + 0.4 * back(ep)})`;
+
+  // resumo
+  sum.style.opacity = win(t, SUM, END, 0.3);
+  rows.forEach((r, k) => {
+    const q = out(prog(t, SUM + 0.1 + k * 0.18, SUM + 0.45 + k * 0.18));
+    r.style.opacity = q; r.style.transform = `translateX(${(1 - q) * 120}px)`;
+  });
+  if (t >= SUM) glow.style.background = C.navy;
+
+  playEnd(end, t, END);
+}
+document.body.appendChild(end.root);
+render(0);
+</script>
+</body></html>
