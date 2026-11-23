@@ -1,8 +1,8 @@
 {
- "updated": "22/11/2026 18:58",
+ "updated": "23/11/2026 07:26",
  "agent": {
-  "message": "Reel do dia (v14) já postado de manhã; views atualizadas às 18h58.",
-  "when": "22 nov"
+  "message": "Vídeo v22 (palavras de viagem: passport, flight, gate, luggage, room) pronto e agendado para 30/11; calendário com 7 dias à frente. Pulei a ideia 'Responder comentário' porque precisa de um comentário real; nova ideia de viagem #2 na fila.",
+  "when": "23 nov"
  },
  "posts": [
   {
@@ -991,6 +991,53 @@
    },
    "title": "5 telas de bloqueio, 5 palavras",
    "video": "v21"
+  },
+  {
+   "id": "2026-11-30",
+   "date": "2026-11-30",
+   "hook": "Vai viajar? Essas 5 palavras salvam.",
+   "note": "Segunda: lista prática de viagem, do passaporte ao quarto do hotel. Palavras do app: passport, flight, gate, luggage, room. Peça nos comentários qual palavra de viagem a pessoa quer aprender; dá ideia pra parte 2.",
+   "platforms": {
+    "instagram": {
+     "status": "pendente",
+     "tags": [
+      "#aprenderingles",
+      "#inglesonline",
+      "#dicasdeingles",
+      "#vocabularioingles",
+      "#inglesparaviagem"
+     ],
+     "text": "Do passaporte ao quarto do hotel, em 5 palavras: passport (passaporte), flight (voo), gate (portão de embarque), luggage (bagagem) e room (quarto). Com frase e tradução, direto na tela de bloqueio.\n\nManda pra quem vai viajar em breve.\nSiga pra saber quando o app lança 🚀",
+     "time": "19:00",
+     "views": null
+    },
+    "tiktok": {
+     "status": "pendente",
+     "tags": [
+      "#aprenderingles",
+      "#inglesfacil",
+      "#dicasdeingles",
+      "#ingles",
+      "#inglesparaviagem"
+     ],
+     "text": "Vai viajar? Essas 5 palavras salvam do começo ao fim: passport (passaporte), flight (voo), gate (portão de embarque), luggage (bagagem) e room (quarto de hotel). Cada uma aparece na tela de bloqueio com frase e tradução.\n\nQual palavra de viagem você quer aprender agora? 👇\nSiga pra saber quando o app lança 🚀",
+     "time": "20:00",
+     "views": null
+    },
+    "youtube": {
+     "status": "pendente",
+     "tags": [
+      "#aprenderingles",
+      "#ingles",
+      "#shorts"
+     ],
+     "text": "5 palavras em inglês para viajar: aeroporto e hotel",
+     "time": "12:00",
+     "views": null
+    }
+   },
+   "title": "Palavras de viagem: aeroporto e hotel",
+   "video": "v22"
   }
  ],
  "videos": {
@@ -1161,6 +1208,18 @@
    "title": "5 telas de bloqueio, 5 palavras",
    "id": "v21",
    "src": "videos/v21.mp4"
+  },
+  "v22": {
+   "brief": "Uma viagem em 5 etapas (saindo de casa, aeroporto, embarque, chegada, hotel): um cartão de embarque mostra a etapa e o celular mostra a palavra do app com frase e tradução: passport, flight, gate, luggage, room. Fecha com a lista das cinco, 'Quantas você já sabia?' e o cartão final.",
+   "date": "2026-11-30",
+   "duration": "18 s",
+   "file": "v22-palavras-de-viagem.mp4",
+   "hook": "Vai viajar? Essas 5 palavras salvam.",
+   "order": 22,
+   "status": "pronto",
+   "title": "Palavras de viagem: aeroporto e hotel",
+   "id": "v22",
+   "src": "videos/v22.mp4"
   },
   "v3": {
    "brief": "Sem sequência pra perder, sem notificação brigando com você. As palavras aparecem sozinhas na tela de bloqueio, no seu ritmo.",
@@ -1419,10 +1478,12 @@
   {
    "id": "fila-08",
    "by": "claude",
+   "date": "2026-11-30",
    "format": "lista",
    "hook": "Vai viajar? Essas 5 palavras salvam.",
-   "status": "ideia",
-   "title": "Palavras de viagem: aeroporto e hotel"
+   "status": "feito",
+   "title": "Palavras de viagem: aeroporto e hotel",
+   "video": "v22"
   },
   {
    "id": "fila-09",
@@ -1477,6 +1538,14 @@
    "hook": "Você sabe o passado desses 3 verbos?",
    "status": "ideia",
    "title": "Quiz do passado: forget, lose, win"
+  },
+  {
+   "id": "fila-15",
+   "by": "claude",
+   "format": "lista",
+   "hook": "No restaurante lá fora, você vai precisar destas.",
+   "status": "ideia",
+   "title": "Palavras de viagem #2: restaurante"
   }
  ],
  "setup": {

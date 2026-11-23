@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>Vídeo 22 — Palavras de viagem: aeroporto e hotel</title>
+<style>html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#0F1B2D}</style>
+<script src="lib.js"></script></head>
+<body>
+<script>
+const DURATION = 18;
+// palavras, traduções e frases (s/t) do words.json; "stage" é a etapa da viagem mostrada acima do celular
+const WS = [
+  { w: 'passport', pt: 'passaporte', e: '🛂', s: "Don't forget your passport.", t: 'Não esqueça seu passaporte.',
+    se: '🏠', stage: 'Saindo de casa', clock: '05:40', short: 'passaporte' },
+  { w: 'flight', pt: 'voo', e: '✈️', s: 'My flight is late again.', t: 'Meu voo está atrasado de novo.',
+    se: '🛫', stage: 'No aeroporto', clock: '07:15', short: 'voo' },
+  { w: 'gate', pt: 'portão (de embarque)', e: '🚪', s: 'Our flight leaves from gate twelve.', t: 'Nosso voo sai do portão doze.',
+    se: '🎫', stage: 'Embarque', clock: '08:30', short: 'portão' },
+  { w: 'luggage', pt: 'bagagem', e: '🛄', s: 'Can you help me with my luggage?', t: 'Você pode me ajudar com a minha bagagem?',
+    se: '🛬', stage: 'Chegando', clock: '14:05', short: 'bagagem' },
+  { w: 'room', pt: 'cômodo, quarto, sala', e: '🛏️', s: 'Our hotel room has a beautiful view.', t: 'Nosso quarto de hotel tem uma vista linda.',
+    se: '🏨', stage: 'No hotel', clock: '16:20', short: 'quarto' },
+];
+const N = WS.length;
+const W0 = 1.2, WL = 2.6, SUM = W0 + WL * N, END = SUM + 2.6;   // SUM = 14.2, END = 16.8
+
+const bg = el('div', `position:absolute;inset:0;background:${C.navy}`);
+
+// celular com a tela de bloqueio do app
+const ph = phone(240, 600, 600, 1272);
+const ls = lockScreen(ph.screen, ph.w, ph.h);
+ls.date.textContent = 'Seg, 30 de novembro';
+
+// cartão da etapa da viagem acima do celular (estilo cartão de embarque)
+const card = el('div', `position:absolute;left:110px;right:110px;top:345px;height:170px;padding:0 40px;border-radius:34px;background:#1C2B44;
+  box-shadow:0 24px 60px rgba(0,0,0,.45), inset 0 0 0 3px ${C.line};font-family:Inter;color:#fff;opacity:0;
+  display:flex;align-items:center;gap:30px;box-sizing:border-box`);
+const cEmoji = el('div', `font-family:'Noto Color Emoji';font-size:84px;line-height:1`, '', card);
+const cText = el('div', ``, '', card);
+const cStep = el('div', `font:700 28px Inter;color:${C.grey};letter-spacing:2px`, '', cText);
+const cName = el('div', `margin-top:6px;font:800 54px/1.1 Inter`, '', cText);
+// trilha de progresso da viagem no cartão
+const track = el('div', `margin-left:auto;display:flex;gap:10px`, '', card);
+const tdots = WS.map(() => el('span', `width:18px;height:18px;border-radius:50%;background:${C.line}`, '', track));
+
+const caps = [
+  [caption('Vai viajar? Essas *5 palavras* salvam ✈️', 130), -0.4, W0 + WL - 0.1],
+  [caption('Voo é *flight*', 160), W0 + WL + 0.1, W0 + WL * 2 - 0.1],
+  [caption('Portão de embarque é *gate*', 130), W0 + WL * 2 + 0.1, W0 + WL * 3 - 0.1],
+  [caption('Bagagem é *luggage* 🧳', 160), W0 + WL * 3 + 0.1, W0 + WL * 4 - 0.1],
+  [caption('Quarto de hotel é *room*', 130), W0 + WL * 4 + 0.1, SUM - 0.1],
+  [caption('Quantas você *já sabia?* 👇', 330), SUM, END],
+];
+
+// resumo
+const sum = el('div', `position:absolute;left:90px;right:90px;top:560px;font-family:Inter;opacity:0`);
+const sumRows = WS.map(p => el('div', `display:flex;justify-content:space-between;align-items:center;padding:30px 0;border-bottom:2px solid ${C.line}`,
+  `<span style="font:900 70px Inter;color:${C.lime}"><span style="font-family:'Noto Color Emoji';font-size:58px;margin-right:24px">${p.e}</span>${p.w}</span><span style="font:700 50px Inter;color:${C.grey}">${p.short}</span>`, sum));
+
+const end = endCard(document.body);
+
+let key = -1;
+function render(t) {
+  for (const [c, a, b] of caps) popCaption(c, t, a, b);
+
+  // gancho: celular, cartão e primeira palavra já na tela no quadro 0
+  const i = Math.min(N - 1, Math.max(0, Math.floor((t - W0) / WL)));
+  const r = t < W0 ? 0 : t - W0 - i * WL;
+  if (key !== i) {
+    const p = WS[i];
+    ls.set(p, i + 1, i + 1, i);
+    ls.clock.textContent = p.clock;
+    cEmoji.textContent = p.se; cName.textContent = p.stage; cStep.textContent = `ETAPA ${i + 1} DE ${N}`;
+    tdots.forEach((d, k) => { d.style.background = k <= i ? C.lime : C.line; });
+    bg.style.background = GROUNDS[i % GROUNDS.length];
+    key = i;
+  }
+  const inWords = t < SUM;
+  if (inWords) {
+    const first = t < W0 + 0.8 && i === 0;   // a 1ª palavra já está na tela desde o quadro 0
+    const mi = first ? 1 : out(prog(r, 0, 0.35));
+    const mo = 1 - prog(t, SUM - 0.2, SUM);
+    card.style.opacity = Math.min(mi, mo);
+    card.style.transform = `translateX(${(1 - mi) * 80}px)`;
+    const bi = first ? 1 : out(prog(r, 0.25, 0.65));
+    ls.block.style.opacity = bi;
+    ls.block.style.transform = `translateY(${(1 - bi) * 40}px)`;
+    ls.emoji.style.transform = `scale(${first ? 1 + 0.04 * Math.sin(t * 5) : 0.7 + 0.3 * back(prog(r, 0.2, 0.6))})`;
+  }
+  ph.body.style.opacity = inWords ? 1 : 1 - prog(t, SUM, SUM + 0.25);
+  if (!inWords) card.style.opacity = 0;
+
+  if (t >= SUM) bg.style.background = C.navy;
+  sum.style.opacity = win(t, SUM, END, 0.3);
+  sumRows.forEach((rw, k) => {
+    const q = out(prog(t, SUM + 0.15 + k * 0.12, SUM + 0.5 + k * 0.12));
+    rw.style.opacity = q; rw.style.transform = `translateX(${(1 - q) * 100}px)`;
+  });
+  playEnd(end, t, END);
+}
+document.body.appendChild(end.root);
+render(0);
+</script>
+</body></html>
