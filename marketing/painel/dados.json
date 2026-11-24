@@ -1,8 +1,8 @@
 {
- "updated": "23/11/2026 18:59",
+ "updated": "24/11/2026 07:26",
  "agent": {
-  "message": "Reel do dia (v6, quiz 'bill') postado no Instagram às 18h55; views atualizadas às 18h58.",
-  "when": "23 nov"
+  "message": "Vídeo v23 (Falsos amigos #3: attend, realize, novel) pronto e agendado para 01/12; calendário com 7 dias à frente e nova ideia (falsos amigos #4) na fila.",
+  "when": "24 nov"
  },
  "posts": [
   {
@@ -1038,6 +1038,53 @@
    },
    "title": "Palavras de viagem: aeroporto e hotel",
    "video": "v22"
+  },
+  {
+   "id": "2026-12-01",
+   "date": "2026-12-01",
+   "hook": "'Attend' não é atender.",
+   "note": "Terça: terceira parte da série de falsos amigos (v7, v10). Palavras do app: attend, realize, novel. 'Pull' e 'college' da ideia original ficaram de fora: 'push' já saiu no #1 e 'college' no #2. Peça nos comentários qual falso amigo já pegou a pessoa; dá ideia pro #4.",
+   "platforms": {
+    "instagram": {
+     "status": "pendente",
+     "tags": [
+      "#aprenderingles",
+      "#inglesonline",
+      "#dicasdeingles",
+      "#vocabularioingles",
+      "#falsoscognatos"
+     ],
+     "text": "Attend é frequentar (não atender), realize é perceber (não realizar) e novel é romance, o livro (não novela). Com frase e tradução, direto na tela de bloqueio.\n\nManda pra quem ainda fala 'realizar' achando que é realize.\nSiga pra saber quando o app lança 🚀",
+     "time": "19:00",
+     "views": null
+    },
+    "tiktok": {
+     "status": "pendente",
+     "tags": [
+      "#aprenderingles",
+      "#inglesfacil",
+      "#dicasdeingles",
+      "#ingles",
+      "#falsoscognatos"
+     ],
+     "text": "Attend não é atender, realize não é realizar e novel não é novela. Attend é frequentar, realize é perceber e novel é romance (livro). Três falsos amigos que enganam todo brasileiro.\n\nQual falso amigo já te pegou? 👇\nSiga pra saber quando o app lança 🚀",
+     "time": "20:00",
+     "views": null
+    },
+    "youtube": {
+     "status": "pendente",
+     "tags": [
+      "#aprenderingles",
+      "#ingles",
+      "#shorts"
+     ],
+     "text": "Falsos amigos em inglês #3: attend, realize e novel",
+     "time": "12:00",
+     "views": null
+    }
+   },
+   "title": "Falsos amigos #3: attend, realize, novel",
+   "video": "v23"
   }
  ],
  "videos": {
@@ -1220,6 +1267,18 @@
    "title": "Palavras de viagem: aeroporto e hotel",
    "id": "v22",
    "src": "videos/v22.mp4"
+  },
+  "v23": {
+   "brief": "Attend = frequentar (não atender). Realize = perceber (não realizar). Novel = romance, o livro (não novela). Cada palavra com o falso significado riscado, o certo e a frase do app; fecha com o resumo e o cartão final.",
+   "date": "2026-12-01",
+   "duration": "15 s",
+   "file": "v23-falsos-amigos-3.mp4",
+   "hook": "'Attend' não é atender.",
+   "order": 23,
+   "status": "pronto",
+   "title": "Falsos amigos #3: attend, realize, novel",
+   "id": "v23",
+   "src": "videos/v23.mp4"
   },
   "v3": {
    "brief": "Sem sequência pra perder, sem notificação brigando com você. As palavras aparecem sozinhas na tela de bloqueio, no seu ritmo.",
@@ -1488,10 +1547,12 @@
   {
    "id": "fila-09",
    "by": "claude",
+   "date": "2026-12-01",
    "format": "série",
    "hook": "'Attend' não é atender.",
-   "status": "ideia",
-   "title": "Falsos amigos #3: attend, pull, college"
+   "status": "feito",
+   "title": "Falsos amigos #3: attend, realize, novel",
+   "video": "v23"
   },
   {
    "id": "fila-10",
@@ -1546,6 +1607,16 @@
    "hook": "No restaurante lá fora, você vai precisar destas.",
    "status": "ideia",
    "title": "Palavras de viagem #2: restaurante"
+  },
+  {
+   "id": "fila-16",
+   "by": "claude",
+   "date": null,
+   "format": "série",
+   "hook": "'Lunch' não é lanche.",
+   "status": "ideia",
+   "title": "Falsos amigos #4: lunch, support, pull",
+   "video": null
   }
  ],
  "setup": {
