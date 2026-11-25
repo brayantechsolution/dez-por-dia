@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>Vídeo 24 — POV: aprendeu 'umbrella' e começou a chover</title>
+<style>html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#0B1422}</style>
+<script src="lib.js"></script></head>
+<body>
+<script>
+const DURATION = 14;
+// palavras e frases do words.json do app
+const UMBRELLA = { w: 'umbrella', pt: 'guarda-chuva', s: "Don't forget your umbrella. It's going to rain.", t: 'Não esqueça o guarda-chuva. Vai chover.', e: '☂️' };
+const RAIN = { w: 'rain', pt: 'chuva; chover', s: "It's going to rain this afternoon.", t: 'Vai chover hoje à tarde.', e: '🌧️' };
+const WET = { w: 'wet', pt: 'molhado', s: "Don't sit there. The chair is wet.", t: 'Não sente aí. A cadeira está molhada.', e: '💦' };
+
+// [hora em que a tela acende, palavra, número, relógio]
+const looks = [
+  [0.0, UMBRELLA, 1, '07:30'],
+  [5.0, RAIN, 2, '13:05'],
+  [7.6, WET, 3, '17:40'],
+];
+
+// céu escurecendo e chuva atrás do celular
+const sky = el('div', 'position:absolute;inset:0;background:linear-gradient(#1A2638,#0B1422);opacity:0');
+const rain = el('div', 'position:absolute;inset:0;overflow:hidden;opacity:0');
+const drops = [];
+let seed = 7;
+const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+for (let i = 0; i < 90; i++) {
+  const d = el('div', `position:absolute;width:4px;height:${70 + rnd() * 60}px;border-radius:2px;
+    background:linear-gradient(rgba(170,200,235,0),rgba(170,200,235,.75));left:0;top:0`, '', rain);
+  drops.push({ d, x: rnd() * 1180 - 50, y0: rnd() * 2200, v: 1500 + rnd() * 900 });
+}
+const flash = el('div', 'position:absolute;inset:0;background:#DDE8FF;opacity:0;z-index:30');
+
+const ph = phone(240, 560, 600, 1272);
+const ls = lockScreen(ph.screen, ph.w, ph.h);
+ls.date.textContent = 'Qua, 2 de dezembro';
+const off = el('div', 'position:absolute;inset:0;background:#000;z-index:40', '', ph.screen);
+
+const caps = [
+  [caption("POV: a palavra do dia era *umbrella* ☂️", 190), 0.05, 2.9],
+  [caption('…e começou a *chover* 🌧️', 230), 2.9, 5.0],
+  [caption('A próxima palavra?<br>*rain* 😅', 190), 5.0, 7.6],
+  [caption('E depois… *wet* 💦', 230), 7.6, 9.4],
+  [caption('Aprende com o dia a dia.<br>*10 por dia.*', 190), 9.4, 11.4],
+];
+const card = endCard(document.body);
+
+let key = -1;
+function render(t) {
+  for (const [c, a, b] of caps) popCaption(c, t, a, b);
+
+  // chuva começa em 2.9 s
+  const r = out(prog(t, 2.9, 3.6));
+  sky.style.opacity = r;
+  rain.style.opacity = r;
+  for (const k of drops) {
+    const y = ((k.y0 + t * k.v) % 2200) - 200;
+    k.d.style.transform = `translate(${k.x - (y + 200) * 0.12}px,${y}px) rotate(7deg)`;
+  }
+  flash.style.opacity = 0.55 * win(t, 3.0, 3.35, 0.08) + 0.35 * win(t, 3.5, 3.75, 0.06);
+
+  ph.body.style.transformOrigin = '50% 30%';
+  const shake = t > 3.0 && t < 3.8 ? Math.sin(t * 70) * 6 * (1 - prog(t, 3.0, 3.8)) : 0;
+  ph.body.style.transform = `translate(${shake}px,${(1 - out(prog(t, 0, 0.6))) * 260}px) scale(${1 + 0.03 * prog(t, 0.6, 11.4)})`;
+
+  let idx = 0;
+  for (let i = 0; i < looks.length; i++) if (t >= looks[i][0] - 0.15) idx = i;
+  const [on, w, n, clk] = looks[idx];
+  if (idx !== key) { ls.set(w, n, n, n - 1); ls.clock.textContent = clk; key = idx; }
+
+  // tela apaga e acende entre uma olhada e outra
+  let dark = 0;
+  for (let i = 1; i < looks.length; i++) dark = Math.max(dark, win(t, looks[i][0] - 0.4, looks[i][0] + 0.05, 0.15));
+  off.style.opacity = dark;
+
+  const pin = idx === 0 ? 1 : out(prog(t, on, on + 0.3));
+  ls.block.style.opacity = pin; ls.emoji.style.opacity = pin; ls.halo.style.opacity = pin;
+  ls.block.style.transform = `translateY(${(1 - pin) * 40}px)`;
+  ls.emoji.style.transform = `scale(${0.7 + 0.3 * back(idx === 0 ? 1 : prog(t, on, on + 0.5))})`;
+
+  playEnd(card, t, 11.4);
+}
+render(0);
+</script>
+</body></html>

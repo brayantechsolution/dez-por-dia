@@ -1,8 +1,8 @@
 {
- "updated": "24/11/2026 18:58",
+ "updated": "25/11/2026 07:26",
  "agent": {
-  "message": "Reel do dia (v16, Uma letra muda tudo: tire x tired) postado no Instagram às 18h54; views atualizadas às 18h57.",
-  "when": "24 nov"
+  "message": "Vídeo v24 (POV: aprendeu 'umbrella' e começou a chover) pronto e agendado para 2 dez; calendário com 7 dias à frente. A ideia 'Responder comentário com vídeo' ficou na fila: precisa de um comentário real escolhido por você.",
+  "when": "25 nov"
  },
  "posts": [
   {
@@ -1085,6 +1085,53 @@
    },
    "title": "Falsos amigos #3: attend, realize, novel",
    "video": "v23"
+  },
+  {
+   "id": "2026-12-02",
+   "date": "2026-12-02",
+   "hook": "POV: a palavra do dia era 'umbrella'… e começou a chover.",
+   "note": "Quarta: POV com humor (formato do v8). Palavras do app em sequência: umbrella, rain, wet. Peça nos comentários qual palavra do dia já 'aconteceu' com a pessoa; dá ideia pra outro POV.",
+   "platforms": {
+    "instagram": {
+     "status": "pendente",
+     "tags": [
+      "#aprenderingles",
+      "#inglesonline",
+      "#dicasdeingles",
+      "#vocabularioingles",
+      "#pov"
+     ],
+     "text": "A palavra do dia era umbrella (guarda-chuva)… e começou a chover. Depois vieram rain (chuva) e wet (molhado). Com frase e tradução, direto na tela de bloqueio.\n\nManda pra quem sempre esquece o guarda-chuva.\nSiga pra saber quando o app lança 🚀",
+     "time": "19:00",
+     "views": null
+    },
+    "tiktok": {
+     "status": "pendente",
+     "tags": [
+      "#aprenderingles",
+      "#inglesfacil",
+      "#dicasdeingles",
+      "#ingles",
+      "#pov"
+     ],
+     "text": "A palavra do dia era umbrella (guarda-chuva)… e começou a chover. A próxima? rain (chuva). Depois, wet (molhado). Pelo menos agora você não esquece mais.\n\nQual palavra em inglês já aconteceu com você no mesmo dia? 👇\nSiga pra saber quando o app lança 🚀",
+     "time": "20:00",
+     "views": null
+    },
+    "youtube": {
+     "status": "pendente",
+     "tags": [
+      "#aprenderingles",
+      "#ingles",
+      "#shorts"
+     ],
+     "text": "POV: a palavra do dia era 'umbrella' e começou a chover",
+     "time": "12:00",
+     "views": null
+    }
+   },
+   "title": "POV: aprendeu 'umbrella' e começou a chover",
+   "video": "v24"
   }
  ],
  "videos": {
@@ -1279,6 +1326,18 @@
    "title": "Falsos amigos #3: attend, realize, novel",
    "id": "v23",
    "src": "videos/v23.mp4"
+  },
+  "v24": {
+   "brief": "Tela de bloqueio às 07:30 com umbrella (guarda-chuva); o céu fecha, relâmpago e chuva atrás do celular. As próximas palavras do dia são rain (chuva) e wet (molhado), com as frases do app; fecha com o cartão final.",
+   "date": "2026-12-02",
+   "duration": "14 s",
+   "file": "v24-pov-umbrella.mp4",
+   "hook": "POV: a palavra do dia era 'umbrella'… e começou a chover.",
+   "order": 24,
+   "status": "pronto",
+   "title": "POV: aprendeu 'umbrella' e começou a chover",
+   "id": "v24",
+   "src": "videos/v24.mp4"
   },
   "v3": {
    "brief": "Sem sequência pra perder, sem notificação brigando com você. As palavras aparecem sozinhas na tela de bloqueio, no seu ritmo.",
@@ -1557,12 +1616,12 @@
   {
    "id": "fila-10",
    "by": "claude",
-   "date": null,
+   "date": "2026-12-02",
    "format": "POV",
    "hook": "POV: a palavra do dia era 'umbrella'… e começou a chover.",
-   "status": "ideia",
+   "status": "feito",
    "title": "POV: aprendeu 'umbrella' e começou a chover",
-   "video": null
+   "video": "v24"
   },
   {
    "id": "fila-11",
