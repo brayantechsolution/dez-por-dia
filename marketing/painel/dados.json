@@ -1,8 +1,8 @@
 {
- "updated": "25/11/2026 18:58",
+ "updated": "26/11/2026 07:26",
  "agent": {
-  "message": "Reel do dia (v17: 5 palavras que você ouve em toda série) postado no Instagram às 18h55; views atualizadas.",
-  "when": "25 nov"
+  "message": "Vídeo v25 (Palavras de série #2: deal, guess, promise) pronto e anexado; dia 03/12 criado no calendário com as três legendas (7 dias à frente).",
+  "when": "26 nov"
  },
  "posts": [
   {
@@ -1132,6 +1132,53 @@
    },
    "title": "POV: aprendeu 'umbrella' e começou a chover",
    "video": "v24"
+  },
+  {
+   "id": "2026-12-03",
+   "date": "2026-12-03",
+   "hook": "Mais 3 palavras que todo personagem fala.",
+   "note": "Quinta: segunda parte do vídeo de séries (v17), mesmo formato da 'TV' com legenda. Palavras do app: deal, guess, promise. Peça nos comentários a próxima palavra de série; dá ideia pro #3.",
+   "platforms": {
+    "instagram": {
+     "status": "pendente",
+     "tags": [
+      "#aprenderingles",
+      "#inglesonline",
+      "#dicasdeingles",
+      "#vocabularioingles",
+      "#series"
+     ],
+     "text": "Deal é acordo (It's a deal! = Fechado!), guess é adivinhar e promise é prometer. Mais três palavras que todo personagem de série fala, com frase e tradução direto na tela de bloqueio.\n\nManda pra quem maratona série com você.\nSiga pra saber quando o app lança 🚀",
+     "time": "19:00",
+     "views": null
+    },
+    "tiktok": {
+     "status": "pendente",
+     "tags": [
+      "#aprenderingles",
+      "#inglesfacil",
+      "#dicasdeingles",
+      "#ingles",
+      "#series"
+     ],
+     "text": "Deal é acordo (It's a deal! = Fechado!), guess é adivinhar (Guess who I saw… = Adivinha quem eu vi…) e promise é prometer. Toda série tem essas três, todo episódio.\n\nQual palavra de série você quer na parte 3? 👇\nSiga pra saber quando o app lança 🚀",
+     "time": "20:00",
+     "views": null
+    },
+    "youtube": {
+     "status": "pendente",
+     "tags": [
+      "#aprenderingles",
+      "#ingles",
+      "#shorts"
+     ],
+     "text": "Palavras de série em inglês #2: deal, guess e promise",
+     "time": "12:00",
+     "views": null
+    }
+   },
+   "title": "Palavras de série #2: deal, guess, promise",
+   "video": "v25"
   }
  ],
  "videos": {
@@ -1338,6 +1385,18 @@
    "title": "POV: aprendeu 'umbrella' e começou a chover",
    "id": "v24",
    "src": "videos/v24.mp4"
+  },
+  "v25": {
+   "brief": "Continuação do v17: a 'TV' (T2 · EP 1 a 3) mostra a fala com legenda em inglês e, embaixo, a palavra e a tradução: deal (negócio, acordo — It's a deal! / Fechado!), guess (adivinhar — Guess who I saw at the market!) e promise (prometer — I promise I'll call you tomorrow.). Frases do app. Fecha com o resumo das três e o cartão final.",
+   "date": "2026-12-03",
+   "duration": "14 s",
+   "file": "v25-palavras-de-serie-2.mp4",
+   "hook": "Mais 3 palavras que todo personagem fala.",
+   "order": 25,
+   "status": "pronto",
+   "title": "Palavras de série #2: deal, guess, promise",
+   "id": "v25",
+   "src": "videos/v25.mp4"
   },
   "v3": {
    "brief": "Sem sequência pra perder, sem notificação brigando com você. As palavras aparecem sozinhas na tela de bloqueio, no seu ritmo.",
@@ -1626,10 +1685,12 @@
   {
    "id": "fila-11",
    "by": "claude",
+   "date": "2026-12-03",
    "format": "série",
    "hook": "Mais três palavras que todo personagem fala.",
-   "status": "ideia",
-   "title": "Palavras de série #2: deal, guess, promise"
+   "status": "feito",
+   "title": "Palavras de série #2: deal, guess, promise",
+   "video": "v25"
   },
   {
    "id": "fila-12",
@@ -1675,6 +1736,16 @@
    "hook": "'Lunch' não é lanche.",
    "status": "ideia",
    "title": "Falsos amigos #4: lunch, support, pull",
+   "video": null
+  },
+  {
+   "id": "fila-17",
+   "by": "claude",
+   "date": null,
+   "format": "série",
+   "hook": "Toda briga de série tem essas três palavras.",
+   "status": "ideia",
+   "title": "Palavras de série #3: mind, owe, forgive",
    "video": null
   }
  ],

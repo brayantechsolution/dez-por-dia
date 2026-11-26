@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>Vídeo 25 — Palavras de série #2: deal, guess, promise</title>
+<style>html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#0F1B2D}</style>
+<script src="lib.js"></script></head>
+<body>
+<script>
+const DURATION = 14;
+// palavras, traduções e frases (s/t) do words.json
+const WS = [
+  { w: 'deal', pt: 'negócio, acordo', e: '🤝', s: "It's a deal!", t: 'Fechado!' },
+  { w: 'guess', pt: 'adivinhar; achar', e: '🎲', s: 'Guess who I saw at the market!', t: 'Adivinha quem eu vi na feira!' },
+  { w: 'promise', pt: 'prometer; promessa', e: '🤙', s: "I promise I'll call you tomorrow.", t: 'Prometo que te ligo amanhã.' },
+];
+const N = WS.length;
+const W0 = 1.4, WL = 2.8, SUM = W0 + WL * N, END = SUM + 2.0;   // SUM = 9.8, END = 11.8
+
+const bg = el('div', `position:absolute;inset:0;background:${C.navy}`);
+
+// "TV" com a cena da série e a legenda em inglês
+const tv = el('div', `position:absolute;left:90px;right:90px;top:430px;height:560px;border-radius:44px;background:#05070B;box-shadow:0 40px 90px rgba(0,0,0,.5), inset 0 0 0 4px #2B3240;overflow:hidden`);
+const scene = el('div', `position:absolute;inset:18px;border-radius:30px;background:linear-gradient(160deg,#22324d,#0b1220 70%);overflow:hidden`, '', tv);
+const ep = el('div', `position:absolute;left:34px;top:30px;padding:8px 22px;border-radius:12px;background:rgba(0,0,0,.45);font:700 30px Inter;color:#fff;letter-spacing:2px`, '▶ T2 · EP 1', scene);
+const sEmoji = el('div', `position:absolute;left:0;right:0;top:90px;text-align:center;font-size:170px;line-height:190px;font-family:'Noto Color Emoji'`, '🎬', scene);
+const sub = el('div', `position:absolute;left:30px;right:30px;bottom:36px;text-align:center;font:700 50px/1.25 Inter;color:#fff;text-shadow:0 3px 0 #000,0 0 14px #000`, '', scene);
+const bar = el('div', `position:absolute;left:0;bottom:0;height:10px;background:#E50914;width:0`, '', tv);
+
+// palavra e tradução
+const card = el('div', `position:absolute;left:80px;right:80px;top:1060px;font-family:Inter;color:#fff;text-align:center;opacity:0`);
+const chip = el('div', `display:inline-block;padding:12px 30px;border-radius:999px;background:${C.lime};color:${C.navy};font:800 34px Inter;letter-spacing:2px`, '', card);
+const word = el('div', `margin-top:30px;font:900 150px/1 Inter;letter-spacing:-4px;color:${C.lime}`, '', card);
+const pt = el('div', `margin-top:20px;font:700 60px/1.1 Inter;color:#fff`, '', card);
+const tr = el('div', `margin-top:26px;font:400 42px/1.3 Inter;color:${C.grey}`, '', card);
+
+const caps = [
+  [caption('Mais 3 palavras que *todo personagem* fala 📺', 150), -0.4, W0 + WL - 0.1],
+  [caption('Sempre antes de *uma fofoca* 👀', 190), W0 + WL, W0 + WL * 2 - 0.1],
+  [caption('A promessa que *ninguém cumpre* 🙄', 190), W0 + WL * 2, SUM - 0.1],
+  [caption('Quantas você *já sabia?*', 400), SUM, END],
+];
+
+const sum = el('div', `position:absolute;left:90px;right:90px;top:560px;font-family:Inter;opacity:0`);
+const sumRows = WS.map(p => el('div', `display:flex;justify-content:space-between;align-items:center;padding:30px 0;border-bottom:2px solid ${C.line}`,
+  `<span style="font:900 64px Inter;color:${C.lime}"><span style="font-family:'Noto Color Emoji';font-size:54px;margin-right:22px">${p.e}</span>${p.w}</span><span style="font:700 48px Inter;color:${C.grey}">${p.pt.split(';')[0]}</span>`, sum));
+
+const end = endCard(document.body);
+
+let key = -1;
+function render(t) {
+  for (const [c, a, b] of caps) popCaption(c, t, a, b);
+
+  // gancho: TV já na tela no quadro 0
+  const inWords = t >= W0 && t < SUM;
+  const i = Math.min(N - 1, Math.max(0, Math.floor((t - W0) / WL)));
+  const r = t - W0 - i * WL;
+  if (t < W0) {
+    if (key !== 'intro') { sEmoji.textContent = '🎬'; sub.textContent = ''; ep.textContent = '▶ T2 · EP 1'; key = 'intro'; }
+    sEmoji.style.transform = `scale(${1 + 0.05 * Math.sin(t * 5)})`;
+  } else if (inWords && key !== i) {
+    const p = WS[i];
+    sEmoji.textContent = p.e;
+    ep.textContent = `▶ T2 · EP ${i + 1}`;
+    sub.innerHTML = p.s.replace(new RegExp(`\\b${p.w}\\b`, 'i'), m => `<span style="color:${C.lime}">${m}</span>`);
+    chip.textContent = `PALAVRA ${i + 1} DE ${N}`;
+    word.textContent = p.w; pt.textContent = p.pt; tr.textContent = p.t;
+    bg.style.background = GROUNDS[i % GROUNDS.length];
+    key = i;
+  }
+  if (inWords) {
+    const si = out(prog(r, 0, 0.3));
+    sEmoji.style.transform = `scale(${0.7 + 0.3 * back(prog(r, 0, 0.4))})`;
+    sub.style.opacity = out(prog(r, 0.15, 0.4));
+    const co = out(prog(r, 0.45, 0.75)) * (1 - prog(r, WL - 0.15, WL));
+    card.style.opacity = co;
+    card.style.transform = `translateY(${(1 - out(prog(r, 0.45, 0.8))) * 50}px)`;
+    word.style.transform = `scale(${0.85 + 0.15 * back(prog(r, 0.45, 0.85))})`;
+    bar.style.width = `${(i + r / WL) / N * 100}%`;
+  } else {
+    card.style.opacity = 0;
+  }
+  tv.style.opacity = t < SUM ? 1 : 1 - prog(t, SUM, SUM + 0.25);
+
+  // resumo
+  if (t >= SUM) bg.style.background = C.navy;
+  sum.style.opacity = win(t, SUM, END, 0.3);
+  sumRows.forEach((rw, k) => {
+    const q = out(prog(t, SUM + 0.15 + k * 0.12, SUM + 0.45 + k * 0.12));
+    rw.style.opacity = q; rw.style.transform = `translateX(${(1 - q) * 100}px)`;
+  });
+  playEnd(end, t, END);
+}
+document.body.appendChild(end.root);
+render(0);
+</script>
+</body></html>
