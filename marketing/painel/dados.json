@@ -1,8 +1,8 @@
 {
- "updated": "26/11/2026 18:59",
+ "updated": "27/11/2026 07:26",
  "agent": {
-  "message": "Reel de 26/11 (v18) já estava postado (18h55); views do Instagram atualizadas.",
-  "when": "26 nov"
+  "message": "Vídeo v26 (Inglês do trabalho #2: boss, coworker, salary) pronto e agendado para 04/12; calendário com 7 dias à frente.",
+  "when": "27 nov"
  },
  "posts": [
   {
@@ -1179,6 +1179,53 @@
    },
    "title": "Palavras de série #2: deal, guess, promise",
    "video": "v25"
+  },
+  {
+   "id": "2026-12-04",
+   "date": "2026-12-04",
+   "hook": "Seu chefe, seu colega e seu salário, em inglês.",
+   "note": "Sexta: continuação do v18 (inglês do trabalho), mesmo formato das mensagens chegando no celular. Palavras do app: boss, coworker, salary. Peça nos comentários mais palavras do trabalho; dá ideia pro #3.",
+   "platforms": {
+    "instagram": {
+     "status": "pendente",
+     "tags": [
+      "#aprenderingles",
+      "#inglesonline",
+      "#dicasdeingles",
+      "#vocabularioingles",
+      "#inglesparatrabalho"
+     ],
+     "text": "Boss é chefe, coworker é colega de trabalho e salary é salário. Três palavras do trabalho, com frase e tradução direto na tela de bloqueio.\n\nManda pra quem divide a mesa com você no trabalho.\nSiga pra saber quando o app lança 🚀",
+     "time": "19:00",
+     "views": null
+    },
+    "tiktok": {
+     "status": "pendente",
+     "tags": [
+      "#aprenderingles",
+      "#inglesfacil",
+      "#dicasdeingles",
+      "#ingles",
+      "#inglesparatrabalho"
+     ],
+     "text": "Boss é chefe (My boss is busy all day.), coworker é colega de trabalho e salary é salário. Três palavras que você vai usar em qualquer conversa sobre trabalho.\n\nQual dessas você já sabia? 👇\nSiga pra saber quando o app lança 🚀",
+     "time": "20:00",
+     "views": null
+    },
+    "youtube": {
+     "status": "pendente",
+     "tags": [
+      "#aprenderingles",
+      "#ingles",
+      "#shorts"
+     ],
+     "text": "Chefe, colega e salário em inglês: boss, coworker, salary",
+     "time": "12:00",
+     "views": null
+    }
+   },
+   "title": "Inglês do trabalho #2: boss, coworker, salary",
+   "video": "v26"
   }
  ],
  "videos": {
@@ -1397,6 +1444,18 @@
    "title": "Palavras de série #2: deal, guess, promise",
    "id": "v25",
    "src": "videos/v25.mp4"
+  },
+  "v26": {
+   "brief": "Continuação do v18: mensagens (de um colega, de uma amiga e do irmão) chegam com boss (chefe — My boss is busy all day.), coworker (colega de trabalho — My coworker always arrives late.) e salary (salário — Is the salary enough to pay the rent?), e o celular mostra cada palavra na tela de bloqueio do 10 por Dia com a frase do app. Fecha com o resumo das três e o cartão final.",
+   "date": "2026-12-04",
+   "duration": "15 s",
+   "file": "v26-ingles-do-trabalho-2.mp4",
+   "hook": "Seu chefe, seu colega e seu salário, em inglês.",
+   "order": 26,
+   "status": "pronto",
+   "title": "Inglês do trabalho #2: boss, coworker, salary",
+   "id": "v26",
+   "src": "videos/v26.mp4"
   },
   "v3": {
    "brief": "Sem sequência pra perder, sem notificação brigando com você. As palavras aparecem sozinhas na tela de bloqueio, no seu ritmo.",
@@ -1695,12 +1754,12 @@
   {
    "id": "fila-12",
    "by": "claude",
-   "date": null,
+   "date": "2026-12-04",
    "format": "lista",
    "hook": "Seu chefe, seu colega e seu salário, em inglês.",
-   "status": "ideia",
+   "status": "feito",
    "title": "Inglês do trabalho #2: boss, coworker, salary",
-   "video": null
+   "video": "v26"
   },
   {
    "id": "fila-13",
