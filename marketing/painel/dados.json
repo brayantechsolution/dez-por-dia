@@ -1,8 +1,8 @@
 {
- "updated": "27/11/2026 18:59",
+ "updated": "28/11/2026 07:27",
  "agent": {
-  "message": "Reel de 27/11 (v19) já estava postado; views atualizadas.",
-  "when": "27 nov"
+  "message": "Vídeo v27 (Quiz relâmpago: entenda a frase em 3 segundos) pronto e agendado para 05/12; calendário com 7 dias à frente e uma ideia nova na fila.",
+  "when": "28 nov"
  },
  "posts": [
   {
@@ -1226,6 +1226,53 @@
    },
    "title": "Inglês do trabalho #2: boss, coworker, salary",
    "video": "v26"
+  },
+  {
+   "id": "2026-12-05",
+   "date": "2026-12-05",
+   "hook": "Você entende essa frase? Tem 3 segundos.",
+   "note": "Sábado: quiz rápido com contagem de 3 segundos e duas opções de tradução. Frases do app: wallet, tired, change (Keep the change) e borrow. Pergunte nos comentários quantas a pessoa acertou.",
+   "platforms": {
+    "instagram": {
+     "status": "pendente",
+     "tags": [
+      "#aprenderingles",
+      "#inglesonline",
+      "#dicasdeingles",
+      "#vocabularioingles",
+      "#quiz"
+     ],
+     "text": "Quiz relâmpago: 3 segundos pra entender cada frase. Keep the change é \"pode ficar com o troco\" e borrow é pegar emprestado (emprestar é lend). Quantas você acertou?\n\nManda pra quem acha que já sabe inglês.\nSiga pra saber quando o app lança 🚀",
+     "time": "11:00",
+     "views": null
+    },
+    "tiktok": {
+     "status": "pendente",
+     "tags": [
+      "#aprenderingles",
+      "#inglesfacil",
+      "#dicasdeingles",
+      "#ingles",
+      "#quiz"
+     ],
+     "text": "Quatro frases em inglês, 3 segundos cada: I lost my wallet on the bus, I'm too tired to go out tonight, Keep the change e Can I borrow your pen? Todas tiradas do app, com tradução na tela de bloqueio.\n\nQuantas você entendeu de primeira? 👇\nSiga pra saber quando o app lança 🚀",
+     "time": "18:00",
+     "views": null
+    },
+    "youtube": {
+     "status": "pendente",
+     "tags": [
+      "#aprenderingles",
+      "#ingles",
+      "#shorts"
+     ],
+     "text": "Você entende essa frase em inglês em 3 segundos?",
+     "time": "11:00",
+     "views": null
+    }
+   },
+   "title": "Quiz relâmpago: entenda a frase em 3 segundos",
+   "video": "v27"
   }
  ],
  "videos": {
@@ -1456,6 +1503,18 @@
    "title": "Inglês do trabalho #2: boss, coworker, salary",
    "id": "v26",
    "src": "videos/v26.mp4"
+  },
+  "v27": {
+   "brief": "Quatro frases do app, uma por vez, com contagem de 3 segundos num anel e duas opções de tradução (uma pegadinha): I lost my wallet on the bus (bolsa é bag), I'm too tired to go out tonight (atrasado é late), Keep the change (change também é mudar) e Can I borrow your pen for a minute? (emprestar é lend). Fecha com o resumo das quatro palavras, 'Quantas você entendeu? Comenta' e o cartão final.",
+   "date": "2026-12-05",
+   "duration": "21 s",
+   "file": "v27-quiz-relampago.mp4",
+   "hook": "Você entende essa frase? Tem 3 segundos.",
+   "order": 27,
+   "status": "pronto",
+   "title": "Quiz relâmpago: entenda a frase em 3 segundos",
+   "id": "v27",
+   "src": "videos/v27.mp4"
   },
   "v3": {
    "brief": "Sem sequência pra perder, sem notificação brigando com você. As palavras aparecem sozinhas na tela de bloqueio, no seu ritmo.",
@@ -1764,12 +1823,12 @@
   {
    "id": "fila-13",
    "by": "claude",
-   "date": null,
+   "date": "2026-12-05",
    "format": "quiz",
    "hook": "Você entende essa frase? Tem 3 segundos.",
-   "status": "ideia",
+   "status": "feito",
    "title": "Quiz relâmpago: entenda a frase em 3 segundos",
-   "video": null
+   "video": "v27"
   },
   {
    "id": "fila-14",
@@ -1805,6 +1864,16 @@
    "hook": "Toda briga de série tem essas três palavras.",
    "status": "ideia",
    "title": "Palavras de série #3: mind, owe, forgive",
+   "video": null
+  },
+  {
+   "id": "fila-18",
+   "by": "claude",
+   "date": null,
+   "format": "quiz",
+   "hook": "O aviso do aeroporto em inglês. Você entende em 3 segundos?",
+   "status": "ideia",
+   "title": "Quiz relâmpago #2: avisos do aeroporto",
    "video": null
   }
  ],

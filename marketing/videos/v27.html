@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>Vídeo 27 — Quiz relâmpago: entenda a frase em 3 segundos</title>
+<style>html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#0F1B2D}</style>
+<script src="lib.js"></script></head>
+<body>
+<script>
+const DURATION = 21;
+// frases (s) e traduções (t) do words.json; a opção errada é uma pegadinha comum
+const QZ = [
+  { w: 'wallet', e: '👛', s: 'I lost my wallet on the bus.', opts: ['Perdi minha carteira no ônibus.', 'Esqueci minha bolsa no ônibus.'], ok: 0,
+    tip: 'Bolsa é *bag* 👜' },
+  { w: 'tired', e: '😴', s: "I'm too tired to go out tonight.", opts: ['Estou atrasado para sair hoje à noite.', 'Estou cansado demais para sair hoje à noite.'], ok: 1,
+    tip: 'Atrasado é *late* ⌚' },
+  { w: 'change', e: '🔄', s: 'Keep the change.', opts: ['Pode mudar de ideia.', 'Pode ficar com o troco.'], ok: 1,
+    tip: '*Change* também é mudar' },
+  { w: 'borrow', e: '🤝', s: 'Can I borrow your pen for a minute?', opts: ['Posso pegar sua caneta emprestada por um minuto?', 'Posso te emprestar minha caneta por um minuto?'], ok: 0,
+    tip: 'Emprestar é *lend* 😉' },
+];
+const Q0 = 0, QL = 4.3, CD0 = 0.35, CD1 = CD0 + 3.0;   // 3 segundos de contagem; resposta em CD1
+const QEND = Q0 + QL * QZ.length;                        // 17.2
+const END = QEND + 1.6;                                  // 18.8
+
+const bg = el('div', `position:absolute;inset:0;background:${C.navy}`);
+
+const card = el('div', `position:absolute;left:80px;right:80px;top:440px;font-family:Inter;color:#fff;text-align:center`);
+const chip = el('div', `display:inline-block;padding:12px 30px;border-radius:999px;background:${C.lime};color:${C.navy};font:800 34px Inter;letter-spacing:2px`, '', card);
+const senBox = el('div', `margin-top:40px;height:230px;display:flex;align-items:center;justify-content:center`, '', card);
+const sen = el('div', `font:900 84px/1.12 Inter;letter-spacing:-2px;color:#fff`, '', senBox);
+// contagem 3, 2, 1 num anel
+const ring = el('div', `position:relative;margin:30px auto 0;width:200px;height:200px`, '', card);
+ring.innerHTML = `<svg width="200" height="200" viewBox="0 0 200 200" style="position:absolute;inset:0;transform:rotate(-90deg)">
+  <circle cx="100" cy="100" r="88" fill="none" stroke="${C.line}" stroke-width="14"/>
+  <circle class="arc" cx="100" cy="100" r="88" fill="none" stroke="${C.lime}" stroke-width="14" stroke-linecap="round" stroke-dasharray="553" stroke-dashoffset="0"/></svg>`;
+const arc = ring.querySelector('.arc');
+const num = el('div', `position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font:900 110px/1 Inter;color:#fff`, '3', ring);
+const optBox = el('div', `margin:44px auto 0;width:920px;display:flex;flex-direction:column;gap:26px`, '', card);
+const opts = [0, 1].map(k => el('div', `display:flex;align-items:center;gap:26px;padding:26px 36px;min-height:150px;box-sizing:border-box;border-radius:30px;border:4px solid ${C.line};background:rgba(255,255,255,.04);font:700 50px/1.2 Inter;color:#fff;text-align:left`, '', optBox));
+
+const tips = QZ.map((q, i) => [caption(q.tip, 1660), Q0 + i * QL + CD1 + 0.2, Q0 + (i + 1) * QL - 0.05]);
+const caps = [
+  [caption('Você entende essa frase?<br>*Tem 3 segundos* ⏱️', 120), -0.4, Q0 + QL - 0.1],
+  [caption('Essa pega *muita gente* 👀', 190), Q0 + QL + 0.1, Q0 + QL * 2 - 0.1],
+  [caption('Essa é de *restaurante* 🍽️', 190), Q0 + QL * 2 + 0.1, Q0 + QL * 3 - 0.1],
+  [caption('Última, *valendo!* 🔥', 190), Q0 + QL * 3 + 0.1, QEND - 0.1],
+  [caption('Quantas você *entendeu?* Comenta 👇', 330), QEND, END],
+  ...tips,
+];
+
+// resumo: as quatro palavras-chave
+const sum = el('div', `position:absolute;left:90px;right:90px;top:720px;font-family:Inter;opacity:0`);
+const PT = { wallet: 'carteira', tired: 'cansado', change: 'troco', borrow: 'pegar emprestado' };
+const sumRows = QZ.map(q => el('div', `display:flex;justify-content:space-between;align-items:center;gap:24px;padding:32px 0;border-bottom:2px solid ${C.line}`,
+  `<span style="font:900 72px Inter;color:${C.lime};letter-spacing:-2px"><span style="font-family:'Noto Color Emoji';font-size:56px;margin-right:22px">${q.e}</span>${q.w}</span><span style="font:700 46px Inter;color:#fff;text-align:right">${PT[q.w]}</span>`, sum));
+
+const end = endCard(document.body);
+
+let key = -1;
+function render(t) {
+  for (const [c, a, b] of caps) popCaption(c, t, a, b);
+  const i = Math.max(0, Math.min(QZ.length - 1, Math.floor((t - Q0) / QL)));
+  const r = t - Q0 - i * QL;
+  const q = QZ[i];
+  if (i !== key) {
+    bg.style.background = GROUNDS[[0, 2, 1, 5][i]];
+    chip.textContent = `FRASE ${i + 1} DE 4`;
+    sen.innerHTML = q.s.replace(new RegExp(`\\b${q.w}\\b`, 'i'), m => `<span style="color:${C.lime}">${m}</span>`);
+    opts.forEach((o, k) => o.innerHTML = `<span style="font:800 44px Inter;color:${C.grey};flex:0 0 44px">${'AB'[k]}</span><span class="w" style="flex:1">${q.opts[k]}</span><span class="m" style="flex:0 0 60px;font-family:'Noto Color Emoji';font-size:56px;text-align:right"></span>`);
+    key = i;
+  }
+  // a 1ª frase já está na tela no quadro 0 (gancho)
+  const inC = i === 0 ? 1 : out(prog(r, 0, 0.35));
+  const outC = 1 - prog(r, QL - 0.2, QL);
+  card.style.opacity = t >= QEND ? 0 : Math.min(inC, outC);
+  card.style.transform = `translateY(${(1 - inC) * 60}px)`;
+
+  // contagem
+  const cd = prog(r, CD0, CD1);
+  arc.setAttribute('stroke-dashoffset', String(553 * cd));
+  const left = Math.ceil(3 - 3 * cd);
+  const revealed = r >= CD1;
+  num.textContent = revealed ? '⏰' : String(Math.max(1, left));
+  num.style.fontFamily = revealed ? "'Noto Color Emoji'" : 'Inter';
+  num.style.fontSize = revealed ? '90px' : '110px';
+  arc.setAttribute('stroke', cd > 0.66 ? '#FF6B6B' : C.lime);
+  const tick = (r - CD0) % 1;
+  num.style.transform = `scale(${revealed ? 1 : 1 + 0.15 * (1 - out(clamp(tick / 0.3)))})`;
+
+  const rv = prog(r, CD1, CD1 + 0.25);
+  opts.forEach((o, k) => {
+    const oin = i === 0 && r < 0.3 ? 1 : out(prog(r, 0.1 + k * 0.08, 0.4 + k * 0.08));
+    const good = k === q.ok;
+    o.style.transform = `translateX(${(1 - oin) * 80}px) scale(${good ? 1 + 0.05 * back(rv) - 0.05 * rv : 1})`;
+    o.style.opacity = oin * (good ? 1 : 1 - 0.6 * rv);
+    o.style.borderColor = good && rv > 0 ? C.lime : C.line;
+    o.style.background = good && rv > 0 ? C.lime : 'rgba(255,255,255,.04)';
+    o.querySelector('.w').style.color = good && rv > 0 ? C.navy : '#fff';
+    o.firstChild.style.color = good && rv > 0 ? C.navy : C.grey;
+    o.querySelector('.m').textContent = rv > 0 ? (good ? '✅' : '❌') : '';
+  });
+
+  if (t >= QEND) bg.style.background = C.navy;
+  sum.style.opacity = win(t, QEND, END, 0.3);
+  sumRows.forEach((row, k) => {
+    const p = out(prog(t, QEND + 0.15 + k * 0.15, QEND + 0.45 + k * 0.15));
+    row.style.opacity = p; row.style.transform = `translateX(${(1 - p) * 100}px)`;
+  });
+  playEnd(end, t, END);
+}
+document.body.appendChild(end.root);
+render(0);
+</script>
+</body></html>
